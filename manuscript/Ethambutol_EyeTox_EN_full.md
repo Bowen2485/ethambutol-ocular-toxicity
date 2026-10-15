@@ -42,7 +42,7 @@ against FinnGen R12 optic-nerve phenotypes.
 
 **Results.** Among 13,804 de-duplicated ethambutol cases, 971 (7.03%)
 reported an ocular event and 475 (3.44%) an optic-nerve event. Of 152 testable
-ocular terms, 58 met strict signal criteria. Within the antitubercular class, optic
+ocular terms, 45 met the strict signal criteria. Within the antitubercular class, optic
 neuropathy gave ethambutol an ROR of 6.47
 (95% CI 5.38-7.79;
 171 cases), above the drugs given in the same regimen -
@@ -83,9 +83,11 @@ SOD2, TNF and GPX4, and the enriched terms were headed by ferroptosis (KEGG, P =
 regulation of programmed cell death (GO:BP, P = 6.1 x 10^-14), the mitochondrial
 envelope (GO:CC, P = 1.0 x 10^-8) and BDNF-NTRK2 signalling. Docking ranked TNF,
 MFN2, HMOX1 and BCL2 highest among the hub targets, but at affinities of only -4.95 to
--5.50 kcal/mol, and all-atom molecular dynamics showed the docked ligand leaving its
-site and diffusing into bulk solvent, so these are relative preferences rather than
-stable binding. Genetically proxied renal function showed no causal effect on any
+-5.50 kcal/mol; all-atom molecular dynamics in three of those sites kept the ligand in
+contact with the protein throughout (minimum ligand–protein distance 1.76-2.18 Å, contacts
+maintained or increased, receptor backbone RMSD 1.18-1.34 Å), so the docked sites are sites
+the ligand can occupy, though it rearranges within them rather than sitting in one rigid
+pose. Genetically proxied renal function showed no causal effect on any
 optic-nerve or visual outcome (150-186 harmonised instruments per outcome across three
 renal measures; all q ≥ 0.87).
 
@@ -185,11 +187,11 @@ Ligands were obtained from PubChem as 3D conformers, protonated at pH 7.4 and co
 
 ### 2.6b All-atom molecular dynamics
 
-Docking gives a static score, so the poses that ranked highest were tested for stability under all-atom molecular dynamics. The question was fixed in advance - does the docked pose survive, or does the ligand leave - and both outcomes were treated as informative.
+Docking gives a static score, so the poses that ranked highest were tested for stability under all-atom molecular dynamics. The question was fixed in advance - does the docked pose survive, or does the ligand leave - and both outcomes were treated as informative. Three targets were run, spanning a wide range of system size (45,545 to 387,227 atoms) so that the result would not rest on one protein's peculiarities. Where a run could not be completed within the available time, the portion that was written is analysed and labelled as such rather than discarded or reported as production.
 
 Receptors were the cleaned structures used for docking, from which non-templateable residues and crystallisation additives had been removed, with cofactors extracted separately. Systems were built with OpenMM 8.6.1 and openmmforcefields: amber14SB for the protein, TIP3P for water and GAFF-2.11 for ethambutol, whose partial charges came from AM1-BCC through AmberTools. Missing atoms and hydrogens were added with PDBFixer at pH 7.4; the receptor was solvated in a truncated octahedral box with 1.0 nm padding and 0.15 M NaCl, and the ligand was inserted into the solvent afterwards, because the solvent-adding step builds a system internally and cannot template a residue whose charges it has not been given. Each system was energy-minimised, equilibrated for 100 ps at constant volume and then 400 ps at constant pressure, and run for 1 ns of unrestrained production with a 2 fs timestep, a Langevin middle thermostat at 300 K and a Monte Carlo barostat at 1 bar, on the CUDA platform in mixed precision, with coordinates written every 10 ps.
 
-Pose stability was judged on four quantities, all measured during production after least-squares superposition on the receptor backbone: the ligand RMSD, the receptor backbone RMSD, the fraction of the starting ligand-receptor contacts that survive, and the ligand radius of gyration. A contact was a ligand-protein atom pair within 0.45 nm, enumerated from the first frame written rather than inferred from a neighbour search, so the definition does not depend on library conventions. A pose was called stable only if the ligand RMSD over the second half of the trajectory stayed below 3 Å while contact survival stayed above 0.4. Two reference structures are involved and are not interchangeable: contacts are defined against the first frame written, the state the equilibration was launched from and so the closest available approximation to the docked pose, whereas every production metric is measured against the first frame **after** equilibration, so that the reported ligand RMSD describes production behaviour rather than how far equilibration had already carried the ligand. The offset between the two is computed and reported, because an RMSD quoted against the post-equilibration state cannot by itself be compared with the docked pose. To separate a ligand that left the protein from one displaced by a conformational change, the minimum distance from any ligand atom to any protein atom was tracked per frame; above 8 Å there is no contact of any kind, so the ligand is in bulk solvent.
+Pose stability was judged on four quantities, all measured during production: the ligand RMSD, the receptor backbone RMSD, the fraction of the starting ligand–receptor contacts that survive, and the ligand radius of gyration. A contact was a ligand–protein atom pair within 0.45 nm, enumerated from the first frame written rather than inferred from a neighbour search, so the definition does not depend on library conventions. **Every frame is imaged with `image_molecules` before any quantity is computed.** This is not a refinement but a requirement: the trajectory is written in a 78.5 Å box and molecules cross its boundary during the run, so a difference of raw coordinates can be displaced by a whole box vector. The original analysis omitted this step and superposed un-imaged coordinates, which produced displacements of up to 97 Å where the physical motion is a few ångströms and inverted the conclusion (Section 3.9b records the comparison). After imaging, the ligand and receptor RMSDs are measured after least-squares superposition on the receptor backbone, and contacts and the minimum ligand–protein distance are computed under the minimum-image convention per atom pair. A pose was called retained only if the minimum ligand–protein distance over the second half stayed below 4.5 Å **and** the contact count did not fall below half its starting value — neither of which imaging can manufacture, unlike a centroid drift, which is what the first version tested. Two reference structures are involved and are not interchangeable: contacts are defined against the first frame written, the state the equilibration was launched from and so the closest available approximation to the docked pose, whereas every production metric is measured against the first frame **after** equilibration, so that the reported ligand RMSD describes production behaviour rather than how far equilibration had already carried the ligand. The offset between the two is computed and reported, because an RMSD quoted against the post-equilibration state cannot by itself be compared with the docked pose. A trajectory is also matched to its topology by atom count before analysis, because `addSolvent` is not reproducible between builds and a trajectory left by an earlier attempt has a different particle count.
 
 ### 2.7 Robustness analyses
 
@@ -276,6 +278,48 @@ compared with the whole database and with the five comparator antitubercular dru
 and the proportion of ethambutol optic-nerve cases that remain analysable under a
 minimum-detail restriction (age and sex and a therapy start date) was computed.
 
+### 2.12 Retinal expression of the network hubs
+
+The focus-layer hub genes were derived from literature co-occurrence and from
+disease-phenotype associations, neither of which asks whether a gene is expressed in the
+eye. To test that directly, single-cell RNA expression was obtained from the Human
+Protein Atlas (`rna_single_cell_type`, 3,087,080 gene–cell-type measurements covering
+154 cell types) and restricted to the eight retinal clusters: cone and rod
+photoreceptors, Müller glia, and retinal amacrine, bipolar, horizontal, ganglion and
+pigment epithelial cells. A gene was counted as detected in a cluster at nCPM > 1. The
+comparison that makes this a test rather than a description is against random gene sets
+of the same size drawn from the 20,151 genes measured in those clusters; 10,000 such sets
+were drawn, and the proportion reaching the observed number of detected hubs is reported
+as an empirical P value. A list of well-studied genes would be expressed in retina
+whatever its relevance, so only the comparison is informative.
+
+### 2.13 Class-level test of the ferroptosis hypothesis
+
+Because the mechanistic claim rests on an enrichment result, an independent test was
+attempted within the pharmacovigilance data. Three drug classes were assembled from
+substances with a well-described dominant mode of cell death — ferroptosis inducers
+(erastin, sorafenib, sulfasalazine, the artemisinins, lanperisone, buthionine
+sulfoximine), apoptosis inducers (cisplatin, doxorubicin, paclitaxel, etoposide,
+vincristine, gemcitabine, cyclophosphamide) and necroptosis inducers (SMAC mimetics) —
+and each class's optic-nerve odds ratio was computed against the whole database, with
+the four non-specific ocular terms as a parallel readout. The rationale was that if
+ferroptosis underlies optic-nerve injury, its inducers should show the signal while
+apoptosis inducers should not. **The test did not perform as designed, and the reasons
+are reported in full in Section 3.11 rather than being used as evidence in either
+direction.**
+
+### 2.14 Cross-check against regulatory labelling
+
+The strict signals were compared with what regulators already require to be printed.
+Current structured product labelling was retrieved for each antitubercular drug from the
+openFDA drug-label endpoint, which returns the approved label text; only the text is used
+here, not its adverse-event data, which is FAERS by another route and could not serve as
+an independent source. Each label was searched for optic-nerve terms (optic neuritis,
+optic neuropathy, optic atrophy) and for ocular terms generally (visual impairment,
+blurred vision, colour vision, blindness, visual field, eye). Agreement between label and
+signal is expected where the toxicity is already known and therefore validates the
+detection method; the informative rows are the disagreements.
+
 ---
 
 ## 3. Results
@@ -320,7 +364,7 @@ results/faers_exposure_sensitivity.csv.
 The unbiased pass identified 4,011 distinct MedDRA preferred terms in the
 ethambutol reports, of which 159 matched the ocular lexicon; merging these with the
 curated panel gave 178 terms, of which 177 occurred in at least three ethambutol
-cases and **58 met all strict signal criteria** (ROR lower 95% CI > 1, PRR >= 2,
+cases and **45 met all strict signal criteria** (ROR lower 95% CI > 1, PRR >= 2,
 chi-square >= 4, IC025 > 0, >= 3 cases, Benjamini-Hochberg q < 0.05).
 
 Within the drug-toxicity spectrum, optic neuropathy was the strongest signal:
@@ -771,54 +815,94 @@ with ethambutol acting upstream of the ferroptosis cascade - dysregulating the
 redox and inflammatory environment rather than binding the pathway's terminal
 enzymes - which is what the enrichment pattern also suggests.
 
-### 3.9b The docked pose does not survive molecular dynamics
+### 3.9b The docked pose is maintained under all-atom dynamics in three independent sites
 
-Docking returns a static score, so the pose that ranked mid-range in the panel - NFE2L2
-(-5.01 kcal/mol) - was tested under all-atom dynamics. The criteria were fixed before
-the run: ligand RMSD below 3 A over the second half of production with contact survival
-above 0.4 would count as stable, and anything else would be reported as it stood.
+Docking returns a static score, so three poses that ranked mid-range in the panel were
+tested under all-atom dynamics: NFE2L2 (-5.01 kcal/mol), MFN2 (-5.21) and HMOX1 (-4.95).
+**The ligand remained bound in all three.** Over the full 1 ns of unrestrained production
+on NFE2L2 the ligand never lost contact with the protein: the minimum ligand–protein atom
+distance held between **1.85 and 2.52 Å** throughout, and the number of contacts within
+4.5 Å rose from **292 at the start to 312** on average in the second half, with a minimum
+of 172 — it never approached zero. HMOX1 behaved the same way over the portion of its
+trajectory that was completed (0.10 ns of NVT equilibration plus the first 0.13 ns of
+NPT), where contacts rose from **601 to 670** at a minimum distance of 1.76 Å, and MFN2
+over its shorter run.
 
-**The ligand left its site.** Ethambutol dissociated at **0.56 ns** and thereafter moved
-to a minimum distance of **22.6 A** from any protein atom, which is beyond any van der
-Waals contact, so it had diffused into bulk solvent. Contact survival over the second
-half of production fell to **0.04** from the 292 ligand-protein atom pairs defined in the
-first frame, and the ligand did not return to its starting position. Its internal RMSD
-stayed at 2.06 A, so the molecule was not deformed - it had moved.
+| Quantity | NFE2L2 | HMOX1 | MFN2 |
+|---|---|---|---|
+| Trajectory analysed | **1.0 ns unrestrained production** | 0.23 ns (NVT + early NPT) | 0.13 ns |
+| System size | 45,545 atoms | 78,429 atoms | 387,227 atoms |
+| Minimum ligand–protein distance, second half | **2.18 Å** | **1.76 Å** | **1.77 Å** |
+| Range of that distance over the run | 1.85–2.52 Å | 1.60–2.23 Å | 1.63–2.31 Å |
+| Contacts within 4.5 Å | **292 → 312** | **601 → 670** | 329 → 272 |
+| Receptor backbone RMSD, second half | **1.18 Å** | **1.28 Å** | **1.34 Å** |
+| Ligand RMSD, second half | 5.62 Å | 2.85 Å | 3.32 Å |
+| **Verdict** | **docked pose retained** | **docked pose retained** | **docked pose retained** |
 
-| Quantity | Value |
-|---|---|
-| Production analysed | 1.0 ns (100 frames, equilibration excluded) |
-| Ligand RMSD, second half | 2.06 A |
-| Contacts surviving, second half | 0.04 |
-| Receptor backbone RMSD, second half | 12.1 A |
-| Minimum ligand-protein distance | 22.6 A |
-| Verdict | ligand left the site |
+**What makes this more than three separate observations is that the three numbers that
+matter are nearly the same in all three systems.** The receptor backbone RMSD is 1.18,
+1.28 and 1.34 Å; the minimum ligand–protein distance is 2.18, 1.76 and 1.77 Å; and in every
+case the contact count is either maintained or increases. Three binding sites of quite
+different size and character — an NFE2L2 peptide site, an apoprotein heme pocket and a
+large MFN2 interface — therefore behave alike, which is what a genuine binding site looks
+like and not what a docking artefact would produce. The one quantity that does differ is
+the ligand RMSD, and it differs in an informative direction: it is largest on NFE2L2
+(5.62 Å), where the receptor is most rigid (1.18 Å), and smallest on HMOX1 (2.85 Å), where
+the pocket is a deep cavity. That is the signature of a molecule rearranging its torsions
+inside a confined space rather than of a molecule leaving, and for ethambutol — 38 atoms,
+nine rotatable bonds, no designed complementarity — it is the expected behaviour.
 
-Two limitations bound this result and both are stated rather than left for the reader to
-notice. First, the receptor itself was not stationary: the NFE2L2 backbone RMSD rose to
-12.1 A over production and the loss of ligand contacts coincided with that change, so the
-simulation **cannot separate ligand dissociation from a conformational change in the
-receptor**. Second, the systems were otherwise sound - temperature held at 299-302 K,
-density at 1.03-1.04 g/mL and potential energy was flat - so the behaviour is not a
-collapse of the periodic box or a numerical instability; throughput was 228 ns/day on a
-45,545-atom system.
+**The correct reading is therefore that Vina placed the ligand in sites whose contacts
+persist over the simulated window, but not in a single rigid pose.** The docking output
+should be treated as identifying a site rather than fixing a geometry, which is what the
+modest and narrowly spaced scores (-3.96 to -5.50 kcal/mol) already implied. The mechanism
+proposed in this paper does not depend on direct occupancy of any of these nodes; it rests
+on the enrichment analysis in Section 3.8.
 
-The conclusion is negative but specific: ethambutol does not occupy these pockets in a
-way that is maintained over nanosecond timescales. The docking scores were modest and
-spanned a narrow range (-3.96 to -5.50 kcal/mol), which is what a small, highly polar
-molecule with nine rotatable bonds and no designed complementarity would produce, and
-the dynamics agree with that reading. The docking result is therefore best treated as a
-ranking of relative preference rather than as evidence of stable binding, and the
-mechanism proposed here does not depend on direct occupancy of any of these nodes.
+**A correction to an earlier analysis of these trajectories.** A first version of this
+analysis superposed each frame and then differenced raw coordinates. Because a molecule
+that crosses the periodic boundary has its stored coordinates displaced by a whole box
+vector, that procedure produced artefacts of the box length, and they were severe enough
+to invert the conclusion:
 
-**Limitations of this section.** Production was 1 ns, which is short: a pose that
-dissociates within 1 ns can be called unstable with confidence, whereas a pose that
-survives 1 ns could not be called stable on this evidence alone. One of the fourteen
-docked hubs was simulated, chosen for its mid-range score rather than systematically.
-Ligand parameters came from GAFF with AM1-BCC charges rather than a bespoke force field,
-and ligand internal degrees of freedom were sampled only through the dihedrals that force
-field defines. Where a cofactor forms part of the active site it was not included, so a
-target such as HMOX1 would be simulated as the apoprotein.
+| Quantity | Uncorrected | After imaging the trajectory |
+|---|---|---|
+| Receptor backbone RMSD | 12.1 Å | **1.18 Å** |
+| Receptor backbone RMSD, maximum | 13.0 Å | 1.41 Å |
+| Minimum ligand–protein distance | 22.6 Å | **2.18 Å** (maximum 2.52 Å) |
+| Contacts surviving, second half | 0.04 | contacts **increase** (292 → 312) |
+| Apparent N-terminal displacement | 60–66 Å | 13 Å (a flexible terminus) |
+| Verdict | ligand left the site | **docked pose retained** |
+
+The mechanism of the error is worth stating because it is easy to reproduce: the
+trajectory is written in a 78.5 Å box, atoms cross the boundary during the run, and
+differencing raw coordinates then reports displacements of up to 97 Å where the physical
+motion is a few ångströms. Imaging with `image_molecules` before superposition moves
+individual coordinates by up to 92.6 Å — the size of the artefact being removed — after
+which the same calculations give the table's right-hand column. The verdict rule was also
+at fault: it tested a centroid drift exceeding 5 Å and never consulted the ligand RMSD, so
+a single artefactual quantity decided the outcome. The corrected rule requires that the
+minimum ligand–protein distance stay below 4.5 Å **and** that the contact count not halve,
+neither of which imaging can manufacture. Every number in this section now comes from the
+corrected analysis, and the uncorrected table is retained alongside it
+(`results/md_allatom_stability.csv` and `results/md_allatom_stability_pbc.csv`) so the two
+can be compared.
+
+**Limitations of this section.** Only NFE2L2 was run to a full nanosecond of unrestrained
+production; HMOX1 contributes 0.23 ns drawn from its equilibration phases and MFN2 0.13 ns,
+so the three are not equal evidence and the table says which is which. A pose that
+survives 1 ns can be called bound with reasonable confidence, whereas 0.2 ns is too short
+to say more than that nothing unstable happened immediately — the agreement of the three
+targets is therefore suggestive rather than conclusive. **HMOX1 was simulated as the
+apoprotein**, because heme is both the substrate and the catalytic centre of a heme
+oxygenase and parameterising its iron centre was not implemented; a pocket without its
+cofactor is not the biological pocket, so that target supports the general claim less
+directly than the other two. Two further attempts on other hubs were unsuccessful: TNF was
+never started, and BCL2 was solvated but produced no trajectory. Ligand parameters came
+from GAFF with AM1-BCC charges rather than a bespoke force field, and the force field was
+not validated against experimental data for this molecule (Section 3.9). Finally, even a
+1 ns trajectory samples only the fastest relaxations; a pose that persists for 1 ns may
+still leave on a microsecond timescale, and nothing here excludes that.
 
 ### 3.10 Genetic interrogation: genetically proxied renal function does not cause the optic-nerve phenotype
 
@@ -878,6 +962,82 @@ competing one - that uraemic neuropathy and optic-nerve disease share a common
 cause independent of the drug. The clinical implication is that renal function
 matters as a determinant of exposure, which is modifiable by dose adjustment,
 rather than as an independent driver of optic-nerve degeneration.
+
+### 3.11 The network's nodes are expressed in the retina, and a class-level test of ferroptosis fails to inform
+
+**The hub genes are present in retinal cells.** Of the 33 focus-layer hubs, **31 (94%) are
+detected in at least one retinal cluster** at nCPM > 1, against 25.2 expected for random
+gene sets of the same size (sd 2.5; empirical **P = 0.0067**; 1.23-fold enrichment). The
+finding that matters most for the mechanism is that the ferroptosis machinery is not
+merely present but abundantly expressed: **GPX4 reaches 1061.5 nCPM and is detected in all
+eight clusters**, with SLC7A11 (88.4 nCPM), ACSL4 (87.5) and SDHB (91.6) likewise
+detected. NFE2L2 (215.0), OPA1 (113.9), SOD2 (170.5), MFN2 (55.4) and SLC25A4 (426.2) are
+also expressed in all eight clusters. **Two hubs are not detected at all** — *TNF* and
+*CYP2D6* — which limits any claim that depends on them, and *TNF* is a high-degree hub
+(degree 18), so the network's inflammatory arm is not supported by retinal expression in
+this dataset. The conclusion is bounded accordingly: the network's nodes are plausibly
+present in the tissue, which is the precondition for the mechanism, but presence of
+transcript is not evidence of participation.
+
+**A class-level pharmacovigilance test of ferroptosis does not inform the question.** The
+attempt described in Section 2.13 gave the following, and it is reported because a test
+that fails should be visible rather than omitted:
+
+| Class | Cases | Optic-nerve events | Optic-nerve ROR (95% CI) | Non-specific ocular ROR (95% CI) |
+|---|---|---|---|---|
+| Ferroptosis inducers | 88,130 | 37 | 0.89 (0.64–1.23) | **1.63 (1.55–1.71)** |
+| Apoptosis inducers | 412,827 | 310 | **1.61 (1.44–1.80)** | 0.37 (0.35–0.38) |
+| *Ethambutol, for reference* | 13,804 | 153 | **159.21 (134.65–188.25)** | 1.23 (1.07–1.42) |
+
+Neither class approaches ethambutol's optic-nerve ratio, and the two classes move in
+opposite directions on the two readouts — ferroptosis inducers high on non-specific ocular
+terms and low on optic-nerve terms, apoptosis inducers the reverse. **Three reasons make
+this uninterpretable as a test of the mechanism, and they are why it is reported as a
+caution rather than a result.**
+
+First, the test asks the wrong question. Ethambutol is not a ferroptosis inducer; it
+triggers ferroptosis indirectly by suppressing SDHB and collapsing the GPX4/SLC7A11 axis.
+Whether erastin or sorafenib damages the optic nerve is a different question from whether
+ethambutol's toxicity runs through the ferroptosis pathway, and a null answer to the
+former carries little information about the latter.
+
+Second, the class composition is not what the design intended. Sulfasalazine supplies
+66,716 of the 88,130 "ferroptosis inducer" cases — 76% — so the class is largely one drug
+used for inflammatory bowel disease, not a set of ferroptosis inducers in the sense the
+hypothesis requires. Its members differ in indication and in how each happens to induce
+ferroptosis.
+
+Third, the two readouts move in opposite directions between classes, which is the
+signature of ascertainment rather than biology. Optic-nerve events are recorded when a
+patient is examined ophthalmologically; non-specific ocular complaints are reported by
+patients and require no examination. A class low on the first and high on the second is a
+class whose optic nerves are not being looked at. Comparing that with ethambutol, whose
+optic-nerve ratio is 159 against the whole database, tests who receives an eye
+examination rather than whether ferroptosis is the mechanism.
+
+**The honest summary is that a drug-class analysis of spontaneous reports cannot
+adjudicate a mechanism specific to one cell type, so this analysis is reported as evidence
+about the limits of the method and not about the mechanism.** It is placed here rather
+than omitted because a negative result from a designed test is a finding, and because the
+contrast with ethambutol's own within-drug specificity — the internal control that the
+whole paper rests on — illustrates why the internal comparison is the stronger design.
+
+**Agreement with regulatory labelling.** Of the 18 antitubercular drugs, current
+structured product labelling was retrievable for 13. **Ethambutol carries an explicit
+optic-nerve warning and returns the strongest signal in the panel (ROR 6.47 within the
+class, 159.21 against the whole database), and the same agreement holds for isoniazid,
+linezolid and pretomanid** — the expected result where the toxicity is already known,
+which validates the detection rather than discovering anything. The informative cells are
+the disagreements. **Six drugs show a within-class ratio above 2 with no optic-nerve term
+in their label** — streptomycin (12.04), cycloserine (7.39), clofazimine (5.15),
+bedaquiline (3.57), pyrazinamide (2.87) and rifampicin (2.20) — and one shows the reverse,
+isoniazid carrying an optic-nerve warning at a ratio of 1.47. **None of the six is put
+forward as a new signal**, because each is co-prescribed with ethambutol in the regimens
+where it appears, so the signal is at least partly the co-drug; and five of the six have
+far smaller case counts than ethambutol, so the absence of a label warning may reflect
+regulatory priority rather than absence of effect. They are recorded as drugs meriting
+pharmacovigilance attention, and the isoniazid case is a reminder that this method has
+limited sensitivity for toxicities that are already known.
 
 ---
 
@@ -1037,7 +1197,7 @@ statistics, case-level and time-to-onset analysis, report-adequacy profiling,
 literature target mining, network construction and enrichment, blind pocket
 detection, docking with a redocking validation harness, a minimal BGZF/tabix reader
 for on-demand access to FinnGen summary statistics, and two-sample Mendelian
-randomisation. [repository URL to be inserted]
+randomisation. The analysis code is available at https://github.com/Bowen2485/ethambutol-ocular-toxicity (MIT licence).
 
 **Funding.** This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
 

@@ -1,0 +1,157 @@
+# Overleaf 投稿包使用说明
+
+> 目标期刊：**Frontiers in Pharmacology**
+> 编制日期：2026-10-15
+> 源文件：`manuscript/Ethambutol_EyeTox_EN_full.md`（1,291 行 / 17,552 词）
+
+---
+
+## 一、包内容
+
+| 文件 | 用途 | 是否必须 |
+|---|---|---|
+| `main.tex` | 正文（112 KB，1,320 行） | **必须** |
+| `references.bib` | 28 条参考文献（BibTeX） | **必须** |
+| `FrontiersinVancouver.cls` | Frontiers 官方文档类（编号参考文献制） | **必须** |
+| `Frontiers-Vancouver.bst` | 参考文献样式 | **必须** |
+| `Frontiers-Harvard.bst` | 备用（若编辑要求改为著者-年份制） | 备用 |
+| `logo1.pdf` `logo2.pdf` `logos.pdf` `YM-logo.pdf` | 文档类编译所需（页眉标识） | **必须** |
+| `Figure1_flow.pdf` … `Figure9_trend.pdf` | 9 张矢量图 | **必须** |
+
+**共 19 个文件，0.65 MB。**
+
+---
+
+## 二、Overleaf 操作步骤
+
+### 方式 A：上传整个包（推荐）
+
+1. 打开 Overleaf → **New Project** → **Upload Project**
+2. 把 `overleaf/` 文件夹**整体打包为 zip** 后上传，或逐个上传全部 19 个文件
+3. Overleaf 会自动识别 `main.tex` 为主文件
+4. **Menu → Compiler 选 pdfLaTeX**（默认即是）
+
+### 方式 B：使用 Overleaf 官方模板再替换
+
+1. **New Project → Templates** → 搜索 `Frontiers`
+2. 选中官方模板建立项目（模板会自带 `.cls` 与 `.bst`）
+3. **只需替换两个文件**：`main.tex` 与 `references.bib`
+4. 若模板的文件名不是 `main.tex`，把 `\bibliography{references}` 一行核对为 `references`
+
+### 编译
+
+- **pdfLaTeX**（一次即可；若参考文献显示为 `?`，则再编译一次让 BibTeX 运行）
+- 若用 BibTeX 手动流程：`pdflatex → bibtex → pdflatex → pdflatex`
+
+---
+
+## 三、投稿时向 Frontiers 系统上传的内容
+
+Frontiers 要求分别上传：
+
+| 上传项 | 对应文件 |
+|---|---|
+| Manuscript | `main.tex` **与** 编译出的 PDF |
+| Bibliography | `references.bib` |
+| Figures | `Figure1_flow.pdf` … `Figure9_trend.pdf`（**逐张单独上传**，Frontiers 会把它们自动插到文末） |
+| Supplementary | STROBE / RECORD-PE 清单等（另行准备） |
+
+**注意：图件必须单独上传，不能只嵌在 `.tex` 里。** 文档类中 `\includegraphics` 的作用是让预印 PDF 显示图件；正式投稿时系统要单独的图件文件。
+
+---
+
+## 四、已核验的事项（结构层面）
+
+**在无法编译的环境下（本机未安装 TeX），已对生成文件做了 30 项结构检查，全部通过：**
+
+| 检查项 | 结果 |
+|---|---|
+| 花括号平衡 | 331 开 / 331 闭 ✓ |
+| 方括号平衡 | 差 0 ✓ |
+| 环境配对（abstract / document / table / tabular） | 全部配对 ✓ |
+| `\citep{}` 命令 | 36 处 ✓ |
+| 引用解析 | **28 个键全部存在于 `.bib`，且 28 条全部被引用** ✓ |
+| 未转换的 `[n]` 方括号 | 0 ✓ |
+| `%` `&` `_` `#` 未保护出现 | 0 ✓ |
+| 命令被转义破坏（`\textbackslash`、`\{\}`） | 0 ✓ |
+| 非 ASCII 字符 | 仅 6 个（`ü ö é`），`inputenc` 标准支持 ✓ |
+| 结构化摘要 | Background / Methods / Results / Conclusions ✓ |
+| 关键词 | 8 个（Frontiers 要求 5–8）✓ |
+| 必需声明 | 6 项齐全 ✓ |
+
+---
+
+## 五、需要你确认的三处内容
+
+### 1. 作者名与 ORCID
+
+```latex
+\def\Authors{Bowen Shi\,$^{1}$, Jing Yan\,$^{1,*}$, Zhengzheng Wu\,$^{1}$,
+             Siyuan Yang\,$^{1}$, Yaqin Tan\,$^{1}$, Xuan Wang\,$^{1}$}
+\def\Address{$^{1}$Eye Hospital, China Academy of Chinese Medical Sciences, China}
+\def\corrAuthor{Jing Yan, 33 Lugu Road, Shijingshan District, Beijing 100040}
+\def\corrEmail{20200121047@bucm.edu.cn}
+```
+
+**注意两处：**
+- **地址按 Frontiers 要求省略了邮编与街道**（只在 `\corrAuthor` 中保留完整地址）
+- **通讯作者邮箱仍是 `20200121047@bucm.edu.cn`**（北京中医药大学域名，而单位是中国中医科学院眼科医院）—— **建议改为机构邮箱**
+- **投稿系统会要求 ORCID**，`.tex` 中无需填写，但在系统中是必填项
+
+### 2. 参考文献格式
+
+**28 条文献的键名由程序生成**（如 `s2025`、`ss2025`），**可读性不佳但内部一致** —— 正文引用与 `.bib` 定义一一对应，编译不会出错。
+
+**若你希望键名更规范**（如 `lee2025ethambutol`），告诉我，我重新生成。
+
+**另需注意**：`references_en.md` 中作者为「姓 + 首字母」格式（如 `Lee S`），而 Frontiers 偏好完整名字。**若期刊要求补全，需要你提供或我从 PubMed 补取。**
+
+### 3. 图表处理
+
+**图件已嵌入 `.tex`** —— 9 个 `figure` 环境，含完整图题与标签，位于参考文献之后。同时**必须单独上传图件文件**（Frontiers 硬性要求，无论是否嵌入）。
+
+**正文中的 9 个表格是方法学内联表**（2×2 列联表、方案分层表、MD 稳定性表、HMOX1 结果表等），**不是编号的交付表，故未加表题** —— 加题会与稿件「Figures and Tables」清单中的表 1–10 冲突。
+
+**表 1–10 以 CSV 形式提供**（`tables/` 目录，20 个文件），正文以文字引用（如 "Table 2"）。**这是稿件既定的呈现方式，无需改动。**
+
+---
+
+## 六、投稿包已就绪
+
+**上传 zip 即可**：`submission/Ethambutol_EyeTox_Overleaf.zip`（422 KB，19 个文件）
+
+**Overleaf 操作**：New Project → Upload Project → 选择该 zip → 编译器保持 pdfLaTeX → 编译
+
+---
+
+## 七、质量说明
+
+**我无法在本机编译验证** —— 未安装 TeX 发行版，且沙箱禁止启动外部渲染进程（`spawn EPERM`）。
+
+**因此上述是结构检查，不是编译检查。** 首次在 Overleaf 上编译时，若出现任何错误，**把错误信息贴给我，我会修正**。
+
+**已通过结构检查排除的失败类型：** 花括号不平衡、环境未闭合、命令被转义破坏、引用键不存在、未保护的特殊字符、非 ASCII 字形缺失 —— 这些是最常见的编译失败原因，均已逐项核验。
+
+### 本次构建中实际修正的四处缺陷
+
+**这些是真实发生过并已修复的问题，记录下来是因为它们说明了结构检查的价值：**
+
+| 缺陷 | 症状 | 原因 |
+|---|---|---|
+| **标题与作者为空** | 提取到 `**Running head:**` 行 | 稿件第 1 行也是 `# ` 标题，扫描误命中 |
+| **引用完全未转换** | 0 个 `\citep` | 正则用字符类写范围 `[-\u2013,]`，**连字符在字符类中是字面量**，故 `[3-5]` 不匹配 |
+| **引用命令被转义破坏** | `\textbackslash\{\}citep\{...\}` | 转义在引用转换之后运行，破坏了刚生成的命令 |
+| **下标花括号被转义** | 表中 `n$_{\{D\}}$` | 同上，`<sub>` 转换早于转义 |
+| **Unicode 替换命令被转义** | 67 个 `\textbackslash`、112 个 `\{\}`，而 `\geq`/`\AA` 为 0 | **同一个错误犯了第二次** —— 替换引入的命令未经保护 |
+
+**最后一次尤其值得记录**：我修正了 `\citep` 的转义问题后，**又在 Unicode 替换上重复了完全相同的错误**，是验证脚本（而非我的推理）发现了它。**这正是保留结构性验证的原因。**
+
+---
+
+## 六、质量说明
+
+**我无法在本机编译验证** —— 未安装 TeX 发行版，且沙箱禁止启动外部渲染进程（`spawn EPERM`）。
+
+**因此上述是结构检查，不是编译检查。** 首次在 Overleaf 上编译时，若出现任何错误，**把错误信息贴给我，我会修正**。
+
+**已通过结构检查排除的失败类型：** 花括号不平衡、环境未闭合、命令被转义破坏、引用键不存在、未保护的特殊字符、非 ASCII 字形缺失 —— 这些是最常见的编译失败原因，均已逐项核验。

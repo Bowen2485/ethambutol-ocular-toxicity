@@ -1,0 +1,4 @@
+﻿gene,n_contacts_pose,ligand_centroid_shift_A,pocket_centroid_shift_A,lig_to_pocket_start_A,lig_to_pocket_end_A,contacts_within_cut_end,contact_retention_pct,tight_contacts,tight_retention_pct,mean_contact_dist_start_A,mean_contact_dist_end_A
+HMOX1,5,3.37,0.71,2.65,3.84,1,20.0,0,,4.98,7.88
+MFN2,20,3.83,0.7,3.52,7.64,0,0.0,0,,4.83,9.0
+TNF,7,3.84,0.2,7.72,9.97,0,0.0,0,,4.87,10.36

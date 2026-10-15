@@ -1,0 +1,5 @@
+﻿term,discovery_a,discovery_ror,discovery_lcl,discovery_ucl,validation_a,validation_ror,validation_lcl,validation_ucl
+CATARACT,6,0.3382,0.1518,0.7536,23,0.5378,0.3572,0.8097
+DRY EYE,1,0.0669,0.0094,0.4754,11,0.3055,0.1691,0.5519
+EYE PAIN,4,0.2427,0.091,0.6471,16,0.4026,0.2465,0.6574
+GLAUCOMA,1,0.1806,0.0254,1.2829,3,0.2243,0.0723,0.6955

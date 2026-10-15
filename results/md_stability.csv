@@ -1,0 +1,4 @@
+﻿gene,n_receptor_beads,n_ligand_beads,n_springs,n_contacts_initial,steps,time_ps,rmsd_ligand_mean_A,rmsd_ligand_max_A,rmsd_receptor_mean_A,contact_retention_mean,energy_mean,seconds
+TNF,6955,14,45185,7,20000,100.0,3.382,5.289,0.415,0.079,3172.41,92.4
+MFN2,854,14,5803,20,20000,100.0,3.582,5.667,0.542,0.083,388.78,10.0
+HMOX1,428,14,2791,5,20000,100.0,3.256,4.548,0.58,0.097,198.51,5.3

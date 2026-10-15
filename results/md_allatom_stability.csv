@@ -1,0 +1,2 @@
+﻿gene,n_frames,ns_analysed,n_contacts_start,ligand_rmsd_mean_A,ligand_rmsd_max_A,ligand_rmsd_last_half_A,ligand_centroid_drift_max_A,receptor_rmsd_mean_A,receptor_rmsd_last_half_A,contact_survival_last_half,ligand_rg_start_A,ligand_rg_mean_A,verdict
+NFE2L2,100,1.0,292,1.83,2.61,2.06,108.06,6.91,12.07,0.035,3.91,3.66,ligand left the site

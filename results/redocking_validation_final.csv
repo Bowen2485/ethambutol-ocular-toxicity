@@ -1,0 +1,8 @@
+﻿system,dir,pdb,ligand,heavy_atoms,affinity,rmsd_A,passed,box_offset_A,box_ok
+Trypsin,TRYPSIN_3PTB,3PTB,BEN,9,-6.588,0.344,True,0.0,OK
+Carbonic anhydrase II (1AZM),CA2_1AZM,1AZM,AZM,13,-6.066,1.937,True,0.0,OK
+Carbonic anhydrase II (3HS4),CA2_3HS4,3HS4,AZM,13,-6.838,1.795,True,0.0,OK
+Purine nucleoside phosphorylase,PNP,1B8O,IMH,19,-8.602,2.434,False,0.0,OK
+HSP90,HSP90,1UYG,PU2,22,-8.837,3.127,False,0.0,OK
+Dihydrofolate reductase,DHFR,1RG7,MTX,33,-9.019,5.863,False,0.0,OK
+BACE1,BACE1_2OH4,2OH4,GIG,36,-13.308,5.836,False,0.0,OK

@@ -1,0 +1,4 @@
+﻿gene,n_lining_residues,lining_displacement_mean_A,lining_displacement_max_A,site_radius_start_A,site_radius_end_A,site_opening_A,max_force_on_receptor,max_force_on_ligand,network_stiffness_per_bead,ligand_receptor_gap_start_A,ligand_receptor_gap_end_A
+HMOX1,3,0.74,0.91,6.94,6.9,-0.04,1.0,0.35,60.0,4.98,7.88
+MFN2,7,0.71,0.88,6.44,6.38,-0.06,2.27,0.79,60.0,4.83,9.0
+TNF,4,0.24,0.45,3.25,3.29,0.04,1.02,0.85,60.0,4.87,10.36

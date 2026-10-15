@@ -1,0 +1,19 @@
+﻿drug,n_cases,n_panel,pct_panel,n_optic_neuropathy,pct_optic_neuropathy,n_toxic_optic_neuropathy,n_optic_neuritis,n_optic_atrophy
+prothionamide,271,14,5.166,10,3.69,0,4,0
+capreomycin,598,30,5.017,32,5.351,5,9,0
+cycloserine,2928,139,4.747,56,1.913,27,73,3
+ethionamide,1047,42,4.011,17,1.624,10,14,0
+pretomanid,647,23,3.555,5,0.773,0,17,0
+delamanid,1895,66,3.483,16,0.844,14,38,4
+bedaquiline,4395,145,3.299,49,1.115,27,115,7
+ethambutol,15573,444,2.851,194,1.246,73,196,29
+streptomycin,1281,35,2.732,31,2.42,0,5,2
+clofazimine,6212,168,2.704,86,1.384,30,76,8
+linezolid,23988,505,2.105,278,1.159,122,221,16
+pyrazinamide,9473,155,1.636,63,0.665,20,83,7
+para-aminosalicylic acid,3263,46,1.41,26,0.797,9,17,2
+rifampicin,27050,301,1.113,124,0.458,28,164,24
+amikacin,13272,73,0.55,21,0.158,9,29,9
+moxifloxacin,37030,166,0.448,52,0.14,17,77,6
+isoniazid,49763,207,0.416,61,0.123,18,112,25
+levofloxacin,102123,190,0.186,69,0.068,22,85,13

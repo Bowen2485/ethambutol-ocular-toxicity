@@ -1,0 +1,14 @@
+﻿check,spearman_duration_cum,spearman_duration_daily,n,duration_or,duration_p,daily_or,daily_p,events,pct_by_tertile,n_per_group,power
+collinearity,0.961,-0.058,,,,,,,,,
+model: duration only,,,1266.0,1.609,6.587e-09,,,,,,
+model: + daily dose,,,1266.0,1.616,6.367e-09,1.148,0.5626,,,,
+model: + age,,,1148.0,1.604,6.384e-08,1.153,0.5611,,,,
+model: + age + sex,,,1141.0,1.622,4.518e-08,1.127,0.6307,,,,
+model: non-specific ocular outcome (negative control),,,1141.0,1.556,6.333e-12,1.141,0.4665,,,,
+"cumulative-dose gradient, interval >= 0 d",,,1266.0,,,,,65.0,"[0.95, 3.55, 10.9]",,
+"cumulative-dose gradient, interval >= 30 d",,,726.0,,,,,60.0,"[5.24, 8.05, 11.57]",,
+"cumulative-dose gradient, interval >= 90 d",,,411.0,,,,,44.0,"[10.22, 8.03, 13.87]",,
+"cumulative-dose gradient, interval >= 180 d",,,223.0,,,,,24.0,"[8.0, 12.16, 12.16]",,
+power for +2pp,,,,,,,,,,422.0,0.229
+power for +4pp,,,,,,,,,,422.0,0.625
+power for +6pp,,,,,,,,,,422.0,0.9

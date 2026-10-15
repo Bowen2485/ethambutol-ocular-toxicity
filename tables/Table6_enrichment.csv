@@ -1,0 +1,37 @@
+﻿source,term_id,term_name,p_value,intersection_size,term_size,genes
+GO:BP,GO:0043067,regulation of programmed cell death,6.147131858250969e-14,22,1467,IBA;IDA;IEA;IMP;ISS
+GO:BP,GO:0042981,regulation of apoptotic process,3.6966968116114265e-13,21,1426,IBA;IDA;IEA;IMP;ISS
+GO:BP,GO:0043069,negative regulation of programmed cell death,3.988935791947242e-12,17,887,IDA;IEA;IMP;ISS
+GO:BP,GO:0070887,cellular response to chemical stimulus,3.988935791947242e-12,23,2199,EXP;IDA;IEA;IEP;IMP;ISS;TAS
+GO:BP,GO:0006915,apoptotic process,3.988935791947242e-12,22,1898,IBA;IDA;IEA;IMP;ISS
+GO:BP,GO:0008219,cell death,3.988935791947242e-12,22,1962,IDA;IMP;ISS
+WP,WP:WP5477,Molecular pathway for oxidative stress,4.562098005123935e-09,8,49,WP
+GO:CC,GO:0005739,mitochondrion,1.0077526870313322e-08,18,1865,HTP;IBA;IDA;ISS;TAS
+GO:MF,GO:0019899,enzyme binding,4.877638254397997e-07,18,2060,EXP;IDA;IEA;IPI;ISS
+KEGG,KEGG:05417,Lipid and atherosclerosis,5.408966691450597e-07,10,215,KEGG
+KEGG,KEGG:04216,Ferroptosis,6.096927581605472e-07,6,41,KEGG
+KEGG,KEGG:04211,Longevity regulating pathway,1.1594948761101589e-06,7,90,KEGG
+KEGG,KEGG:05418,Fluid shear stress and atherosclerosis,1.1594948761101589e-06,8,141,KEGG
+KEGG,KEGG:05210,Colorectal cancer,1.1594948761101589e-06,7,87,KEGG
+WP,WP:WP2447,Amyotrophic lateral sclerosis ALS ,1.3891797247077684e-06,6,38,WP
+WP,WP:WP4216,Chromosomal and microsatellite instability in colorectal cancer ,1.5870580487078016e-06,7,73,WP
+WP,WP:WP4864,Host pathogen interaction of human coronaviruses apoptosis,1.5870580487078016e-06,5,21,WP
+KEGG,KEGG:04932,Non-alcoholic fatty liver disease,1.8057954606377103e-06,8,156,KEGG
+REAC,REAC:R-HSA-9711123,Cellular response to chemical stress,2.48767455557841e-06,9,206,REAC
+WP,WP:WP3611,Photodynamic therapy induced AP 1 survival signaling,2.802113509178175e-06,6,50,WP
+WP,WP:WP254,Apoptosis,2.802113509178175e-06,7,87,WP
+GO:MF,GO:0002020,protease binding,2.7366541655116957e-05,6,139,IDA;IEA;IPI
+GO:MF,GO:0016491,oxidoreductase activity,2.7366541655116957e-05,10,695,IDA;IEA;IMP
+GO:CC,GO:0005740,mitochondrial envelope,5.120144779412848e-05,10,845,IDA;ISS;TAS
+REAC,REAC:R-HSA-9027307,Biosynthesis of maresin-like SPMs,6.855469740004572e-05,3,6,REAC
+REAC,REAC:R-HSA-109606,Intrinsic Pathway for Apoptosis,6.855469740004572e-05,5,54,REAC
+GO:CC,GO:0005737,cytoplasm,6.902600232372308e-05,33,12601,IDA;ISS;TAS
+GO:CC,GO:0005741,mitochondrial outer membrane,8.364130460027684e-05,6,232,IDA;ISS;TAS
+GO:CC,GO:0019867,outer membrane,9.871331854372478e-05,6,263,IDA;ISS;TAS
+GO:CC,GO:0031966,mitochondrial membrane,9.871331854372478e-05,9,796,IDA;ISS;TAS
+GO:MF,GO:0016712,"oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, reduced flavin or flavoprotein as one donor, and incorporation of one atom of oxygen",0.000105056211321,4,46,IBA;IDA
+GO:MF,GO:0042802,identical protein binding,0.000105056211321,15,2179,IDA;IMP;IPI;ISS
+REAC,REAC:R-HSA-9018682,Biosynthesis of maresins,0.0001403554890365,3,8,REAC
+REAC,REAC:R-HSA-8953897,Cellular responses to stimuli,0.0001472355022561,12,806,REAC
+REAC,REAC:R-HSA-3299685,Detoxification of Reactive Oxygen Species,0.0002247654392129,4,35,REAC
+GO:MF,GO:0020037,heme binding,0.0003387110676684,5,143,IDA;IEA

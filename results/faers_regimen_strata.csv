@@ -1,0 +1,10 @@
+﻿analysis,stratum,n_with_ethambutol,optic_with,n_without_ethambutol,optic_without,rate_ratio,rate_with_pct,rate_without_pct
+regimen stratum,isoniazid,310,10,53850,21,82.719,3.226,0.039
+regimen stratum,rifampicin,2893,97,12097,38,10.674,3.353,0.314
+regimen stratum,rifampicin + isoniazid + pyrazinamide,5757,67,845,3,3.278,1.164,0.355
+regimen stratum,rifampicin + isoniazid,1033,20,1709,3,11.029,1.936,0.176
+regimen stratum,pyrazinamide,319,20,1158,32,2.269,6.27,2.763
+regimen stratum,isoniazid + pyrazinamide,517,9,362,4,1.575,1.741,1.105
+regimen stratum,rifampicin + pyrazinamide,181,4,100,0,,2.21,0.0
+fixed regimen (RIP +/- E),RIP base,5757,67,845,3,3.278,1.164,0.355
+isoniazid +/- ethambutol,INH base,7617,106,54212,25,30.177,1.392,0.046

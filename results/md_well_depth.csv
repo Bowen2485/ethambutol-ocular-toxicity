@@ -1,0 +1,4 @@
+﻿gene,pose,n_contacts,contact_energy_pose,contact_energy_at_30A,well_depth_kcal,well_depth_in_kT,kT_at_300K,cm_kinetic_energy_kT
+HMOX1,1N45_clean,5,0.0,-1.75,-1.75,-2.94,0.5962,1.5
+MFN2,6JFM_clean,20,0.0,-7.0,-7.0,-11.74,0.5962,1.5
+TNF,5MU8_clean,7,0.0,-2.45,-2.45,-4.11,0.5962,1.5

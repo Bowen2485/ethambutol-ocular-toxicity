@@ -1,0 +1,5 @@
+﻿term,discovery_a,discovery_n_emb,discovery_ror,discovery_lcl,discovery_ucl,validation_a,validation_n_emb,validation_ror,validation_lcl,validation_ucl,both_periods_signal
+OPTIC NEUROPATHY,44,2554,81.8533,60.5043,110.7352,109,11282,86.8716,71.4502,105.6214,True
+OPTIC NEURITIS,11,2554,4.6521,2.5718,8.4152,118,11282,21.108,17.5783,25.3464,True
+OPTIC ATROPHY,7,2554,17.3406,8.2397,36.4936,12,11282,12.3246,6.9763,21.7732,True
+TOXIC OPTIC NEUROPATHY,8,2554,60.7092,30.1039,122.4296,52,11282,185.3131,138.229,248.4353,True

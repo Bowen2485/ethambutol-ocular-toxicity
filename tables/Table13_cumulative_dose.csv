@@ -1,0 +1,4 @@
+﻿stratum,n,cum_dose_median_g,cum_dose_range_g,median_interval_d,median_daily_mg,n_optic,pct_optic,n_ocular,pct_ocular
+low,422,4.8,0-14,6,800,4,0.95,11,2.61
+middle,422,35.0,15-78,40,1000,15,3.55,39,9.24
+high,422,181.0,79-3310,181,1000,46,10.9,74,17.54

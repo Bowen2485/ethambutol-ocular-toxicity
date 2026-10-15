@@ -1,0 +1,550 @@
+﻿gene,in_drug_targets,in_literature,in_core_panel,score,disease
+OPA1,False,True,True,0.8871836354217958,hereditary optic neuropathy
+AFG3L2,False,True,False,0.8044330316521731,optic atrophy
+MT-ND1,False,True,False,0.7579522875189314,optic atrophy
+DNM1L,False,True,False,0.7473936298817276,optic atrophy
+MT-ND6,False,True,False,0.7431611508050542,optic atrophy
+MT-ND4,False,True,False,0.7341168961918819,optic atrophy
+YME1L1,False,True,False,0.5018681518895604,optic atrophy
+ATOH7,False,True,False,0.44067380660058836,hereditary optic neuropathy
+SPG7,False,True,False,0.38653964693096277,optic atrophy
+GRIN2B,False,True,False,0.2839460023022696,Visual impairment
+MFN2,False,True,True,0.16570798144623697,optic atrophy
+TP53,False,True,False,0.09317456495246866,hereditary optic neuropathy
+POU4F2,False,True,False,0.0906660722623744,hereditary optic neuropathy
+NDUFS1,False,True,False,0.08555896829235742,hereditary optic neuropathy
+SOD1,False,True,False,0.08333608197908401,optic atrophy
+MYOC,False,True,False,0.0826647503135847,optic atrophy
+SOD2,False,True,True,0.07927905741876454,hereditary optic neuropathy
+NQO1,False,True,False,0.07804403986838312,Leber hereditary optic neuropathy
+NDUFB11,False,True,False,0.07598972456600452,hereditary optic neuropathy
+SLC7A11,False,True,True,0.06991293864557502,autosomal dominant optic atrophy
+OPTN,False,True,False,0.06291472641374772,autosomal dominant optic atrophy
+AIFM1,False,True,False,0.05600905701943597,Leber hereditary optic neuropathy
+NTRK2,False,True,True,0.0380593334354306,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+ABCB1,False,True,False,,
+ACSL4,False,True,True,,
+AKT1,False,True,True,,
+ATP7B,False,True,False,,
+BAX,False,True,False,,
+BCL2,False,True,False,,
+BDNF,False,True,True,,
+BECN1,False,True,False,,
+CASP3,False,True,False,,
+CAT,False,True,False,,
+GPX4,False,True,True,,
+HMOX1,False,True,True,,
+MAP1LC3B,False,True,False,,
+MCOLN1,False,True,True,,
+MT1A,False,True,True,,
+MTOR,False,True,False,,
+NFE2L2,False,True,True,,
+NGF,False,True,False,,
+POLG,False,True,True,,
+PRDX3,False,True,True,,
+RBPMS,False,True,False,,
+SDHB,False,True,True,,
+SLC17A6,False,True,False,,
+SLC1A2,False,True,False,,
+SLC22A6,False,True,False,,
+SLC22A8,False,True,False,,
+SLC25A4,False,True,True,,
+SLC30A10,False,True,True,,
+SLC31A1,False,True,False,,
+SLC39A1,False,True,False,,
+SMAD4,False,True,True,,
+SQSTM1,False,True,False,,
+TXN2,False,True,True,,
+CLCN7,False,False,False,0.8608222388291097,hereditary optic neuropathy
+TCIRG1,False,False,False,0.8367980573567994,hereditary optic neuropathy
+HESX1,False,False,False,0.8329855321104136,hereditary optic neuropathy
+PLP1,False,False,False,0.8273114824352633,hereditary optic neuropathy
+CA2,False,False,False,0.8207473113292818,hereditary optic neuropathy
+OPA3,False,False,False,0.81976010977828,hereditary optic neuropathy
+NR2F1,False,False,False,0.8164176235080326,optic atrophy
+TIMM8A,False,False,False,0.8152200784990835,hereditary optic neuropathy
+SLC38A8,False,False,False,0.8143734793721376,hereditary optic neuropathy
+ATP1A3,False,False,False,0.7930714662470456,hereditary optic neuropathy
+FERMT3,False,False,False,0.7921278978470275,hereditary optic neuropathy
+ACO2,False,False,False,0.7913248828128617,optic atrophy
+PRPS1,False,False,False,0.7892672840331054,hereditary optic neuropathy
+PAX6,False,False,False,0.7865395840575318,hereditary optic neuropathy
+TNFRSF11A,False,False,False,0.7833064144172261,hereditary optic neuropathy
+SNX10,False,False,False,0.7784329656896412,hereditary optic neuropathy
+SSBP1,False,False,False,0.7762563654880885,optic atrophy
+TNFSF11,False,False,False,0.7549713696789259,hereditary optic neuropathy
+LIPT2,False,False,False,0.7543133171900832,hereditary optic neuropathy
+MT-ND5,False,False,False,0.7508422528208345,hereditary optic neuropathy
+TMEM126A,False,False,False,0.7479675146396725,optic atrophy
+ALPK1,False,False,False,0.7461045716151932,hereditary optic neuropathy
+RTN4IP1,False,False,False,0.7422638636638212,optic atrophy
+MT-ATP6,False,False,False,0.7211170048956238,hereditary optic neuropathy
+MT-CO1,False,False,False,0.6997732837334117,optic atrophy
+MT-ND2,False,False,False,0.6908476423562292,hereditary optic neuropathy
+MT-CYB,False,False,False,0.6862365345479693,hereditary optic neuropathy
+MT-ND4L,False,False,False,0.6735757083744165,optic atrophy
+OSTM1,False,False,False,0.6626018416496351,hereditary optic neuropathy
+MT-CO3,False,False,False,0.6359291480110161,hereditary optic neuropathy
+GP1BA,False,False,False,0.6165533915372094,hereditary optic neuropathy
+MECR,False,False,False,0.6051439377385196,optic atrophy
+MIEF1,False,False,False,0.5708849330813158,optic atrophy
+ISCA2,False,False,False,0.5680804264496269,optic atrophy
+WFS1,False,False,False,0.55365753842741,optic atrophy
+DNAJC30,False,False,False,0.5469869469810508,optic atrophy
+SLC25A46,False,False,False,0.5451433603772762,optic atrophy
+CFH,False,False,False,0.5428138340537471,Visual impairment
+ABHD12,False,False,False,0.5382378536122013,optic atrophy
+PLEKHM1,False,False,False,0.5366323982247067,hereditary optic neuropathy
+CHRNE,False,False,False,0.5344094201429453,hereditary optic neuropathy
+ABCA4,False,False,False,0.5279755686473299,optic atrophy
+POLR3H,False,False,False,0.5260341472981717,optic atrophy
+ITM2B,False,False,False,0.5258238446954893,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+CRYGC,False,False,False,0.525253776601679,hereditary optic neuropathy
+MMP19,False,False,False,0.5216939836183478,hereditary optic neuropathy
+PITX3,False,False,False,0.5211336756044214,hereditary optic neuropathy
+OCA2,False,False,False,0.5187944449187527,Visual impairment
+BTD,False,False,False,0.5157051805052915,optic atrophy
+MCAT,False,False,False,0.5108620596462805,optic atrophy
+SLC52A2,False,False,False,0.5068790420798449,optic atrophy
+CEP290,False,False,False,0.49598630865782695,Visual impairment
+GUCY2D,False,False,False,0.48443752717072974,optic atrophy
+CRYGD,False,False,False,0.48402444689439683,hereditary optic neuropathy
+CACNA1F,False,False,False,0.4835997757950656,optic atrophy
+ARMS2,False,False,False,0.48044495358165784,Visual impairment
+EFEMP1,False,False,False,0.47200322121461064,Visual impairment
+RHO,False,False,False,0.4667633802329671,Visual impairment
+SOX2,False,False,False,0.46425886752700696,hereditary optic neuropathy
+GPR179,False,False,False,0.46322917694539145,optic atrophy
+MT-TT,False,False,False,0.4619748183558772,hereditary optic neuropathy
+VAMP2,False,False,False,0.4619748183558772,Visual impairment
+FTO,False,False,False,0.4556253719277587,Visual impairment
+BUD23,False,False,False,0.4537619326962172,optic atrophy
+NDUFS2,False,False,False,0.4518829575443401,optic atrophy
+SLC4A2,False,False,False,0.441571854494796,hereditary optic neuropathy
+HTRA1,False,False,False,0.4362348519668001,Visual impairment
+USH2A,False,False,False,0.43521951255814123,Visual impairment
+PPIB,False,False,False,0.43410233764840594,optic atrophy
+NBAS,False,False,False,0.42818674962934083,hereditary optic neuropathy
+VPS13B,False,False,False,0.42501683288740705,Visual impairment
+WNT7B,False,False,False,0.41866989014069234,Visual impairment
+TCF7L2,False,False,False,0.418046119421377,Visual impairment
+PMPCA,False,False,False,0.41778179392660025,optic atrophy
+KARS1,False,False,False,0.41771763075738416,hereditary optic neuropathy
+TYR,False,False,False,0.41745808075696766,Visual impairment
+GNB1,False,False,False,0.41670128615700125,Visual impairment
+VEGFA,False,False,False,0.41649893034334834,Visual impairment
+SGSH,False,False,False,0.4157773365202895,Visual impairment
+MFRP,False,False,False,0.41189599396046483,Visual impairment
+COL4A1,False,False,False,0.40309882660822716,hereditary optic neuropathy
+RP1L1,False,False,False,0.39870499600775045,optic atrophy
+TFAP2A,False,False,False,0.39637556725466144,Visual impairment
+OTX2,False,False,False,0.39191407135938516,hereditary optic neuropathy
+CHRM1,False,False,False,0.3911108143935355,Visual impairment
+CHRM2,False,False,False,0.3911108143935355,Visual impairment
+CHRM3,False,False,False,0.3911108143935355,Visual impairment
+GALC,False,False,False,0.39046804609666275,Visual impairment
+VIPR2,False,False,False,0.39034084351760184,Visual impairment
+FGFR1,False,False,False,0.38742463234646957,hereditary optic neuropathy
+BMP4,False,False,False,0.38627312299077293,Visual impairment
+SOX3,False,False,False,0.3848631266611216,hereditary optic neuropathy
+PDE11A,False,False,False,0.3817039202562409,Visual impairment
+PEX1,False,False,False,0.37958930908241245,optic atrophy
+ARNT2,False,False,False,0.3782760686654328,hereditary optic neuropathy
+CYP4V2,False,False,False,0.37811148262981653,optic atrophy
+BMP3,False,False,False,0.3765009810504411,Visual impairment
+NPHP3,False,False,False,0.37450758608049783,optic atrophy
+PROKR2,False,False,False,0.3724152507976286,hereditary optic neuropathy
+CACNA2D1,False,False,False,0.3695798546847018,Visual impairment
+RAD21,False,False,False,0.3695798546847018,hereditary optic neuropathy
+PGF,False,False,False,0.36947103394971126,Visual impairment
+NR2E3,False,False,False,0.3687483000116612,Visual impairment
+ANTXR2,False,False,False,0.3631031169293718,Visual impairment
+CNGA3,False,False,False,0.36247000269736157,optic atrophy
+BBS7,False,False,False,0.36034035831758426,optic atrophy
+C3,False,False,False,0.3602023636422282,Visual impairment
+CNGB3,False,False,False,0.35888121695307074,optic atrophy
+ELP4,False,False,False,0.35835470833301025,hereditary optic neuropathy
+SHH,False,False,False,0.3578029777097055,hereditary optic neuropathy
+UCHL1,False,False,False,0.3570568644460339,hereditary optic neuropathy
+LAMA2,False,False,False,0.35430956549861975,Visual impairment
+MFSD8,False,False,False,0.3535215073375807,optic atrophy
+PRSS56,False,False,False,0.35203622482551106,Visual impairment
+HERC2,False,False,False,0.3520153026055006,hereditary optic neuropathy
+RBFOX1,False,False,False,0.3518357837390986,Visual impairment
+ITGB2,False,False,False,0.3513416704364381,hereditary optic neuropathy
+SOX5,False,False,False,0.3493893650197074,hereditary optic neuropathy
+ZEB1,False,False,False,0.34863884415184215,Visual impairment
+ZMAT4,False,False,False,0.3458650818438369,Visual impairment
+WDR45,False,False,False,0.3415757248977756,optic atrophy
+TMEM67,False,False,False,0.34120310279772736,Visual impairment
+ARID1A,False,False,False,0.3409374159466374,hereditary optic neuropathy
+BMP2,False,False,False,0.3402735870836271,Visual impairment
+BBS12,False,False,False,0.3400134663099256,Visual impairment
+C19orf12,False,False,False,0.3400134663099256,Visual impairment
+HMBS,False,False,False,0.3400134663099256,Visual impairment
+KMT2D,False,False,False,0.3400134663099256,Visual impairment
+TSEN54,False,False,False,0.3400134663099256,Visual impairment
+ZC3H11B,False,False,False,0.3386728292880326,Visual impairment
+NRIP1,False,False,False,0.3381576969615872,Visual impairment
+TRAP1,False,False,False,0.3379935577944898,Visual impairment
+TLL1,False,False,False,0.33504424375611125,Visual impairment
+PLAT,False,False,False,0.3349001921389351,Visual impairment
+TLN2,False,False,False,0.33429828670225986,Visual impairment
+ADGRG1,False,False,False,0.3326218692162316,Visual impairment
+GRIK2,False,False,False,0.3326218692162316,Visual impairment
+SYN3,False,False,False,0.3326218692162316,Visual impairment
+NR3C1,False,False,False,0.33159525850877414,Visual impairment
+NT5DC1,False,False,False,0.33131445848685437,Visual impairment
+CRB1,False,False,False,0.3298155223022928,optic atrophy
+RDH5,False,False,False,0.3295776295598881,Visual impairment
+TUBB6,False,False,False,0.3267409507298002,optic atrophy
+COL4A2,False,False,False,0.325873399141093,hereditary optic neuropathy
+KCNMA1,False,False,False,0.3219639684330719,Visual impairment
+SALL4,False,False,False,0.3170434230850879,Visual impairment
+NOG,False,False,False,0.31460887715102653,Visual impairment
+CDHR1,False,False,False,0.31283688449996705,optic atrophy
+HIVEP3,False,False,False,0.3103843085447373,Visual impairment
+DOCK9,False,False,False,0.3058909212521895,Visual impairment
+BICC1,False,False,False,0.3052058074013248,Visual impairment
+ATXN1,False,False,False,0.3051382903906709,Visual impairment
+RASGRF1,False,False,False,0.30368384706076695,Visual impairment
+TBC1D32,False,False,False,0.30180643952506664,hereditary optic neuropathy
+NAALADL1,False,False,False,0.2987437158701339,optic atrophy
+JPH3,False,False,False,0.2974823994109026,Visual impairment
+RORB,False,False,False,0.2951433466636419,Visual impairment
+ABCC6,False,False,False,0.2938159844743379,optic atrophy
+SLC14A2,False,False,False,0.293694722781237,Visual impairment
+HNF1A,False,False,False,0.2907947136778388,Visual impairment
+BMAL1,False,False,False,0.29026493503546813,Visual impairment
+PODXL,False,False,False,0.28817880840822746,Visual impairment
+KCNA4,False,False,False,0.28762879642699246,Visual impairment
+RIN3,False,False,False,0.2874432488894267,Visual impairment
+RGR,False,False,False,0.28591016318636475,Visual impairment
+OAT,False,False,False,0.28434545162889896,optic atrophy
+GSC,False,False,False,0.28261089534562706,Visual impairment
+SNAP25,False,False,False,0.28236845906269165,optic atrophy
+JMJD1C,False,False,False,0.2782025303925147,optic atrophy
+PIGQ,False,False,False,0.2772068289737485,optic atrophy
+DRD3,False,False,False,0.27718489101352634,Visual impairment
+MIR6753,False,False,False,0.27718489101352634,hereditary optic neuropathy
+SPAST,False,False,False,0.27701011054058167,hereditary optic neuropathy
+EPOR,False,False,False,0.2761791392419855,hereditary optic neuropathy
+UGCG,False,False,False,0.27559950923374815,Visual impairment
+NMNAT1,False,False,False,0.2726023935545431,Visual impairment
+TMEM181,False,False,False,0.26941784421603804,Visual impairment
+COL6A1,False,False,False,0.2689192471644811,Visual impairment
+ALMS1,False,False,False,0.2669230044496375,Visual impairment
+RPGRIP1,False,False,False,0.2666236333605573,Visual impairment
+MTRFR,False,False,False,0.26649196040110107,optic atrophy
+RALGAPB,False,False,False,0.26609749537298527,hereditary optic neuropathy
+VWDE,False,False,False,0.26609749537298527,optic atrophy
+ADAMTS9,False,False,False,0.2649843088360589,Visual impairment
+PAX1,False,False,False,0.26382434484631634,Visual impairment
+RNASET2,False,False,False,0.261651171906041,Visual impairment
+CFAP299,False,False,False,0.26060036000565356,Visual impairment
+MT-ATP8,False,False,False,0.25983260353072585,hereditary optic neuropathy
+PTGS2,False,False,False,0.25962984791600296,Visual impairment
+KCNQ5,False,False,False,0.25958744844224607,Visual impairment
+ADRA1A,False,False,False,0.25870589827929125,Visual impairment
+ADRA1B,False,False,False,0.25870589827929125,Visual impairment
+ADRA1D,False,False,False,0.25870589827929125,Visual impairment
+ADRA2A,False,False,False,0.25870589827929125,Visual impairment
+ADRA2B,False,False,False,0.25870589827929125,Visual impairment
+ADRA2C,False,False,False,0.25870589827929125,Visual impairment
+ARV1,False,False,False,0.25870589827929125,Visual impairment
+CASK,False,False,False,0.25870589827929125,Visual impairment
+CC2D1A,False,False,False,0.25870589827929125,Visual impairment
+DDC,False,False,False,0.25870589827929125,Visual impairment
+EDNRA,False,False,False,0.25870589827929125,Visual impairment
+EDNRB,False,False,False,0.25870589827929125,Visual impairment
+PRKCB,False,False,False,0.25870589827929125,Visual impairment
+PTGS1,False,False,False,0.25870589827929125,Visual impairment
+ZDHHC14,False,False,False,0.25714970008941773,Visual impairment
+GRIA1,False,False,False,0.25663070448392683,Visual impairment
+KLHL1,False,False,False,0.2552158026273615,Visual impairment
+LMCD1,False,False,False,0.2546690508901677,Visual impairment
+SNF8,False,False,False,0.2545378588070138,optic atrophy
+LIPJ,False,False,False,0.25420997328327344,Visual impairment
+PMAIP1,False,False,False,0.25419126818380344,Visual impairment
+ADAMTSL1,False,False,False,0.25279326507527977,Visual impairment
+MT-TL1,False,False,False,0.25188920318177344,optic atrophy
+MT-TK,False,False,False,0.2515196233270887,optic atrophy
+CTIF,False,False,False,0.2507030080712976,Visual impairment
+TRA2B,False,False,False,0.25024930546133617,Visual impairment
+ZIC2,False,False,False,0.24813948698135763,Visual impairment
+NRDC,False,False,False,0.244686498288955,hereditary optic neuropathy
+LRRC4C,False,False,False,0.24464532044186005,Visual impairment
+FLT1,False,False,False,0.24290492286938917,Visual impairment
+OLFM1,False,False,False,0.24276878565198962,Visual impairment
+OPCML,False,False,False,0.23564927178418743,Visual impairment
+ST8SIA4,False,False,False,0.23473486144531105,Visual impairment
+NALF1,False,False,False,0.23354740566797716,Visual impairment
+KYNU,False,False,False,0.22985035501118886,Visual impairment
+SORCS2,False,False,False,0.22840793933835618,Visual impairment
+MGAT4C,False,False,False,0.2283543876271105,Visual impairment
+RNLS,False,False,False,0.22640817613519557,Visual impairment
+EMB,False,False,False,0.22560633233044733,optic atrophy
+MT-ND3,False,False,False,0.22342302774269301,hereditary optic neuropathy
+NPLOC4,False,False,False,0.22168212996025885,Visual impairment
+CD55,False,False,False,0.2157078789622936,Visual impairment
+WDR7,False,False,False,0.2123779361902891,Visual impairment
+TSC22D1,False,False,False,0.21094712962968448,Visual impairment
+ZBTB38,False,False,False,0.2086936621655545,Visual impairment
+PHF19,False,False,False,0.2056459287612047,optic atrophy
+PRICKLE3,False,False,False,0.2044399669925625,optic atrophy
+NDUFA1,False,False,False,0.20420649942538638,hereditary optic neuropathy
+NDUFA10,False,False,False,0.20343317778977915,hereditary optic neuropathy
+ZNF726,False,False,False,0.20182503288819953,Visual impairment
+FANCL,False,False,False,0.19592630418445056,Visual impairment
+PBX1,False,False,False,0.19455202320634551,Visual impairment
+IRX1,False,False,False,0.19419310998901684,optic atrophy
+IL20RB,False,False,False,0.19132712971980775,Visual impairment
+MLIP,False,False,False,0.19130625200516363,Visual impairment
+KHDC1L,False,False,False,0.19120342489939196,Visual impairment
+C19orf38,False,False,False,0.19119518342100042,Visual impairment
+GLT6D1,False,False,False,0.19090235623153565,optic atrophy
+ZNF281,False,False,False,0.1898797630650461,Visual impairment
+NTNG1,False,False,False,0.18864340362709295,Visual impairment
+CNTNAP5,False,False,False,0.18591246461164654,Visual impairment
+CA1,False,False,False,0.18571387697906264,Visual impairment
+CA12,False,False,False,0.18571387697906264,Visual impairment
+CA4,False,False,False,0.18571387697906264,Visual impairment
+ZNF423,False,False,False,0.18360471646483725,optic atrophy
+DNAJC5B,False,False,False,0.1825506904028876,optic atrophy
+CDH23,False,False,False,0.17979150363941435,optic atrophy
+SEMA4A,False,False,False,0.17890846149320588,optic atrophy
+LAMA1,False,False,False,0.1785090847106586,optic atrophy
+CEP250,False,False,False,0.17761162931415084,optic atrophy
+ADGRV1,False,False,False,0.1743460130932382,optic atrophy
+USH1C,False,False,False,0.17404784441768217,optic atrophy
+FOXN4,False,False,False,0.1737729234534848,optic atrophy
+RPGR,False,False,False,0.17369015738898425,optic atrophy
+TRPM1,False,False,False,0.17289839748253255,optic atrophy
+MERTK,False,False,False,0.17210495064158063,optic atrophy
+DYNC2H1,False,False,False,0.17151585089492538,optic atrophy
+MKS1,False,False,False,0.17139708846184384,optic atrophy
+PCARE,False,False,False,0.16978157090965515,optic atrophy
+SERPINA4,False,False,False,0.16871398339058044,optic atrophy
+PCDH15,False,False,False,0.1676594698838657,optic atrophy
+ROM1,False,False,False,0.1668647438827201,optic atrophy
+LRIT3,False,False,False,0.1653140924040511,optic atrophy
+SCAPER,False,False,False,0.1622763545278078,optic atrophy
+EYS,False,False,False,0.16134213878402148,Visual impairment
+USH1G,False,False,False,0.1606998515814586,optic atrophy
+RPGRIP1L,False,False,False,0.16059348068382553,optic atrophy
+RP1,False,False,False,0.15907003438440737,optic atrophy
+CC2D2A,False,False,False,0.15864708035480402,optic atrophy
+CACNA2D4,False,False,False,0.15852037429870192,optic atrophy
+PDE6C,False,False,False,0.15740656716935952,optic atrophy
+KCNV2,False,False,False,0.15706009110353708,optic atrophy
+CNGB1,False,False,False,0.15700628198291175,optic atrophy
+SPATA7,False,False,False,0.1567818131636915,optic atrophy
+NPHP4,False,False,False,0.15648849608290025,optic atrophy
+IFT172,False,False,False,0.1555099633549554,optic atrophy
+PROS1,False,False,False,0.1543700832661084,optic atrophy
+ESPN,False,False,False,0.1529600230567382,optic atrophy
+TUBGCP4,False,False,False,0.15223712841958084,optic atrophy
+COL9A1,False,False,False,0.15213400495499196,optic atrophy
+AP5Z1,False,False,False,0.15191785248956158,optic atrophy
+KIAA1549,False,False,False,0.15091177399625322,optic atrophy
+SEMA6B,False,False,False,0.15091177399625322,optic atrophy
+TOPORS,False,False,False,0.15091177399625322,optic atrophy
+WDR19,False,False,False,0.14990574683348024,optic atrophy
+FBLN5,False,False,False,0.1478319418738807,optic atrophy
+WDPCP,False,False,False,0.14598404260045722,optic atrophy
+PRPH2,False,False,False,0.14037449936167642,optic atrophy
+ARHGEF18,False,False,False,0.13909548475341735,optic atrophy
+PROM1,False,False,False,0.13899466202649172,optic atrophy
+AHI1,False,False,False,0.13859244550676317,optic atrophy
+IDH3B,False,False,False,0.13859244550676317,optic atrophy
+IFT74,False,False,False,0.13859244550676317,optic atrophy
+PUM3,False,False,False,0.13859244550676317,optic atrophy
+TUBGCP6,False,False,False,0.13859244550676317,optic atrophy
+ZNF408,False,False,False,0.13859244550676317,optic atrophy
+ZNF513,False,False,False,0.13859244550676317,optic atrophy
+RDH12,False,False,False,0.13749767730003148,optic atrophy
+PAX2,False,False,False,0.13655695571252166,optic atrophy
+LYST,False,False,False,0.13452329386987316,hereditary optic neuropathy
+DSPP,False,False,False,0.13405479486817443,hereditary optic neuropathy
+GRM6,False,False,False,0.13252045210643137,optic atrophy
+ARL6,False,False,False,0.13229474369959876,optic atrophy
+SLC24A1,False,False,False,0.13194502094454066,optic atrophy
+CNGA1,False,False,False,0.13062508028873898,optic atrophy
+RAB28,False,False,False,0.13051497527759148,optic atrophy
+LRP5,False,False,False,0.1305148781164246,optic atrophy
+TSPAN12,False,False,False,0.12987626542669362,optic atrophy
+WHRN,False,False,False,0.12935109911180911,optic atrophy
+SLC7A14,False,False,False,0.1288348650559803,optic atrophy
+MYO7A,False,False,False,0.12874137088311782,optic atrophy
+KCNE3,False,False,False,0.12852509026515188,hereditary optic neuropathy
+NRL,False,False,False,0.11953085119604595,Visual impairment
+LETM1,False,False,False,0.11826555349910459,hereditary optic neuropathy
+SSU72,False,False,False,0.11826555349910459,hereditary optic neuropathy
+PDE6B,False,False,False,0.11180449578051474,optic atrophy
+MT-CO2,False,False,False,0.11124353626009523,hereditary optic neuropathy
+MAB21L1,False,False,False,0.10760277354065989,hereditary optic neuropathy
+AHSA1,False,False,False,0.10519997507087062,hereditary optic neuropathy
+SYT8,False,False,False,0.10519997507087062,hereditary optic neuropathy
+TBCEL,False,False,False,0.10519997507087062,hereditary optic neuropathy
+TBCEL-TECTA,False,False,False,0.10519997507087062,hereditary optic neuropathy
+DCC,False,False,False,0.09878332972310597,hereditary optic neuropathy
+IDH3A,False,False,False,0.09806062765506983,optic atrophy
+ZNF329,False,False,False,0.09669536737763983,hereditary optic neuropathy
+METTL23,False,False,False,0.09523116123391187,optic atrophy
+NDUFS4,False,False,False,0.0927471762907066,hereditary optic neuropathy
+ZNF486,False,False,False,0.0913717115423844,optic atrophy
+ZNF506,False,False,False,0.0913717115423844,optic atrophy
+ZNF679,False,False,False,0.0913717115423844,optic atrophy
+ZNF722,False,False,False,0.0913717115423844,optic atrophy
+ZNF735,False,False,False,0.0913717115423844,optic atrophy
+FOXE3,False,False,False,0.09069190618106726,hereditary optic neuropathy
+RYBP,False,False,False,0.09027913131202649,hereditary optic neuropathy
+FOXC1,False,False,False,0.08889474509545746,hereditary optic neuropathy
+FOXG1,False,False,False,0.08841137012106667,optic atrophy
+PPIA,False,False,False,0.08832011009948268,hereditary optic neuropathy
+NDUFA8,False,False,False,0.08819372566184022,hereditary optic neuropathy
+GUCY1A1,False,False,False,0.0876065677794008,hereditary optic neuropathy
+PITX2,False,False,False,0.08749843573969943,hereditary optic neuropathy
+CRYBB2,False,False,False,0.0873417152659527,hereditary optic neuropathy
+CRX,False,False,False,0.08702203812403768,optic atrophy
+CRYAA,False,False,False,0.08684391704543216,hereditary optic neuropathy
+FOXF2,False,False,False,0.08650522529657416,hereditary optic neuropathy
+RPE65,False,False,False,0.0864184398186007,optic atrophy
+MIP,False,False,False,0.086386501515801,hereditary optic neuropathy
+HSF4,False,False,False,0.08606617713645164,hereditary optic neuropathy
+NCAM1,False,False,False,0.08592652690577607,optic atrophy
+LIM2,False,False,False,0.0857163990723857,hereditary optic neuropathy
+PPIP5K2,False,False,False,0.08565666259211802,hereditary optic neuropathy
+LRRK1,False,False,False,0.08556440218995531,hereditary optic neuropathy
+INTS15,False,False,False,0.08545907152608025,hereditary optic neuropathy
+GJA8,False,False,False,0.08522815712694254,hereditary optic neuropathy
+RP2,False,False,False,0.0852043128592457,optic atrophy
+SCN8A,False,False,False,0.08513703129159238,Visual impairment
+PRPF3,False,False,False,0.0849300554165517,optic atrophy
+BEST1,False,False,False,0.08466210953679655,hereditary optic neuropathy
+TDRD7,False,False,False,0.08453824795188827,hereditary optic neuropathy
+HOXC10,False,False,False,0.08438392074310558,hereditary optic neuropathy
+EPHB1,False,False,False,0.08422498262166381,hereditary optic neuropathy
+AIPL1,False,False,False,0.08405117808996665,optic atrophy
+SEC14L4,False,False,False,0.08402969957962146,optic atrophy
+NHS,False,False,False,0.08397986238326527,hereditary optic neuropathy
+PDE6A,False,False,False,0.08396148369312838,optic atrophy
+RAX,False,False,False,0.08380685528931954,hereditary optic neuropathy
+ADCYAP1,False,False,False,0.08366407963123086,hereditary optic neuropathy
+CX3CR1,False,False,False,0.08361475536650856,optic atrophy
+EIF3F,False,False,False,0.08289757663665683,hereditary optic neuropathy
+CSTB,False,False,False,0.08287349143075275,hereditary optic neuropathy
+PMP22,False,False,False,0.08279299772073472,hereditary optic neuropathy
+TULP1,False,False,False,0.08269645462311852,optic atrophy
+PRKCQ,False,False,False,0.08267467770830958,hereditary optic neuropathy
+GOLGA1,False,False,False,0.08252542655013845,hereditary optic neuropathy
+UBE3B,False,False,False,0.08197432672456187,hereditary optic neuropathy
+LMX1B,False,False,False,0.0819529565109303,hereditary optic neuropathy
+GNGT1,False,False,False,0.08191810462685015,optic atrophy
+FSCN2,False,False,False,0.08186375908376936,optic atrophy
+FGF9,False,False,False,0.08179809349206751,hereditary optic neuropathy
+RS1,False,False,False,0.08169943999142906,optic atrophy
+PXDN,False,False,False,0.08164611775298916,hereditary optic neuropathy
+SYNE2,False,False,False,0.08153287533947709,optic atrophy
+SPTBN4,False,False,False,0.08143624254992694,hereditary optic neuropathy
+TMEFF2,False,False,False,0.08135535615397423,optic atrophy
+VSX2,False,False,False,0.08133636648294641,hereditary optic neuropathy
+LPP,False,False,False,0.08115439224733838,optic atrophy
+LGR4,False,False,False,0.08111571469011919,hereditary optic neuropathy
+VAV2,False,False,False,0.08105514440830033,hereditary optic neuropathy
+STX5,False,False,False,0.08098530304861262,optic atrophy
+SH3RF1,False,False,False,0.08069782735072985,optic atrophy
+CDKN2A,False,False,False,0.08055698072424129,hereditary optic neuropathy
+NECTIN3,False,False,False,0.0803687788580903,hereditary optic neuropathy
+MAPT,False,False,False,0.08026291639395584,hereditary optic neuropathy
+MAP3K1,False,False,False,0.08023973648143559,hereditary optic neuropathy
+AQP5,False,False,False,0.0801711502732142,hereditary optic neuropathy
+HKDC1,False,False,False,0.07987543147279849,optic atrophy
+FAR2,False,False,False,0.07983306897805002,hereditary optic neuropathy
+SLC1A3,False,False,False,0.07977164033700763,optic atrophy
+SPTLC3,False,False,False,0.07972657818071267,hereditary optic neuropathy
+CCDC34,False,False,False,0.07941255373806554,optic atrophy
+STK38,False,False,False,0.07912868088689716,optic atrophy
+ATP2B2,False,False,False,0.07911223905942298,hereditary optic neuropathy
+SLC4A5,False,False,False,0.07908157592623512,optic atrophy
+GUCA1A,False,False,False,0.0789794717016968,optic atrophy
+GUCA1ANB-GUCA1A,False,False,False,0.0789794717016968,optic atrophy
+FOXD2,False,False,False,0.07897669674328804,optic atrophy
+PARD3,False,False,False,0.07887144960819964,optic atrophy
+GJA10,False,False,False,0.07883257344377782,optic atrophy
+HMCN1,False,False,False,0.07851542410897404,hereditary optic neuropathy
+CTNNA1,False,False,False,0.0785092056517332,optic atrophy
+VLDLR,False,False,False,0.07845361793334807,optic atrophy
+MAF,False,False,False,0.07841621194127578,hereditary optic neuropathy
+NDP,False,False,False,0.07833476510153464,optic atrophy
+MITF,False,False,False,0.07825703314581202,hereditary optic neuropathy
+C1QTNF5,False,False,False,0.0774846725786608,hereditary optic neuropathy
+SIX6,False,False,False,0.07744146422405827,hereditary optic neuropathy
+AWAT2,False,False,False,0.07717277234216952,hereditary optic neuropathy
+SLC4A3,False,False,False,0.07716782374962317,hereditary optic neuropathy
+TFAP2B,False,False,False,0.07716585584054553,hereditary optic neuropathy
+NRTN,False,False,False,0.07707043011153746,hereditary optic neuropathy
+ATXN7,False,False,False,0.07658112188444058,hereditary optic neuropathy
+THUMPD3-AS1,False,False,False,0.07627212306390012,hereditary optic neuropathy
+MAL,False,False,False,0.0762585684288358,hereditary optic neuropathy
+ELOVL2,False,False,False,0.07597089835601877,hereditary optic neuropathy
+ATP8A2,False,False,False,0.07582437437639399,hereditary optic neuropathy
+TMEM98,False,False,False,0.07570098474107174,hereditary optic neuropathy
+NDRG1,False,False,False,0.0755712881177004,hereditary optic neuropathy
+MAP1B,False,False,False,0.07318493798912361,Visual impairment
+ID3,False,False,False,0.0721297841965015,autosomal dominant optic atrophy
+DMD,False,False,False,0.07034999054628896,autosomal dominant optic atrophy
+CACNA1A,False,False,False,0.06996275568776668,autosomal dominant optic atrophy
+GRID2,False,False,False,0.06968644469189171,autosomal dominant optic atrophy
+ZFP69,False,False,False,0.06916991605269227,autosomal dominant optic atrophy
+SLC26A4,False,False,False,0.06875477929302609,autosomal dominant optic atrophy
+RELN,False,False,False,0.06867269839605562,autosomal dominant optic atrophy
+BEST2,False,False,False,0.06861920793615198,autosomal dominant optic atrophy
+OTOF,False,False,False,0.06815885711942297,autosomal dominant optic atrophy
+BSN,False,False,False,0.06809697734076872,autosomal dominant optic atrophy
+NR2E1,False,False,False,0.06802040229668878,Visual impairment
+SLC17A8,False,False,False,0.0678794219205299,autosomal dominant optic atrophy
+GINM1,False,False,False,0.0677436239435154,autosomal dominant optic atrophy
+SH3PXD2B,False,False,False,0.0671249354234161,autosomal dominant optic atrophy
+SLC7A8,False,False,False,0.06689359484566865,autosomal dominant optic atrophy
+ATP1B2,False,False,False,0.06689242606804958,autosomal dominant optic atrophy
+CLCC1,False,False,False,0.06665620219290487,autosomal dominant optic atrophy
+ELOVL4,False,False,False,0.06662693635936416,autosomal dominant optic atrophy
+AGTPBP1,False,False,False,0.06648550658428623,autosomal dominant optic atrophy
+DSCAM,False,False,False,0.0661369041176327,autosomal dominant optic atrophy
+BARHL2,False,False,False,0.06593664096847514,autosomal dominant optic atrophy
+FKRP,False,False,False,0.06472011348049268,autosomal dominant optic atrophy
+LARGE1,False,False,False,0.06425504453549777,autosomal dominant optic atrophy
+LPCAT1,False,False,False,0.0640911591793624,autosomal dominant optic atrophy
+PDGFRB,False,False,False,0.06384258538403348,Leber hereditary optic neuropathy
+GRK1,False,False,False,0.06384219937840749,autosomal dominant optic atrophy
+SAMD7,False,False,False,0.06338479297769979,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+ARL2BP,False,False,False,0.06335856839573893,autosomal dominant optic atrophy
+VSX1,False,False,False,0.06305673952613174,autosomal dominant optic atrophy
+RBP4,False,False,False,0.061978404064789695,autosomal dominant optic atrophy
+GNAT2,False,False,False,0.06192731375632237,autosomal dominant optic atrophy
+RD3,False,False,False,0.06159294664890345,autosomal dominant optic atrophy
+SPTSSB,False,False,False,0.06144556874045301,autosomal dominant optic atrophy
+UCHL3,False,False,False,0.06141775553167583,Leber hereditary optic neuropathy
+CCND1,False,False,False,0.05950810562419875,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+SEMA3E,False,False,False,0.05918847038043186,Leber hereditary optic neuropathy
+FAM161A,False,False,False,0.058874892139838965,Leber hereditary optic neuropathy
+FASLG,False,False,False,0.05694301611054544,Leber hereditary optic neuropathy
+TIMP3,False,False,False,0.05686355644178821,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+MPP4,False,False,False,0.05646995389654901,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+FAM151B,False,False,False,0.05607080765348954,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+CHM,False,False,False,0.05593406310725619,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+TLCD3B,False,False,False,0.055819493352303934,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+ARSK,False,False,False,0.055778839568288614,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+PROKR1,False,False,False,0.055778839568288614,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+TBC1D25,False,False,False,0.055778839568288614,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+CYP4F8,False,False,False,0.05478466975918676,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+PRPF8,False,False,False,0.05466086050786739,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+HMGA1,False,False,False,0.05433193443719801,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+PNPLA2,False,False,False,0.053942027690505656,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+DSCAML1,False,False,False,0.05216065279092539,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+DIXDC1,False,False,False,0.05188716369845871,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+IQCB1,False,False,False,0.050743314048209566,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+HSP90AA1,False,False,False,0.050543740926679806,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+HSP90AA4P,False,False,False,0.050543740926679806,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies
+COL18A1,False,False,False,0.049636422383428865,retinal dystrophy with inner retinal dysfunction and ganglion cell anomalies

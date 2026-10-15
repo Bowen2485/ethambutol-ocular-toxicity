@@ -1,0 +1,7 @@
+﻿group,metric,n,median,q25,q75
+all ethambutol cases,recorded therapy duration (days),828,60.44,23.0,182.64000000000001
+all ethambutol cases,recorded dose amount,3799,750.0,100.0,1000.0
+ocular cases,recorded therapy duration (days),59,121.76,60.88,258.74
+ocular cases,recorded dose amount,331,750.0,16.5,1000.0
+optic-nerve cases,recorded therapy duration (days),40,157.10000000000002,63.25,319.6125
+optic-nerve cases,recorded dose amount,169,750.0,18.0,1000.0

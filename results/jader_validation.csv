@@ -1,0 +1,21 @@
+﻿analysis,term,a,b,c,d,n_ethambutol,n_event,ror,ror_lcl,ror_ucl,chi2_yates,signal,control
+suspect only,optic neuropathy,73,1725,78,1052363,1798,151,570.959,413.504,788.369,20303.044,True,False
+suspect only,optic neuritis,30,1768,342,1052099,1798,372,52.2,35.837,76.035,1316.015,True,False
+suspect only,optic atrophy,3,1795,35,1052406,1798,38,50.254,15.442,163.545,91.662,True,False
+suspect only,toxic optic neuropathy,19,1779,13,1052428,1798,32,864.623,426.366,1753.358,6244.982,True,False
+suspect only,visual acuity reduced,130,1668,1822,1050619,1798,1952,44.941,37.377,54.036,4798.815,True,False
+suspect only,visual field defect,15,1783,349,1052092,1798,364,25.361,15.094,42.611,310.934,True,False
+suspect only,colour vision deficiency,5,1793,35,1052406,1798,40,83.85,32.814,214.266,288.406,True,False
+suspect only,cataract,4,1794,1670,1050771,1798,1674,1.403,0.525,3.746,0.146,False,True
+suspect only,glaucoma,2,1796,931,1051510,1798,933,1.258,0.314,5.04,0.005,False,True
+suspect only,dry eye,0,1798,85,1052356,1798,85,0.0,0.0,,0.871,False,True
+any role,optic neuropathy,75,3408,76,1050680,3483,151,304.242,220.754,419.304,11015.005,True,False
+any role,optic neuritis,30,3453,342,1050414,3483,372,26.685,18.346,38.814,652.702,True,False
+any role,optic atrophy,3,3480,35,1050721,3483,38,25.88,7.956,84.185,45.059,True,False
+any role,toxic optic neuropathy,19,3464,13,1050743,3483,32,443.332,218.78,898.359,3211.083,True,False
+any role,visual acuity reduced,135,3348,1817,1048939,3483,1952,23.278,19.48,27.816,2555.722,True,False
+any role,visual field defect,15,3468,349,1050407,3483,364,13.018,7.756,21.851,147.573,True,False
+any role,colour vision deficiency,5,3478,35,1050721,3483,40,43.158,16.899,110.222,144.849,True,False
+any role,cataract,4,3479,1670,1049086,3483,1674,0.722,0.271,1.928,0.193,False,True
+any role,glaucoma,2,3481,931,1049825,3483,933,0.648,0.162,2.595,0.111,False,True
+any role,dry eye,0,3483,85,1050671,3483,85,0.0,0.0,,0.172,False,True

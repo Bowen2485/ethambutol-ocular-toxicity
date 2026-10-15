@@ -1,0 +1,17 @@
+﻿target,pdb,ligand,ligand_heavy_atoms,best_affinity_kcal_mol,top_pose_rmsd_A,passed,status
+CA2,3HS4,AZM_A_701,13.0,-6.838,1.795,True,ok
+DHFR,1RG7,MTX_A_161,33.0,-9.019,5.863,False,ok
+TRYPSIN,3PTB,BEN_A_1,9.0,-6.588,0.344,True,ok
+CA2,3M04,BE9_A_502,19.0,-6.838,23.244,False,ok
+CA2,1AZM,AZM_A_262,13.0,-6.838,54.267,False,ok
+BACE1,2OH4,,,,,,error TimeoutError
+PNP,1B8O,IMH_A_600,19.0,-8.602,2.434,False,ok
+HSP90,1UYG,PU2_A_1224,22.0,-8.837,3.127,False,ok
+AMPC,1FSY,,,,,,"docking failed U: 31
+Verbosity: 1
+
+
+
+PDBQT parsing error: Atom type B is not a valid AutoDock type (atom types are case-sensitive).
+ > ATOM   2797  B   105 B 964      76.973   4.806  28.614  0.00  0.00    +0.000 B 
+"

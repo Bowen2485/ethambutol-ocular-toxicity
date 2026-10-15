@@ -1,0 +1,7 @@
+﻿gene,scale,centroid_shift_A,contact_retention_pct,mean_contact_dist_A
+HMOX1,1.0,3.38,0.0,8.44
+HMOX1,10.0,4.38,0.0,10.53
+HMOX1,50.0,6.08,0.0,11.8
+MFN2,1.0,6.5,0.0,10.97
+MFN2,10.0,8.61,0.0,12.77
+MFN2,50.0,9.74,0.0,14.02

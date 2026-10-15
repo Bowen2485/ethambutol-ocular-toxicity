@@ -1,0 +1,83 @@
+[
+  {
+    "target": "CA2_AZM",
+    "pdb": "3HS4",
+    "ligand": "AZM",
+    "chain": "A",
+    "resseq": "701",
+    "heavy": 13,
+    "note": "existing control - acetazolamide"
+  },
+  {
+    "target": "CA2_AZM",
+    "pdb": "1AZM",
+    "ligand": "AZM",
+    "chain": "A",
+    "resseq": "262",
+    "heavy": 13,
+    "note": "aromatic sulfonamide, small"
+  },
+  {
+    "target": "CA2_BE9",
+    "pdb": "3M04",
+    "ligand": "BE9",
+    "chain": "A",
+    "resseq": "502",
+    "heavy": 19,
+    "note": "second CA2 ligand, small"
+  },
+  {
+    "target": "CA2_BE7",
+    "pdb": "3M04",
+    "ligand": "BE7",
+    "chain": "A",
+    "resseq": "503",
+    "heavy": 10,
+    "note": "second CA2 ligand, small"
+  },
+  {
+    "target": "TRYPSIN_BEN",
+    "pdb": "3PTB",
+    "ligand": "BEN",
+    "chain": "A",
+    "resseq": "1",
+    "heavy": 9,
+    "note": "benzamidine, very small and rigid"
+  },
+  {
+    "target": "HSP90_PU2",
+    "pdb": "1UYG",
+    "ligand": "PU2",
+    "chain": "A",
+    "resseq": "1224",
+    "heavy": 22,
+    "note": "resorcinol, small and polar"
+  },
+  {
+    "target": "PNP_IMH",
+    "pdb": "1B8O",
+    "ligand": "IMH",
+    "chain": "A",
+    "resseq": "600",
+    "heavy": 19,
+    "note": "immucillin, polar"
+  },
+  {
+    "target": "BACE1_PTR",
+    "pdb": "2OH4",
+    "ligand": "PTR",
+    "chain": "A",
+    "resseq": "1052",
+    "heavy": 16,
+    "note": "hydroxyethylamine, hydroxy-rich like ethambutol"
+  },
+  {
+    "target": "AMPC_105",
+    "pdb": "1FSY",
+    "ligand": "105",
+    "chain": "A",
+    "resseq": "964",
+    "heavy": 20,
+    "note": "boronic acid, very small"
+  }
+]

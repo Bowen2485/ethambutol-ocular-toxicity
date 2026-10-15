@@ -1,0 +1,68 @@
+﻿gene,n_papers,n_pmids,example_pmids,example_title
+TNF,14,14,41037321;39236267;39904950;41095908;39284999;35216083;36865745;22879892,Lipid peroxidation and type I interferon coupling fuels pathogenic macrophage activation causing tuberculosis susceptibility.
+NAT2,12,12,41939271;41323558;40332508;38424191;40517315;40133601;39858601;39085767,Common Adverse Reactions and Management Strategies of First-Line Anti-Tuberculosis Drugs.
+OPA1,10,10,37498569;34573359;34676220;36071901;24067127;22776096;25132831;24603424,Visual Function and Inner Retinal Structure in Relation to Birth Factors in Autosomal Dominant Optic Atrophy.
+CS,6,6,37156848;40231840;39512935;35859910;39692505;41055087,Achromatic and chromatic contrast discrimination in patients with type 2 diabetes.
+ABCG2,6,6,42620596;40918521;41541562;40528479;38094893;37123969,Therapeutic potential of traditional Chinese medicine for hyperuricemia: mechanistic insights and clinical prospects.
+STAT3,6,6,42688214;41034003;36248428;38809023;36712944;23143785,Case Report: &lt;i&gt;STAT3&lt;/i&gt; hyper-IgE syndrome in children: two cases report with uncommon complications of tuberculosis and lymphoma.
+STAT1,5,5,42644113;40656276;39453997;38058431;40980136,&lt;i&gt;STAT1&lt;/i&gt; gain-of-function variant in a previously healthy patient with disseminated &lt;i&gt;Mycobacterium genavense&lt;/i&gt; infection.
+BDNF,4,4,41184893;35216083;36287318;24109560,Müller glia-mediated protection of retinal ganglion cells from ethambutol-induced neurotoxicity through brain-derived neurotrophic factor.
+TFEB,3,3,42063162;40265045;32574211,"The role of autophagy in ocular health: mechanisms, pathologies, and therapeutic strategies."
+CYP2E1,3,3,42259768;41323558;36383336,"CYP2E1 and CYP2D6 in Anti-Tuberculosis Drug-Induced Liver Injury: Mechanisms, Epigenetic Regulation, and Translational Implications."
+TP53,3,3,42657381;41578885;36444935,Diagnostic value and prognostic effect of has-miR-151a-3p in tuberculosis.
+GPX4,2,2,41563626;39315396,Ethambutol induces optic neuropathy through SDHB-mediated ferroptosis in retinal ganglion cells via Smad4 pathway.
+CYP3A4,2,2,PPR1180473;31885960,The Zinc Paradox in Tuberculosis: A Systematic Review of Anti-Tuberculosis Drug–Induced Zinc Depletion and Its Implications for Optic Neuropathy and Visual Loss
+ATOH7,2,2,PPR685014;37540379,The efficient induction of human retinal ganglion-like cells provides a platform for studying optic neuropathies
+CYP2D6,2,2,42259768;39858601,"CYP2E1 and CYP2D6 in Anti-Tuberculosis Drug-Induced Liver Injury: Mechanisms, Epigenetic Regulation, and Translational Implications."
+CAT,2,2,42812992;40128909,Effect of Herbal Extracts on Antituberculosis Drug-Induced Hepatotoxicity: A Systematic Review.
+JUN,2,2,42522001;36444935,Exposure the Hazardous Potential of Quinalphos: An In-Depth Analysis for Environmental and Biological Effects on Human Health.
+CYBB,2,2,40656276;41026270,Overview of Mendelian Susceptibility to Mycobacterial Diseases (MSMD).
+IFNGR1,2,2,40656276;35281241,Overview of Mendelian Susceptibility to Mycobacterial Diseases (MSMD).
+AKT1,2,2,41578885;36865745,Elucidating the Mechanism of Modified Yiguanjian against Anti-Tuberculosis Drug-Induced Liver Injury via Integrated Pharmacology and Metabolomics.
+IDH2,2,2,37384044;42063707,"A case report of complete remission of acute myeloid leukemia combined with <i>DNMT3A, FLT3-TKD</i>, and <i>IDH2</i> gene mutations and active pulmonary tuberculosis treated with h"
+PPARG,2,2,36865745;37342358,"Mechanism of Xiezhuo Huayu Yiqi Tongluo Formula in the Treatment of Uric Acid Nephropathy Based on Network Pharmacology, Molecular Docking, and In Vivo Experiments."
+ATG5,2,2,35590096;22879892,Human M1 macrophages express unique innate immune response genes after mycobacterial infection to defend against tuberculosis.
+MPO,2,2,27574522;42131077,Neutrophil Extracellular Traps in Pulmonary Diseases: Too Much of a Good Thing?
+NGF,1,1,41184893,Müller glia-mediated protection of retinal ganglion cells from ethambutol-induced neurotoxicity through brain-derived neurotrophic factor.
+SDHB,1,1,41563626,Ethambutol induces optic neuropathy through SDHB-mediated ferroptosis in retinal ganglion cells via Smad4 pathway.
+SLC7A11,1,1,41563626,Ethambutol induces optic neuropathy through SDHB-mediated ferroptosis in retinal ganglion cells via Smad4 pathway.
+SPG7,1,1,38796496,Genetic susceptibility to optic neuropathy in patients with alcohol use disorder.
+MFN1,1,1,24067127,"Dominant optic atrophy, OPA1, and mitochondrial quality control: understanding mitochondrial network dynamics."
+MFN2,1,1,24067127,"Dominant optic atrophy, OPA1, and mitochondrial quality control: understanding mitochondrial network dynamics."
+OPA3,1,1,22776096,Dominant optic atrophy.
+TLR4,1,1,42513105,Mechanisms of Gut Microbiota-Derived Metabolites in Treating Hyperuricemia: Natural Products as Interventions.
+IFNGR2,1,1,40656276,Overview of Mendelian Susceptibility to Mycobacterial Diseases (MSMD).
+ATP7B,1,1,38424191,Synergistic toxicity with copper contributes to NAT2-associated isoniazid toxicity.
+GSTP1,1,1,40517315,Pharmacogenetic Study of Anti-TB Drugs in the Native Ancestry Peruvian Population.
+SLC22A2,1,1,40775340,Influence of OCT2 gene variants on metformin efficacy in type 2 diabetes: insights into pharmacogenomics and drug interactions.
+XIAP,1,1,40301935,Late presentation of X-linked inhibitor of apoptosis (XIAP) deficiency in a young adult.
+ATF4,1,1,40265045,High throughput screening assay for the identification of ATF4 and TFEB activating compounds.
+TYK2,1,1,38058431,Adult-onset Mendelian Susceptibility to Mycobacterial Diseases: A case report and systematic literature review.
+SQSTM1,1,1,38433218,circRNA_SLC8A1 promotes the survival of mycobacterium tuberculosis in macrophages by upregulating expression of autophagy-related protein SQSTM1/p62 to activate the NF-κB pathway.
+IL6,1,1,36865745,"Mechanism of Xiezhuo Huayu Yiqi Tongluo Formula in the Treatment of Uric Acid Nephropathy Based on Network Pharmacology, Molecular Docking, and In Vivo Experiments."
+ATG13,1,1,31934022,Autophagy-related genes affect drug resistance of mycobacteria by regulating autophagy.
+ATG16L1,1,1,33708385,Circular RNA TRAPPC6B inhibits intracellular &lt;i&gt;Mycobacterium tuberculosis&lt;/i&gt; growth while inducing autophagy in macrophages by targeting microRNA-874-3p.
+MAP1LC3B,1,1,30797286,Metformin induced autophagy in diabetes mellitus - Tuberculosis co-infection patients: A case study.
+TSC1,1,1,35248007,Multifocal micronodular pneumocyte hyperplasia lacking typical clinical features of the tuberous sclerosis complex: a case report and literature review.
+PTEN,1,1,35420971,Sp1 transcription factor represses transcription of phosphatase and tensin homolog to aggravate lung injury in mice with type 2 diabetes mellitus-pulmonary tuberculosis.
+KEAP1,1,1,31586142,"Association between genetic polymorphisms of NRF2, KEAP1, MAFF, MAFK and anti-tuberculosis drug-induced liver injury: a nested case-control study."
+NOS2,1,1,32269568,Myeloid-Derived Suppressor Cells as Target of Phosphodiesterase-5 Inhibitors in Host-Directed Therapeutics for Tuberculosis.
+NQO1,1,1,22589723,Nitazoxanide stimulates autophagy and inhibits mTORC1 signaling and intracellular proliferation of Mycobacterium tuberculosis.
+PIK3R1,1,1,34545082,Isonicotinylation is a histone mark induced by the anti-tuberculosis first-line drug isoniazid.
+CYP1B1,1,1,39449569,"Thai pharmacogenomics database -2 (TPGxD-2) sequel to TPGxD-1, analyzing genetic variants in 26 non-VIPGx genes within the Thai population."
+UGT2B7,1,1,39449569,"Thai pharmacogenomics database -2 (TPGxD-2) sequel to TPGxD-1, analyzing genetic variants in 26 non-VIPGx genes within the Thai population."
+ATG10,1,1,22879892,Polymorphisms in autophagy genes and susceptibility to tuberculosis.
+LAMP1,1,1,22879892,Polymorphisms in autophagy genes and susceptibility to tuberculosis.
+LAMP3,1,1,22879892,Polymorphisms in autophagy genes and susceptibility to tuberculosis.
+MTOR,1,1,22879892,Polymorphisms in autophagy genes and susceptibility to tuberculosis.
+GLS,1,1,36674717,Cysteamine/Cystamine Exert Anti-<i>Mycobacterium abscessus</i> Activity Alone or in Combination with Amikacin.
+CP,1,1,37273589,N-Acylated Ciprofloxacin Derivatives: Synthesis and In Vitro Biological Evaluation as Antibacterial and Anticancer Agents.
+SIRT1,1,1,36712944,A Novel Approach Based on Gut Microbiota Analysis and Network Pharmacology to Explain the Mechanisms of Action of <i>Cichorium intybus</i> L. Formula in the Improvement of Hyperuri
+VEGFA,1,1,36712944,A Novel Approach Based on Gut Microbiota Analysis and Network Pharmacology to Explain the Mechanisms of Action of <i>Cichorium intybus</i> L. Formula in the Improvement of Hyperuri
+SIRT7,1,1,35795226,Molecular genetics of idiopathic pulmonary fibrosis.
+NTRK1,1,1,33315984,Predictors of immunotherapy benefit in Merkel cell carcinoma.
+BID,1,1,32899037,"Long-term safety and efficacy of mirogabalin in Asian patients with postherpetic neuralgia: Results from an open-label extension of a multicenter randomized, double-blind, placebo-"
+ABCB1,1,1,PPR1313050,Nanopore sequencing panel for saliva-based host pharmacogenomic screening in anti-tubercular therapy
+UGT1A1,1,1,PPR1313050,Nanopore sequencing panel for saliva-based host pharmacogenomic screening in anti-tubercular therapy
+CYP2C9,1,1,42549153,Rifampin-induced fluvastatin toxicity: a case report and review of literature.
+CYP2C19,1,1,36978292,Relevance of Pharmacogenomics to the Safe Use of Antimicrobials.

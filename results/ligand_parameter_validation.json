@@ -1,0 +1,82 @@
+{
+ "ligand_file": "docking\\ligands\\ethambutol\\ligand_h.mol",
+ "reference": "PubChem CID 14052",
+ "formula": "C10H24N2O2",
+ "heavy_atoms": 14,
+ "total_atoms": 38,
+ "formal_charge": 0,
+ "species": "neutral free base",
+ "rotatable_bonds_strict": 9,
+ "rotatable_bonds_default": 11,
+ "hbd": 4,
+ "hba": 4,
+ "tpsa": 64.52,
+ "clogp": -0.293,
+ "n_conformers_embedded": 195,
+ "n_conformers_minimised": 195,
+ "conformer_energy_min_kcal": 54.215,
+ "conformer_energy_max_kcal": 70.265,
+ "conformers_with_3kcal_of_min": 6,
+ "redocking_panel": [
+  {
+   "system": "Trypsin",
+   "pdb": "3PTB",
+   "ligand": "BEN",
+   "heavy": 9,
+   "rmsd": 0.344,
+   "passed": true
+  },
+  {
+   "system": "Carbonic anhydrase II (1AZM)",
+   "pdb": "1AZM",
+   "ligand": "AZM",
+   "heavy": 13,
+   "rmsd": 1.937,
+   "passed": true
+  },
+  {
+   "system": "Carbonic anhydrase II (3HS4)",
+   "pdb": "3HS4",
+   "ligand": "AZM",
+   "heavy": 13,
+   "rmsd": 1.795,
+   "passed": true
+  },
+  {
+   "system": "Purine nucleoside phosphorylase",
+   "pdb": "1B8O",
+   "ligand": "IMH",
+   "heavy": 19,
+   "rmsd": 2.434,
+   "passed": false
+  },
+  {
+   "system": "HSP90",
+   "pdb": "1UYG",
+   "ligand": "PU2",
+   "heavy": 22,
+   "rmsd": 3.127,
+   "passed": false
+  },
+  {
+   "system": "Dihydrofolate reductase",
+   "pdb": "1RG7",
+   "ligand": "MTX",
+   "heavy": 33,
+   "rmsd": 5.863,
+   "passed": false
+  },
+  {
+   "system": "BACE1",
+   "pdb": "2OH4",
+   "ligand": "GIG",
+   "heavy": 36,
+   "rmsd": 5.836,
+   "passed": false
+  }
+ ],
+ "largest_passing_heavy_atoms": 13,
+ "smallest_failing_heavy_atoms": 19,
+ "force_field_validated_against_experiment": false,
+ "note": "Ligand identity, charge state and size are verified. The GAFF-2.11 parameters and AM1-BCC charges are NOT validated against experiment; no experimental structure of free ethambutol is available for that."
+}

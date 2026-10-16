@@ -1,0 +1,67 @@
+﻿gene,set,open_targets_diseases,hpo_diseases,eye_annotations,any_eye
+TP53,hub,40,0,choroid plexus papilloma; choroid plexus carcinoma,True
+NFE2L2,hub,40,0,,False
+AKT1,hub,40,0,,False
+BCL2,hub,40,0,,False
+HMOX1,hub,40,0,,False
+CASP3,hub,40,0,,False
+SOD2,hub,40,0,diabetic retinopathy; age-related macular degeneration,True
+TNF,hub,40,0,uveitis; panuveitis; posterior uveitis; intermediate uveitis,True
+GPX4,hub,40,0,,False
+MFN2,hub,40,0,,False
+SLC7A11,hub,40,0,,False
+ACSL4,hub,40,0,,False
+SDHB,hub,40,0,,False
+OPA1,hub,40,0,"autosomal dominant optic atrophy, classic form; optic atrophy with or without deafness, ophthalmoplegia, myopathy, ataxia, and neuropathy; optic atrophy; hereditary optic neuropathy; OPA1-related optic atrophy with or without extraocular features",True
+SLC25A4,hub,40,0,,False
+KEAP1,hub,40,0,,False
+MAPK1,hub,40,0,,False
+IL6,hub,40,0,,False
+STAT3,hub,40,0,,False
+CAT,hub,40,0,age-related macular degeneration,True
+GPX1,hub,40,0,retinopathy of prematurity,True
+TXN,hub,40,0,,False
+NQO1,hub,40,0,,False
+HIF1A,hub,40,0,,False
+PPARGC1A,hub,40,0,corneal ulcer,True
+DNM1L,hub,40,0,"autosomal dominant optic atrophy, classic form; Leber hereditary optic neuropathy; optic atrophy; hereditary optic atrophy; inherited retinal dystrophy",True
+VDAC1,hub,40,0,open-angle glaucoma,True
+CYCS,hub,40,0,,False
+APAF1,hub,40,0,,False
+BAX,hub,40,0,,False
+BCL2L1,hub,40,0,,False
+FTH1,hub,40,0,inherited retinal dystrophy; vitelliform macular dystrophy 2; autosomal dominant vitreoretinochoroidopathy; Stargardt disease; retinitis pigmentosa 50,True
+FTL,hub,40,0,,False
+HBB,control,40,0,,False
+HBA1,control,40,0,,False
+ALB,control,40,0,,False
+APOA1,control,40,0,,False
+APOB,control,40,0,,False
+FGA,control,40,0,,False
+FGB,control,40,0,,False
+FGG,control,40,0,,False
+SERPINA1,control,40,0,,False
+ORM1,control,40,0,fish eye disease,True
+HP,control,40,0,,False
+TF,control,40,0,,False
+CP,control,40,0,,False
+AMY1A,control,40,0,myalgic encephalomeyelitis/chronic fatigue syndrome,True
+AMY2A,control,40,0,,False
+PRSS1,control,40,0,,False
+CELA1,control,40,0,,False
+CTRB1,control,40,0,age-related macular degeneration; atrophic macular degeneration; wet macular degeneration; diabetic eye disease; diabetic retinopathy,True
+CPA1,control,40,0,,False
+PNLIP,control,40,0,,False
+CLPS,control,40,0,fish eye disease,True
+CELA3A,control,40,0,,False
+SYCN,control,23,0,,False
+PNLIPRP1,control,40,0,,False
+CTRB2,control,40,0,age-related macular degeneration; atrophic macular degeneration; wet macular degeneration; diabetic eye disease; diabetic retinopathy,True
+CEL,control,40,0,disorder of visual system,True
+CPA2,control,40,0,cataract - microcornea syndrome; retinitis pigmentosa; Leber congenital amaurosis; exudative vitreoretinopathy; posterior polymorphous corneal dystrophy,True
+PRSS2,control,40,0,,False
+CTRC,control,40,0,retinitis pigmentosa; exudative vitreoretinopathy; spondylometaphyseal dysplasia-cone-rod dystrophy syndrome; X-linked retinoschisis,True
+CELP,control,4,0,,False
+PNLIPRP2,control,38,0,,False
+CLPSL1,control,21,0,,False
+CELA2A,control,40,0,,False

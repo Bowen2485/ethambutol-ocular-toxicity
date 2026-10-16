@@ -54,11 +54,22 @@ print()
 print("=" * 92)
 print("2. Commands that must survive intact")
 print("=" * 92)
-for cmd, expect in (("\\citep{", 36), ("\\section{", 11), ("\\subsection{", 36),
-                    ("\\section*{", 6), ("\\begin{table}", 9),
-                    ("\\textbf{", 105), ("\\textit{", 36)):
+for cmd, expect in (("\\citep{", 36), ("\\section{", 11), ("\\subsection{", 42),
+                    ("\\section*{", 6),
+                    ("\\textbf{", 142), ("\\textit{", 43)):
     n = src.count(cmd)
     check(n == expect, f"{cmd:16s} appears {expect} times", f"found {n}")
+
+# Tables of five or more columns use table*, the double-column float this class defines,
+# because an ordinary table in a two-column layout is half the text width and a wide one is
+# clipped rather than erroring.  Both environments are counted, so a table that disappears
+# is still detected, and the wide ones are counted separately because their being wide is a
+# formatting decision kept visible here.
+n_table = len(re.findall(r"\\begin\{table\}", src))
+n_table_wide = len(re.findall(r"\\begin\{table\*\}", src))
+check(n_table + n_table_wide == 12, f"tables: {n_table} plain + {n_table_wide} wide "
+      f"= {n_table + n_table_wide} (expected 12)")
+check(n_table_wide == 4, f"wide tables: {n_table_wide} (expected 4)")
 
 print()
 print("=" * 92)

@@ -1,0 +1,688 @@
+{
+  "hubs": {
+    "TP53": {
+      "n_diseases": 247,
+      "n_eye": 9,
+      "eye_diseases": [
+        "Childhood Choroid Plexus Papilloma",
+        "Choroid Plexus Carcinoma",
+        "Choroid Plexus Papilloma",
+        "Dyskeratosis Congenita",
+        "Dyskeratosis Congenita, Autosomal Recessive 3",
+        "Keratosis",
+        "Low Tension Glaucoma",
+        "Optic Atrophy, Hereditary, Leber",
+        "Primary open angle glaucoma"
+      ],
+      "strong_eye": [
+        "Childhood Choroid Plexus Papilloma",
+        "Choroid Plexus Carcinoma",
+        "Choroid Plexus Papilloma",
+        "Dyskeratosis Congenita",
+        "Dyskeratosis Congenita, Autosomal Recessive 3",
+        "Keratosis",
+        "Low Tension Glaucoma",
+        "Optic Atrophy, Hereditary, Leber",
+        "Primary open angle glaucoma"
+      ],
+      "max_score": 1.3
+    },
+    "NFE2L2": {
+      "n_diseases": 74,
+      "n_eye": 3,
+      "eye_diseases": [
+        "Keratosis",
+        "Macular degeneration",
+        "Other cataract"
+      ],
+      "strong_eye": [
+        "Keratosis",
+        "Macular degeneration",
+        "Other cataract"
+      ],
+      "max_score": 1.05
+    },
+    "AKT1": {
+      "n_diseases": 77,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 1.2
+    },
+    "BCL2": {
+      "n_diseases": 76,
+      "n_eye": 1,
+      "eye_diseases": [
+        "Retinal Degeneration"
+      ],
+      "strong_eye": [
+        "Retinal Degeneration"
+      ],
+      "max_score": 1.2
+    },
+    "HMOX1": {
+      "n_diseases": 82,
+      "n_eye": 1,
+      "eye_diseases": [
+        "Retinal Diseases"
+      ],
+      "strong_eye": [
+        "Retinal Diseases"
+      ],
+      "max_score": 1.15
+    },
+    "CASP3": {
+      "n_diseases": 39,
+      "n_eye": 2,
+      "eye_diseases": [
+        "Diabetic Retinopathy",
+        "Retinal Detachment"
+      ],
+      "strong_eye": [
+        "Diabetic Retinopathy",
+        "Retinal Detachment"
+      ],
+      "max_score": 0.9
+    },
+    "SOD2": {
+      "n_diseases": 198,
+      "n_eye": 7,
+      "eye_diseases": [
+        "Cataract and cardiomyopathy",
+        "Exudative age-related macular degeneration",
+        "Optic Atrophy, Hereditary, Leber",
+        "Optic Neuritis",
+        "Primary open angle glaucoma",
+        "Uveitis",
+        "Visual seizure"
+      ],
+      "strong_eye": [
+        "Cataract and cardiomyopathy",
+        "Exudative age-related macular degeneration",
+        "Optic Atrophy, Hereditary, Leber",
+        "Optic Neuritis",
+        "Primary open angle glaucoma",
+        "Uveitis",
+        "Visual seizure"
+      ],
+      "max_score": 0.95
+    },
+    "TNF": {
+      "n_diseases": 304,
+      "n_eye": 8,
+      "eye_diseases": [
+        "Anterior uveitis",
+        "Diabetic Retinopathy",
+        "Glaucoma, Open-Angle",
+        "Low Tension Glaucoma",
+        "Primary open angle glaucoma",
+        "Retinal Diseases",
+        "Uveitis",
+        "Uveitis, Intermediate"
+      ],
+      "strong_eye": [
+        "Anterior uveitis",
+        "Diabetic Retinopathy",
+        "Glaucoma, Open-Angle",
+        "Low Tension Glaucoma",
+        "Primary open angle glaucoma",
+        "Retinal Diseases",
+        "Uveitis",
+        "Uveitis, Intermediate"
+      ],
+      "max_score": 1.2
+    },
+    "GPX4": {
+      "n_diseases": 15,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.9
+    },
+    "MFN2": {
+      "n_diseases": 50,
+      "n_eye": 3,
+      "eye_diseases": [
+        "Hereditary motor and sensory neuropathy with optic atrophy (disorder)",
+        "Optic Atrophy",
+        "Retinal Dystrophies"
+      ],
+      "strong_eye": [
+        "Hereditary motor and sensory neuropathy with optic atrophy (disorder)",
+        "Optic Atrophy",
+        "Retinal Dystrophies"
+      ],
+      "max_score": 1.0
+    },
+    "SLC7A11": {
+      "n_diseases": 1,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.4
+    },
+    "ACSL4": {
+      "n_diseases": 15,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.8
+    },
+    "SDHB": {
+      "n_diseases": 20,
+      "n_eye": 1,
+      "eye_diseases": [
+        "Sporadic pheochromocytoma and secreting paraganglioma (disorder)"
+      ],
+      "strong_eye": [
+        "Sporadic pheochromocytoma and secreting paraganglioma (disorder)"
+      ],
+      "max_score": 1.15
+    },
+    "OPA1": {
+      "n_diseases": 42,
+      "n_eye": 13,
+      "eye_diseases": [
+        "Cone-Rod Dystrophies",
+        "Dominant hereditary optic atrophy",
+        "GLAUCOMA, NORMAL TENSION, SUSCEPTIBILITY TO",
+        "Low Tension Glaucoma",
+        "OPTIC ATROPHY WITH OR WITHOUT DEAFNESS, OPHTHALMOPLEGIA, MYOPATHY, ATAXIA, AND NEUROPATHY",
+        "Optic Atrophy",
+        "Optic Atrophy 1",
+        "Optic Nerve Hypoplasia",
+        "Optic Neuropathy",
+        "Retinal Diseases"
+      ],
+      "strong_eye": [
+        "Cone-Rod Dystrophies",
+        "Dominant hereditary optic atrophy",
+        "GLAUCOMA, NORMAL TENSION, SUSCEPTIBILITY TO",
+        "Low Tension Glaucoma",
+        "OPTIC ATROPHY WITH OR WITHOUT DEAFNESS, OPHTHALMOPLEGIA, MYOPATHY, ATAXIA, AND NEUROPATHY",
+        "Optic Atrophy",
+        "Optic Atrophy 1",
+        "Optic Nerve Hypoplasia",
+        "Optic Neuropathy",
+        "Retinal Diseases"
+      ],
+      "max_score": 1.3
+    },
+    "SLC25A4": {
+      "n_diseases": 25,
+      "n_eye": 1,
+      "eye_diseases": [
+        "Cataract and cardiomyopathy"
+      ],
+      "strong_eye": [
+        "Cataract and cardiomyopathy"
+      ],
+      "max_score": 0.85
+    },
+    "KEAP1": {
+      "n_diseases": 20,
+      "n_eye": 1,
+      "eye_diseases": [
+        "Keratosis"
+      ],
+      "strong_eye": [
+        "Keratosis"
+      ],
+      "max_score": 0.95
+    },
+    "MAPK1": {
+      "n_diseases": 62,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.95
+    },
+    "IL6": {
+      "n_diseases": 216,
+      "n_eye": 8,
+      "eye_diseases": [
+        "Diabetic Retinopathy",
+        "Dry Eye Syndromes",
+        "Kaposi's sarcoma of conjunctiva",
+        "Kaposi's sarcoma of cornea",
+        "Keratitis",
+        "Retinal Artery Occlusion",
+        "Uveitis",
+        "Visual seizure"
+      ],
+      "strong_eye": [
+        "Diabetic Retinopathy",
+        "Dry Eye Syndromes",
+        "Kaposi's sarcoma of conjunctiva",
+        "Kaposi's sarcoma of cornea",
+        "Keratitis",
+        "Retinal Artery Occlusion",
+        "Uveitis",
+        "Visual seizure"
+      ],
+      "max_score": 1.2
+    },
+    "STAT3": {
+      "n_diseases": 97,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 1.2
+    },
+    "CAT": {
+      "n_diseases": 98,
+      "n_eye": 7,
+      "eye_diseases": [
+        "Angle Closure Glaucoma",
+        "Keratosis",
+        "Optic Neuritis",
+        "RETINITIS PIGMENTOSA 1",
+        "Retinitis Pigmentosa",
+        "Senile cataract",
+        "Visual seizure"
+      ],
+      "strong_eye": [
+        "Angle Closure Glaucoma",
+        "Keratosis",
+        "Optic Neuritis",
+        "RETINITIS PIGMENTOSA 1",
+        "Retinitis Pigmentosa",
+        "Senile cataract",
+        "Visual seizure"
+      ],
+      "max_score": 1.05
+    },
+    "GPX1": {
+      "n_diseases": 74,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.95
+    },
+    "TXN": {
+      "n_diseases": 15,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.65
+    },
+    "NQO1": {
+      "n_diseases": 45,
+      "n_eye": 1,
+      "eye_diseases": [
+        "Macular degeneration"
+      ],
+      "strong_eye": [
+        "Macular degeneration"
+      ],
+      "max_score": 0.85
+    },
+    "HIF1A": {
+      "n_diseases": 58,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 1.0
+    },
+    "PPARGC1A": {
+      "n_diseases": 21,
+      "n_eye": 1,
+      "eye_diseases": [
+        "Macular degeneration"
+      ],
+      "strong_eye": [
+        "Macular degeneration"
+      ],
+      "max_score": 1.0
+    },
+    "DNM1L": {
+      "n_diseases": 17,
+      "n_eye": 4,
+      "eye_diseases": [
+        "Optic Atrophy",
+        "Optic Atrophy 1",
+        "Optic atrophy 5",
+        "Retinal Dystrophies"
+      ],
+      "strong_eye": [
+        "Optic Atrophy",
+        "Optic Atrophy 1",
+        "Optic atrophy 5",
+        "Retinal Dystrophies"
+      ],
+      "max_score": 0.9
+    },
+    "VDAC1": {
+      "n_diseases": 9,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.65
+    },
+    "CYCS": {
+      "n_diseases": 21,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 1.05
+    },
+    "APAF1": {
+      "n_diseases": 11,
+      "n_eye": 2,
+      "eye_diseases": [
+        "Eye Abnormalities",
+        "Retinal Detachment"
+      ],
+      "strong_eye": [
+        "Eye Abnormalities",
+        "Retinal Detachment"
+      ],
+      "max_score": 0.6
+    },
+    "BAX": {
+      "n_diseases": 30,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.9
+    },
+    "BCL2L1": {
+      "n_diseases": 34,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.9
+    },
+    "FTH1": {
+      "n_diseases": 25,
+      "n_eye": 5,
+      "eye_diseases": [
+        "Autosomal dominant vitreoretinochoroidopathy",
+        "Juvenile-Onset Vitelliform Macular Dystrophy",
+        "Retinal Dystrophies",
+        "Retinitis Pigmentosa",
+        "Retinitis Pigmentosa, Concentric"
+      ],
+      "strong_eye": [
+        "Autosomal dominant vitreoretinochoroidopathy",
+        "Juvenile-Onset Vitelliform Macular Dystrophy",
+        "Retinal Dystrophies",
+        "Retinitis Pigmentosa",
+        "Retinitis Pigmentosa, Concentric"
+      ],
+      "max_score": 0.7
+    },
+    "FTL": {
+      "n_diseases": 18,
+      "n_eye": 1,
+      "eye_diseases": [
+        "Hyperferritinemia, hereditary, with congenital cataracts"
+      ],
+      "strong_eye": [
+        "Hyperferritinemia, hereditary, with congenital cataracts"
+      ],
+      "max_score": 1.1
+    }
+  },
+  "controls": {
+    "HBB": {
+      "n_diseases": 64,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 1.35
+    },
+    "HBA1": {
+      "n_diseases": 27,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 1.0
+    },
+    "ALB": {
+      "n_diseases": 87,
+      "n_eye": 1,
+      "eye_diseases": [
+        "Uveitis"
+      ],
+      "strong_eye": [
+        "Uveitis"
+      ],
+      "max_score": 1.05
+    },
+    "APOA1": {
+      "n_diseases": 45,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 1.1
+    },
+    "APOB": {
+      "n_diseases": 44,
+      "n_eye": 1,
+      "eye_diseases": [
+        "Diabetic Retinopathy"
+      ],
+      "strong_eye": [
+        "Diabetic Retinopathy"
+      ],
+      "max_score": 1.25
+    },
+    "FGA": {
+      "n_diseases": 29,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 1.05
+    },
+    "FGB": {
+      "n_diseases": 26,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.95
+    },
+    "FGG": {
+      "n_diseases": 21,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.9
+    },
+    "SERPINA1": {
+      "n_diseases": 43,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 1.35
+    },
+    "ORM1": {
+      "n_diseases": 4,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.4
+    },
+    "HP": {
+      "n_diseases": 52,
+      "n_eye": 1,
+      "eye_diseases": [
+        "Retinal Detachment"
+      ],
+      "strong_eye": [
+        "Retinal Detachment"
+      ],
+      "max_score": 0.95
+    },
+    "TF": {
+      "n_diseases": 38,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 1.15
+    },
+    "CP": {
+      "n_diseases": 39,
+      "n_eye": 1,
+      "eye_diseases": [
+        "Retinal Degeneration"
+      ],
+      "strong_eye": [
+        "Retinal Degeneration"
+      ],
+      "max_score": 1.1
+    },
+    "AMY1A": {
+      "n_diseases": 0,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0
+    },
+    "AMY2A": {
+      "n_diseases": 0,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0
+    },
+    "PRSS1": {
+      "n_diseases": 10,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 1.25
+    },
+    "CELA1": {
+      "n_diseases": 2,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.4
+    },
+    "CTRB1": {
+      "n_diseases": 1,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.4
+    },
+    "CPA1": {
+      "n_diseases": 3,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.75
+    },
+    "PNLIP": {
+      "n_diseases": 1,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.7
+    },
+    "CLPS": {
+      "n_diseases": 1,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.65
+    },
+    "CELA3A": {
+      "n_diseases": 0,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0
+    },
+    "SYCN": {
+      "n_diseases": 0,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0
+    },
+    "PNLIPRP1": {
+      "n_diseases": 1,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.4
+    },
+    "CTRB2": {
+      "n_diseases": 0,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0
+    },
+    "CEL": {
+      "n_diseases": 7,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 1.05
+    },
+    "CPA2": {
+      "n_diseases": 2,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.5
+    },
+    "PRSS2": {
+      "n_diseases": 3,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.75
+    },
+    "CTRC": {
+      "n_diseases": 4,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.95
+    },
+    "CELP": {
+      "n_diseases": 0,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0
+    },
+    "PNLIPRP2": {
+      "n_diseases": 0,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0
+    },
+    "CLPSL1": {
+      "n_diseases": 0,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0
+    },
+    "CELA2A": {
+      "n_diseases": 6,
+      "n_eye": 0,
+      "eye_diseases": [],
+      "strong_eye": [],
+      "max_score": 0.7
+    }
+  },
+  "fisher_any": 4.082883642653558e-05,
+  "fisher_strong": 4.082883642653558e-05,
+  "n_hub_eye": 20,
+  "n_ctrl_eye": 4,
+  "n_hub_strong": 20,
+  "n_ctrl_strong": 4,
+  "fields_used": {
+    "disease": "diseaseName",
+    "score": "score",
+    "evidence": "ei"
+  },
+  "restriction": "academic plan: CURATED sources only"
+}

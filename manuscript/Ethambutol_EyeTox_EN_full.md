@@ -320,6 +320,64 @@ blurred vision, colour vision, blindness, visual field, eye). Agreement between 
 signal is expected where the toxicity is already known and therefore validates the
 detection method; the informative rows are the disagreements.
 
+### 2.15 Subgroup analysis of the optic-nerve signal
+
+The signal was recomputed within strata of sex, age band, reporting region and reporting era,
+using the same 2×2 construction, ROR and Woolf interval as the primary analysis so that the
+stratum-specific values are directly comparable with it. Strata were then compared with each
+other by the ratio of their odds ratios with a 95% interval, because two strata can both be
+significant, or both null, and still differ from one another; the contrast is what tests
+heterogeneity rather than the inspection of separate intervals. Age was banded at 0–17,
+18–44, 45–64 and 65 years and over, and only reports whose age was recorded in years were
+banded, which is 59.7% of the de-duplicated database. Sex is unrecorded in 12.1% of reports,
+and those reports were retained as an explicit "unknown" stratum rather than dropped, because
+dropping them would change the denominator against which every other stratum is compared.
+Reporting region groups countries into the Americas, Asia, Europe and a combined remainder;
+it is reported because the peer literature reports it, and it is explicitly not interpreted,
+for the reason set out in Section 3.2c.
+
+### 2.16 Disease-annotation cross-check of the hub genes
+
+The focus-layer hubs were tested for whether the genes are annotated for eye disease at all,
+which functional enrichment does not establish. Two independent databases were queried for
+each gene's disease annotations: Open Targets, already used for the drug–target landscape,
+and DisGeNET through its REST interface. A gene was counted as having an eye association if
+any annotated disease name matched a list of ocular stems. Because disease names can contain
+an ocular stem while naming something else — *keratosis* and *dyskeratosis congenita* are
+skin diseases — every match was listed and the analysis was repeated with those removed, and
+both figures are reported. The comparison is against a set of the same size drawn from a
+fixed unrelated pathway (33 exocrine pancreatic genes) rather than against chance, because a
+literature-derived hub set is pleiotropic by construction and would otherwise appear
+enriched against any baseline. Enrichment was tested by one-sided Fisher exact, and the
+direction was fixed in advance. GeneCards was also attempted and returned HTTP 403; the
+DisGeNET interface under an academic plan is restricted to curated sources only, which the
+API states in each response, so the counts reported are lower bounds.
+
+### 2.17 Trajectory measures independent of displacement
+
+Two further quantities were computed from the existing trajectories, neither of which
+involves a displacement and so neither of which can be affected by how the periodic boundary
+was handled. Per-residue fluctuation (RMSF) was calculated for C-alpha atoms after
+superposition on the backbone, using only the protein so that ligand motion cannot
+contribute. Ligand–protein polar contacts were counted per frame as donor–acceptor pairs
+within 3.5 Å under the minimum-image convention; because the trajectories were written
+without explicit hydrogen positions for the ligand, this counts potential polar contacts
+rather than geometrically enumerated hydrogen bonds, and it is used as a comparative measure
+across targets rather than as a bond count. The fraction of the specific atom pairs present
+in the first frame that remain within 3.5 Å in the second half was computed as the exchange
+measure: contacts maintained in number while their identities change indicate a ligand that
+stays and re-forms its interactions, whereas a ligand that leaves loses both.
+
+### 2.18 Software and per-residue contact definition
+
+Per-residue contact persistence was computed with an explicit lookup table from absolute atom
+index to position within the protein subset. An earlier implementation mapped indices with
+`np.searchsorted` and a bounds test that did not hold; it reported every residue in each
+structure as contacting the ligand, 301 of 301, 428 of 428 and 841 of 841, and listed the
+first residues of each sequence as the most persistent contacts. The values from that run
+were discarded, and the corrected analysis includes a guard that refuses to write its output
+if the number of contacting residues is again equal to the total.
+
 ---
 
 ## 3. Results
@@ -713,6 +771,72 @@ term, uses the whole case set; the temporal and dose analyses rest on the minori
 of reports that carry those fields, and this is why they are reported as
 supporting rather than primary evidence.
 
+### 3.7b The signal holds in every patient subgroup, and the age gradient is the only one worth reading
+
+Two questions follow from a signal that survives every specification: whether it is
+confined to a group in which reporting is denser, and whether any group behaves
+differently enough to explain it. Both were tested by recomputing the optic-nerve odds
+ratio within strata of sex, age, reporting region and reporting era, using the same 2×2
+construction, ROR and Woolf interval as the main analysis so the values are directly
+comparable (Table 11).
+
+| Stratum | Cases | Optic-nerve cases | ROR (95% CI) | Ratio of odds ratios vs reference |
+|---|---|---|---|---|
+| **Sex** | | | | |
+| Female | 5,987 | 136 | 44.72 (37.65–53.12) | reference |
+| Male | 6,324 | 113 | 50.13 (41.45–60.62) | 1.12 (0.87–1.45) |
+| Unknown | 1,492 | 46 | **97.55** (72.17–131.85) | 2.18 (1.54–3.09) |
+| **Age** | | | | |
+| 0–17 | 740 | 8 | 21.23 (10.49–42.98) | reference |
+| 18–44 | 3,614 | 79 | 23.55 (18.78–29.54) | 1.11 (0.53–2.33) |
+| 45–64 | 2,931 | 51 | 34.71 (26.23–45.93) | 1.63 (0.77–3.49) |
+| **65+** | 3,247 | 87 | **114.73** (91.91–143.22) | **5.40 (2.58–11.32)** |
+| Unknown | 3,271 | 70 | 61.91 (48.73–78.66) | 2.92 (1.38–6.14) |
+| **Reporting region** | | | | |
+| Americas | 4,349 | 79 | 55.70 (44.49–69.74) | reference |
+| Asia | 3,583 | 81 | 42.19 (33.37–53.34) | 0.76 (0.55–1.05) |
+| Europe | 3,334 | 108 | 40.12 (32.97–48.82) | 0.72 (0.53–0.97) |
+| Other regions | 959 | 6 | 5.62 (2.51–12.60) | 0.10 (0.04–0.23) |
+| Other / unknown | 1,578 | 21 | 34.51 (22.38–53.23) | 0.62 (0.38–1.01) |
+| **Reporting era** | | | | |
+| 2004–2016 | 2,506 | 58 | 60.13 (46.23–78.22) | reference |
+| 2017–2026 | 11,297 | 237 | 45.91 (40.27–52.34) | 0.76 (0.57–1.02) |
+
+**The signal is present in every stratum**, which is what a real association looks like and
+is why the analysis is reported as a consistency check rather than as a discovery. Comparing
+the strata with each other, rather than reading each in isolation, leaves five contrasts
+whose interval excludes unity: unknown versus known sex, the 65-and-over band and the
+unknown-age band against the youngest, and Europe and the combined other-region group
+against the Americas. Three of those five should not be read as effects, and the reasoning
+is given here rather than left to the reader.
+
+**Unknown sex is a marker of a sparsely completed report, not a risk factor.** It carries
+the highest ratio in the table (97.55), and the temptation is to report it as a finding. It
+is not one: a report missing the patient's sex is a report with less complete structured
+data, and completeness is itself associated with whether a serious event was recorded. The
+same reasoning applies to the unknown-age stratum, which behaves the same way (61.91).
+
+**Reporting region is not interpretable, for the reason already established.** Section 3.2c
+showed that FAERS country counts measure national reporting intensity rather than patient
+numbers, so a subgroup defined by country inherits that limitation; interpreting the
+regional column would contradict an argument the paper already makes. The combined
+other-region stratum rests on six optic-nerve cases and is not estimable in any useful
+sense.
+
+**The age gradient is the one contrast worth reading.** Risk rises monotonically across the
+four age bands and the 65-and-over band differs from the youngest with a ratio of 5.40
+(2.58–11.32). This agrees with the continuous age effect in Section 3.5, where each
+additional year raised the odds of an ocular event (adjusted OR 1.009, 95% CI 1.005–1.012).
+Two analyses of the same database agreeing is not independent confirmation, and it is not
+presented as such; what it does establish is that the age association is not an artefact of
+modelling age as continuous rather than by band.
+
+**What the analysis adds, and what it does not.** It adds the negative result that no
+subgroup is responsible for the signal, which is the question a reviewer asks of an
+association measured in one population. It does not add a new risk factor: every contrast
+that survives correction is either a reporting artefact, an uninterpretable geography, or a
+restatement of the age effect already reported.
+
 ### 3.8 The mechanistic network points towards ferroptosis and mitochondrial integrity
 
 Open Targets contains **no human mechanism of action for ethambutol**: the only
@@ -742,6 +866,63 @@ membrane (8.36e-5), and GO molecular function by oxidoreductase activity
 (2.74e-5) and haem binding (3.39e-4). WikiPathways returned oxidative stress
 (P = 4.56e-9) and Reactome returned BDNF-activated NTRK2 (TRKB) signalling
 (P = 5.16e-4) together with detoxification of reactive oxygen species (2.25e-4).
+
+### 3.8b The hub genes carry eye-disease annotations far more often than a comparison set
+
+Enrichment says what the gene set is *about*; it does not say whether the set has anything
+to do with the eye. That was tested separately by asking, for each hub, which diseases the
+gene is annotated for in an independent database, and comparing the hub set with a
+comparison set of the same size drawn from a fixed unrelated pathway (33 exocrine pancreatic
+genes). A gene counted as having an eye association if any of its annotated disease names
+matched a list of ocular terms. The test is one-sided Fisher exact, because the expectation
+is directional: a network assembled for ocular toxicity should be annotated for eye disease
+more often than an arbitrary set.
+
+**The result depends entirely on which database is asked, and the first choice was wrong.**
+Against Open Targets and the HPO annotation service, both narrow curated resources, 10 of 33
+hubs (30%) and 8 of 33 controls (24%) carried an eye association — no enrichment (Fisher
+P = 0.39). Against DisGeNET, whose disease vocabulary is far broader, **20 of 33 hubs (61%)
+and 4 of 33 controls (12%)** did — an odds ratio of 9.95 (Fisher P = 4.1 × 10⁻⁵). The
+narrow sources appear to have been the reason for the null, not the network.
+
+**The keyword match was then audited, because it can only produce false positives.** Names
+such as *keratosis* and *dyskeratosis congenita* are skin diseases whose spelling contains
+an ocular stem, and *cataract and cardiomyopathy* is a syndrome classified under its cardiac
+feature. Removing every match of that kind left **18 of 33 hubs (55%) against 4 of 33
+controls (12%)**, odds ratio 7.82, Fisher P = 2.6 × 10⁻⁴. The enrichment survives the
+correction, and the corrected figure is the one reported.
+
+| Source | Hubs with eye annotation | Controls | Fisher P |
+|---|---|---|---|
+| Open Targets + HPO | 10/33 (30%) | 8/33 (24%) | 0.39 |
+| DisGeNET, any match | 20/33 (61%) | 4/33 (12%) | 4.1 × 10⁻⁵ |
+| **DisGeNET, false positives removed** | **18/33 (55%)** | **4/33 (12%)** | **2.6 × 10⁻⁴** |
+
+**The positive control for the method is satisfied.** OPA1 is annotated for 13 eye diseases
+including dominant hereditary optic atrophy and optic neuropathy, DNM1L for optic atrophy 1
+and 5, and MFN2 for optic atrophy and retinal dystrophies. Three genes whose protein products
+act at the mitochondrion and are established causes of optic atrophy are detected as such, so
+the test can find what is there rather than matching anything.
+
+**Three genes at the centre of the proposed mechanism are absent, and this bounds the
+mechanism rather than supporting it.** GPX4 (15 annotated diseases), SLC7A11 (1) and ACSL4
+(15) carry **no eye-disease annotation at all**. The ferroptosis terminal machinery is
+therefore not annotated for ocular disease in any of the three sources consulted, whereas
+the mitochondrial and inflammatory nodes are. The correct reading is that the network's
+ocular evidence lies in its mitochondrial and inflammatory arm — OPA1, DNM1L, MFN2, TNF,
+TP53 — and that the ferroptosis finding rests on the enrichment of Section 3.8 and on the
+retinal expression data of Section 3.11, not on disease annotation. The manuscript's
+mechanistic claim does not require GPX4 to be an eye-disease gene, and it should not be read
+as though it did.
+
+**A limitation of the sources.** GeneCards was queried and returned HTTP 403, and the
+DisGeNET REST interface is restricted for an academic plan to curated sources (CHEMBL,
+CLINGEN, CLINPGX, CLINVAR, GENCC, MGD_HUMAN, ORPHANET, PSYGENET, RGD_HUMAN, UNIPROT), which
+the API states in every response. The counts above are therefore floors rather than complete
+annotations, and a licensed DisGeNET subscription or a GeneCards licence would raise them.
+Two of the four comparator papers in this genre assemble disease targets from GeneCards and
+DisGeNET together; that combination was not available here, and the substitution is named
+rather than left implicit.
 
 ### 3.9 Docking shows which network nodes ethambutol can occupy directly
 
@@ -839,6 +1020,45 @@ over its shorter run.
 | Ligand RMSD, second half | 5.62 Å | 2.85 Å | 3.32 Å |
 | **Verdict** | **docked pose retained** | **docked pose retained** | **docked pose retained** |
 
+**Two further measurements test the same conclusion by routes that do not depend on
+displacement.** The first is per-residue fluctuation (RMSF), which says whether the binding
+site is rigid or whether the protein is breathing around it. The second is a census of
+ligand–protein polar contacts, which distinguishes a ligand that keeps its partners from one
+that exchanges them while staying put.
+
+| Measurement | NFE2L2 | HMOX1 | MFN2 |
+|---|---|---|---|
+| C-alpha residues analysed | 301 | 428 | 841 |
+| **RMSF, mean over the run** | **0.68 Å** | **0.66 Å** | **0.65 Å** |
+| RMSF, maximum | 0.92 Å | 0.86 Å | 0.95 Å |
+| Polar contacts within 3.5 Å, first frame | 63 | 175 | 88 |
+| Polar contacts, second half | **80.0** | **189.2** | 71.7 |
+| Maximum over the run | 159 | 215 | 108 |
+| **Initial pairs still present in the second half** | **0.11** | **0.21** | **0.14** |
+
+**The fluctuation is low and nearly identical across three proteins of very different size.**
+A mean C-alpha RMSF of 0.65–0.68 Å and a maximum below 1 Å indicates that the regions
+contacting the ligand are among the more rigid parts of each structure, consistent with the
+backbone RMSD of 1.18–1.34 Å. This matters for interpretation: the ligand is not being lost
+because the site is falling apart around it.
+
+**The polar-contact census is the third line of evidence for rearrangement rather than
+departure.** In all three targets the number of ligand–protein polar contacts is maintained
+or increases over the run — 63 to 80, 175 to 189 — so the ligand is not losing its polar
+contacts. Yet only 11% to 21% of the *specific* atom pairs present in the first frame are
+still within 3.5 Å in the second half. Contacts maintained in number while their identities
+largely exchange is the signature of a ligand that stays in the pocket and re-forms its
+interactions there, and it is the same behaviour that the ligand RMSD and the contact
+survival fraction indicated. Unlike those two, this measure does not involve a displacement
+and cannot be affected by how the trajectory was imaged.
+
+The following should be stated about the polar-contact criterion: it counts donor–acceptor
+pairs within 3.5 Å rather than enumerating hydrogen bonds geometrically, because the
+trajectories were written without explicit hydrogen positions for the ligand, and 3.5 Å is
+the conventional upper bound for such a pair. It therefore counts potential polar contacts,
+not established hydrogen bonds, and is used as a comparative measure across the three
+targets rather than as a bond count.
+
 **What makes this more than three separate observations is that the three numbers that
 matter are nearly the same in all three systems.** The receptor backbone RMSD is 1.18,
 1.28 and 1.34 Å; the minimum ligand–protein distance is 2.18, 1.76 and 1.77 Å; and in every
@@ -933,6 +1153,19 @@ correction (all q ≥ 0.87; Table 8); genetically proxied type 2 diabetes was li
 null for optic neuritis (OR 1.094, 95% CI 0.940-1.274; 57 instruments). MR-Egger
 intercepts were non-significant and Steiger directionality was correct in every case,
 arguing against reverse causation.
+
+**The panel carries a positive control, and it behaves as it should.** Body mass index was
+included precisely because a higher body mass index is a recognised risk factor for the
+optic-nerve phenotype, so its performance tests whether this pipeline can detect a real
+effect or whether it returns nulls whatever the exposure. With **266 harmonised instruments**
+it gave **OR 1.680 (95% CI 1.265-2.231), p = 3.4 × 10⁻⁴, q = 0.020** for optic neuritis — the
+only exposure-outcome pair among the **60** tested that survives Benjamini-Hochberg
+correction — with a non-significant Egger intercept (p = 0.92) and a Steiger direction that
+is correct. The distinction this establishes is what makes the renal result readable: an
+instrument set of this size, analysed by this pipeline, does recover an association where one
+exists, so the renal nulls are absences of effect rather than absences of power. A panel that
+returned nothing for every exposure would leave the negative results uninterpretable, and
+this is the reason the control was carried.
 
 Serum creatinine deserves a note, because it was absent from the first analysis and
 its recovery is instructive. An early run recorded zero harmonised instruments for it
@@ -1275,6 +1508,7 @@ randomisation. The analysis code is available at https://github.com/Bowen2485/et
 **Table 8** Two-sample Mendelian randomisation results.
 **Table 9** Robustness checks (four scenarios).
 **Table 10** Report adequacy.
+**Table 11** Optic-nerve odds ratio by patient subgroup, with contrasts between strata.
 
 **Additional tables.** Regimen-stratified within-class comparison (`results/faers_regimen_strata.csv`); JADER external validation (`results/jader_validation.csv`); temporal split validation (`results/faers_temporal_validation.csv`); redocking validation panel (`results/redocking_validation_final.csv`); tuberculosis burden denominator (`data/derived/faers_tb_denominator.csv` and `data/derived/faers_who_merged.csv`); ligand parameter validation (`results/ligand_parameter_validation.json`).
 

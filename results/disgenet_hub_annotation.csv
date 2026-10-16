@@ -1,0 +1,67 @@
+﻿gene,set,n_diseases,n_eye,n_strong_eye,max_score,eye_diseases
+TP53,hub,247,9,9,1.3,"Childhood Choroid Plexus Papilloma; Choroid Plexus Carcinoma; Choroid Plexus Papilloma; Dyskeratosis Congenita; Dyskeratosis Congenita, Autosomal Recessive 3; Keratosis; Low Tension Glaucoma; Optic Atrophy, Hereditary, Leber; Primary open angle glaucoma"
+NFE2L2,hub,74,3,3,1.05,Keratosis; Macular degeneration; Other cataract
+AKT1,hub,77,0,0,1.2,
+BCL2,hub,76,1,1,1.2,Retinal Degeneration
+HMOX1,hub,82,1,1,1.15,Retinal Diseases
+CASP3,hub,39,2,2,0.9,Diabetic Retinopathy; Retinal Detachment
+SOD2,hub,198,7,7,0.95,"Cataract and cardiomyopathy; Exudative age-related macular degeneration; Optic Atrophy, Hereditary, Leber; Optic Neuritis; Primary open angle glaucoma; Uveitis; Visual seizure"
+TNF,hub,304,8,8,1.2,"Anterior uveitis; Diabetic Retinopathy; Glaucoma, Open-Angle; Low Tension Glaucoma; Primary open angle glaucoma; Retinal Diseases; Uveitis; Uveitis, Intermediate"
+GPX4,hub,15,0,0,0.9,
+MFN2,hub,50,3,3,1.0,Hereditary motor and sensory neuropathy with optic atrophy (disorder); Optic Atrophy; Retinal Dystrophies
+SLC7A11,hub,1,0,0,0.4,
+ACSL4,hub,15,0,0,0.8,
+SDHB,hub,20,1,1,1.15,Sporadic pheochromocytoma and secreting paraganglioma (disorder)
+OPA1,hub,42,13,10,1.3,"Cone-Rod Dystrophies; Dominant hereditary optic atrophy; GLAUCOMA, NORMAL TENSION, SUSCEPTIBILITY TO; Low Tension Glaucoma; OPTIC ATROPHY WITH OR WITHOUT DEAFNESS, OPHTHALMOPLEGIA, MYOPATHY, ATAXIA, AND NEUROPATHY; Optic Atrophy; Optic Atrophy 1; Optic Nerve Hypoplasia; Optic Neuropathy; Retinal Diseases"
+SLC25A4,hub,25,1,1,0.85,Cataract and cardiomyopathy
+KEAP1,hub,20,1,1,0.95,Keratosis
+MAPK1,hub,62,0,0,0.95,
+IL6,hub,216,8,8,1.2,Diabetic Retinopathy; Dry Eye Syndromes; Kaposi's sarcoma of conjunctiva; Kaposi's sarcoma of cornea; Keratitis; Retinal Artery Occlusion; Uveitis; Visual seizure
+STAT3,hub,97,0,0,1.2,
+CAT,hub,98,7,7,1.05,Angle Closure Glaucoma; Keratosis; Optic Neuritis; RETINITIS PIGMENTOSA 1; Retinitis Pigmentosa; Senile cataract; Visual seizure
+GPX1,hub,74,0,0,0.95,
+TXN,hub,15,0,0,0.65,
+NQO1,hub,45,1,1,0.85,Macular degeneration
+HIF1A,hub,58,0,0,1.0,
+PPARGC1A,hub,21,1,1,1.0,Macular degeneration
+DNM1L,hub,17,4,4,0.9,Optic Atrophy; Optic Atrophy 1; Optic atrophy 5; Retinal Dystrophies
+VDAC1,hub,9,0,0,0.65,
+CYCS,hub,21,0,0,1.05,
+APAF1,hub,11,2,2,0.6,Eye Abnormalities; Retinal Detachment
+BAX,hub,30,0,0,0.9,
+BCL2L1,hub,34,0,0,0.9,
+FTH1,hub,25,5,5,0.7,"Autosomal dominant vitreoretinochoroidopathy; Juvenile-Onset Vitelliform Macular Dystrophy; Retinal Dystrophies; Retinitis Pigmentosa; Retinitis Pigmentosa, Concentric"
+FTL,hub,18,1,1,1.1,"Hyperferritinemia, hereditary, with congenital cataracts"
+HBB,control,64,0,0,1.35,
+HBA1,control,27,0,0,1.0,
+ALB,control,87,1,1,1.05,Uveitis
+APOA1,control,45,0,0,1.1,
+APOB,control,44,1,1,1.25,Diabetic Retinopathy
+FGA,control,29,0,0,1.05,
+FGB,control,26,0,0,0.95,
+FGG,control,21,0,0,0.9,
+SERPINA1,control,43,0,0,1.35,
+ORM1,control,4,0,0,0.4,
+HP,control,52,1,1,0.95,Retinal Detachment
+TF,control,38,0,0,1.15,
+CP,control,39,1,1,1.1,Retinal Degeneration
+AMY1A,control,0,0,0,0,
+AMY2A,control,0,0,0,0,
+PRSS1,control,10,0,0,1.25,
+CELA1,control,2,0,0,0.4,
+CTRB1,control,1,0,0,0.4,
+CPA1,control,3,0,0,0.75,
+PNLIP,control,1,0,0,0.7,
+CLPS,control,1,0,0,0.65,
+CELA3A,control,0,0,0,0,
+SYCN,control,0,0,0,0,
+PNLIPRP1,control,1,0,0,0.4,
+CTRB2,control,0,0,0,0,
+CEL,control,7,0,0,1.05,
+CPA2,control,2,0,0,0.5,
+PRSS2,control,3,0,0,0.75,
+CTRC,control,4,0,0,0.95,
+CELP,control,0,0,0,0,
+PNLIPRP2,control,0,0,0,0,
+CLPSL1,control,0,0,0,0,
+CELA2A,control,6,0,0,0.7,

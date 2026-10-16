@@ -1,0 +1,74 @@
+[
+  {
+    "label": "Open Targets GraphQL (known working)",
+    "url": "https://api.platform.opentargets.org/api/v4/graphql",
+    "status": 400,
+    "seconds": 0.59,
+    "bytes": 0,
+    "ok": false,
+    "sample": "HTTPError 400 Bad Request"
+  },
+  {
+    "label": "CTD disease-gene associations (batch query)",
+    "url": "https://ctdbase.org/tools/batchQuery.go?inputType=gene&inputTerms=CASP3&report=curated&format=tsv",
+    "status": 302,
+    "seconds": 1.35,
+    "bytes": 0,
+    "ok": false,
+    "sample": "HTTPError 302 Moved Temporarily"
+  },
+  {
+    "label": "DisGeNET public API v1",
+    "url": "https://www.disgenet.org/api/gda/summary/CASP3",
+    "status": 200,
+    "seconds": 1.59,
+    "bytes": 12572,
+    "ok": true,
+    "sample": "<!doctype html> <html lang=\"en\">   <head>     <meta charset=\"utf-8\" />     <link rel=\"manifest\" href=\"/manifest.json\" />     <link rel=\"icon\" href=\"/static/images/icons/PicDisgenet.jpg\" />     <meta n"
+  },
+  {
+    "label": "GeneCards search page",
+    "url": "https://www.genecards.org/cgi-bin/carddisp.pl?gene=CASP3",
+    "status": 403,
+    "seconds": 1.0,
+    "bytes": 0,
+    "ok": false,
+    "sample": "HTTPError 403 Forbidden"
+  },
+  {
+    "label": "NCBI eutils esearch (GEO)",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term=retina+AND+human%5Borgn%5D&retmax=5&retmode=json",
+    "status": 200,
+    "seconds": 0.46,
+    "bytes": 719,
+    "ok": true,
+    "sample": "{\"header\":{\"type\":\"esearch\",\"version\":\"0.3\"},\"esearchresult\":{\"count\":\"24835\",\"retmax\":\"5\",\"retstart\":\"0\",\"idlist\":[\"200283720\",\"200313447\",\"200318037\",\"200315988\",\"200332962\"],\"translationset\":[{\"fro"
+  },
+  {
+    "label": "Europe PMC search",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=retina%20AND%20expression&format=json&pageSize=2",
+    "status": 200,
+    "seconds": 1.28,
+    "bytes": 2046,
+    "ok": true,
+    "sample": "{\"version\":\"6.9\",\"hitCount\":127378,\"nextCursorMark\":\"AoIIQHHK5CgzODgyNzIzOA==\",\"nextPageUrl\":\"https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=retina+AND+expression&cursorMark=AoIIQHHK5Cg"
+  },
+  {
+    "label": "MONARCH / HPO gene-disease",
+    "url": "https://api.monarchinitiative.org/api/bioentity/gene/NCBIGene:1432/diseases",
+    "status": 404,
+    "seconds": 1.03,
+    "bytes": 0,
+    "ok": false,
+    "sample": "HTTPError 404 Not Found"
+  },
+  {
+    "label": "STRING API",
+    "url": "https://string-db.org/api/tsv/interactionPartners?identifiers=TP53&limit=5",
+    "status": 404,
+    "seconds": 1.09,
+    "bytes": 0,
+    "ok": false,
+    "sample": "HTTPError 404 Not Found"
+  }
+]

@@ -1,0 +1,806 @@
+{
+  "geo": {
+    "retina, human": [
+      {
+        "gse": "GSE283720",
+        "title": "Autosomal recessive RDH12-Leber congenital amaurosis retinal organoids display reduced photoreceptor length and phospholipid dysregulation",
+        "n_samples": 24,
+        "taxon": "Homo sapiens",
+        "summary": "NADPH-dependent retinol dehydrogenase 12 (RDH12) reduces all-trans-retinal in photoreceptor inner segments to regulate the phototransduction cascade and control the concentration of retinoids in the r"
+      },
+      {
+        "gse": "GSE313447",
+        "title": "Programmable CRISPRtune dissects the transcriptional repressive activity of MeCP2",
+        "n_samples": 62,
+        "taxon": "Homo sapiens",
+        "summary": "The ability to control the expression of human genes is a major goal in synthetic biology, enables dissection of gene function, and can be harnessed for therapeutic applications. Advances in genome ed"
+      },
+      {
+        "gse": "GSE318037",
+        "title": "Monocyte-derived pro-angiogenic ocular macrophages localize to neovascular membranes and promote angiogenesis across species",
+        "n_samples": 7,
+        "taxon": "Homo sapiens",
+        "summary": "We performed a xenium spatial transcriptomics experiment on 6 human donor maculas, 3 with neovascular AMD (consisting of 4 total tissue sections), and 3 without neovascular AMD. Data were loaded into "
+      },
+      {
+        "gse": "GSE315988",
+        "title": "An Epigenetic–Apoptotic Axis Governs the Generation of Focal Extrachromosomal and Integrated MYC amplifications",
+        "n_samples": 59,
+        "taxon": "Homo sapiens",
+        "summary": "Extrachromosomal (ecDNA) and inherited DNA amplifications are frequent drivers of tumor evolution, yet the mechanisms governing site-specific oncogenic copy gains remain poorly understood. Here, we de"
+      },
+      {
+        "gse": "GSE332962",
+        "title": "ACSS2 modulates endothelial glycolysis in angiogenesis [Cut&Tag]",
+        "n_samples": 3,
+        "taxon": "Homo sapiens",
+        "summary": "Endothelial cells (ECs) sustain high glycolytic flux and display remarkable metabolic plasticity. Although the molecular pathways regulating endothelial glycolysis are well characterized, the metaboli"
+      },
+      {
+        "gse": "GSE262958",
+        "title": " Gene regulatory behaviors of mutant CRX proteins demonstrated with late-stage human retinal organoids",
+        "n_samples": 8,
+        "taxon": "Homo sapiens",
+        "summary": "Purpose: CRX variants that are associated with Leber congenital amaurosis (LCA7) have been shown to disrupt photoreceptor maturation and function. CRX plays a vast role in photoreceptor gene regulatio"
+      },
+      {
+        "gse": "GSE322497",
+        "title": "Granzyme B links CFH Genetic Risk to Vitronectin Loss in Macular Degeneration",
+        "n_samples": 6,
+        "taxon": "Homo sapiens",
+        "summary": "The complement factor H (CFH) Y402H polymorphism is a leading genetic risk factor for age-related macular degeneration (AMD). However, the molecular mechanisms connecting this risk variant to retinal "
+      },
+      {
+        "gse": "GSE325954",
+        "title": "Single-cell sequencing of the human fetal uveal tract",
+        "n_samples": 16,
+        "taxon": "Homo sapiens",
+        "summary": "Single-cell RNA sequencing was performed on human fetal uveal tract tissue at 12 and 20 weeks post-conception to generate a comprehensive cellular atlas. This dataset provides single-cell resolution c"
+      },
+      {
+        "gse": "GSE326273",
+        "title": "Loss of ABCA4 from photoreceptor discs triggers changes in glial cell homeostasis",
+        "n_samples": 2,
+        "taxon": "Homo sapiens",
+        "summary": "Loss-of-function mutations in the ABCA4 gene cause Stargardt disease (STGD1), the most common inherited macular dystrophy leading to progressive central vision loss. Here, we generated hiPSC-derived r"
+      },
+      {
+        "gse": "GSE325539",
+        "title": "Glypican-1 modulates TGF-β signaling to drive subretinal fibrosis through a non-canonical AKT-Cyclin A2 cell cycle axis and its inhibition alleviates fibrosis progression",
+        "n_samples": 12,
+        "taxon": "Homo sapiens",
+        "summary": "Subretinal fibrosis (SRF) is a major cause of irreversible vision loss in neovascular age-related macular degeneration (nAMD) and remains poorly responsive to current anti-vascular endothelial growth "
+      },
+      {
+        "gse": "GSE345168",
+        "title": "Retinal Organoid–Based Evaluation of Icariin-Loaded Extracellular Vesicles for Hypoxia-Induced Retinal Injury via Mitochondrial Modulation",
+        "n_samples": 4,
+        "taxon": "Homo sapiens",
+        "summary": "Background: Hypoxic injury is a critical pathological factor in various retinal degenerative diseases, leading to mitochondrial dysfunction and irreversible loss of retinal neurons. This study investi"
+      },
+      {
+        "gse": "GSE317151",
+        "title": "Chemical Induction and Reversal of Photoreceptor Dystrophy in Retinal Organoids",
+        "n_samples": 4,
+        "taxon": "Homo sapiens",
+        "summary": "Activating Transcription Factor 6 (ATF6) controls a signal transduction pathway of the Unfolded Protein Response (UPR) to alleviate endoplasmic reticulum (ER) stress. Loss-of-function ATF6 mutations i"
+      }
+    ],
+    "optic nerve, human": [
+      {
+        "gse": "GSE332997",
+        "title": "Pathophysiological insights into ACO2-related inherited disorders through combined functional and multi-omic analyses of ACO2 patient-derived fibroblasts",
+        "n_samples": 24,
+        "taxon": "Homo sapiens",
+        "summary": "ACO2 encodes the mitochondrial aconitase, involved in the second step of the tricarboxylic acid cycle. ACO2 variants cause isolated dominant or recessive optic atrophy, characterized by the degenerati"
+      },
+      {
+        "gse": "GSE328375",
+        "title": "Human retinal organoids functionally bridge a transected optic nerve in a rat model",
+        "n_samples": 1,
+        "taxon": "Homo sapiens",
+        "summary": "Functional restoration of vision in adult mammals remains unattainable following complete transection of the optic nerve. In this study, we address this challenge by heterotopically transplanting huma"
+      },
+      {
+        "gse": "GSE325526",
+        "title": "Quantitative transcriptome and proteome maps of classical nonclinical species",
+        "n_samples": 2227,
+        "taxon": "Homo sapiens; Canis lupus familiaris; Rattus norvegicus; Macaca fascicularis; Sus scrofa; Mus musculus",
+        "summary": "This SuperSeries is composed of the SubSeries listed below."
+      },
+      {
+        "gse": "GSE325522",
+        "title": "Quantitative transcriptome and proteome maps of classical nonclinical species [b1]",
+        "n_samples": 757,
+        "taxon": "Macaca fascicularis; Sus scrofa; Homo sapiens; Canis lupus familiaris; Mus musculus; Rattus norvegicus",
+        "summary": "The distribution of expression of target genes can provide insights that advance understanding of target availability to aid therapeutic development purposes. The increase of use of biologics and nove"
+      },
+      {
+        "gse": "GSE316553",
+        "title": "Optic Nerve Head Spatial Transcriptomic Change in Non-Human Primate Early Experimental Glaucoma.",
+        "n_samples": 139,
+        "taxon": "Homo sapiens",
+        "summary": "Purpose: To determine optic nerve head (ONH) laminar collagen and retrolaminar myelin expression change in non-human-primate (NHP) experimental-glaucoma (EG) using immunohistochemistry (IHC) and spati"
+      },
+      {
+        "gse": "GSE285564",
+        "title": "Single-cell transcriptome comparison of myeloid cells’ in the retina in response to transplantation of human stem-cell derived neurons and to ocular damage reveals the reversibility of the microglia activation.",
+        "n_samples": 3,
+        "taxon": "Homo sapiens; Mus musculus",
+        "summary": "Retinal ganglion cells (RGCs) play a critical role in the transmission of visual signals from the retina to the brain required for proper vision. The optic neuropathies, including glaucoma, NAION,  LH"
+      },
+      {
+        "gse": "GSE294687",
+        "title": "Müller glia-mediated protection of retinal ganglion cells from ethambutol-induced neurotoxicity through brain-derived neurotrophic factor",
+        "n_samples": 8,
+        "taxon": "Homo sapiens",
+        "summary": "Ethambutol (EMB)-associated optic neuropathy is the most common toxic optic neuropathy and poses a significant visual threat worldwide. This study aimed to investigate the neuroprotective roles of Mü"
+      },
+      {
+        "gse": "GSE305194",
+        "title": "Waves of cell death modulate the abundance and maturation of human retinal ganglion cells",
+        "n_samples": 16,
+        "taxon": "Homo sapiens",
+        "summary": "Retinal ganglion cells (RGCs) are the projection neurons that transmit visual information from the retina to the brain via the optic nerve. A substantial proportion of RGCs are eliminated by programme"
+      },
+      {
+        "gse": "GSE308054",
+        "title": "A human pluripotent stem cell tri-culture platform to elucidate microglial regulation of retinal ganglion cells in neuroinflammation",
+        "n_samples": 3,
+        "taxon": "Homo sapiens",
+        "summary": "Optic neuropathies, including glaucoma, are characterized by the progressive degeneration of retinal ganglion cells (RGCs), ultimately leading to irreversible vision loss. Increasing evidence implicat"
+      },
+      {
+        "gse": "GSE305550",
+        "title": "Establishment of human Leber’s hereditary optic neuropathy model using iPSC-derived retinal organoids",
+        "n_samples": 6,
+        "taxon": "Homo sapiens",
+        "summary": "Leber’s hereditary optic neuropathy (LHON) is a mitochondrial disease caused by mitochondrial DNA mutations, leading to central vision loss and retinal ganglion cell (RGC) degeneration. Progress in un"
+      },
+      {
+        "gse": "GSE270806",
+        "title": "Novel Bi-Allelic Variants in RINT1 Presenting As Early-Onset Pure Hereditary Spastic Paraplegia",
+        "n_samples": 2,
+        "taxon": "Homo sapiens",
+        "summary": "The hereditary spastics paraplegias (HSPs) are a group of over 80 neurogenetic disorders that share the feature of progressive lower limb spasticity. Bi-allelic loss-of-function variants in the RINT1 "
+      },
+      {
+        "gse": "GSE273954",
+        "title": "Multiple sclerosis severity variant in the DYSF–ZNF638 locus associates with increased neuronal loss and inflammation",
+        "n_samples": 26,
+        "taxon": "Homo sapiens",
+        "summary": "A recent genome-wide association study identified homozygous carriership of the A allele at variant rs10191329 to associate with faster disability accrual in multiple sclerosis (MS). We investigated t"
+      }
+    ],
+    "retinal ganglion cell, human": [
+      {
+        "gse": "GSE326418",
+        "title": "RNA-seq of human iPS cell-derived retinal ganglion cells",
+        "n_samples": 3,
+        "taxon": "Homo sapiens",
+        "summary": "The integrin family is a key regulator of cellular behavior, transducing adhesion signals through interactions with the extracellular matrix (ECM). Despite its central role in retinal ganglion cell (R"
+      },
+      {
+        "gse": "GSE310484",
+        "title": "Role of MYOC A445V mutation on glaucomatous degeneration of human retinal ganglion cells.",
+        "n_samples": 6,
+        "taxon": "Homo sapiens",
+        "summary": "Glaucoma is a group of diseases that results in the death of retinal ganglion cells (RGCs), leading to permanent blindness. Myocilin is one of the genetic factors associated with primary open angle gl"
+      },
+      {
+        "gse": "GSE307923",
+        "title": "Single cell transcriptomics of retinal organoids reveal effects of PRPF31 mutations on Mueller glial activation and progressive photoreceptor degeneration",
+        "n_samples": 4,
+        "taxon": "Homo sapiens",
+        "summary": "Retinitis pigmentosa (RP) encompasses a group of inherited retinal disorders characterized by progressive degeneration of rod and cone photoreceptors, leading to vision loss. Among RP subtypes, RP11 i"
+      },
+      {
+        "gse": "GSE265774",
+        "title": "Integrated multi-omics single cell atlas of the human retina",
+        "n_samples": 63,
+        "taxon": "Homo sapiens",
+        "summary": "Single-cell sequencing has revolutionized the scale and resolution of molecular profiling of tissues and organs. Here, we present an integrated multimodal reference atlas of the most accessible portio"
+      },
+      {
+        "gse": "GSE305550",
+        "title": "Establishment of human Leber’s hereditary optic neuropathy model using iPSC-derived retinal organoids",
+        "n_samples": 6,
+        "taxon": "Homo sapiens",
+        "summary": "Leber’s hereditary optic neuropathy (LHON) is a mitochondrial disease caused by mitochondrial DNA mutations, leading to central vision loss and retinal ganglion cell (RGC) degeneration. Progress in un"
+      },
+      {
+        "gse": "GSE268936",
+        "title": "Immune Tolerance to HSP60 Attenuates Neurodegeneration in Glaucoma",
+        "n_samples": 8,
+        "taxon": "Homo sapiens",
+        "summary": "Our previous study suggests that CD4+ T cells primed by bacterial heat shock proteins (HSP) mediate an autoimmune mechanism contributing to the pathogenesis of glaucoma. The present study showed that "
+      },
+      {
+        "gse": "GSE286236",
+        "title": "Modeling retinal ganglion cell axonal pathology associated with glaucoma using human pluripotent stem cell-based microfluidic platforms",
+        "n_samples": 16,
+        "taxon": "Homo sapiens",
+        "summary": "Retinal ganglion cells (RGCs) are highly compartmentalized cells, and previous studies have demonstrated that RGC degeneration in glaucoma occurs in a compartmentalized manner, with distinct injury re"
+      },
+      {
+        "gse": "GSE265801",
+        "title": "Single cell atlas of the human retina",
+        "n_samples": 379,
+        "taxon": "Homo sapiens",
+        "summary": "This SuperSeries is composed of the SubSeries listed below.  As the light sensing part of the visual system, the human retina is composed of five classes of neuron, including photoreceptors, horizonta"
+      },
+      {
+        "gse": "GSE245286",
+        "title": "MicroRNA profile of extracellular vesicles released by Müller glial cells",
+        "n_samples": 6,
+        "taxon": "Homo sapiens",
+        "summary": "As any other radial glia in the central nervous system, Müller glia derive from the same neuroepithelial precursors, perform similar functions and exhibit neurogenic properties as radial glia in the b"
+      },
+      {
+        "gse": "GSE245816",
+        "title": "A Molecular Switch for Neuroprotective Astrocyte Reactivity",
+        "n_samples": 5,
+        "taxon": "Homo sapiens",
+        "summary": "The intrinsic mechanisms that regulate neurotoxic versus neuroprotective astrocyte phenotypes and their effects on central nervous system (CNS) degeneration and repair remain poorly understood. Here, "
+      },
+      {
+        "gse": "GSE242537",
+        "title": "Rare intercellular material transfer as a confound to interpreting inner retinal neuronal transplantation",
+        "n_samples": 1,
+        "taxon": "Homo sapiens",
+        "summary": "Intercellular cytoplasmic material transfer (MT) occurs between transplanted and developing photoreceptors and ambiguates cell origin identification in developmental, transdifferentiation, and transpl"
+      },
+      {
+        "gse": "GSE191017",
+        "title": "Self-formation of concentric zones of telencephalic and ocular tissues and directional retinal ganglion cell axons",
+        "n_samples": 1,
+        "taxon": "Homo sapiens",
+        "summary": "Telencephalon, optic stalk, and optic-cup in vertebrates are originated from adjacent fields in the anterior neuroplate. How these tissues develop coordinately along the midline-periphery axis is uncl"
+      }
+    ]
+  },
+  "annotation": {
+    "hubs": {
+      "TP53": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "choroid plexus papilloma",
+          "choroid plexus carcinoma"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "NFE2L2": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "AKT1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "BCL2": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "HMOX1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "CASP3": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "SOD2": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "diabetic retinopathy",
+          "age-related macular degeneration"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "TNF": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "uveitis",
+          "panuveitis",
+          "posterior uveitis",
+          "intermediate uveitis"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "GPX4": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "MFN2": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "SLC7A11": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "ACSL4": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "SDHB": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "OPA1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "autosomal dominant optic atrophy, classic form",
+          "optic atrophy with or without deafness, ophthalmoplegia, myopathy, ataxia, and neuropathy",
+          "optic atrophy",
+          "hereditary optic neuropathy",
+          "OPA1-related optic atrophy with or without extraocular features",
+          "inherited retinal dystrophy"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "SLC25A4": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "KEAP1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "MAPK1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "IL6": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "STAT3": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "CAT": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "age-related macular degeneration"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "GPX1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "retinopathy of prematurity"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "TXN": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "NQO1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "HIF1A": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "PPARGC1A": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "corneal ulcer"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "DNM1L": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "autosomal dominant optic atrophy, classic form",
+          "Leber hereditary optic neuropathy",
+          "optic atrophy",
+          "hereditary optic atrophy",
+          "inherited retinal dystrophy"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "VDAC1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "open-angle glaucoma"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "CYCS": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "APAF1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "BAX": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "BCL2L1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "FTH1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "inherited retinal dystrophy",
+          "vitelliform macular dystrophy 2",
+          "autosomal dominant vitreoretinochoroidopathy",
+          "Stargardt disease",
+          "retinitis pigmentosa 50",
+          "severe early-childhood-onset retinal dystrophy"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "FTL": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      }
+    },
+    "controls": {
+      "HBB": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "HBA1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "ALB": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "APOA1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "APOB": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "FGA": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "FGB": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "FGG": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "SERPINA1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "ORM1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "fish eye disease"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "HP": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "TF": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "CP": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "AMY1A": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "myalgic encephalomeyelitis/chronic fatigue syndrome"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "AMY2A": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "PRSS1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "CELA1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "CTRB1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "age-related macular degeneration",
+          "atrophic macular degeneration",
+          "wet macular degeneration",
+          "diabetic eye disease",
+          "diabetic retinopathy"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "CPA1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "PNLIP": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "CLPS": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "fish eye disease"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "CELA3A": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "SYCN": {
+        "open_targets_total": 23,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "PNLIPRP1": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "CTRB2": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "age-related macular degeneration",
+          "atrophic macular degeneration",
+          "wet macular degeneration",
+          "diabetic eye disease",
+          "diabetic retinopathy"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "CEL": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "disorder of visual system"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "CPA2": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "cataract - microcornea syndrome",
+          "retinitis pigmentosa",
+          "Leber congenital amaurosis",
+          "exudative vitreoretinopathy",
+          "posterior polymorphous corneal dystrophy",
+          "granular corneal dystrophy type I"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "PRSS2": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "CTRC": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [
+          "retinitis pigmentosa",
+          "exudative vitreoretinopathy",
+          "spondylometaphyseal dysplasia-cone-rod dystrophy syndrome",
+          "X-linked retinoschisis"
+        ],
+        "eye_in_hpo": [],
+        "any_eye": true
+      },
+      "CELP": {
+        "open_targets_total": 4,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "PNLIPRP2": {
+        "open_targets_total": 38,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "CLPSL1": {
+        "open_targets_total": 21,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      },
+      "CELA2A": {
+        "open_targets_total": 40,
+        "hpo_total": 0,
+        "eye_in_opentargets": [],
+        "eye_in_hpo": [],
+        "any_eye": false
+      }
+    }
+  },
+  "eye_counts": {
+    "hubs": 10,
+    "controls": 8
+  },
+  "fisher_p": 0.39141256088329346
+}

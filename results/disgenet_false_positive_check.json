@@ -1,0 +1,22 @@
+{
+  "hub_with_eye": 20,
+  "control_with_eye": 4,
+  "p_one_sided": 4.082883642653558e-05,
+  "p_one_sided_strict": 0.0002592032862384288,
+  "hub_with_eye_strict": 18,
+  "control_with_eye_strict": 4,
+  "questionable_terms": [
+    "keratosis",
+    "cataract and cardiomyopathy",
+    "cardiomyopathy"
+  ],
+  "genes_only_questionable": [
+    "CAT",
+    "KEAP1",
+    "NFE2L2",
+    "SLC25A4",
+    "SOD2",
+    "TP53"
+  ],
+  "odds_ratio_strict": 7.82
+}

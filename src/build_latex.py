@@ -292,13 +292,19 @@ def convert_table(block: list[str]) -> list[str]:
         return []
     ncol = max(len(r) for r in rows)
     rows = [r + [""] * (ncol - len(r)) for r in rows]
-    out = [r"\begin{table}[htbp]", r"\centering",
+    # The Frontiers class sets a text width of 42pc and is typeset in two columns, so an
+    # ordinary table gets roughly half of that and a wider one is clipped rather than
+    # erroring.  The class defines table* as a double-column float, so tables of five or
+    # more columns use it.  The preprint built from this file is one column, which is why
+    # the problem would not be visible locally.
+    env = "table*" if ncol >= 5 else "table"
+    out = [r"\begin{" + env + "}[htbp]", r"\centering",
            r"\begin{tabular}{" + "l" * ncol + "}", r"\hline"]
     for i, r in enumerate(rows):
         out.append(" & ".join(inline(c) for c in r) + r" \\")
         if i == 0:
             out.append(r"\hline")
-    out += [r"\hline", r"\end{tabular}", r"\end{table}", ""]
+    out += [r"\hline", r"\end{tabular}", r"\end{" + env + "}", ""]
     return out
 
 

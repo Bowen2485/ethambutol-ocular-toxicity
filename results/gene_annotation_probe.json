@@ -1,0 +1,72 @@
+[
+  {
+    "source": "Monarch Initiative v3 entity",
+    "url": "https://api.monarchinitiative.org/v3/api/entity/NCBIGene:7157",
+    "usable": false,
+    "bytes": 23,
+    "sample": "HTTPError 404 Not Found"
+  },
+  {
+    "source": "Monarch v3 gene associations",
+    "url": "https://api.monarchinitiative.org/v3/api/association?subject=NCBIGene:7157&category=biolink:GeneToDiseaseAssociation&limit=5",
+    "usable": false,
+    "bytes": 21,
+    "sample": "HTTPError 422 unknown"
+  },
+  {
+    "source": "HPO JAX network annotation",
+    "url": "https://ontology.jax.org/api/network/annotation/NCBIGene:7157",
+    "usable": true,
+    "bytes": 13450,
+    "sample": "{\"diseases\":[{\"id\":\"ORPHA:524\",\"name\":\"Li-Fraumeni syndrome\",\"mondoId\":\"MONDO:0018875\",\"description\":null},{\"id\":\"ORPHA:668\",\"name\":\"Osteosarcoma\",\"mondoId\":\"MO"
+  },
+  {
+    "source": "Gene Ontology API (bioentity)",
+    "url": "https://api.geneontology.org/api/bioentity/gene/NCBIGene:7157",
+    "usable": false,
+    "bytes": 23,
+    "sample": "HTTPError 404 Not Found"
+  },
+  {
+    "source": "Reactome content service",
+    "url": "https://reactome.org/ContentService/data/mapping/UniProt:P04637/pathways",
+    "usable": false,
+    "bytes": 23,
+    "sample": "HTTPError 404 Not Found"
+  },
+  {
+    "source": "Open Targets target by symbol",
+    "url": "https://api.platform.opentargets.org/api/v4/graphql",
+    "usable": false,
+    "bytes": 25,
+    "sample": "HTTPError 400 Bad Request"
+  },
+  {
+    "source": "NCBI ClinVar esearch",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=clinvar&term=TP53&retmode=json&retmax=3",
+    "usable": true,
+    "bytes": 313,
+    "sample": "{\"header\":{\"type\":\"esearch\",\"version\":\"0.3\"},\"esearchresult\":{\"count\":\"6045\",\"retmax\":\"3\",\"retstart\":\"0\",\"idlist\":[\"5007259\",\"5006523\",\"5006237\"],\"translationse"
+  },
+  {
+    "source": "NCBI Gene esummary",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gene&id=7157&retmode=json",
+    "usable": true,
+    "bytes": 3745,
+    "sample": "{\"header\":{\"type\":\"esummary\",\"version\":\"0.3\"},\"result\":{\"uids\":[\"7157\"],\"7157\":{\"uid\":\"7157\",\"name\":\"TP53\",\"description\":\"tumor protein p53\",\"status\":\"\",\"curren"
+  },
+  {
+    "source": "Ensembl REST (xrefs)",
+    "url": "https://rest.ensembl.org/xrefs/symbol/homo_sapiens/TP53?content-type=application/json",
+    "usable": true,
+    "bytes": 71,
+    "sample": "[{\"id\":\"ENSG00000141510\",\"type\":\"gene\"},{\"type\":\"gene\",\"id\":\"LRG_321\"}]"
+  },
+  {
+    "source": "DisGeNET v1 with json accept",
+    "url": "https://www.disgenet.org/api/gda/summary/TP53",
+    "usable": false,
+    "bytes": 12572,
+    "sample": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <link rel=\"icon\" href=\"/static/imag"
+  }
+]

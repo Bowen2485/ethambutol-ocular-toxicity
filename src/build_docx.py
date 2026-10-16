@@ -364,11 +364,14 @@ KEY_TABLES = [
     ("Table7_docking.csv",
      "Table 7. Docking scores (AutoDock Vina, kcal/mol)."),
     ("Table8_mr.csv",
-     "Table 8. Two-sample Mendelian randomisation estimates (main panel, "
-     "10 exposures x 6 optic-nerve and visual outcomes)."),
+     "Table 8. Two-sample Mendelian randomisation estimates for the primary outcome, "
+     "optic neuritis, one row per exposure."),
     ("TableS1_mr_renal.csv",
      "Table S1. Renal-function Mendelian randomisation estimates, from the wider "
      "harmonisation against the cached FinnGen scans."),
+    ("TableS2_mr_full_panel.csv",
+     "Table S2. The full Mendelian randomisation panel: every exposure against all six "
+     "optic-nerve and visual outcomes (60 estimates)."),
     ("Table9_robustness.csv",
      "Table 9. Robustness of the disproportionality conclusions across four "
      "specifications."),
@@ -384,8 +387,9 @@ CN_TABLE_TITLES = {
     "Table5_hubs.csv": "表5 聚焦层蛋白互作网络 hub 基因（按度排序）",
     "Table6_enrichment.csv": "表6 主要富集通路（FDR < 0.05）",
     "Table7_docking.csv": "表7 分子对接打分（AutoDock Vina, kcal/mol）",
-    "Table8_mr.csv": "表8 两样本孟德尔随机化结果（主面板，10 个暴露 × 6 个视神经及视觉结局）",
+    "Table8_mr.csv": "表8 两样本孟德尔随机化估计：主要结局（视神经炎），每个暴露一行",
     "TableS1_mr_renal.csv": "表S1 肾功能孟德尔随机化估计（对照缓存 FinnGen 扫描的更宽协调）",
+    "TableS2_mr_full_panel.csv": "表S2 完整孟德尔随机化面板：全部暴露 × 全部 6 个视神经及视觉结局（60 个估计）",
     "Table9_robustness.csv": "表9 四情景稳健性检验",
     "Table10_adequacy.csv": "表10 报告充分性：关键字段完整度",
 }

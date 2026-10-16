@@ -210,9 +210,18 @@ if not t7.empty:
 # ---------------------------------------------------------------- Table 8
 t8 = read(RESULTS / "mr_opengwas_results.csv")
 if not t8.empty:
-    t8.to_csv(TABLES / "Table8_mr.csv", index=False, encoding="utf-8-sig")
+    #: Split as the manuscript presents it: Table 8 is the primary outcome (optic neuritis), one
+    #: row per exposure sorted by q, and the full ten-by-six panel is Table S2.  Writing the whole
+    #: panel to Table 8 here is what produced a 61-row table in the middle of the manuscript.
+    _primary = t8[t8.outcome == "H7_OPTNEURITIS"].sort_values("p_fdr")
+    _short = ["exposure", "exposure_label", "gwas_id", "exposure_n", "outcome",
+              "outcome_label", "n_snp", "method", "or", "or_lcl", "or_ucl", "p", "p_fdr"]
+    _primary[[c for c in _short if c in _primary.columns]].to_csv(
+        TABLES / "Table8_mr.csv", index=False, encoding="utf-8-sig")
+    t8.to_csv(TABLES / "TableS2_mr_full_panel.csv", index=False, encoding="utf-8-sig")
     note("## 8. Two-sample MR (OpenGWAS exposures -> FinnGen optic-nerve outcomes)\n")
-    note(f"Estimates: {len(t8)}")
+    note(f"Estimates: {len(t8)} in total; Table 8 carries the primary outcome "
+         f"({len(_primary)} rows), the full panel is Table S2")
     show = t8[t8.p.notna()].nsmallest(25, "p")
     note("| Exposure | Outcome | SNPs | Method | OR (95% CI) | p |")
     note("|---|---|---|---|---|---|")

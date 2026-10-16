@@ -56,20 +56,39 @@ def reorder(cols):
 
 
 print("=" * 92)
-print("1. Table 8 - the main panel")
+print("1. Table 8 - the primary outcome, and Table S2 - the full panel")
 print("=" * 92)
 cols, rows = read("mr_opengwas_results.csv")
 print(f"  source: results/mr_opengwas_results.csv, {len(rows)} rows, {len(cols)} columns")
+
+#: Table 8 carried all 60 estimates, which prints as a 61-row table in the middle of the
+#: manuscript.  It now carries the primary outcome only - optic neuritis, one row per exposure -
+#: and the full ten-by-six cross-product moves to Table S2, which is where a reader looks for it
+#: and where a 60-row table does not interrupt the argument.  Nothing is dropped: the panel row
+#: count the text quotes is verified against Table S2 below.
+PRIMARY = "H7_OPTNEURITIS"
+short_cols = ["exposure", "exposure_label", "gwas_id", "exposure_n", "outcome",
+              "outcome_label", "n_snp", "method", "or", "or_lcl", "or_ucl", "p", "p_fdr"]
+#: reader-facing columns only: the diagnostics (Cochran's Q, Egger intercept, Steiger, and the
+#: instrument rsID list) stay in Table S2, where a long row does no harm
+primary = sorted((r for r in rows if r.get("outcome") == PRIMARY),
+                 key=lambda r: float(r["p_fdr"]))
 out8 = TABLES / "Table8_mr.csv"
 before = out8.read_text(encoding="utf-8-sig").count("\n") if out8.exists() else 0
-write(out8, cols, rows)
-print(f"  Table8_mr.csv: {before} lines before -> {len(rows) + 1} lines after")
+write(out8, [c for c in short_cols if c in cols], primary)
+print(f"  Table8_mr.csv: {before} lines before -> {len(primary) + 1} lines after "
+      f"(the primary outcome, {PRIMARY})")
+
+out_s2 = TABLES / "TableS2_mr_full_panel.csv"
+write(out_s2, cols, rows)
+print(f"  TableS2_mr_full_panel.csv: {len(rows) + 1} lines (the full panel)")
 print(f"  {'exposure':<20} {'outcome':<30} {'n_snp':>6} {'OR':>8} {'q':>9}")
 for r in rows:
+    mark = "  <- Table 8" if r.get("outcome") == PRIMARY else ""
     print(f"  {r['exposure'][:18]:<20} {r['outcome'][:28]:<30} {r['n_snp']:>6} "
-          f"{float(r['or']):>8.3f} {float(r['p_fdr']):>9.4f}")
+          f"{float(r['or']):>8.3f} {float(r['p_fdr']):>9.4f}{mark}")
 qs = [float(r["p_fdr"]) for r in rows]
-print(f"  q range in the main panel: {min(qs):.4f} to {max(qs):.4f}")
+print(f"  q range in the full panel: {min(qs):.4f} to {max(qs):.4f}  ({len(rows)} estimates)")
 print("  the manuscript's 'all q >= 0.87' cannot be read off this table: the positive")
 print("  control reaches q = 0.0203 here")
 

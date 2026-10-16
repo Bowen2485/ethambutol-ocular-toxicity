@@ -96,20 +96,45 @@ CONFIDENCE = {"T": "high", "B": "medium", "X": "high", "D": "medium", "U": "auth
 T_REASON = ("within the drug-related axes the manuscript already treats as toxicity: optic "
             "nerve, visual function, retina, lens, ocular surface")
 
-src = TAB / "Table2d_unclassified_terms.csv"
-rows = list(csv.DictReader(open(src, newline="", encoding="utf-8-sig")))
+#: The review is now adopted, so the list it was written from - the 83-term
+#: Table2d_unclassified_terms.csv - no longer exists: every term has a category and Table 2d is
+#: the anatomical grouping summary.  Reading that file would make this script unrunnable, so the
+#: sheet is rebuilt from the adopted classification instead: the terms are the ones the classifier
+#: used to leave unclassified, which the bucket dictionaries below still name, and their
+#: statistics come from the discovery panel.
+sig = {r["term"]: r for r in csv.DictReader(
+    open(ROOT / "results" / "faers_signals_ethambutol.csv", newline="", encoding="utf-8-sig"))}
 
-#: Table 2d is written from the 177-term discovery panel, which still carries the terms Table 2f
-#: records as removed (in_panel=False).  The analysis panel is the 152-term classified file, and
-#: that is the set the manuscript's counts come from - verified, not assumed: none of Table 2f's
-#: 13 terms appears in it.  So each term is marked here, and the counts are reported for the
-#: analysis panel, which is the set that actually needs a category.
+#: every term the review touched: the four buckets, plus the ones whose category is recorded in
+#: the classifier rather than here.  The 54 that defaulted to the drug-toxicity spectrum are
+#: recovered from the adopted classification, which is where they now live.
+_adopted = {r["term"]: r.get("category", "") for r in csv.DictReader(
+    open(ROOT / "results" / "faers_signals_annotated.csv", newline="", encoding="utf-8-sig"))}
+CATEGORY_TO_BUCKET = {
+    "non-ocular artefact": "X  non-ocular artefact",
+    "ocular tuberculosis (disease)": "B  ocular tuberculosis",
+    "other ocular (excluded)": "D  ocular comorbidity",
+    "drug-toxicity spectrum": None,          # only counted if named in a bucket below
+}
+review_terms = (set(X_ARTEFACT) | set(B_INFECTION) | set(D_COMORBIDITY) | set(U_REVIEW))
+#: the terms that were reviewed and placed in the drug-toxicity spectrum: those the classifier
+#: now calls toxicity and that are not one of the original panel's curated entries.  Recovered
+#: from the review sheet when it already exists, so a re-run reproduces the same 83 and not more.
+_prev = TAB / "Table2d_review_proposed.csv"
+if _prev.exists():
+    review_terms |= {r["term"] for r in csv.DictReader(
+        open(_prev, newline="", encoding="utf-8-sig"))}
+
+#: The analysis panel is the 152-term classified file, which is the set the manuscript's counts
+#: come from - verified, not assumed: none of Table 2f's 13 removed terms appears in it.
 analysis_terms = {r["term"] for r in csv.DictReader(
     open(ROOT / "results" / "faers_signals_classified.csv", newline="", encoding="utf-8-sig"))}
 
 out = []
-for r in rows:
-    term = r["term"]
+for term in sorted(review_terms):
+    r = sig.get(term)
+    if r is None:
+        continue
     if term in X_ARTEFACT:
         cat, reason, conf = "X  non-ocular artefact", X_ARTEFACT[term], "high"
     elif term in B_INFECTION:

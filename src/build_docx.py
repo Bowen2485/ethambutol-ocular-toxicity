@@ -401,7 +401,11 @@ def append_tables(doc_path: Path, east: str, size: float,
         if not p.exists():
             continue
         caption = CN_TABLE_TITLES.get(fname, en_caption) if cn else en_caption
-        add_table_from_csv(doc, p, caption, max_rows=30, east=east,
+        #: Every row is printed.  The limit was 30, which silently halved Tables 5, 6, 9 and -
+        #: once the MR panel was completed - Table 8; a submission table that reads "first 30 of
+        #: 60 rows" is worse than a long one, and the caption now discloses any cut that the
+        #: limit does impose, so the limit is set above the longest table in the set.
+        add_table_from_csv(doc, p, caption, max_rows=80, east=east,
                            size=size - 2)
     doc.save(doc_path)
     print(f"[ok] tables appended to {doc_path.name}")

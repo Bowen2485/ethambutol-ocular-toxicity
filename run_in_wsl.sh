@@ -25,7 +25,8 @@ PROJ="$HOME/ethambutol"
 PY="$HOME/miniconda3/envs/md/bin/python"
 ENV_DIR="$HOME/miniconda3/envs/md"
 STAGE="$PROJ"
-LOGDIR="$WIN"
+LOGDIR="$WIN/logs"
+mkdir -p "$LOGDIR"
 
 say()  { printf '\n\033[1;36m==> %s\033[0m\n' "$*"; }
 warn() { printf '\033[1;33m[warn] %s\033[0m\n' "$*"; }

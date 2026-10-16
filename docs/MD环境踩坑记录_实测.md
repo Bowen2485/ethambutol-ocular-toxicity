@@ -198,7 +198,7 @@ Did not recognize residue JNI; did you forget to call .add_molecules() to add it
 
 ```bash
 ~/miniconda3/envs/md/bin/python ~/ethambutol/src/probe_all_apis.py 2>&1 \
-  | tee "/mnt/c/Users/20200/Downloads/论文/投稿/Ethambutol_EyeTox/wsl_feedback.txt"
+  | tee "/mnt/c/Users/20200/Downloads/论文/投稿/Ethambutol_EyeTox/logs/wsl_feedback.txt"
 ```
 
 ---

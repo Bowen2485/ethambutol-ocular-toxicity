@@ -35,10 +35,10 @@ else
 fi
 
 say "Stage log, main log and checkpoints"
-if [ -f "$WIN/wsl_md_more.txt" ]; then
-  echo "  main log last written: $(date -r "$WIN/wsl_md_more.txt" '+%H:%M:%S')"
+if [ -f "$WIN/logs/wsl_md_more.txt" ]; then
+  echo "  main log last written: $(date -r "$WIN/logs/wsl_md_more.txt" '+%H:%M:%S')"
   echo "  last three stage lines:"
-  grep -aE "checkpoint|equilibration|production|finished|ns/day" "$WIN/wsl_md_more.txt" \
+  grep -aE "checkpoint|equilibration|production|finished|ns/day" "$WIN/logs/wsl_md_more.txt" \
     | tail -3 | sed 's/^/    /'
 fi
 for d in "$PROJ"/md_allatom/*/; do
@@ -95,7 +95,7 @@ elif [ "$ALIVE" = yes ]; then
   echo "      bash $PROJ/start_md.sh HMOX1"
 else
   printf '%s  NOT RUNNING.%s\n' "$BAD" "$OFF"
-  if grep -qa "production finished" "$WIN/wsl_md_more.txt" 2>/dev/null; then
+  if grep -qa "production finished" "$WIN/logs/wsl_md_more.txt" 2>/dev/null; then
     echo "  Some targets did finish. Recover them with:"
     echo "      bash $PROJ/recover_md.sh"
   else

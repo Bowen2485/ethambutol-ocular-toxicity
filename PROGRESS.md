@@ -592,7 +592,7 @@ WSL（Ubuntu 24.04 + conda-forge）下 `['Reference', 'CPU', 'CUDA']` 三平台�
 
 ### 8.5 首轮运行
 
-NFE2L2，1 ns。日志 `wsl_md_run.txt` 显示体系构建 → 最小化 → NVT 平衡全部成功，
+NFE2L2，1 ns。日志 `logs/wsl_md_run.txt` 显示体系构建 → 最小化 → NVT 平衡全部成功，
 checkpoint 机制生效。**结论待运行完成后回填。**
 
 ### 8.6 会话稳定性问题与应对

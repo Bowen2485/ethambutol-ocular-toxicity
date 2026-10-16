@@ -62,7 +62,8 @@ echo "  describe the active site, and the manuscript has to say so.  Parameteris
 echo "  heme (iron centre, no CONECT records) is not implemented.  BCL2 and MFN2 are"
 echo "  unaffected."
 
-LOG="$WIN/wsl_md_more.txt"
+mkdir -p "$WIN/logs"
+LOG="$WIN/logs/wsl_md_more.txt"
 say "Starting in the background; log: $LOG"
 echo "  production per target: $NS ns"
 cd "$PROJ"

@@ -52,7 +52,8 @@ rm -rf "$PROJ/src/__pycache__"
 [ -d "$PROJ/receptors_clean" ] || cp -r "$WIN/receptors_clean" "$PROJ/" \
   || die "could not copy receptors_clean"
 
-LOG="$WIN/wsl_md_${GENE,,}.txt"
+mkdir -p "$WIN/logs"
+LOG="$WIN/logs/wsl_md_${GENE,,}.txt"
 say "Starting; log: $LOG"
 echo "  keep this terminal open until it prints 'production finished'"
 echo "  progress is also visible in md_allatom/$GENE/md.log"

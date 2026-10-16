@@ -32,7 +32,7 @@
 > addSolvent is not deterministic - two builds of the same BCL2 receptor gave …
 > OpenMMException 'wrong number of particles', which aborted the whole target"*
 
-运行日志亦原样记录（`wsl_md_hmox1.txt`）：
+运行日志亦原样记录（`logs/wsl_md_hmox1.txt`）：
 
 ```
 [00:12:40] HMOX1: the checkpoint was built on 79056 atoms but this system has 79113,

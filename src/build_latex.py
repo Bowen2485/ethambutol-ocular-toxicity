@@ -176,6 +176,43 @@ UNICODE_MAP = {
 }
 
 
+#: Unicode super- and subscripts, listed in full rather than sampled.  The per-character
+#: map below was written by hand and had gaps - U+2074 and every subscript digit were
+#: missing - so "10\u207b\u2074" came out as "10$^{-}$\u2074": pdflatex aborts on the stray glyph, and
+#: the number it spells is no longer the number in the manuscript.  Note that 1, 2 and 3
+#: are Latin-1 characters (U+00B9-B3) and do not sit with the others in U+2070-2079.
+SUPERSCRIPT = {
+    "\u2070": "0", "\u00b9": "1", "\u00b2": "2", "\u00b3": "3", "\u2074": "4",
+    "\u2075": "5", "\u2076": "6", "\u2077": "7", "\u2078": "8", "\u2079": "9",
+    "\u207a": "+", "\u207b": "-",
+}
+SUBSCRIPT = {
+    "\u2080": "0", "\u2081": "1", "\u2082": "2", "\u2083": "3", "\u2084": "4",
+    "\u2085": "5", "\u2086": "6", "\u2087": "7", "\u2088": "8", "\u2089": "9",
+    "\u208a": "+", "\u208b": "-",
+}
+SUP_RUN = re.compile("[" + re.escape("".join(SUPERSCRIPT)) + "]+")
+SUB_RUN = re.compile("[" + re.escape("".join(SUBSCRIPT)) + "]+")
+
+
+def fold_script_runs(s: str, store: list[str]) -> str:
+    """Coalesce runs of super/subscript characters into one maths group.
+
+    This must run before the per-character map, and it must park its output in `store`
+    like every other replacement here: the result is LaTeX maths, so letting it reach
+    escape_latex would turn every brace into "\\{\\}".
+    """
+    def sup(m: re.Match) -> str:
+        store.append("$^{" + "".join(SUPERSCRIPT[c] for c in m.group(0)) + "}$")
+        return f"\x03U{len(store)-1}\x03"
+
+    def sub(m: re.Match) -> str:
+        store.append("$_{" + "".join(SUBSCRIPT[c] for c in m.group(0)) + "}$")
+        return f"\x03U{len(store)-1}\x03"
+
+    return SUB_RUN.sub(sub, SUP_RUN.sub(sup, s))
+
+
 def fold_unicode(s: str, store: list[str]) -> str:
     """Replace characters pdflatex cannot set, holding the replacements behind markers.
 
@@ -186,6 +223,10 @@ def fold_unicode(s: str, store: list[str]) -> str:
     The longest keys are applied first so that a multi-character term is romanised as a
     whole and not character by character.
     """
+    # Runs of super/subscripts first: "10⁻⁴" has to become one "10$^{-4}$", not a minus
+    # that this map knows and a digit that it does not.
+    s = fold_script_runs(s, store)
+
     for k in sorted(UNICODE_MAP, key=len, reverse=True):
         if k not in s:
             continue
@@ -194,7 +235,6 @@ def fold_unicode(s: str, store: list[str]) -> str:
             store.append(repl)
             s = s.replace(k, f"\x03U{len(store)-1}\x03", 1)
     return s
-
 
 def inline(s: str) -> str:
     s, math = protect_math(s)

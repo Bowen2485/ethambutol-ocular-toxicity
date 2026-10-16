@@ -22,7 +22,7 @@ Run with
     ~/miniconda3/envs/md/bin/python src/probe_all_apis.py
     # or, to leave the output where the Windows side can read it:
     ~/miniconda3/envs/md/bin/python src/probe_all_apis.py 2>&1 | tee \
-      "/mnt/c/Users/20200/Downloads/论文/投稿/Ethambutol_EyeTox/wsl_feedback.txt"
+      "/mnt/c/Users/20200/Downloads/论文/投稿/Ethambutol_EyeTox/logs/wsl_feedback.txt"
 """
 from __future__ import annotations
 

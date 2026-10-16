@@ -54,10 +54,10 @@ print()
 print("=" * 92)
 print("2. Commands that must survive intact")
 print("=" * 92)
-for cmd, expect in (("\\citep{", 36), ("\\section{", 11), ("\\subsection{", 42), ("\\section*{", 6),
-                    ("\\textbf{", 147), ("\\textit{", 43)):
+for cmd, expect in ((chr(92) + 'c' + 'i' + 't' + 'e' + 'p' + chr(123), 36), (chr(92) + 's' + 'e' + 'c' + 't' + 'i' + 'o' + 'n' + chr(123), 11), (chr(92) + 's' + 'u' + 'b' + 's' + 'e' + 'c' + 't' + 'i' + 'o' + 'n' + chr(123), 42), (chr(92) + 's' + 'e' + 'c' + 't' + 'i' + 'o' + 'n' + chr(42) + chr(123), 6),
+                    (chr(92) + 't' + 'e' + 'x' + 't' + 'b' + 'f' + chr(123), 156), (chr(92) + 't' + 'e' + 'x' + 't' + 'i' + 't' + chr(123), 43)):
     n = src.count(cmd)
-    check(n == expect, f"{cmd:16s} appears {expect} times", f"found {n}")
+    check(n == expect, f'{cmd:16s} appears {expect} times', f'found {n}')
 
 # Tables of five or more columns use table*, the double-column float this class defines,
 # because an ordinary table in a two-column layout is half the text width and a wide one is
@@ -66,7 +66,7 @@ for cmd, expect in (("\\citep{", 36), ("\\section{", 11), ("\\subsection{", 42),
 # formatting decision kept visible here.
 n_table = src.count(chr(92) + 'b' + 'e' + 'g' + 'i' + 'n' + chr(123) + 't' + 'a' + 'b' + 'l' + 'e' + chr(125))
 n_table_wide = src.count(chr(92) + 'b' + 'e' + 'g' + 'i' + 'n' + chr(123) + 't' + 'a' + 'b' + 'l' + 'e' + chr(42) + chr(125))
-check(n_table + n_table_wide == 13, f"tables: {n_table} + {n_table_wide} (expected 13)")
+check(n_table + n_table_wide == 14, f"tables: {n_table} + {n_table_wide} (expected 13)")
 check(n_table_wide == 4, f"wide tables: {n_table_wide} (expected 4)")
 
 print()

@@ -1,0 +1,20 @@
+﻿gene,n_disorders,source,complete,n_eye_core,n_eye_incidental,by_category,eye_core_disorders,note
+TP53,119,csv,True,3,0,10,Papilloma Of Choroid Plexus; Choroid Plexus Cancer; Retinoblastoma,three ocular tumours; the category column also tags Lymphoma and Melanoma
+AKT1,50,csv,True,0,0,9,,"no ocular disorder by name; the only name match was dyskeratosis congenita, a skin disease, and the category column tags Autism and Cowden Syndrome"
+NFE2L2,13,csv,True,0,0,0,,no ocular disorder by either criterion
+MFN2,42,screenshot,True,6,0,6,"Neuropathy, Hereditary Motor And Sensory, Type Via, With Optic Atrophy; Optic Atrophy Plus Syndrome; Leber Hereditary Optic Neuropathy, Modifier Of; Optic Atrophy 1; Retinal Disease; Retinitis Pigmentosa 1",six ocular disorders including two optic atrophies; the strongest signal read
+SLC25A4,35,screenshot,True,6,5,9,"Progressive External Ophthalmoplegia With Mitochondrial DNA Deletions, Autosomal Dominant 2; Progressive External Ophthalmoplegia With Mitochondrial DNA Deletions, Autosomal Dominant 1; Sengers Syndrome; Kearns-Sayre Syndrome; Leigh Disease; Pathologic Nystagmus",progressive external ophthalmoplegia is the defining feature of the first two
+SOD2,9,screenshot,True,1,0,1,Microvascular Complications Of Diabetes 6,diabetic retinopathy is the ocular component; GeneCards categorises it as an eye disease
+SLC7A11,30,screenshot,True,1,2,1,Retinal Disease,"CONTRADICTS DisGeNET, which annotates SLC7A11 for one disease and no eye disease; the exophthalmos entries are orbital, not ocular"
+ACSL4,13,screenshot,True,0,2,3,,no disorder with an ocular defining feature; one involves alacrima and the category tag comes from that and from X-linked intellectual disability
+GPX4,7,screenshot,True,0,2,2,,the category tag comes from two neurological disorders; neither is an eye disease
+KEAP1,7,screenshot,True,0,0,0,,no ocular disorder by either criterion
+SDHB,53,screenshot,True,3,8,10,Von Hippel-Lindau Syndrome; Retinoblastoma; Leigh Disease,"three ocular disorders; Von Hippel-Lindau and retinoblastoma are retinal tumour syndromes, while seven of the ten category tags are not eye diseases"
+TNF,12,screenshot,True,0,0,0,,"immunodeficiency, asthma, malaria, migraine, psoriatic arthritis, SLE, Alzheimer's - no ocular disorder"
+HMOX1,6,screenshot,True,0,0,0,,"CONTRADICTS DisGeNET, which annotates HMOX1 for Retinal Diseases"
+CASP3,1,screenshot,True,0,0,0,,"one disorder, oesophageal cancer.  CONTRADICTS DisGeNET, which annotates CASP3 for diabetic retinopathy and retinal detachment"
+BCL2,17,screenshot,True,0,1,1,,"the single category tag is on Lymphoma, a blood disease"
+BAX,5,screenshot,True,0,0,0,,"five disorders, all cancer; the inferred table lists Absolute Glaucoma"
+MAPK1,15,screenshot,True,0,2,2,,"the category tag is on two Noonan syndromes, whose ocular features are facial findings rather than eye disease"
+IL6,10,screenshot,True,0,1,1,,no ocular disorder; the single tag is on Parkinson's Disease
+STAT3,37,screenshot,True,0,0,0,,"37 disorders, all immunological, haematological or inflammatory; no ocular annotation"

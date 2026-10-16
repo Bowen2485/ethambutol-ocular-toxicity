@@ -1,0 +1,52 @@
+{
+  "AKT1": {
+    "n_disorders": 50,
+    "by_name": [
+      "Dyskeratosis Congenita"
+    ],
+    "by_name_clean": [],
+    "by_category": [
+      "Cowden Syndrome 6",
+      "Cowden Syndrome",
+      "Overgrowth Syndrome",
+      "Lissencephaly Due To Lis1 Mutation",
+      "Autism",
+      "Developmental And Epileptic Encephalopathy 29",
+      "Dyskeratosis Congenita",
+      "Melanoma",
+      "Muscular Dystrophy"
+    ]
+  },
+  "TP53": {
+    "n_disorders": 119,
+    "by_name": [
+      "Papilloma Of Choroid Plexus",
+      "Choroid Plexus Cancer",
+      "Dyskeratosis Congenita",
+      "Retinoblastoma"
+    ],
+    "by_name_clean": [
+      "Papilloma Of Choroid Plexus",
+      "Choroid Plexus Cancer",
+      "Retinoblastoma"
+    ],
+    "by_category": [
+      "Papilloma Of Choroid Plexus",
+      "Lymphoma",
+      "Ataxia-Telangiectasia",
+      "Von Hippel-Lindau Syndrome",
+      "Dyskeratosis Congenita",
+      "Melanoma",
+      "Familial Adenomatous Polyposis 1",
+      "Retinoblastoma",
+      "Muscular Dystrophy",
+      "Developmental And Epileptic Encephalopathy 29"
+    ]
+  },
+  "NFE2L2": {
+    "n_disorders": 13,
+    "by_name": [],
+    "by_name_clean": [],
+    "by_category": []
+  }
+}

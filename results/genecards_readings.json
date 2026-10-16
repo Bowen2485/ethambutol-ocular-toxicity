@@ -1,0 +1,275 @@
+{
+  "data": {
+    "TP53": {
+      "source": "csv",
+      "complete": true,
+      "n_disorders": 119,
+      "eye_core": [
+        "Papilloma Of Choroid Plexus",
+        "Choroid Plexus Cancer",
+        "Retinoblastoma"
+      ],
+      "eye_incidental": [],
+      "by_category": 10,
+      "note": "three ocular tumours; the category column also tags Lymphoma and Melanoma"
+    },
+    "AKT1": {
+      "source": "csv",
+      "complete": true,
+      "n_disorders": 50,
+      "eye_core": [],
+      "eye_incidental": [],
+      "by_category": 9,
+      "note": "no ocular disorder by name; the only name match was dyskeratosis congenita, a skin disease, and the category column tags Autism and Cowden Syndrome"
+    },
+    "NFE2L2": {
+      "source": "csv",
+      "complete": true,
+      "n_disorders": 13,
+      "eye_core": [],
+      "eye_incidental": [],
+      "by_category": 0,
+      "note": "no ocular disorder by either criterion"
+    },
+    "MFN2": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 42,
+      "eye_core": [
+        "Neuropathy, Hereditary Motor And Sensory, Type Via, With Optic Atrophy",
+        "Optic Atrophy Plus Syndrome",
+        "Leber Hereditary Optic Neuropathy, Modifier Of",
+        "Optic Atrophy 1",
+        "Retinal Disease",
+        "Retinitis Pigmentosa 1"
+      ],
+      "eye_incidental": [],
+      "by_category": 6,
+      "note": "six ocular disorders including two optic atrophies; the strongest signal read"
+    },
+    "SLC25A4": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 35,
+      "eye_core": [
+        "Progressive External Ophthalmoplegia With Mitochondrial DNA Deletions, Autosomal Dominant 2",
+        "Progressive External Ophthalmoplegia With Mitochondrial DNA Deletions, Autosomal Dominant 1",
+        "Sengers Syndrome",
+        "Kearns-Sayre Syndrome",
+        "Leigh Disease",
+        "Pathologic Nystagmus"
+      ],
+      "eye_incidental": [
+        "Mitochondrial DNA Depletion Syndrome 12B",
+        "Mitochondrial DNA Depletion Syndrome 12A",
+        "Mitochondrial DNA Depletion Syndrome 4B",
+        "Mitochondrial DNA Depletion Syndrome 5",
+        "Mitochondrial DNA Depletion Syndrome 3"
+      ],
+      "by_category": 9,
+      "note": "progressive external ophthalmoplegia is the defining feature of the first two"
+    },
+    "SOD2": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 9,
+      "eye_core": [
+        "Microvascular Complications Of Diabetes 6"
+      ],
+      "eye_incidental": [],
+      "by_category": 1,
+      "note": "diabetic retinopathy is the ocular component; GeneCards categorises it as an eye disease"
+    },
+    "SLC7A11": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 30,
+      "eye_core": [
+        "Retinal Disease"
+      ],
+      "eye_incidental": [
+        "Thyrotoxic Exophthalmos",
+        "Endocrine Exophthalmos"
+      ],
+      "by_category": 1,
+      "note": "CONTRADICTS DisGeNET, which annotates SLC7A11 for one disease and no eye disease; the exophthalmos entries are orbital, not ocular"
+    },
+    "ACSL4": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 13,
+      "eye_core": [],
+      "eye_incidental": [
+        "Intellectual Developmental Disorder, X-Linked 63",
+        "Alacrima, Achalasia, And Impaired Intellectual Development Syndrome"
+      ],
+      "by_category": 3,
+      "note": "no disorder with an ocular defining feature; one involves alacrima and the category tag comes from that and from X-linked intellectual disability"
+    },
+    "GPX4": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 7,
+      "eye_core": [],
+      "eye_incidental": [
+        "Muscular Dystrophy",
+        "Developmental And Epileptic Encephalopathy 29"
+      ],
+      "by_category": 2,
+      "note": "the category tag comes from two neurological disorders; neither is an eye disease"
+    },
+    "KEAP1": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 7,
+      "eye_core": [],
+      "eye_incidental": [],
+      "by_category": 0,
+      "note": "no ocular disorder by either criterion"
+    },
+    "SDHB": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 53,
+      "eye_core": [
+        "Von Hippel-Lindau Syndrome",
+        "Retinoblastoma",
+        "Leigh Disease"
+      ],
+      "eye_incidental": [
+        "Cowden Syndrome",
+        "Dyskeratosis Congenita",
+        "Familial Adenomatous Polyposis 1",
+        "Leukodystrophy",
+        "Melanoma",
+        "Parkinson's Disease",
+        "Microcephaly",
+        "Autism"
+      ],
+      "by_category": 10,
+      "note": "three ocular disorders; Von Hippel-Lindau and retinoblastoma are retinal tumour syndromes, while seven of the ten category tags are not eye diseases"
+    },
+    "TNF": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 12,
+      "eye_core": [],
+      "eye_incidental": [],
+      "by_category": 0,
+      "note": "immunodeficiency, asthma, malaria, migraine, psoriatic arthritis, SLE, Alzheimer's - no ocular disorder"
+    },
+    "HMOX1": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 6,
+      "eye_core": [],
+      "eye_incidental": [],
+      "by_category": 0,
+      "note": "CONTRADICTS DisGeNET, which annotates HMOX1 for Retinal Diseases"
+    },
+    "CASP3": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 1,
+      "eye_core": [],
+      "eye_incidental": [],
+      "by_category": 0,
+      "note": "one disorder, oesophageal cancer.  CONTRADICTS DisGeNET, which annotates CASP3 for diabetic retinopathy and retinal detachment"
+    },
+    "BCL2": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 17,
+      "eye_core": [],
+      "eye_incidental": [
+        "Lymphoma"
+      ],
+      "by_category": 1,
+      "note": "the single category tag is on Lymphoma, a blood disease"
+    },
+    "BAX": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 5,
+      "eye_core": [],
+      "eye_incidental": [],
+      "by_category": 0,
+      "note": "five disorders, all cancer; the inferred table lists Absolute Glaucoma"
+    },
+    "MAPK1": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 15,
+      "eye_core": [],
+      "eye_incidental": [
+        "Noonan Syndrome 13",
+        "Noonan Syndrome 1"
+      ],
+      "by_category": 2,
+      "note": "the category tag is on two Noonan syndromes, whose ocular features are facial findings rather than eye disease"
+    },
+    "IL6": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 10,
+      "eye_core": [],
+      "eye_incidental": [
+        "Parkinson's Disease"
+      ],
+      "by_category": 1,
+      "note": "no ocular disorder; the single tag is on Parkinson's Disease"
+    },
+    "STAT3": {
+      "source": "screenshot",
+      "complete": true,
+      "n_disorders": 37,
+      "eye_core": [],
+      "eye_incidental": [],
+      "by_category": 0,
+      "note": "37 disorders, all immunological, haematological or inflammatory; no ocular annotation"
+    }
+  },
+  "arms": {
+    "mitochondrial": [
+      "MFN2",
+      "SLC25A4",
+      "SDHB",
+      "DNM1L",
+      "OPA1",
+      "SDHA",
+      "CYCS",
+      "VDAC1",
+      "APAF1"
+    ],
+    "oxidative_stress": [
+      "TP53",
+      "SOD2",
+      "SLC7A11",
+      "GPX1",
+      "CAT",
+      "TXN",
+      "NQO1",
+      "GPX4",
+      "ACSL4"
+    ],
+    "inflammatory": [
+      "TNF",
+      "IL6",
+      "STAT3",
+      "NFE2L2",
+      "HMOX1",
+      "KEAP1",
+      "MAPK1",
+      "AKT1",
+      "BCL2",
+      "BAX",
+      "CASP3"
+    ]
+  },
+  "contradictions": {
+    "SLC7A11": "DisGeNET: 1 disease, no eye disease.  GeneCards: Retinal Disease.",
+    "HMOX1": "DisGeNET: Retinal Diseases.  GeneCards: 6 disorders, none ocular.",
+    "CASP3": "DisGeNET: diabetic retinopathy, retinal detachment.  GeneCards: oesophageal cancer only.",
+    "GPX4": "DisGeNET: no eye disease.  GeneCards: two ocular category tags, neither an eye disease."
+  }
+}

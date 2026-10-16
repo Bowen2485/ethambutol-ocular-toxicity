@@ -916,25 +916,64 @@ and 5, and MFN2 for optic atrophy and retinal dystrophies. Three genes whose pro
 act at the mitochondrion and are established causes of optic atrophy are detected as such, so
 the test can find what is there rather than matching anything.
 
-**Three genes at the centre of the proposed mechanism are absent, and this bounds the
-mechanism rather than supporting it.** GPX4 (15 annotated diseases), SLC7A11 (1) and ACSL4
-(15) carry **no eye-disease annotation at all**. The ferroptosis terminal machinery is
-therefore not annotated for ocular disease in any of the three sources consulted, whereas
-the mitochondrial and inflammatory nodes are. The correct reading is that the network's
-ocular evidence lies in its mitochondrial and inflammatory arm — OPA1, DNM1L, MFN2, TNF,
-TP53 — and that the ferroptosis finding rests on the enrichment of Section 3.8 and on the
-retinal expression data of Section 3.11, not on disease annotation. The manuscript's
-mechanistic claim does not require GPX4 to be an eye-disease gene, and it should not be read
-as though it did.
+**A manual GeneCards pass over 19 of the 33 hubs distinguishes which parts of the network
+carry ocular annotation and which do not.** GeneCards blocks automated access, so each gene's
+Disorders table was read from the web interface and recorded with its source, and the reads
+are complete tables rather than excerpts. Grouping the nodes by the process they belong to
+gives a clear separation:
 
-**A limitation of the sources.** GeneCards was queried and returned HTTP 403, and the
-DisGeNET REST interface is restricted for an academic plan to curated sources (CHEMBL,
-CLINGEN, CLINPGX, CLINVAR, GENCC, MGD_HUMAN, ORPHANET, PSYGENET, RGD_HUMAN, UNIPROT), which
-the API states in every response. The counts above are therefore floors rather than complete
-annotations, and a licensed DisGeNET subscription or a GeneCards licence would raise them.
-Two of the four comparator papers in this genre assemble disease targets from GeneCards and
-DisGeNET together; that combination was not available here, and the substitution is named
-rather than left implicit.
+| Network arm | Read | With an ocular disorder as a defining feature | Genes |
+|---|---|---|---|
+| **Mitochondrial** | 3 of 9 | **3** | MFN2, SLC25A4, SDHB |
+| **Oxidative stress** | 5 of 9 | **3** | TP53, SOD2, SLC7A11 |
+| **Inflammatory response** | **11 of 11** | **0** | TNF, IL6, STAT3, NFE2L2, HMOX1, KEAP1, MAPK1, AKT1, BCL2, BAX, CASP3 |
+| **Ferroptosis terminal enzymes** | 3 of 3 | 1 | SLC7A11 only; GPX4 and ACSL4 none |
+
+The mitochondrial nodes name the condition directly: MFN2 is annotated for hereditary motor
+and sensory neuropathy type VIA with optic atrophy, optic atrophy plus syndrome, optic atrophy
+1, retinal disease and retinitis pigmentosa 1; SLC25A4 for progressive external
+ophthalmoplegia with mitochondrial DNA deletions and for Kearns-Sayre syndrome, in which
+pigmentary retinopathy is a diagnostic criterion. The oxidative-stress nodes name ocular
+tumours and diabetic retinopathy. **The inflammatory arm is empty, and its emptiness is a
+complete result rather than a sampling artefact: all eleven genes assigned to it were read.**
+
+**This corrects a statement made earlier in this manuscript and in its own audit.** An
+earlier version of this section asserted that "GPX4, SLC7A11 and ACSL4 carry no eye-disease
+annotation at all". That came from DisGeNET, where it was true of the two databases queried,
+and GeneCards contradicts it: SLC7A11 is annotated for retinal disease. The corrected claim is
+narrower and is what the data across both databases support — the ocular annotation in this
+network sits with its mitochondrial and oxidative-stress nodes, and neither the
+inflammatory-response genes nor the ferroptosis terminal enzymes (GPX4, ACSL4) carry any,
+while SLC7A11, a cystine transporter rather than a terminal enzyme, does. The mechanism's
+ferroptosis component therefore rests on the enrichment of Section 3.8 and the retinal
+expression data of Section 3.11, not on disease annotation, and GPX4 need not be an
+eye-disease gene for the claim to hold.
+
+**The four disagreements between the two databases are themselves informative.** SLC7A11 is
+annotated for retinal disease in GeneCards and for a single disease in DisGeNET; HMOX1 is
+annotated for retinal diseases in DisGeNET and for six non-ocular disorders in GeneCards;
+CASP3 is annotated for diabetic retinopathy and retinal detachment in DisGeNET and only for
+oesophageal cancer in GeneCards; GPX4 is unannotated for eye disease in DisGeNET while
+GeneCards assigns two ocular category tags to conditions that are not eye diseases. In two of
+the four the direction reverses. A disease annotation is a property of a database's
+vocabulary and curation policy as much as of the biology, which is why the analysis reports
+both databases rather than pooling them into one figure.
+
+**A limitation of the sources, now measured rather than assumed.** GeneCards assigns each
+disorder a Categories field, and its "Eye diseases" tag is unreliable: it is applied to
+Lymphoma on the BCL2 page, to Melanoma and dyskeratosis congenita on the SDHB page, to
+Autism and Cowden syndrome on the AKT1 page, and to Noonan syndrome on the MAPK1 page. Across
+the 19 genes read, which between them carry 481 disorder entries, the tag marks 55
+gene–disorder pairs while matching the disorder name against ocular stems marks 20 — so the
+category would have made the hub set look between two and three times as ocular as it is.
+The disorder name is therefore the primary criterion here and the category is reported only
+as a caution. The DisGeNET REST interface under an academic plan is likewise restricted to
+curated sources (CHEMBL, CLINGEN, CLINPGX, CLINVAR, GENCC, MGD_HUMAN, ORPHANET, PSYGENET,
+RGD_HUMAN, UNIPROT), which the API states in every response, so those counts are floors
+rather than complete annotations. Two of the four comparator papers in this genre assemble
+disease targets from GeneCards and DisGeNET together; GeneCards did not permit automated
+retrieval here, so that combination was assembled by hand for the genes reported and not for
+the rest.
 
 ### 3.9 Docking shows which network nodes ethambutol can occupy directly
 

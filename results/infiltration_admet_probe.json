@@ -1,0 +1,74 @@
+{
+  "venn": {
+    "hubs": 33,
+    "ocular_genes": 184,
+    "hub_in_ocular": 5,
+    "hub_genes_in_overlap": [
+      "CAT",
+      "HMOX1",
+      "OPA1",
+      "SOD2",
+      "TNF"
+    ],
+    "optic_union": 25,
+    "hub_in_optic": 2
+  },
+  "probes": [
+    {
+      "label": "CIBERSORTx",
+      "url": "https://cibersortx.stanford.edu/",
+      "status": 200,
+      "bytes": 13434,
+      "challenge": false,
+      "sample": "<!DOCTYPE html> <html lang=\"en\">   <head>     <meta charset=\"utf-8\">     <!--meta name=\"robots\" content=\"noindex\" -->   "
+    },
+    {
+      "label": "xCell (R package page)",
+      "url": "https://bioconductor.org/packages/xCell/",
+      "status": 200,
+      "bytes": 81094,
+      "challenge": false,
+      "sample": "<!DOCTYPE html><html dir=\"ltr\" lang=\"en-US\"> <head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-wid"
+    },
+    {
+      "label": "TIMER2.0 web",
+      "url": "http://timer.cistrome.org/",
+      "status": 200,
+      "bytes": 101892,
+      "challenge": false,
+      "sample": "<!DOCTYPE html> <html> <head>   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>   <script type=\"app"
+    },
+    {
+      "label": "SwissADME",
+      "url": "http://www.swissadme.ch/",
+      "status": 200,
+      "bytes": 42909,
+      "challenge": false,
+      "sample": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\"> <html lang='en'> "
+    },
+    {
+      "label": "pkCSM",
+      "url": "https://biosig.lab.uq.edu.au/pkcsm/",
+      "status": 200,
+      "bytes": 8093,
+      "challenge": false,
+      "sample": " <!DOCTYPE html>  <html lang=\"en\"> <head>    <meta charset=\"utf-8\"> <title>pkCSM</title> <meta name=\"viewport\" content=\""
+    },
+    {
+      "label": "ADMETlab 3.0",
+      "url": "https://admetlab3.scbdd.com/",
+      "status": 200,
+      "bytes": 28810,
+      "challenge": false,
+      "sample": " <!DOCTYPE html> <html lang=\"\"> <head>     <link rel=\"shortcut icon\" href=\"/static/favicon.ico\"/>     <meta http-equiv=\""
+    },
+    {
+      "label": "PubChem ethambutol",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ethambutol/property/MolecularFormula,MolecularWeight,XLogP,TPSA,HBondDonorCount,HBondAcceptorCount,RotatableBondCount,CanonicalSMILES/JSON",
+      "status": 200,
+      "bytes": 364,
+      "challenge": false,
+      "sample": "{   \"PropertyTable\": {     \"Properties\": [       {         \"CID\": 14052,         \"MolecularFormula\": \"C10H24N2O2\",      "
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "pubchem": {
+    "CID": 14052,
+    "MolecularFormula": "C10H24N2O2",
+    "MolecularWeight": "204.31",
+    "ConnectivitySMILES": "CCC(CO)NCCNC(CC)CO",
+    "XLogP": -0.1,
+    "TPSA": 64.5,
+    "Complexity": 109,
+    "HBondDonorCount": 4,
+    "HBondAcceptorCount": 4,
+    "RotatableBondCount": 9,
+    "HeavyAtomCount": 14
+  },
+  "rules": [
+    {
+      "rule": "Lipinski rule of five",
+      "pass": true,
+      "detail": "MW 204.3<=500, XLogP -0.10<=5, HBD 4<=5, HBA 4<=10"
+    },
+    {
+      "rule": "Veber oral bioavailability",
+      "pass": true,
+      "detail": "rotatable bonds 9<=10, TPSA 64.5<=140"
+    },
+    {
+      "rule": "Ghose filter",
+      "pass": true,
+      "detail": "MW 204.3, XLogP -0.10, rot 9"
+    },
+    {
+      "rule": "CNS penetration by TPSA",
+      "pass": true,
+      "detail": "TPSA 64.5; values below 90 are associated with CNS penetration, above 120 with poor penetration"
+    },
+    {
+      "rule": "Blood-brain barrier estimate (CNS MPO-style)",
+      "pass": true,
+      "detail": "XLogP -0.10, TPSA 64.5"
+    }
+  ],
+  "known_from_docking": {
+    "heavy atoms": 14,
+    "rotatable bonds": 9,
+    "SMILES used for docking": "CC[C@H](CO)NCCN[C@C@H](CC)CO"
+  },
+  "source": "PubChem REST, property endpoint",
+  "correction": "An earlier draft of this section stated that the profile fails the descriptors for barrier penetration, which contradicted the rule table computed from the same numbers.  All five rules pass, and the text now reports that.",
+  "rules_passed": 5,
+  "rules_total": 5
+}

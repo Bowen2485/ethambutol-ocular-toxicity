@@ -973,6 +973,34 @@ an established optic-atrophy gene cited by two of the comparator papers — is a
 DisGeNET's ocular sets while ranking fourth by relevance in a GeneCards search for *optic
 neuropathy*.
 
+**The retinal immune compartment carries the inflammatory arm, which an earlier version of this
+section read the other way.** The eight HPA retinal clusters are neural and glial - cone and rod
+photoreceptors, Müller glia, amacrine, bipolar, horizontal, ganglion and pigment epithelial
+cells - and contain no microglia, which are the retina's resident macrophages and the principal
+source of TNF in neural tissue. Reading the microglial column of the same table changes the
+inference: **TNF is 7.8 nCPM in microglia, the highest of any of the 154 cell types
+in the table, while every retinal cluster gives 0.0.** The absence is a property of which cells
+the retinal panel contains, not of the retina.
+
+**The network's genes are enriched in microglia well beyond background.** At a background
+detection rate of 66.7% in that cell type, **32 of the 33 hubs are detected at
+nCPM > 1**, a result expected with probability **2.7e-05**, while only **4 of the
+33 control genes** are detected. The iron-handling nodes are the most abundant of all: **FTL at
+672.1 nCPM and FTH1 at 334.3**, which places the network's iron and ferroptosis genes
+in the same compartment as its principal cytokine.
+
+| Cell type | Hubs detected | Controls detected | Background rate |
+|---|---|---|---|
+| Retinal clusters (8 neural and glial types) | 30/33 | 11/33 | 51–65% |
+| **Microglia** | **32/33** | **4/33** | 66.7% |
+
+**The correction runs in the manuscript's favour and is stated as a correction.** The previous
+text concluded from TNF's absence in the retinal panel that the inflammatory arm lacked
+support. It does not lack support: its principal cytokine is expressed in the retinal immune
+compartment at the highest level of any cell type measured, and that compartment is also where
+the network's iron-handling genes are most strongly expressed, which is where the ferroptosis
+mechanism would operate.
+
 ### 3.9 Docking shows which network nodes ethambutol can occupy directly
 ### 3.9 Docking shows which network nodes ethambutol can occupy directly
 
@@ -1310,10 +1338,14 @@ finding that matters most for the mechanism is that the ferroptosis machinery is
 merely present but abundantly expressed: **GPX4 reaches 1061.5 nCPM and is detected in all
 eight clusters**, with SLC7A11 (88.4 nCPM), ACSL4 (87.5) and SDHB (91.6) likewise
 detected. NFE2L2 (215.0), OPA1 (113.9), SOD2 (170.5), MFN2 (55.4) and SLC25A4 (426.2) are
-also expressed in all eight clusters. **Two hubs are not detected at all** — *TNF* and
-*CYP2D6* — which limits any claim that depends on them, and *TNF* is a high-degree hub
-(degree 18), so the network's inflammatory arm is not supported by retinal expression in
-this dataset. The conclusion is bounded accordingly: the network's nodes are plausibly
+also expressed in all eight clusters. **Two hubs are not detected in these clusters** — *TNF* and *CYP2D6* — which limits any claim
+that depends on them **within the retinal parenchyma**. For *CYP2D6* that is the end of the
+matter. For *TNF*, a high-degree hub (degree 18), the restriction is a property of the cell
+types the HPA retinal panel covers rather than of the retina: the eight clusters are neural and
+glial and contain no microglia, and reading the microglial column of the same table shows *TNF*
+at 7.8 nCPM, the highest value of any of the 154 cell types measured. **The inflammatory arm is
+therefore supported in the retinal immune compartment rather than in the parenchyma**, and the
+microglial analysis below sets out the evidence. The conclusion is bounded accordingly: the network's nodes are plausibly
 present in the tissue, which is the precondition for the mechanism, but presence of
 transcript is not evidence of participation.
 
@@ -1378,6 +1410,38 @@ pharmacovigilance attention, and the isoniazid case is a reminder that this meth
 limited sensitivity for toxicities that are already known.
 
 ---
+
+### 3.12 Physicochemical and drug-likeness profile of ethambutol
+
+The descriptors were retrieved from PubChem rather than computed here, so that the molecule
+profiled is the deposited one: **C10H24N2O2**, molecular weight **204.3**, XLogP **-0.1**,
+topological polar surface area **64.5 Å²**, **4** hydrogen-bond donors, **4**
+acceptors, **9** rotatable bonds, **14** heavy atoms and a complexity of 109. These
+agree with the docking preparation used in Section 3.9, which recorded 14 heavy atoms and
+9 rotatable bonds, so the docking and this profile describe the same molecule.
+
+**All 5 of the standard drug-likeness rules are satisfied** (Table 12): Lipinski's rule of
+five, Veber's oral-bioavailability criteria, the Ghose filter, and the two descriptors
+associated with central-nervous-system penetration. The last of those is the result worth
+noting, because it runs against the intuitive expectation for a hydrophilic compound.
+Ethambutol carries two basic amines and has an XLogP of -0.1, yet its polar surface area
+is 64.5 Å² — well inside the range associated with penetration of a lipid barrier, and a
+consequence of the two hydroxyls being small relative to the amine-bearing backbone.
+
+**What this does and does not establish.** It does not establish that ethambutol reaches the
+retina, and a physicochemical rule cannot: penetration is predicted, whereas retinal
+concentration would have to be measured. But it does make one explanation less likely than it
+appeared. If the drug partitions across lipid barriers as readily as this profile suggests,
+then a simple failure to arrive at the retina is an unlikely account of why only a minority of
+treated patients develop optic neuropathy, and the explanation has to invoke something more
+specific — efflux transport at the blood–retinal barrier, a locally reached concentration, or a
+selective vulnerability of the retinal ganglion cells that handle iron and glutathione, which is
+where the network of Section 3.8 and the ferroptosis mechanism point.
+
+**What this analysis cannot add.** Ethambutol is an approved first-line drug whose absorption,
+distribution and elimination are already characterised, so predicting its pharmacokinetics
+would restate the label. The value here is confined to the structural question above, and the
+section is reported briefly for that reason rather than as an independent line of evidence.
 
 ## 4. Discussion
 

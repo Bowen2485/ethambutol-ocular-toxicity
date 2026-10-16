@@ -355,8 +355,25 @@ while i < body_end:
         i += 1
         continue
 
-    out.append(inline(ln))
-    i += 1
+    # A markdown paragraph is several consecutive source lines, and emphasis can span the
+    # breaks between them.  Converting one line at a time therefore fails wherever a bold run
+    # opens on one line and closes on the next, which happened 69 times and left literal
+    # asterisks in the compiled text.  Consecutive non-blank lines that are not headings,
+    # table rows or rules are gathered and joined into one paragraph before conversion, so the
+    # emphasis regex sees the whole run.  Joining also removes the hard wraps, which LaTeX
+    # treats as spaces anyway.
+    para = [stripped]
+    j = i + 1
+    while j < body_end:
+        nxt = LINES[j]
+        ns = nxt.strip()
+        if (not ns or ns in ("---", "***", "___") or ns.startswith("#")
+                or is_row(nxt)):
+            break
+        para.append(ns)
+        j += 1
+    out.append(inline(" ".join(para)))
+    i = j
 
 body_tex = "\n".join(out)
 body_tex = re.sub(r"\n{3,}", "\n\n", body_tex)
@@ -366,13 +383,29 @@ body_tex = re.sub(r"\n{3,}", "\n\n", body_tex)
 abs_start = next((i for i, ln in enumerate(LINES) if ln.startswith("## Abstract")), 23)
 abs_end = next((i for i, ln in enumerate(LINES) if ln.startswith("**Keywords")), 100)
 abs_lines = [l for l in LINES[abs_start + 1:abs_end] if l.strip()]
-abs_parts: list[str] = []
+#: The abstract is wrapped across source lines too, and a bold run in it spans a break, so
+#: the same paragraph joining has to be applied here. Joining first and stripping the
+#: per-line emphasis independently is what left a literal ** pair in the abstract while the
+#: body was fixed.
+_abs_paras: list[str] = []
+_buf: list[str] = []
 for l in abs_lines:
-    m = re.match(r"^\*\*(.+?)\.\*\*\s*(.*)$", l.strip())
+    m = re.match(r"^\*\*(Background|Methods|Results|Conclusions?)\.\*\*", l.strip())
+    if m and _buf:
+        _abs_paras.append(" ".join(_buf))
+        _buf = [l.strip()]
+    else:
+        _buf.append(l.strip())
+if _buf:
+    _abs_paras.append(" ".join(_buf))
+
+abs_parts: list[str] = []
+for para in _abs_paras:
+    m = re.match(r"^\*\*(.+?)\.\*\*\s*(.*)$", para, re.S)
     if m:
         abs_parts.append(r"\section{" + m.group(1) + "} " + inline(m.group(2)))
     else:
-        abs_parts.append(inline(l.strip()))
+        abs_parts.append(inline(para))
 kw_line = LINES[abs_end] if abs_end < len(LINES) else ""
 kw = re.sub(r"^\*\*Keywords\.\*\*\s*", "", kw_line).strip()
 kw = kw.replace(";", ",")

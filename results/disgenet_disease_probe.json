@@ -1,0 +1,44 @@
+{
+  "UMLS_C0029134": {
+    "label": "Optic Nerve Diseases",
+    "total": 10,
+    "ok": true,
+    "error": null
+  },
+  "UMLS_C0029139": {
+    "label": "Optic Neuritis",
+    "total": 0,
+    "ok": false,
+    "error": null
+  },
+  "UMLS_C0151876": {
+    "label": "Optic Atrophy",
+    "total": 0,
+    "ok": false,
+    "error": null
+  },
+  "UMLS_C0271084": {
+    "label": "Optic Neuropathy",
+    "total": 18,
+    "ok": true,
+    "error": null
+  },
+  "UMLS_C0015397": {
+    "label": "Eye Diseases",
+    "total": 16,
+    "ok": true,
+    "error": null
+  },
+  "UMLS_C0035309": {
+    "label": "Retinal Diseases",
+    "total": 146,
+    "ok": true,
+    "error": null
+  },
+  "UMLS_C0015396": {
+    "label": "Eye",
+    "total": 0,
+    "ok": false,
+    "error": null
+  }
+}

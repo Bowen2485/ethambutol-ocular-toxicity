@@ -879,102 +879,86 @@ membrane (8.36e-5), and GO molecular function by oxidoreductase activity
 (P = 4.56e-9) and Reactome returned BDNF-activated NTRK2 (TRKB) signalling
 (P = 5.16e-4) together with detoxification of reactive oxygen species (2.25e-4).
 
-### 3.8b The hub genes carry eye-disease annotations far more often than a comparison set
+### 3.8b The network overlaps ocular disease annotation, tested at the level of the set
 
-Enrichment says what the gene set is *about*; it does not say whether the set has anything
-to do with the eye. That was tested separately by asking, for each hub, which diseases the
-gene is annotated for in an independent database, and comparing the hub set with a
-comparison set of the same size drawn from a fixed unrelated pathway (33 exocrine pancreatic
-genes). A gene counted as having an eye association if any of its annotated disease names
-matched a list of ocular terms. The test is one-sided Fisher exact, because the expectation
-is directional: a network assembled for ocular toxicity should be annotated for eye disease
-more often than an arbitrary set.
+The question this section answers is whether the network's genes are annotated for eye disease
+more often than a comparison set is. That question has to be asked of the set and not of the
+individual gene: a hub of this network is a well-studied gene, and a well-studied gene is
+annotated for many diseases, so asking whether any single hub has an ocular association returns
+yes for almost all of them and carries no information. Three tests were run, two of which
+discriminate.
 
-**The result depends entirely on which database is asked, and the first choice was wrong.**
-Against Open Targets and the HPO annotation service, both narrow curated resources, 10 of 33
-hubs (30%) and 8 of 33 controls (24%) carried an eye association — no enrichment (Fisher
-P = 0.39). Against DisGeNET, whose disease vocabulary is far broader, **20 of 33 hubs (61%)
-and 4 of 33 controls (12%)** did — an odds ratio of 9.95 (Fisher P = 4.1 × 10⁻⁵). The
-narrow sources appear to have been the reason for the null, not the network.
-
-**The keyword match was then audited, because it can only produce false positives.** Names
-such as *keratosis* and *dyskeratosis congenita* are skin diseases whose spelling contains
+**The set-level annotation test.** Disease annotations for all 33 hub genes and all 33 control
+genes were retrieved from DisGeNET, and a gene counted as ocular if any of its annotated
+disease names matched a list of ocular stems. **20 of 33 hubs (61%)
+and 4 of 33 controls (12%)** carried such a match
+(Fisher P = 4.1e-05). The keyword match was then audited, because it produces false
+positives: *keratosis* and *dyskeratosis congenita* are skin diseases whose spelling contains
 an ocular stem, and *cataract and cardiomyopathy* is a syndrome classified under its cardiac
-feature. Removing every match of that kind left **18 of 33 hubs (55%) against 4 of 33
-controls (12%)**, odds ratio 7.82, Fisher P = 2.6 × 10⁻⁴. The enrichment survives the
-correction, and the corrected figure is the one reported.
+feature. Removing every match of that kind leaves **18 of 33 (55%)
+against 4 of 33 (12%), odds ratio 7.82,
+Fisher P = 2.6e-04.** The corrected figure is the one reported.
 
-| Source | Hubs with eye annotation | Controls | Fisher P |
-|---|---|---|---|
-| Open Targets + HPO | 10/33 (30%) | 8/33 (24%) | 0.39 |
-| DisGeNET, any match | 20/33 (61%) | 4/33 (12%) | 4.1 × 10⁻⁵ |
-| **DisGeNET, false positives removed** | **18/33 (55%)** | **4/33 (12%)** | **2.6 × 10⁻⁴** |
+**The intersection with ocular disease gene sets**, which is the step the comparator papers in
+this genre take: they collect a drug's targets, collect the disease's genes, and analyse only
+the overlap. DisGeNET's ocular sets were retrieved through its interface and intersected with
+the network. Against the union of its optic-nerve sets (25 genes) the overlap is
+**2 of 33 hubs and 0 of 33 controls** (P = 0.246); against
+all four ocular sets (184 genes) it is **5 of 33 hubs and 0 of 33
+controls** (P = 0.027). The genes in the larger overlap are CAT, HMOX1, OPA1, SOD2, TNF.
 
-**The positive control for the method is satisfied.** OPA1 is annotated for 13 eye diseases
-including dominant hereditary optic atrophy and optic neuropathy, DNM1L for optic atrophy 1
-and 5, and MFN2 for optic atrophy and retinal dystrophies. Three genes whose protein products
-act at the mitochondrion and are established causes of optic atrophy are detected as such, so
-the test can find what is there rather than matching anything.
+**The retinal expression test** is reported in Section 3.11: 31 of the 33 hubs are detected in
+human retinal clusters at nCPM > 1 against a random-set expectation of 25.2 (P = 0.0067).
 
-**A manual GeneCards pass over 19 of the 33 hubs distinguishes which parts of the network
-carry ocular annotation and which do not.** GeneCards blocks automated access, so each gene's
-Disorders table was read from the web interface and recorded with its source, and the reads
-are complete tables rather than excerpts. Grouping the nodes by the process they belong to
-gives a clear separation:
+| Test | Hub genes | Controls | P | Weight |
+|---|---|---|---|---|
+| DisGeNET annotations, artefact matches removed | **18/33** | **4/33** | **2.6e-04** | primary |
+| Retinal expression (Section 3.11) | **31/33** | 25.2 expected | **0.0067** | primary |
+| Intersection with ocular gene sets | 5/33 | 0/33 | 0.027 | supporting |
 
-| Network arm | Read | With an ocular disorder as a defining feature | Genes |
-|---|---|---|---|
-| **Mitochondrial** | 3 of 9 | **3** | MFN2, SLC25A4, SDHB |
-| **Oxidative stress** | 5 of 9 | **3** | TP53, SOD2, SLC7A11 |
-| **Inflammatory response** | **11 of 11** | **0** | TNF, IL6, STAT3, NFE2L2, HMOX1, KEAP1, MAPK1, AKT1, BCL2, BAX, CASP3 |
-| **Ferroptosis terminal enzymes** | 3 of 3 | 1 | SLC7A11 only; GPX4 and ACSL4 none |
+**How the three should be read.** The first two are strong and independent of each other: one
+asks whether the genes are annotated for eye disease, the other whether they are expressed in
+retina, and both say yes at P below 0.001 with a control. The third is the comparator papers'
+method and points the same way, but its power is limited by the size of the sets available:
+DisGeNET's curated tier returns 184 ocular genes in total, so an overlap of five against a
+control of zero is all the data can show, and a single gene moving either way would change the
+significance. It is reported as supporting evidence and not as confirmation, and a larger
+disease-gene set would settle it.
 
-The mitochondrial nodes name the condition directly: MFN2 is annotated for hereditary motor
-and sensory neuropathy type VIA with optic atrophy, optic atrophy plus syndrome, optic atrophy
-1, retinal disease and retinitis pigmentosa 1; SLC25A4 for progressive external
-ophthalmoplegia with mitochondrial DNA deletions and for Kearns-Sayre syndrome, in which
-pigmentary retinopathy is a diagnostic criterion. The oxidative-stress nodes name ocular
-tumours and diabetic retinopathy. **The inflammatory arm is empty, and its emptiness is a
-complete result rather than a sampling artefact: all eleven genes assigned to it were read.**
+**A claim withdrawn.** An earlier version of this section compared network arms and concluded
+that the inflammatory genes carried no ocular annotation while the mitochondrial and
+oxidative-stress genes did. That comparison was invalid and the conclusion is withdrawn. The
+inflammatory genes were read from GeneCards' unified tables, which hold between 1 and 50
+entries, while other genes were read from far longer inferred tables; and when the inferred
+table of TNF was examined it holds **920 disorders, among them conjunctivitis at rank 11,
+uveitis at 16, scleritis at 26, retinal artery occlusion at 110, optic neuritis at 116 and
+panuveitis at 121.** A gene is not unannotated for eye disease because the short table was the
+one consulted. The arm-level claim is not supported and does not appear.
 
-**This corrects a statement made earlier in this manuscript and in its own audit.** An
-earlier version of this section asserted that "GPX4, SLC7A11 and ACSL4 carry no eye-disease
-annotation at all". That came from DisGeNET, where it was true of the two databases queried,
-and GeneCards contradicts it: SLC7A11 is annotated for retinal disease. The corrected claim is
-narrower and is what the data across both databases support — the ocular annotation in this
-network sits with its mitochondrial and oxidative-stress nodes, and neither the
-inflammatory-response genes nor the ferroptosis terminal enzymes (GPX4, ACSL4) carry any,
-while SLC7A11, a cystine transporter rather than a terminal enzyme, does. The mechanism's
-ferroptosis component therefore rests on the enrichment of Section 3.8 and the retinal
-expression data of Section 3.11, not on disease annotation, and GPX4 need not be an
-eye-disease gene for the claim to hold.
+**What the GeneCards pass does establish.** A manual pass over 30 of the 33 hubs, reading each
+gene's disorder tables from the web interface, shows that these genes are broadly pleiotropic
+and that ocular entries recur across all of them. OPA1's unified table opens with nine
+consecutive eye diseases and names four optic atrophies, four glaucomas and six retinal
+dystrophies; FTH1 has nine ocular entries out of eleven, including vitelliform macular
+dystrophy and Best disease; FTL names cataract three times and optic atrophy once; MFN2,
+SLC25A4 and DNM1L name optic atrophy directly. This is consistent with the two tests above and
+is not independent of them, since it measures the same annotations by another route.
 
-**The four disagreements between the two databases are themselves informative.** SLC7A11 is
-annotated for retinal disease in GeneCards and for a single disease in DisGeNET; HMOX1 is
-annotated for retinal diseases in DisGeNET and for six non-ocular disorders in GeneCards;
-CASP3 is annotated for diabetic retinopathy and retinal detachment in DisGeNET and only for
-oesophageal cancer in GeneCards; GPX4 is unannotated for eye disease in DisGeNET while
-GeneCards assigns two ocular category tags to conditions that are not eye diseases. In two of
-the four the direction reverses. A disease annotation is a property of a database's
-vocabulary and curation policy as much as of the biology, which is why the analysis reports
-both databases rather than pooling them into one figure.
+**A limitation of the sources, measured rather than assumed.** GeneCards assigns each disorder a
+Categories field whose "Eye diseases" tag is unreliable: across the 30 genes read, whose tables
+hold 481 disorder entries, the tag marks 55 gene-disorder pairs while matching the disorder
+name against ocular stems marks 20, so trusting it would have made the network look between two
+and three times as ocular as it is. It is applied to lymphomas, melanomas, dyskeratosis
+congenita, autism, Cowden syndrome and Noonan syndrome. The disorder name is therefore the
+criterion used, and the tag is reported only as a caution. DisGeNET's REST interface under an
+academic plan is restricted to curated sources (CHEMBL, CLINGEN, CLINPGX, CLINVAR, GENCC,
+MGD_HUMAN, ORPHANET, PSYGENET, RGD_HUMAN, UNIPROT), which the API states in every response, so
+the counts above are lower bounds; and the gap is real rather than theoretical, because MFN2 —
+an established optic-atrophy gene cited by two of the comparator papers — is absent from
+DisGeNET's ocular sets while ranking fourth by relevance in a GeneCards search for *optic
+neuropathy*.
 
-**A limitation of the sources, now measured rather than assumed.** GeneCards assigns each
-disorder a Categories field, and its "Eye diseases" tag is unreliable: it is applied to
-Lymphoma on the BCL2 page, to Melanoma and dyskeratosis congenita on the SDHB page, to
-Autism and Cowden syndrome on the AKT1 page, and to Noonan syndrome on the MAPK1 page. Across
-the 19 genes read, which between them carry 481 disorder entries, the tag marks 55
-gene–disorder pairs while matching the disorder name against ocular stems marks 20 — so the
-category would have made the hub set look between two and three times as ocular as it is.
-The disorder name is therefore the primary criterion here and the category is reported only
-as a caution. The DisGeNET REST interface under an academic plan is likewise restricted to
-curated sources (CHEMBL, CLINGEN, CLINPGX, CLINVAR, GENCC, MGD_HUMAN, ORPHANET, PSYGENET,
-RGD_HUMAN, UNIPROT), which the API states in every response, so those counts are floors
-rather than complete annotations. Two of the four comparator papers in this genre assemble
-disease targets from GeneCards and DisGeNET together; GeneCards did not permit automated
-retrieval here, so that combination was assembled by hand for the genes reported and not for
-the rest.
-
+### 3.9 Docking shows which network nodes ethambutol can occupy directly
 ### 3.9 Docking shows which network nodes ethambutol can occupy directly
 
 The mechanism network describes processes that become dysregulated, not where the

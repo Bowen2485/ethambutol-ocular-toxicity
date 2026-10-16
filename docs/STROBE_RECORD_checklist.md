@@ -64,7 +64,7 @@ integrated computational mechanism analysis.
 | 19 | Limitations | Discussion 4.6 | ✅ |
 | 20 | Interpretation, comparison with other studies | Discussion 4.2–4.5 | ✅ |
 | 21 | Generalisability | Discussion 4.5–4.6 | ✅ |
-| 22 | Funding | To be inserted by the authors | ⬜ |
+| 22 | Funding | Statements — "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors" | ✅ |
 | 23 | Data availability | Data availability statement | ✅ |
 
 ---

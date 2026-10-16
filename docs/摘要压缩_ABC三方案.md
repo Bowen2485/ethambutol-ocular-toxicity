@@ -1,8 +1,9 @@
 # 摘要压缩：三个方案
 
-> **✅ 已采用方案 A（2026-10-17）**，并已写入中英两版稿件与 `submission/abstract_rewritten.json`；
+> **✅ 已采用方案 A（2026-10-16）**，并已写入中英两版稿件与 `submission/abstract_rewritten.json`；
 > 应用脚本 `src/apply_abstract_and_title.py`（可重跑）。
-> 最终为 **350 词**，比下表多 1 词，原因是把摘要里的"在任何比较中"改为
+> 最终实测为 **353 词**（对 `manuscript/Ethambutol_EyeTox_EN_full.md` 摘要段按空白分词统计），
+> 略超 Frontiers 约 350 词的上限，建议再删 5–10 词；超出下表的原因是把摘要里的"在任何比较中"改为
 > **"在同类药内部比较中"**——1.15 这组数值出自 `faers_withinclass_signals.csv`，
 > 而 Table 2 与正文 §3.2 引用的 1.82 出自全库比较；原来的措辞会让读者以为摘要写错了。
 > 若需要留出余量，改用 C（303 词）只需替换 `apply_abstract_and_title.py` 中的 EN_PARTS／CN_PARTS。

@@ -69,6 +69,12 @@ print()
 print("=" * 100)
 print("4. Version parity")
 print("=" * 100)
+#: The reference-count sentinel is derived from the reference list rather than
+#: hard-coded.  It was written when the paper had 28 references and went stale when
+#: the list grew to 32, so the check reported a false mismatch on every run.
+_refs = (MS / "references_en.md").read_text(encoding="utf-8")
+N_REFS = len(re.findall(r"^\s*\d+\.\s", _refs, flags=re.M))
+
 PAIRS = [
     ("de-duplicated cases", "20,328,568", "20 328 568"),
     ("ethambutol cases (toxicology)", "13,804", "13 804"),
@@ -80,7 +86,7 @@ PAIRS = [
     ("STROBE", "STROBE", "STROBE"),
     ("RECORD-PE", "RECORD-PE", "RECORD-PE"),
     ("GAFF-2.11", "GAFF-2.11", "GAFF-2.11"),
-    ("reference count", "28.", "28 条"),
+    ("reference count", f"{N_REFS}.", f"{N_REFS} 条"),
 ]
 for label, en_k, cn_k in PAIRS:
     e, c = en_k in EN, cn_k in CN

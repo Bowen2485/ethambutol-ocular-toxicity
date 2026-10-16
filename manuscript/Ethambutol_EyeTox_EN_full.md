@@ -121,7 +121,7 @@ Docking gives a static score, so the poses that ranked highest were tested for s
 
 Receptors were the cleaned structures used for docking, from which non-templateable residues and crystallisation additives had been removed, with cofactors extracted separately. Systems were built with OpenMM 8.6.1 and openmmforcefields: amber14SB for the protein, TIP3P for water and GAFF-2.11 for ethambutol, whose partial charges came from AM1-BCC through AmberTools. Missing atoms and hydrogens were added with PDBFixer at pH 7.4; the receptor was solvated in a truncated octahedral box with 1.0 nm padding and 0.15 M NaCl, and the ligand was inserted into the solvent afterwards, because the solvent-adding step builds a system internally and cannot template a residue whose charges it has not been given. Each system was energy-minimised, equilibrated for 100 ps at constant volume and then 400 ps at constant pressure, and run for 1 ns of unrestrained production with a 2 fs timestep, a Langevin middle thermostat at 300 K and a Monte Carlo barostat at 1 bar, on the CUDA platform in mixed precision, with coordinates written every 10 ps.
 
-Pose stability was judged on four quantities, all measured during production: the ligand RMSD, the receptor backbone RMSD, the fraction of the starting ligand–receptor contacts that survive, and the ligand radius of gyration. A contact was a ligand–protein atom pair within 0.45 nm, enumerated from the first frame written rather than inferred from a neighbour search, so the definition does not depend on library conventions. **Every frame is imaged with `image_molecules` before any quantity is computed.** This is not a refinement but a requirement: the trajectory is written in a 78.5 Å box and molecules cross its boundary during the run, so a difference of raw coordinates can be displaced by a whole box vector. The original analysis omitted this step and superposed un-imaged coordinates, which produced displacements of up to 97 Å where the physical motion is a few ångströms and inverted the conclusion (Section 3.9b records the comparison). After imaging, the ligand and receptor RMSDs are measured after least-squares superposition on the receptor backbone, and contacts and the minimum ligand–protein distance are computed under the minimum-image convention per atom pair. A pose was called retained only if the minimum ligand–protein distance over the second half stayed below 4.5 Å **and** the contact count did not fall below half its starting value — neither of which imaging can manufacture, unlike a centroid drift, which is what the first version tested. Two reference structures are involved and are not interchangeable: contacts are defined against the first frame written, the state the equilibration was launched from and so the closest available approximation to the docked pose, whereas every production metric is measured against the first frame **after** equilibration, so that the reported ligand RMSD describes production behaviour rather than how far equilibration had already carried the ligand. The offset between the two is computed and reported, because an RMSD quoted against the post-equilibration state cannot by itself be compared with the docked pose. A trajectory is also matched to its topology by atom count before analysis, because `addSolvent` is not reproducible between builds and a trajectory left by an earlier attempt has a different particle count.
+Pose stability was judged on four quantities, measured over the analysed window of each trajectory — the unrestrained production segment where a run reached one, and otherwise the equilibration phases actually completed, labelled per target in Section 3.9b: the ligand RMSD, the receptor backbone RMSD, the fraction of the starting ligand–receptor contacts that survive, and the ligand radius of gyration. A contact was a ligand–protein atom pair within 0.45 nm, enumerated from the first frame written rather than inferred from a neighbour search, so the definition does not depend on library conventions. **Every frame is imaged with `image_molecules` before any quantity is computed.** This is not a refinement but a requirement: the trajectory is written in a 78.5 Å box and molecules cross its boundary during the run, so a difference of raw coordinates can be displaced by a whole box vector. The original analysis omitted this step and superposed un-imaged coordinates, which produced displacements of up to 97 Å where the physical motion is a few ångströms and inverted the conclusion (Section 3.9b records the comparison). After imaging, the ligand and receptor RMSDs are measured after least-squares superposition on the receptor backbone, and contacts and the minimum ligand–protein distance are computed under the minimum-image convention per atom pair. A pose was called retained only if the minimum ligand–protein distance over the second half stayed below 4.5 Å **and** the contact count did not fall below half its starting value — neither of which imaging can manufacture, unlike a centroid drift, which is what the first version tested. Two reference structures are involved and are not interchangeable: contacts are defined against the first frame written, the state the equilibration was launched from and so the closest available approximation to the docked pose, whereas every metric of a production window is measured against the first frame **after** equilibration, so that a reported ligand RMSD describes production behaviour rather than how far equilibration had already carried the ligand. The offset between the two is computed and reported, because an RMSD quoted against the post-equilibration state cannot by itself be compared with the docked pose. A trajectory is also matched to its topology by atom count before analysis, because `addSolvent` is not reproducible between builds and a trajectory left by an earlier attempt has a different particle count.
 
 ### 2.7 Robustness analyses
 
@@ -343,24 +343,6 @@ Within the ethambutol cases, **971 (7.03%)** reported at least one ocular event 
 **475 (3.44%)** at least one optic-nerve event. The median age was 51 years
 (interquartile range 33-68) and 5,987 of 12,312 cases with a recorded sex (48.6%)
 were female.
-
-**Note on the two case counts reported in this paper.** Two ethambutol case
-counts appear and they are not the same quantity. The toxicological analyses use
-13,804 de-duplicated cases in which a drug line matches the string ETHAMBUTOL; this
-is the case set behind the whole-database odds ratios and all case-level models. The
-within-class comparison uses 15,573 cases, because comparing drugs with each other
-requires the salt and brand variants of one molecule to be merged - DEXAMBUTOL,
-MYAMBUTOL, ETHAMBUTOL HYDROCHLORIDE, ETHAMBUTOL DIHYDROCHLORIDE, ETHAMBUTOL HCL and
-ETAMBUTOL - otherwise a single molecule is split across several entries and its rank
-is driven by whichever variant happens to carry the most events. Merging adds 1,769
-cases and 18 optic-neuropathy cases, and reduces the whole-database odds ratio for
-optic neuropathy from 159.21 to 121.43; no conclusion depends on the choice. A third,
-more permissive definition - also accepting the drug when it appears on a
-non-surviving version of a re-submitted report - was tested and rejected: establishing
-exposure through a caseid join rather than through the surviving report inflates the
-exposed set to 251,793 cases, which is an artefact of the join rather than a valid
-exposure definition. The sensitivity analysis is in
-results/faers_exposure_sensitivity.csv.
 
 ### 3.2 The ocular phenotype resolves into a highly specific optic-nerve signal
 
@@ -950,7 +932,6 @@ compartment at the highest level of any cell type measured, and that compartment
 the network's iron-handling genes are most strongly expressed, which is where the ferroptosis
 mechanism would operate.
 
-### 3.9 Docking shows which network nodes ethambutol can occupy directly
 ### 3.9 Docking shows which network nodes ethambutol can occupy directly
 
 The mechanism network describes processes that become dysregulated, not where the
@@ -1572,7 +1553,7 @@ randomisation. The analysis code is available at https://github.com/Bowen2485/et
 
 **Competing interests.** The authors declare no competing interests.
 
-**Author contributions** (CRediT). **Bowen Shi:** Conceptualization, Methodology, Software, Validation, Formal analysis, Resources, Data curation, Writing – original draft. **Yaqin Tan:** Investigation. **Siyuan Yang:** Writing – review & editing. **Xuan Wang:** Visualization. **Zhengzheng Wu:** Supervision. **Jing Yan:** Project administration, Funding acquisition, Supervision. All authors read and approved the final manuscript.
+**Author contributions** (CRediT). **Bowen Shi:** Conceptualization, Methodology, Software, Validation, Formal analysis, Resources, Data curation, Writing – original draft. **Yaqin Tan:** Investigation. **Siyuan Yang:** Writing – review & editing. **Xuan Wang:** Visualization. **Zhengzheng Wu:** Supervision. **Jing Yan:** Project administration, Supervision. All authors read and approved the final manuscript.
 
 ---
 

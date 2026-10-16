@@ -146,8 +146,8 @@ df -h ~
 
 ```bash
 cd ~/ethambutol
-python src/final_audit.py        # 应为 60 项全过
-python src/audit_crosslanguage.py # 应为 33 项全过
+python src/final_audit.py        # 应为 72 项全过
+python src/audit_crosslanguage.py # 应为 35 项全过
 ```
 
 若报缺少 `data/derived/faers.sqlite`，说明你选了方案二但脚本需要数据库——改用方案一或方案三。
@@ -389,7 +389,7 @@ assert ctx.getPlatform().getName() == 'CUDA', 'fell back to CPU!'
 SQLite 全表扫描从 `/mnt/c` 读取会慢数倍。把数据库复制到 WSL 原生盘（`~/`）再跑。
 
 **E5. 内存不足**
-WSL2 默认最多用宿主内存的 50%。创建 `<user directory>\.wslconfig`：
+WSL2 默认最多用宿主内存的 50%。创建 `C:\Users\20200\.wslconfig`：
 ```ini
 [wsl2]
 memory=24GB
@@ -413,7 +413,7 @@ swap=8GB
 [ ] 5. 装 miniforge + conda 环境（C1）
 [ ] 6. 验证 CUDA 平台（C2）   -> 必须看到 CUDA 那一行
 [ ] 7. 复制项目（B2 方案二或三）
-[ ] 8. cd ~/ethambutol && python src/final_audit.py   -> 60 项全过
+[ ] 8. cd ~/ethambutol && python src/final_audit.py   -> 72 项全过
 [ ] 9. 按 D2 跑全原子 MD
 [ ] 10. 按 D3 判定并结合四个指标写结论
 ```

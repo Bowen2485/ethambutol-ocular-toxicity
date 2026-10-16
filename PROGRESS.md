@@ -5,7 +5,7 @@
 >
 > **本项目全部数值均来自真实数据分析，无一处编造。**
 > **全部 32 条参考文献均经 Europe PMC 回查验证。**
-> **稿件内全部数值经 60 项自动一致性审计通过。**
+> **稿件内全部数值经 72 项自动一致性审计通过。**
 >
 > ⚠️ **最近一次状态回填：2026-10-17（含 10-16 回填）。** 本文件是分期存档，以下章节
 > 保留各轮的历史状态，其中若干处已被后续工作推翻；**凡与第〇节冲突者，以第〇节为准。**
@@ -27,6 +27,7 @@
 | **摘要** | ✅ 已由 867 词压至 **353 词**并改题（正文标题 20 词）。实测略超 Frontiers 约 350 词上限，建议再删 5–10 词 | `manuscript/Ethambutol_EyeTox_EN_full.md` 摘要段 |
 | **参考文献** | ✅ **32 条**（旧稿写 27 条） | `manuscript/references_en.md` |
 | **图** | ✅ **10 张**（F1–F10，含 Figure10 Venn） | `figures/Figure1..10` |
+| **稿件修订（2026-10-17）** | ✅ 已修四处缺陷：①Methods §2.6b「all measured during production」与 §3.9b「HMOX1/MFN2 无生产帧」自相矛盾；②Results 段「两个病例数」整段与 Methods **逐字重复**（删 Results 那份，保留 Methods）；③`### 3.9` 标题重复一次；④CRediT 中 Jing Yan 的「Funding acquisition」与「无资助」声明冲突（已删）。CN 重复标题一并删除 | 已重建 DOCX 与 LaTeX/Overleaf：`final_audit` **72/72**、`audit_crosslanguage` **35/35**、`verify_latex` **34/34**、`final_consistency_check` 无 MISMATCH |
 | **代码仓库** | ✅ **已公开**：https://github.com/Bowen2485/ethambutol-ocular-toxicity （MIT 许可）；2026-10-16 复核 `main` 已与本地工作副本一致 | GitHub API 返回 `"private": false`；稿件 Code availability 已填真实 URL |
 | **MD 分子动力学** | ⏸ **已搁置（2026-10-17 作者决定：运行会致机器过热重启）**。稿件仍按 NFE2L2 1.0 ns 生产段 / HMOX1 0.23 ns / MFN2 0.13 ns 表述，**自洽、无需改动**。**但本次意外抢救出 HMOX1 约 0.48 ns 生产段**（未采用；采用须连改 §3.9b 解读段，因配体 RMSD 由 2.85 → 5.13 Å）。另查明：`addSolvent` 不可复现 → 原子数每次不同 → checkpoint 守卫必然拒绝 → **续跑在现有实现下不可能**，每次尝试都必须一口气跑完 | `results/md_allatom_stability_pbc.csv`；`docs/MD生产段_搁置记录.md` |
 | **HMOX1 血红素** | 🔶 现方案剥离 HEM，改以"接触残基与血红素邻接残基重叠 2/8"作地标；参数化方案仍未验证 | 见下文 §8.8 |

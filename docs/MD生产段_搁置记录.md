@@ -152,11 +152,21 @@ wsl -d Ubuntu -- bash -c 'cd /home/bowen/ethambutol && /home/bowen/miniconda3/en
 
 ## 六、对当前稿件的结论
 
-**不改稿件。** 现行 §3.9b 的表述（只有 NFE2L2 跑满 1 ns 生产段；HMOX1 0.23 ns、MFN2 0.13 ns
+**§3.9b 不改。** 现行表述（只有 NFE2L2 跑满 1 ns 生产段；HMOX1 0.23 ns、MFN2 0.13 ns
 取自平衡阶段；三位点"一致但只是提示性而非结论性"）与其引用的
-`results/md_allatom_stability_pbc.csv` 完全自洽，且已如实披露。
+`results/md_allatom_stability_pbc.csv` 完全自洽，且已如实披露。本次抢救出的
+0.48 ns 生产段**未采用**（理由见第三节）。
 
-**但有一处独立缺陷仍应修正**（与本次抢救无关）：
-稿件 Methods §2.6b 写 *"Pose stability was judged on four quantities, all measured
-during production"*，而 §3.9b 自己说明 HMOX1、MFN2 两处**没有任何生产帧**——
-方法句与结果不符。这句话本就该改，无论是否采用抢救数据。
+**已修正的一处独立缺陷（2026-10-17）。** 稿件 Methods §2.6b 原文写
+*"Pose stability was judged on four quantities, all measured during production"*，
+而 §3.9b 自己说明 HMOX1、MFN2 两处**没有任何生产帧**——方法句与结果自相矛盾。
+现改为：
+
+> *"Pose stability was judged on four quantities, measured over the analysed window of
+> each trajectory — the unrestrained production segment where a run reached one, and
+> otherwise the equilibration phases actually completed, labelled per target in
+> Section 3.9b: …"*
+
+同段末的 "every production metric" 相应改为 "every metric of a production window"。
+改后 `src/final_audit.py` **72 项**、`src/audit_crosslanguage.py` **35 项**、
+`src/verify_latex.py` **34 项**全部通过。

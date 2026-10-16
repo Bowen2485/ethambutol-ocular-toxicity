@@ -409,7 +409,14 @@ for para in _abs_paras:
 kw_line = LINES[abs_end] if abs_end < len(LINES) else ""
 kw = re.sub(r"^\*\*Keywords\.\*\*\s*", "", kw_line).strip()
 kw = kw.replace(";", ",")
-keywords = [k.strip() for k in kw.split(",") if k.strip()][:8]
+keywords = [k.strip() for k in kw.split(",") if k.strip()]
+#: Frontiers allows at most eight keywords, and the manuscript lists ten.  The slice here used
+#: to be silent, so two keywords disappeared from the submitted .tex - the last two, which is a
+#: choice made by position rather than deliberately - with nothing in the build output to say so.
+if len(keywords) > 8:
+    print(f"      keywords   : {len(keywords)} listed, the journal allows 8; "
+          f"dropping {keywords[8:]}")
+keywords = keywords[:8]
 
 # ---------------------------------------------------------------- figure captions
 # The template allows the figures to be embedded, in which case they are placed after the

@@ -17,8 +17,8 @@ import re
 import sys
 from pathlib import Path
 
-WORK = Path(r"C:\Users\20200\Downloads\论文\投稿\Ethambutol_EyeTox")
-REPO = Path(r"C:\Users\20200\Downloads\论文\投稿\ethambutol-ocular-toxicity")
+WORK = Path(r"<user directory>\Downloads\论文\投稿\Ethambutol_EyeTox")
+REPO = Path(r"<user directory>\Downloads\论文\投稿\ethambutol-ocular-toxicity")
 
 PLAN = [("src", "*.py"), ("src", "*.sh"), ("docs", "*.md"), ("tables", "*.csv"),
         ("figures", "*"), ("manuscript", "*"),
@@ -35,7 +35,7 @@ def digest(p: Path) -> str:
 #: document that mentions a path as drifted, which is noise, so the same two transforms are
 #: applied here before comparing text files.
 WINPATH = re.compile(r"[A-Za-z]:\\+Users\\+[\w\u4e00-\u9fff]+")
-EMAIL_SELF = "<corresponding author email>"
+EMAIL_SELF = "20200121047@bucm.edu.cn"
 TEXTUAL = {".md", ".py", ".sh"}
 
 

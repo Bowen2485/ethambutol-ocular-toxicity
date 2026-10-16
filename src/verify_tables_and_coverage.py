@@ -25,7 +25,7 @@ DECLARED = {
     "Table2_signals_full_panel.csv": "Table 2 full panel (178 terms)",
     "Table2b_signals_strict.csv": "Table 2b strict (58)",
     "Table2c_toxicity_spectrum.csv": "Table 2c toxicity spectrum",
-    "Table2d_unclassified_terms.csv": "Table 2d unclassified (83)",
+    "Table2d_panel_anatomical.csv": "Table 2d anatomical grouping (5 groups)",
     "Table2_withinclass.csv": "Table 2 within-class",
     "Table3_tto.csv": "Table 3 time to onset",
     "Table4_logistic.csv": "Table 4 logistic",
@@ -65,10 +65,14 @@ print("=" * 96)
 print("2. Do the quoted counts match the files?")
 print("=" * 96)
 CHECKS = [
-    ("Table 2 signals", "Table2_signals.csv", 177),
+    #: 152 and 45, not 177 and 58: Table 2 is the scored analysis panel and Table 2b its strict
+    #: signals, while 177 and 58 are the discovery panel and the full-panel signal count, which
+    #: are Table 2_signals_full_panel.csv below.  The two expectations had been swapped, so this
+    #: check reported a mismatch against files that were right.
+    ("Table 2 signals", "Table2_signals.csv", 152),
     ("Table 2 full panel", "Table2_signals_full_panel.csv", 178),
-    ("Table 2b strict", "Table2b_signals_strict.csv", 58),
-    ("Table 2d unclassified", "Table2d_unclassified_terms.csv", 83),
+    ("Table 2b strict", "Table2b_signals_strict.csv", 45),
+    ("Table 2d anatomical grouping", "Table2d_panel_anatomical.csv", 5),
     ("Table 5 hubs", "Table5_hubs.csv", 33),
 ]
 for label, fname, expected in CHECKS:

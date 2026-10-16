@@ -194,8 +194,11 @@ manifestations are expected in patients with tuberculosis irrespective of which
 antitubercular drug they receive - and a smaller number of lexical artefacts (for
 example "macule", a skin lesion, matched the macul- pattern). Signals were
 therefore classified by an explicit, auditable list into the drug-toxicity
-spectrum, ocular tuberculosis, or non-ocular artefacts, and the drug-toxicity
-spectrum is what the manuscript reports as the ethambutol signal.
+spectrum, ocular tuberculosis, non-ocular artefacts, or other ocular findings that
+are neither drug toxicity nor tuberculosis (trauma, surgery, tumour, a cohort
+comorbidity and non-specific symptom codes), and the drug-toxicity spectrum is what
+the manuscript reports as the ethambutol signal. Every term in the panel now carries
+one of those four categories; none is left unclassified.
 
 ### 2.11 Report adequacy
 
@@ -381,7 +384,8 @@ The remaining leading drug-toxicity signals were hereditary optic atrophy
 (50.3), scotoma (42.1),
 optic neuritis (29.2), chromatopsia
 (27.3), optic atrophy
-(24.8), optic nerve injury
+(24.8), retinal injury
+(17.6), optic nerve injury
 (15.5), hemianopia
 (15.4), optic nerve disorder
 (9.9), visual field defect
@@ -599,7 +603,7 @@ reported for completeness and explicitly excluded from the drug-toxicity
 interpretation (Table 2e).
 
 The ocular panel is therefore **152 terms, of which 45 are strict signals** after three
-exclusions that are stated rather than applied silently. Twelve ocular tuberculosis
+exclusions that are stated rather than applied silently. Seventeen ocular tuberculosis
 manifestations are set aside as above. **Thirteen terms are removed because they are not
 findings of the eye or of vision at all** and do not belong in a panel described as
 ocular: a systemic rash (177 reports, ratio 15.5), a route of exposure, a behavioural
@@ -609,11 +613,25 @@ being flagged as a non-ocular artefact by the term classifier, because a macule 
 retinal finding and removing a term on an ambiguous label would be the worse error; the
 decision is recorded here rather than left implicit.
 
-The 83 terms the earlier version of this manuscript listed as awaiting manual review turn
-out not to be an undecided group. Their anatomical group — optic nerve, visual function,
-retina, anterior segment — was already assigned by the term classifier; what they lack is
-a toxicity-versus-disease category, which is not needed to report them, since the panel
-is presented anatomically. They are now reported under those groups instead.
+The 83 terms the earlier version of this manuscript listed as awaiting manual review have
+since been reviewed one by one, and every term in the panel now carries a category; the
+individual decisions and the reason for each are recorded in
+`tables/Table2d_review_proposed.csv`. Fifty-five are ocular findings within the drug-related
+axes and join the drug-toxicity spectrum, which grows from 80 to 135 terms. Five of those
+are optic-nerve or retinal terms that had been sitting without a category — optic ischaemic
+neuropathy, retrobulbar optic neuritis, optic nerve cupping, retinal toxicity and retinal
+injury — and a manuscript arguing that the signal is specific to the optic nerve should not
+have been carrying optic-nerve terms as uncategorised, which is the clearest reason the
+review was worth doing. Five further terms are intraocular infection or its sequelae and join
+the tuberculosis group. The remaining fifteen are neither drug toxicity nor tuberculosis —
+post-surgical codes, trauma, an ocular tumour, diabetic retinopathy and non-specific symptom
+codes — and are reported as a fourth group that is explicitly excluded from the toxicity
+reading (Table 2g), so that they neither inflate the signal count nor disappear from it. Two
+of that group are strict signals, ocular fistula and a complication of cataract surgery;
+excluding them from the toxicity reading does not remove them from the panel, so the
+152-term count and its 45 strict signals are unchanged. The panel's anatomical composition
+is summarised in Table 2d, which now reports one row per anatomical group rather than the
+unclassified list it previously held.
 
 ### 3.4 Time to onset separates optic-nerve events from all other events
 
@@ -1623,8 +1641,9 @@ randomisation. The analysis code is available at https://github.com/Bowen2485/et
 **Table 2b** Strict signals (45 terms).
 **Table 2c** Drug-toxicity-spectrum signals (top 30).
 **Table 2d** Anatomical grouping of the panel (152 terms).
-**Table 2e** Ocular tuberculosis manifestations, excluded from the toxicity reading (12 terms).
+**Table 2e** Ocular tuberculosis manifestations, excluded from the toxicity reading (17 terms).
 **Table 2f** Non-ocular terms removed from the panel (13 terms).
+**Table 2g** Other ocular findings, neither drug toxicity nor tuberculosis, excluded from the toxicity reading (15 terms).
 **Table 3** Time from starting ethambutol to onset.
 **Table 4** Multivariable logistic regression.
 **Table 5** Focus-layer hub genes.
@@ -1638,7 +1657,7 @@ randomisation. The analysis code is available at https://github.com/Bowen2485/et
 
 **Additional tables.** Regimen-stratified within-class comparison (`results/faers_regimen_strata.csv`); JADER external validation (`results/jader_validation.csv`); temporal split validation (`results/faers_temporal_validation.csv`); redocking validation panel (`results/redocking_validation_final.csv`); tuberculosis burden denominator (`data/derived/faers_tb_denominator.csv` and `data/derived/faers_who_merged.csv`); ligand parameter validation (`results/ligand_parameter_validation.json`).
 
-**Machine-readable table files.** Each numbered table is also provided as a UTF-8 CSV in `tables/`: `Table1_cohort.csv`, `Table2_signals.csv` (152 ocular terms), `Table2b_signals_strict.csv` (the 45 strict signals), `Table2c_toxicity_spectrum.csv` (top 30 by ratio), `Table2d_unclassified_terms.csv`, `Table2e_ocular_tuberculosis.csv` (12, excluded from the toxicity reading), `Table2f_non_ocular_terms.csv` (13, removed from the panel), `Table2_signals_full_panel.csv` (the 178-term derived panel), `Table3_tto.csv`, `Table4_logistic.csv`, `Table5_hubs.csv`, `Table6_enrichment.csv`, `Table7_docking.csv`, `Table8_mr.csv`, `TableS1_mr_renal.csv`, `Table9_robustness.csv`, `Table10_adequacy.csv`.
+**Machine-readable table files.** Each numbered table is also provided as a UTF-8 CSV in `tables/`: `Table1_cohort.csv`, `Table2_signals.csv` (152 ocular terms), `Table2b_signals_strict.csv` (the 45 strict signals), `Table2c_toxicity_spectrum.csv` (top 30 by ratio), `Table2d_panel_anatomical.csv` (the panel by anatomical group), `Table2d_review_proposed.csv` (the review of the previously unclassified terms, with a reason for each), `Table2e_ocular_tuberculosis.csv` (17, excluded from the toxicity reading), `Table2f_non_ocular_terms.csv` (13, removed from the panel), `Table2g_other_ocular.csv` (15, neither drug toxicity nor tuberculosis, excluded from the toxicity reading), `Table2_signals_full_panel.csv` (the 178-term derived panel), `Table3_tto.csv`, `Table4_logistic.csv`, `Table5_hubs.csv`, `Table6_enrichment.csv`, `Table7_docking.csv`, `Table8_mr.csv`, `TableS1_mr_renal.csv`, `Table9_robustness.csv`, `Table10_adequacy.csv`.
 
 ---
 

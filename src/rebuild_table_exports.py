@@ -76,13 +76,14 @@ t2c.to_csv(T / "Table2c_toxicity_spectrum.csv", index=False, encoding="utf-8-sig
 print(f"  Table2c_toxicity_spectrum.csv {len(t2c_old):>4} -> {len(t2c):>4} rows "
       f"(of {len(spec)} in the category)")
 
-# ---- Table 2d: the unclassified terms
-t2d_old = pd.read_csv(T / "Table2d_unclassified_terms.csv", encoding="utf-8-sig")
-unc = src[src.category == "unclassified ocular"].sort_values("q_bh")
-t2d = take(unc, COLS_T2) if set(COLS_T2) <= set(unc.columns) else \
-    take(unc, list(t2d_old.columns))
-t2d.to_csv(T / "Table2d_unclassified_terms.csv", index=False, encoding="utf-8-sig")
-print(f"  Table2d_unclassified_terms.csv{len(t2d_old):>4} -> {len(t2d):>4} rows")
+# ---- Table 2d: retired from this script
+# Table 2d used to be the unclassified-term list and this block rebuilt it.  After the review in
+# tables/Table2d_review_proposed.csv every term has a category, so there is no unclassified list
+# to rebuild; Table 2d is now the anatomical grouping summary written by classify_signals.py, and
+# re-running this block would overwrite that summary with an empty table.  Left as a note rather
+# than deleted, so the change of meaning is visible to whoever reads this script next.
+print("  Table2d: now the anatomical grouping summary; not rebuilt here "
+      "(classify_signals.py owns it)")
 
 # ---- the full derived panel, so PTOSIS is restored
 fp_old = pd.read_csv(T / "Table2_signals_full_panel.csv", encoding="utf-8-sig")
@@ -105,7 +106,7 @@ CHECKS = [
     ("Table2_signals.csv", 177, "all terms"),
     ("Table2b_signals_strict.csv", 58, "strict signals"),
     ("Table2c_toxicity_spectrum.csv", 30, "spectrum, top 30"),
-    ("Table2d_unclassified_terms.csv", 83, "unclassified"),
+    ("Table2d_panel_anatomical.csv", 5, "anatomical groups"),
     ("Table2_signals_full_panel.csv", 178, "derived panel"),
 ]
 ok = True

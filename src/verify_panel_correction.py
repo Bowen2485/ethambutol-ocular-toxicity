@@ -26,7 +26,7 @@ WANT = {
     "Table2e_ocular_tuberculosis.csv": 12,
     "Table2f_non_ocular_terms.csv": 13,
     "Table2c_toxicity_spectrum.csv": 30,
-    "Table2d_unclassified_terms.csv": 83,
+    "Table2d_panel_anatomical.csv": 5,
     "Table2_signals_full_panel.csv": 178,
 }
 ok = True

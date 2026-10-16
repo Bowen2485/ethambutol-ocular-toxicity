@@ -51,7 +51,7 @@ CHECKS = [
     ("Table 2 signals", "tables/Table2_signals.csv", 152, "152 "),
     ("Table 2b strict", "tables/Table2b_signals_strict.csv", 45, "45"),
     ("Table 2c spectrum", "tables/Table2c_toxicity_spectrum.csv", 30, "top 30"),
-    ("Table 2d unclassified", "tables/Table2d_unclassified_terms.csv", 83, "83"),
+    ("Table 2d anatomical grouping", "tables/Table2d_panel_anatomical.csv", 5, "152 terms"),
     ("Table 2 full panel", "tables/Table2_signals_full_panel.csv", 178, "178"),
 ]
 for label, rel, expected, quoted in CHECKS:

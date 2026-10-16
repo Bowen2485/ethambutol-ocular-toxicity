@@ -88,7 +88,7 @@ contact with the protein throughout (minimum ligand–protein distance 1.76-2.18
 maintained or increased, receptor backbone RMSD 1.18-1.34 Å), so the docked sites are sites
 the ligand can occupy, though it rearranges within them rather than sitting in one rigid
 pose. Genetically proxied renal function showed no causal effect on any
-optic-nerve or visual outcome (150-186 harmonised instruments per outcome across three
+optic-nerve or visual outcome (151-186 harmonised instruments per outcome across three
 renal measures; all q ≥ 0.87).
 
 **Conclusions.** In the largest pharmacovigilance assessment
@@ -219,9 +219,9 @@ Outcome data were the FinnGen release 12 summary statistics for optic neuritis, 
 
 A conventional drug-exposure Mendelian randomisation was not attempted. Ethambutol is an environmental exposure with no genetic instrument, no "ethambutol use" genome-wide association study exists, and no cis-region variant in the candidate panel attained genome-wide significance for optic neuropathy in FinnGen; a Wald-ratio estimate built on non-significant, outcome-derived variants would be both underpowered and circular. This limitation is reported explicitly rather than concealed, and the MR reported here therefore concerns modifiable risk factors for the optic-nerve phenotype rather than the drug itself.
 
-**Scope of the MR actually reported.** Ten exposures were nominated, but the FinnGen optic-nerve endpoints are rare and each instrument region must be retrieved individually from a 20-million-variant release; the complete panel could not be retrieved within the computing budget available. The analysis reported here therefore covers the renal-function and glycaemic exposures that could be fully harmonised — estimated glomerular filtration rate, cystatin C, serum creatinine and type 2 diabetes — giving 19 exposure–outcome estimates in total: all six optic-nerve and visual outcomes for each of the three renal measures, and optic neuritis for type 2 diabetes. The renal trio was selected on mechanistic grounds as well as statistical ones: ethambutol is eliminated renally and renal impairment is the strongest clinical risk factor for its optic neuropathy, so renal function is the trait whose causal role most needs testing, and three correlated but separately instrumented measures of it provide mutual replication. Diabetes is the most consistently replicated clinical predictor. The remaining nominated exposures (HbA1c, smoking initiation, cigarettes per day, alcohol intake, zinc supplement use, body mass index and vitamin B12 preparation) are not reported, and this is stated rather than presented as a complete cross-product.
+**Scope of the MR actually reported.** Ten exposures were nominated and all ten were retrieved, giving 60 exposure–outcome estimates: each of the six optic-nerve and visual outcomes for each of estimated glomerular filtration rate, cystatin C, serum creatinine, type 2 diabetes, HbA1c, smoking initiation, cigarettes per day, alcohol intake, zinc supplement use and body mass index (Table 8). Vitamin B12 preparation was considered as an eleventh exposure and is not reported, because its instruments could not be harmonised against the FinnGen endpoints. The renal trio was selected on mechanistic grounds as well as statistical ones: ethambutol is eliminated renally and renal impairment is the strongest clinical risk factor for its optic neuropathy, so renal function is the trait whose causal role most needs testing, and three correlated but separately instrumented measures of it provide mutual replication. Diabetes is the most consistently replicated clinical predictor. Body mass index was carried as a positive control rather than as a hypothesis, so that the panel can demonstrate it recovers an association where one exists. Because the panel is the full cross-product rather than a subset, that control is what makes the remaining nulls readable.
 
-**A note on instrument recovery.** Serum creatinine was initially recorded as yielding zero harmonised instruments against every outcome, and that zero was an artefact rather than a finding. Serum creatinine measures the same renal function as eGFR in the same population, and 186 of its 370 instruments are present in the cached FinnGen scans, a higher proportion than eGFR's 151 of 342; a genuine absence of shared variants is therefore not available as an explanation. The estimates reported here for serum creatinine were recomputed from the cached scans after the cause was identified. The episode is recorded because a spurious zero is indistinguishable, in a results table, from a genuinely underpowered exposure, and would have been read as an absence of evidence rather than as a retrieval failure. Every exposure-outcome pair reported in Table 8 was checked against the cached data in the same way.
+**A note on instrument recovery.** Serum creatinine was initially recorded as yielding zero harmonised instruments against every outcome, and that zero was an artefact rather than a finding. Serum creatinine measures the same renal function as eGFR in the same population, and 186 of its 370 instruments are present in the cached FinnGen scans, a higher proportion than eGFR's 151 of 342; a genuine absence of shared variants is therefore not available as an explanation. The estimates reported here for serum creatinine were recomputed from the cached scans after the cause was identified. The episode is recorded because a spurious zero is indistinguishable, in a results table, from a genuinely underpowered exposure, and would have been read as an absence of evidence rather than as a retrieval failure. Every exposure-outcome pair reported in Tables 8 and S1 was checked against the cached data in the same way.
 
 **A note on instrument–outcome harmonisation.** The OpenGWAS instruments and FinnGen are on different genome builds, so variants were matched by rsID (build-independent) with position matching only as a fallback for variants lacking an rsID. Two implementation faults were found and corrected before the estimates were interpretable — a regional retrieval that silently truncated wide queries to a single 16 kb bin, and position-based matching across genome builds that recovered only 0.2% of 13,560 instrument-outcome pairs. Both are documented because they would otherwise be undetectable from the reported numbers, and because the corrected recovery rate (13.5%) is itself the relevant measure of how much of each instrument panel actually contributed.
 
@@ -1252,14 +1252,14 @@ build-independent - raised recovery to 13.5%.
 
 With harmonisation corrected, the renal-function exposures are well powered:
 estimated glomerular filtration rate (n = 1,004,040), cystatin C (n = 437,846) and
-serum creatinine (n = 437,660) each contributed **150-186 harmonised instruments** per
-outcome, and the estimates are precise (for example, cystatin C on optic neuritis:
-OR 1.026, 95% CI 0.865-1.216).
+serum creatinine (n = 437,660) contributed **151, 162 and 186 harmonised instruments**
+per outcome respectively, and the estimates are precise (for example, cystatin C on
+optic neuritis, 162 instruments: OR 1.035, 95% CI 0.876-1.224; Table S1).
 
 **No causal effect was detected.** Across all six optic-nerve and visual outcomes,
 genetically proxied renal function showed no association after Benjamini-Hochberg
-correction (all q ≥ 0.87; Table 8); genetically proxied type 2 diabetes was likewise
-null for optic neuritis (OR 1.094, 95% CI 0.940-1.274; 57 instruments). MR-Egger
+correction (all q ≥ 0.87; Table S1); genetically proxied type 2 diabetes was likewise
+null for optic neuritis (OR 1.099, 95% CI 0.942-1.284; 54 instruments). MR-Egger
 intercepts were non-significant and Steiger directionality was correct in every case,
 arguing against reverse causation.
 
@@ -1696,10 +1696,11 @@ randomisation. The analysis code is available at https://github.com/Bowen2485/et
 **Table 9** Robustness checks (four scenarios).
 **Table 10** Report adequacy.
 **Table 11** Optic-nerve odds ratio by patient subgroup, with contrasts between strata.
+**Table S1** Renal-function Mendelian randomisation estimates (wider harmonisation against the cached FinnGen scans).
 
 **Additional tables.** Regimen-stratified within-class comparison (`results/faers_regimen_strata.csv`); JADER external validation (`results/jader_validation.csv`); temporal split validation (`results/faers_temporal_validation.csv`); redocking validation panel (`results/redocking_validation_final.csv`); tuberculosis burden denominator (`data/derived/faers_tb_denominator.csv` and `data/derived/faers_who_merged.csv`); ligand parameter validation (`results/ligand_parameter_validation.json`).
 
-**Machine-readable table files.** Each numbered table is also provided as a UTF-8 CSV in `tables/`: `Table1_cohort.csv`, `Table2_signals.csv` (152 ocular terms), `Table2b_signals_strict.csv` (the 45 strict signals), `Table2c_toxicity_spectrum.csv` (top 30 by ratio), `Table2d_unclassified_terms.csv`, `Table2e_ocular_tuberculosis.csv` (12, excluded from the toxicity reading), `Table2f_non_ocular_terms.csv` (13, removed from the panel), `Table2_signals_full_panel.csv` (the 178-term derived panel), `Table3_tto.csv`, `Table4_logistic.csv`, `Table5_hubs.csv`, `Table6_enrichment.csv`, `Table7_docking.csv`, `Table8_mr.csv`, `Table9_robustness.csv`, `Table10_adequacy.csv`.
+**Machine-readable table files.** Each numbered table is also provided as a UTF-8 CSV in `tables/`: `Table1_cohort.csv`, `Table2_signals.csv` (152 ocular terms), `Table2b_signals_strict.csv` (the 45 strict signals), `Table2c_toxicity_spectrum.csv` (top 30 by ratio), `Table2d_unclassified_terms.csv`, `Table2e_ocular_tuberculosis.csv` (12, excluded from the toxicity reading), `Table2f_non_ocular_terms.csv` (13, removed from the panel), `Table2_signals_full_panel.csv` (the 178-term derived panel), `Table3_tto.csv`, `Table4_logistic.csv`, `Table5_hubs.csv`, `Table6_enrichment.csv`, `Table7_docking.csv`, `Table8_mr.csv`, `TableS1_mr_renal.csv`, `Table9_robustness.csv`, `Table10_adequacy.csv`.
 
 ---
 

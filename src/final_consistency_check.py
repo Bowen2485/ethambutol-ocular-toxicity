@@ -48,8 +48,8 @@ print("=" * 100)
 print("3. Quoted counts against the rebuilt files")
 print("=" * 100)
 CHECKS = [
-    ("Table 2 signals", "tables/Table2_signals.csv", 177, "177 term"),
-    ("Table 2b strict", "tables/Table2b_signals_strict.csv", 58, "58"),
+    ("Table 2 signals", "tables/Table2_signals.csv", 152, "152 "),
+    ("Table 2b strict", "tables/Table2b_signals_strict.csv", 45, "45"),
     ("Table 2c spectrum", "tables/Table2c_toxicity_spectrum.csv", 30, "top 30"),
     ("Table 2d unclassified", "tables/Table2d_unclassified_terms.csv", 83, "83"),
     ("Table 2 full panel", "tables/Table2_signals_full_panel.csv", 178, "178"),

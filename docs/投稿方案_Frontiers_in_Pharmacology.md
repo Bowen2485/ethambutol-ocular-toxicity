@@ -128,7 +128,7 @@ cases carry enough detail for time-to-onset analysis, and on that basis we prese
 the temporal result as supporting rather than primary. Daily dose does not predict
 optic outcome (likelihood-ratio P = 0.55), and we report that null. A two-sample
 Mendelian randomisation interrogation found no causal effect of renal function on
-any optic-nerve or visual phenotype (150-186 harmonised instruments per outcome
+any optic-nerve or visual phenotype (151-186 harmonised instruments per outcome
 across three renal measures; all q >= 0.87), which we interpret as locating renal
 impairment in exposure rather than in causation. We also report a designed test
 that failed: a class-level analysis of ferroptosis inducers could not adjudicate
@@ -229,7 +229,7 @@ Frontiers in Pharmacology 编辑部
 我们量化而非假定报告充分性：仅 **27.8%** 的视神经病例具备足够细节做发病时间分析，据此
 我们把时序结果作为支持性而非主要证据呈现。日剂量不预测视神经结局（似然比检验 P = 0.55），
 该阴性结果已报告。两样本孟德尔随机化未发现肾功能对任何视神经或视觉表型的因果效应（三个
-肾功能指标各覆盖每个结局 150–186 个协调工具变量；全部 q ≥ 0.87），我们将其解读为把肾功能
+肾功能指标各覆盖每个结局 151–186 个协调工具变量；全部 q ≥ 0.87），我们将其解读为把肾功能
 不全定位在暴露环节而非因果环节。我们也报告了一项**失败的设计检验**：铁死亡诱导剂的类别
 层面分析无法裁决该机制，我们没有略去它，而是作为方法局限的证据呈现。
 

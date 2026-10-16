@@ -143,8 +143,15 @@ def add_table_from_csv(doc, csv_path: Path, caption: str | None = None,
     df = pd.read_csv(csv_path, encoding="utf-8-sig")
     if df.empty:
         return
+    #: A long table is truncated for the Word manuscript, and the truncation is stated in the
+    #: caption rather than left silent.  Table 8 reached 60 rows when the MR panel was completed;
+    #: an unqualified head() there would have printed half the panel with nothing to say so.
+    total = len(df)
     df = df.head(max_rows)
     if caption:
+        if total > max_rows:
+            caption = (f"{caption}  (Showing the first {max_rows} of {total} rows; the complete "
+                       f"table is in {csv_path.name}.)")
         p = doc.add_paragraph()
         p.paragraph_format.space_before = Pt(10)
         p.paragraph_format.space_after = Pt(4)
@@ -353,7 +360,11 @@ KEY_TABLES = [
     ("Table7_docking.csv",
      "Table 7. Docking scores (AutoDock Vina, kcal/mol)."),
     ("Table8_mr.csv",
-     "Table 8. Two-sample Mendelian randomisation estimates."),
+     "Table 8. Two-sample Mendelian randomisation estimates (main panel, "
+     "10 exposures x 6 optic-nerve and visual outcomes)."),
+    ("TableS1_mr_renal.csv",
+     "Table S1. Renal-function Mendelian randomisation estimates, from the wider "
+     "harmonisation against the cached FinnGen scans."),
     ("Table9_robustness.csv",
      "Table 9. Robustness of the disproportionality conclusions across four "
      "specifications."),
@@ -369,7 +380,8 @@ CN_TABLE_TITLES = {
     "Table5_hubs.csv": "表5 聚焦层蛋白互作网络 hub 基因（按度排序）",
     "Table6_enrichment.csv": "表6 主要富集通路（FDR < 0.05）",
     "Table7_docking.csv": "表7 分子对接打分（AutoDock Vina, kcal/mol）",
-    "Table8_mr.csv": "表8 两样本孟德尔随机化结果",
+    "Table8_mr.csv": "表8 两样本孟德尔随机化结果（主面板，10 个暴露 × 6 个视神经及视觉结局）",
+    "TableS1_mr_renal.csv": "表S1 肾功能孟德尔随机化估计（对照缓存 FinnGen 扫描的更宽协调）",
     "Table9_robustness.csv": "表9 四情景稳健性检验",
     "Table10_adequacy.csv": "表10 报告充分性：关键字段完整度",
 }

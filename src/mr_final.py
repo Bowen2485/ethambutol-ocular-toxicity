@@ -204,11 +204,22 @@ def main() -> int:
         exp = exp.dropna(subset=["pos", "beta", "sebeta"])
         if exp.empty:
             continue
-        # the instrument span may cross chromosomes; scan per chromosome.  Within a
-        # chromosome the instruments are grouped into windows so that neither
-        # memory nor the tabix chunk read grows without bound, while still
-        # merging nearby instruments into a single query (a 2 Mb gap threshold
-        # keeps the number of range requests manageable).
+        # The instrument span may cross chromosomes; scan per chromosome.  Within a
+        # chromosome the instruments are grouped into windows so that neither memory nor
+        # the tabix chunk read grows without bound.
+        #
+        # The harmonised variants are POOLED across every window and chromosome before any
+        # estimate is computed.  An earlier version called run_mr inside the window loop
+        # and then kept, per exposure-outcome pair, the single window with the most SNPs.
+        # That discarded almost the whole instrument set: serum creatinine harmonised 186
+        # instruments across the genome and every reported estimate used four of them, so
+        # the confidence intervals described four SNPs while the manuscript quoted the 186
+        # as the instrument count.  Pooling is the correct procedure for two-sample MR -
+        # the instruments are independent and belong to one analysis, not to a series of
+        # window-wise analyses.
+        pooled: dict[str, list] = {ph: [] for ph in tbs}
+        window_stats = {"windows": 0, "scans": 0, "no_variants": 0, "harmonised": 0}
+
         for chrom, grp in exp.groupby("chrom"):
             grp = grp.sort_values("pos")
             positions = grp["pos"].astype(int).tolist()
@@ -225,6 +236,7 @@ def main() -> int:
                 sub = grp[(grp["pos"] >= lo) & (grp["pos"] <= hi)]
                 if sub.empty:
                     continue
+                window_stats["windows"] += 1
                 for ph, tb in tbs.items():
                     try:
                         out = region_scan(tb, chrom, lo, hi,
@@ -232,32 +244,62 @@ def main() -> int:
                     except Exception as exc:  # noqa: BLE001
                         print(f"      outcome scan failed {ph}: {str(exc)[:80]}")
                         continue
+                    window_stats["scans"] += 1
+                    if out is None or out.empty:
+                        window_stats["no_variants"] += 1
+                        continue
                     h = harmonise(sub, out)
                     if h.empty:
                         continue
-                    res = run_mr(h)
-                    if not res:
-                        continue
-                    res.update({
-                        "exposure": name, "exposure_label": meta["label"],
-                        "gwas_id": gid, "exposure_n": meta["n"],
-                        "outcome": ph, "outcome_label": OUTCOMES.get(ph, ""),
-                        "snps": ";".join(h["snp"].astype(str)),
-                    })
-                    results.append(res)
+                    window_stats["harmonised"] += len(h)
+                    pooled[ph].append(h)
+
+        # one estimate per exposure-outcome pair, on the pooled instrument set
+        for ph, frames in pooled.items():
+            if not frames:
+                print(f"      {ph}: no harmonised instruments")
+                continue
+            h = pd.concat(frames, ignore_index=True)
+            # a variant can sit in two overlapping windows; keep one row per variant
+            h = h.drop_duplicates(subset=["snp"]).reset_index(drop=True)
+            if h.empty:
+                continue
+            res = run_mr(h)
+            if not res:
+                continue
+            res.update({
+                "exposure": name, "exposure_label": meta["label"],
+                "gwas_id": gid, "exposure_n": meta["n"],
+                "outcome": ph, "outcome_label": OUTCOMES.get(ph, ""),
+                "snps": ";".join(h["snp"].astype(str)),
+            })
+            results.append(res)
+            print(f"      {ph:28s} {res['n_snp']:>4} instruments pooled   "
+                  f"beta {res['beta']:+.4f}  se {res['se']:.4f}")
         print(f"      -> {sum(1 for r in results if r['exposure'] == name)} "
               f"exposure-outcome estimates so far "
               f"({time.time() - T0:.0f}s)")
+        print(f"         windows {window_stats['windows']}, scans "
+              f"{window_stats['scans']}, scans with no variants "
+              f"{window_stats['no_variants']}, harmonised rows "
+              f"{window_stats['harmonised']}")
 
     if not results:
         print("no MR estimates produced")
         return 1
 
     df = pd.DataFrame(results)
-    # collapse multi-chromosome scans: keep the estimate with the most SNPs
+    # One estimate per exposure-outcome pair is produced above, on the pooled instrument
+    # set, so the collapse that used to happen here is gone.  It kept the window with the
+    # most SNPs and discarded the rest, which is what reduced a 186-instrument analysis to
+    # four SNPs; leaving it in place would silently undo the pooling.  The guard below
+    # keeps the file well-formed if a duplicate ever appears.
     df = (df.sort_values("n_snp", ascending=False)
             .drop_duplicates(["exposure", "outcome"], keep="first")
             .reset_index(drop=True))
+    if len(df) != len(results):
+        print(f"  WARNING: {len(results) - len(df)} duplicate exposure-outcome rows "
+              f"collapsed; pooling should have produced one each")
     if "p" in df.columns:
         ok = df["p"].notna() & (df["n_snp"] > 0)
         df["p_fdr"] = np.nan

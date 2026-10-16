@@ -1587,6 +1587,11 @@ randomisation. The analysis code is available at https://github.com/Bowen2485/et
 25. Kanaujia V, Jain VK, Sharma K, Agarwal R, Mishra P, Sharma RK.. Ethambutol-induced optic neuropathy in renal disorder: a clinico-electrophysiological study. Canadian journal of ophthalmology. Journal canadien d'ophtalmologie. 2019; doi:10.1016/j.jcjo.2018.06.013.
 26. Han KE, Yoon H, Choi H, Lee JE, Kim SJ.. Factors affecting visual outcome in patients with toxic optic neuropathy caused by ethambutol. Scientific reports. 2025; doi:10.1038/s41598-025-90663-3.
 27. Sheth J, Sachdeva V, Goyal A, Parikh A, Nalawade R, Nanavati H, et al. Clinical profile and visual outcomes in ethambutol-induced toxic optic neuropathy. Indian journal of ophthalmology. 2025; doi:10.4103/ijo.ijo_1807_24.
+28. Mao Q, Ou ZM.. Mining of adverse reaction signals and medication insights of anti-tuberculosis drugs based on the FAERS database. Asia-Pacific Medical Frontiers. 2026;1(3):1-18.
+29. Gupta A, Tejpal T, Sriranganathan A, Chen B, Quinn MP, Ing EB, et al. Risk factors for ethambutol-induced optic neuropathy: a systematic review and meta-analysis of comparative studies. Canadian journal of ophthalmology. 2026; doi:10.1016/j.jcjo.2026.03.004.
+30. Lee EJ, Kim SJ, Choung HK, Kim JH, Yu YS.. Incidence and clinical features of ethambutol-induced optic neuropathy in Korea. Journal of neuro-ophthalmology. 2008; doi:10.1097/WNO.0b013e31818e3c6b.
+31. Su L, Li Q, Zhu L, et al. Characterisation of macular superficial vessel density alteration in preclinical ethambutol-induced optic neuropathy using optical coherence tomography angiography. The British journal of ophthalmology. 2022; doi:10.1136/bjophthalmol-2020-317742.
+32. Li J, Wang X, Zhang Y, Zhang P, Tan Z, Huang R, et al. Deciphering the molecular mechanisms of fluoxetine-induced sexual dysfunction: evidence from pharmacovigilance, network toxicology, and molecular docking. Progress in neuro-psychopharmacology & biological psychiatry. 2026; doi:10.1016/j.pnpbp.2026.111773.
 
 
 ---

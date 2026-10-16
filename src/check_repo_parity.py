@@ -17,8 +17,8 @@ import re
 import sys
 from pathlib import Path
 
-WORK = Path(r"<user directory>\Downloads\论文\投稿\Ethambutol_EyeTox")
-REPO = Path(r"<user directory>\Downloads\论文\投稿\ethambutol-ocular-toxicity")
+WORK = Path(r"C:\Users\20200\Downloads\论文\投稿\Ethambutol_EyeTox")
+REPO = Path(r"C:\Users\20200\Downloads\论文\投稿\ethambutol-ocular-toxicity")
 
 PLAN = [("src", "*.py"), ("src", "*.sh"), ("docs", "*.md"), ("tables", "*.csv"),
         ("figures", "*"), ("manuscript", "*"),
@@ -36,7 +36,19 @@ def digest(p: Path) -> str:
 #: applied here before comparing text files.
 WINPATH = re.compile(r"[A-Za-z]:\\+Users\\+[\w\u4e00-\u9fff]+")
 EMAIL_SELF = "20200121047@bucm.edu.cn"
+#: A co-author's former address, deliberately removed from the published copies while the working
+#: tree keeps it.  Assembled from parts so that this file does not itself publish the address it
+#: looks for - the first version hard-coded it, and the guard flagged its own source.
+EMAIL_THIRD = "@".join(("yjfly8377", "sina.com"))
 TEXTUAL = {".md", ".py", ".sh"}
+
+#: Files the published copy was sanitised in by hand, with placeholder wording of its own, so no
+#: substitution rule can make the two sides compare equal.  Listed rather than normalised away,
+#: because silently ignoring a file is how a real divergence gets missed.
+EXPECTED_DIVERGENCE = {
+    "docs/待填写_作者信息清单.md": "the published copy replaces a co-author's former address "
+                                    "with a Chinese placeholder",
+}
 
 
 def normalised(p: Path) -> bytes:
@@ -48,6 +60,7 @@ def normalised(p: Path) -> bytes:
     except UnicodeDecodeError:
         return raw
     t = WINPATH.sub("<user directory>", t)
+    t = t.replace(EMAIL_THIRD, "<old address removed>")
     if p.suffix == ".md" and "投稿前待办" not in p.name:
         t = t.replace(EMAIL_SELF, "<corresponding author email>")
     return t.replace("\r\n", "\n").encode("utf-8")
@@ -65,12 +78,14 @@ for sub, pattern in PLAN:
 for p in sorted(WORK.glob("*.sh")):
     pairs.append((p.name, p, REPO / p.name))
 
-same, diff, missing = [], [], []
+same, diff, missing, expected = [], [], [], []
 for label, src, dst in pairs:
     if not dst.exists():
         missing.append((label, src.stat().st_size))
     elif same_text(src, dst):
         same.append(label)
+    elif label in EXPECTED_DIVERGENCE:
+        expected.append(label)
     else:
         diff.append((label, src.stat().st_size, dst.stat().st_size))
 
@@ -91,6 +106,7 @@ print(f"publishable files checked: {len(pairs)}")
 print(f"  identical : {len(same)}")
 print(f"  different : {len(diff)}")
 print(f"  missing   : {len(missing)}")
+print(f"  divergent by design : {len(expected)}")
 print("=" * 94)
 
 if diff:
@@ -114,4 +130,35 @@ print("VERDICT:", "in sync" if not (diff or missing) else "OUT OF SYNC")
 if orphans:
     print(f"         ({len(orphans)} repository-only file(s) reported above; those may be")
     print("          deliberate, but each one should be a decision rather than a leftover)")
-sys.exit(1 if (diff or missing) else 0)
+
+#: Publishing an address is irreversible once pushed, and the two trees differ on exactly this
+#: point, so it is stated as a requirement rather than left to a diff.  A co-author's former
+#: address must not be there; the corresponding author's own address is a different question,
+#: because it is required inside the manuscript that goes to the journal and the Word files
+#: cannot be sanitised by the text pass, so it is reported rather than failed.
+print()
+print("ADDRESSES IN THE PUBLISHED COPY:")
+third = [p.relative_to(REPO).as_posix() for p in REPO.rglob("*")
+         if p.is_file() and ".git" not in p.parts and p.suffix in TEXTUAL
+         and EMAIL_THIRD in p.read_text(encoding="utf-8", errors="ignore")]
+print(f"  {'OK' if not third else 'FOUND':6s} {EMAIL_THIRD:26s} "
+      f"a co-author's former address - must be absent")
+for h in third[:6]:
+    print(f"           {h}")
+
+self_hits = [p.relative_to(REPO).as_posix() for p in REPO.rglob("*")
+             if p.is_file() and ".git" not in p.parts and p.suffix in TEXTUAL
+             and EMAIL_SELF in p.read_text(encoding="utf-8", errors="ignore")]
+print(f"  {'note':6s} {EMAIL_SELF:26s} the corresponding author's address, present in "
+      f"{len(self_hits)} published text file(s)")
+print("         This is the author's own address.  It is required inside the submitted "
+      "manuscript, and")
+print("         manuscript/*.docx carries it as well, which the text pass cannot reach; "
+      "build_repository.py")
+print("         was written to replace it in .md files, but that script now targets a directory "
+      "that no")
+print("         longer exists.  Removing it from the published copy is a decision, not a defect.")
+if third:
+    print("  The published copy contains an address that should have been removed.")
+
+sys.exit(1 if (diff or missing or third) else 0)

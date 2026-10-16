@@ -31,8 +31,11 @@ problems, notes = [], []
 skipped = []
 
 
-def check(cond, msg):
-    (notes if cond else problems).append(("OK   " if cond else "FAIL ") + msg)
+def check(cond, msg, detail=""):
+    """Record a check.  detail carries the numbers that make a failure diagnosable, and is
+    optional so the existing two-argument calls read unchanged."""
+    text = msg + (f"   {detail}" if detail else "")
+    (notes if cond else problems).append(("OK   " if cond else "FAIL ") + text)
 
 
 def try_read(path: Path, **kw):
@@ -82,7 +85,28 @@ dedup = try_read(RES / "faers_dedup_summary.csv")
 rb = try_read(RES / "faers_robustness.csv")
 adqs = try_read(RES / "faers_adequacy_summary.csv")
 terms = try_read(data_path("ocular_terms.csv"))
-cited = try_read(data_path("citation_map.json"))
+#: The [n] -> BibTeX key map lives at submission/citation_map.json, which is what build_latex.py
+#: reads.  data_path() searches data/derived first, and a different file of the same name sits
+#: there: a 27-entry PMID -> key map for the literature pipeline.  Loading that one made this
+#: audit compare the manuscript's 32 inline citations against a 27-key table and report a
+#: failure that was the audit's own.  The schema is checked rather than the path trusted.
+_cmap_path = ROOT / "submission" / "citation_map.json"
+cited = None
+if _cmap_path.exists():
+    try:
+        _loaded = json.loads(_cmap_path.read_text(encoding="utf-8"))
+        if isinstance(_loaded, dict) and all(
+                str(k).isdigit() for k in _loaded):
+            cited = _loaded
+        else:
+            print(f"[warn] {_cmap_path.relative_to(ROOT)} is not an [n] -> key map; "
+                  f"reference checks skipped")
+    except Exception as exc:  # noqa: BLE001
+        print(f"[warn] {_cmap_path.relative_to(ROOT)} unreadable ({type(exc).__name__}); "
+              f"reference checks skipped")
+else:
+    print(f"[warn] no citation map at {_cmap_path.relative_to(ROOT)}; "
+          f"reference checks skipped")
 
 if sig is None or dedup is None:
     print("\n[skip] the signal and cohort tables are required for the numeric")
@@ -164,6 +188,23 @@ if cited is not None:
     check(cited_en == set(range(1, n_ref + 1)),
           f"all {n_ref} references are cited inline "
           f"(missing {sorted(set(range(1, n_ref+1)) - cited_en)})")
+
+    #: A citation whose number has no entry in the list is a dangling reference, and both Word
+    #: manuscripts are built from this file.  References 28 to 32 were cited for several rounds
+    #: while the list stopped at 27, and the check above could not see it because it compared the
+    #: citations against the map rather than against the list.
+    ref_head = en.find("\n## References")
+    if ref_head == -1:
+        check(False, "the EN reference list has a heading")
+    else:
+        ref_end = en.find("\n## ", ref_head + 1)
+        ref_block = en[ref_head:ref_end if ref_end != -1 else len(en)]
+        ref_nums = {int(m) for m in re.findall(r"^\s*(\d{1,2})\.\s+\S", ref_block, flags=re.M)}
+        unlisted = sorted(cited_en - ref_nums)
+        check(not unlisted, "every inline citation has an entry in the reference list",
+              f"{len(ref_nums)} entries listed"
+              + (f", cited but not listed: {unlisted}" if unlisted else ""))
+
     check("参考文献编号与英文版完全一致" in cn or "编号与英文版" in cn,
           "CN states the reference numbering follows the English version")
 else:
@@ -175,9 +216,11 @@ bad = [r"\bTODO\b", r"\bTBD\b", r"\bPLACEHOLDER\b", r"\[PMID"]
 for name, txt in (("EN", en), ("CN", cn)):
     hits = [p for p in bad if re.search(p, txt)]
     check(not hits, f"{name} free of placeholders {hits}")
-# the fields a human must fill are allowed and are listed in the checklist
-for marker in ["[to be inserted]"]:
-    check(marker in en, f"EN keeps the human-fill marker {marker}")
+#: The fields a human had to fill have been filled, so the marker's absence is now the expected
+#: state and its presence is a submission blocker.  This check used to assert the marker was
+#: still present, which failed the manuscript for having completed its own placeholders.
+for marker in ("[to be inserted]", "[repository URL"):
+    check(marker not in en, f"EN carries no unfilled marker {marker}")
 
 # ----------------------------------------- 5. structure parity EN vs CN
 print("\n[5] structural parity")

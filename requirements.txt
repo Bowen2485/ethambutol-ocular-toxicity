@@ -1,0 +1,64 @@
+# Dependency record for the ethambutol ocular-toxicity analysis.
+#
+# Why this file exists
+#     The manuscript's software paragraph names the libraries but no lock file was ever kept, so
+#     a reader could not reproduce the run.  Every version below was read from the interpreter
+#     that actually holds it rather than transcribed from documentation:
+#         * the analysis environment, C:\Python314\python.exe (3.14.8), queried with
+#           importlib.metadata
+#         * the docking packages, read from the project's own .piptarget/*.dist-info directories
+#         * the molecular-dynamics environment, taken from docs/MD环境踩坑记录_实测.md, which
+#           records what was measured in WSL (Python 3.12.15, conda env ~/miniconda3/envs/md)
+#
+# Two environments, not one
+#     The pharmacovigilance, network, docking and Mendelian randomisation analyses run on
+#     Windows under Python 3.14.  The all-atom molecular dynamics needs OpenMM and AmberTools and
+#     runs separately in WSL under Python 3.12.  They are kept apart below because they cannot be
+#     merged: the MD stack pins Python 3.12 and a development build of OpenMM.
+
+# ---------------------------------------------------------------------------
+# Analysis environment - Windows, Python 3.14.8
+# ---------------------------------------------------------------------------
+numpy==2.3.5
+pandas==3.0.0
+scipy==1.17.0
+statsmodels==0.14.6          # multivariable logistic regression (Table 4)
+networkx==3.6.1              # PPI network construction and hub ranking (Table 5)
+matplotlib==3.10.8           # Figures 1-10
+lxml==6.1.0
+requests==2.32.5             # Europe PMC, Open Targets, STRING, PubChem, DisGeNET, OpenGWAS
+
+# ---------------------------------------------------------------------------
+# Docking - Windows; versions read from .piptarget/*.dist-info
+# ---------------------------------------------------------------------------
+rdkit==2026.9.1
+biopython==1.88
+meeko==0.8.0                 # receptor/ligand PDBQT preparation
+vina==1.2.7                  # AutoDock Vina Python binding
+swig==4.5.1                  # required by the vina binding
+platformdirs==4.13.0
+
+# ---------------------------------------------------------------------------
+# Molecular dynamics - WSL Ubuntu 24.04, Python 3.12.15, conda env ~/miniconda3/envs/md
+#   INSTALL WITH CONDA, NOT PIP: the OpenMM conda-forge build is what registers the CUDA
+#   platform, and the build string does not say so.  See docs/MD环境踩坑记录_实测.md.
+# ---------------------------------------------------------------------------
+# openmm==8.6.1.dev-b399af4  # conda-forge build py312hdfcc665_0; platform list must show CUDA
+# openff-toolkit==0.19.0
+# openmmforcefields==0.16.0
+# rdkit==2026.03.1
+# mdtraj==1.11.2             # trajectory reading for the analysis and the interaction energy
+# ambertools                 # via conda, for antechamber and AM1-BCC charges
+
+# ---------------------------------------------------------------------------
+# Non-Python tools the pipeline calls
+# ---------------------------------------------------------------------------
+# SQLite 3                          - FAERS quarterly ASCII ingestion and querying
+# Open Babel 3.1.1                  - receptor and ligand conversion; Reduce adds hydrogens
+# Reduce, ADFR suite 1.0            - protonation of receptor structures before docking
+# AutoDock Vina 1.2.7               - also used through its command-line interface
+#
+# A note on what is not pinned
+#     The Windows figure/table builders use python-docx, openpyxl, python-pptx and Pillow, which
+#     are packaging helpers rather than analysis dependencies, so they are left out here.  The
+#     analysis itself does not depend on them.

@@ -429,11 +429,9 @@ for m in re.finditer(r"\*\*Figure (\d{1,2})\*\*\s*(.+?)(?=\n\*\*|\Z)", _fm, re.S
     fig_caps[m.group(1)] = " ".join(m.group(2).split())
 
 FIG_FILES = {
-    "1": "Figure1_flow.pdf", "2": "Figure2_volcano.pdf", "3": "Figure3_heatmap.pdf",
-    "4": "Figure4_forest.pdf", "5": "Figure5_network.pdf",
-    "6": "Figure6_enrichment.pdf", "7": "Figure7_docking.pdf",
-    "8": "Figure8_tto.pdf", "9": "Figure9_trend.pdf",
-    "10": "Figure10_venn_hubs_ocular.pdf",
+    "1": "Figure1_flow.pdf", "2": "Figure2_disproportionality.pdf",
+    "3": "Figure3_network.pdf", "4": "Figure4_enrichment.pdf",
+    "5": "Figure5_docking.pdf", "6": "Figure6_temporal.pdf",
 }
 fig_block: list[str] = []
 #: sorted by integer, not by string: string order would place Figure 10 between 1 and 2

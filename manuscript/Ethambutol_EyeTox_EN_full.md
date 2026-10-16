@@ -149,7 +149,7 @@ Outcome data were the FinnGen release 12 summary statistics for optic neuritis, 
 
 A conventional drug-exposure Mendelian randomisation was not attempted. Ethambutol is an environmental exposure with no genetic instrument, no "ethambutol use" genome-wide association study exists, and no cis-region variant in the candidate panel attained genome-wide significance for optic neuropathy in FinnGen; a Wald-ratio estimate built on non-significant, outcome-derived variants would be both underpowered and circular. This limitation is reported explicitly rather than concealed, and the MR reported here therefore concerns modifiable risk factors for the optic-nerve phenotype rather than the drug itself.
 
-**Scope of the MR actually reported.** Ten exposures were nominated and all ten were retrieved, giving 60 exposure–outcome estimates: each of the six optic-nerve and visual outcomes for each of estimated glomerular filtration rate, cystatin C, serum creatinine, type 2 diabetes, HbA1c, smoking initiation, cigarettes per day, alcohol intake, zinc supplement use and body mass index (Table S2; the primary outcome, optic neuritis, is summarised in Table 8). Vitamin B12 preparation was considered as an eleventh exposure and is not reported, because its instruments could not be harmonised against the FinnGen endpoints. The renal trio was selected on mechanistic grounds as well as statistical ones: ethambutol is eliminated renally and renal impairment is the strongest clinical risk factor for its optic neuropathy, so renal function is the trait whose causal role most needs testing, and three correlated but separately instrumented measures of it provide mutual replication. Diabetes is the most consistently replicated clinical predictor. Body mass index was carried as a positive control rather than as a hypothesis, so that the panel can demonstrate it recovers an association where one exists. Because the panel is the full cross-product rather than a subset, that control is what makes the remaining nulls readable.
+**Scope of the MR actually reported.** Ten exposures were nominated and all ten were retrieved, giving 60 exposure–outcome estimates: each of the six optic-nerve and visual outcomes for each of estimated glomerular filtration rate, cystatin C, serum creatinine, type 2 diabetes, HbA1c, smoking initiation, cigarettes per day, alcohol intake, zinc supplement use and body mass index (Table S2; the primary outcome, optic neuritis, is summarised in Table 4). Vitamin B12 preparation was considered as an eleventh exposure and is not reported, because its instruments could not be harmonised against the FinnGen endpoints. The renal trio was selected on mechanistic grounds as well as statistical ones: ethambutol is eliminated renally and renal impairment is the strongest clinical risk factor for its optic neuropathy, so renal function is the trait whose causal role most needs testing, and three correlated but separately instrumented measures of it provide mutual replication. Diabetes is the most consistently replicated clinical predictor. Body mass index was carried as a positive control rather than as a hypothesis, so that the panel can demonstrate it recovers an association where one exists. Because the panel is the full cross-product rather than a subset, that control is what makes the remaining nulls readable.
 
 **A note on instrument recovery.** Serum creatinine was initially recorded as yielding zero harmonised instruments against every outcome, and that zero was an artefact rather than a finding. Serum creatinine measures the same renal function as eGFR in the same population, and 186 of its 370 instruments are present in the cached FinnGen scans, a higher proportion than eGFR's 151 of 342; a genuine absence of shared variants is therefore not available as an explanation. The estimates reported here for serum creatinine were recomputed from the cached scans after the cause was identified. The episode is recorded because a spurious zero is indistinguishable, in a results table, from a genuinely underpowered exposure, and would have been read as an absence of evidence rather than as a retrieval failure. Every exposure-outcome pair reported in Tables 8 and S1 was checked against the cached data in the same way.
 
@@ -377,7 +377,7 @@ visual acuity reduced (6.1), macular
 degeneration (4.7), blindness
 (3.7), visual impairment
 (2.5) and diplopia
-(2.4) (Figure 2, Figure 4, Table 2, Table 2c).
+(2.4) (Figure 2, Table S3, Table S4).
 
 The informative result is the contrast. **Not one non-specific ocular complaint
 formed a signal:** vision blurred returned an ROR of
@@ -388,7 +388,7 @@ conjunctivitis 1.04, dry eye
 0.68, glaucoma 0.38 and
 ocular hyperaemia 0.23. The signals are confined
 to the optic-nerve, retinal and colour-vision axes; the ocular surface and anterior
-segment are spared (Figure 3).
+segment are spared (Figure S1).
 
 ### 3.2b Within the antitubercular class, once co-prescription is accounted for
 
@@ -468,7 +468,7 @@ eye pain 0.32, glaucoma 0.18, ocular
 hyperaemia 0.18 and vision blurred
 1.15 - all at or below the class background, so the
 specificity of the signal does not depend on which denominator is used
-(Table 2b, Figure 3).
+(Table 2, Figure S1).
 
 ### 3.2c What the whole-database ratio means
 
@@ -582,7 +582,7 @@ any drug and are therefore recorded almost exclusively in tuberculosis reports.
 top seven positions by ratio in the whole panel**, so a reader who took the ranking at
 face value would have the drug apparently implicated in choroidal tubercles. They are
 reported for completeness and explicitly excluded from the drug-toxicity
-interpretation (Table 2e).
+interpretation (Table S6).
 
 The ocular panel is therefore **152 terms, of which 45 are strict signals** after three
 exclusions that are stated rather than applied silently. Seventeen ocular tuberculosis
@@ -590,7 +590,7 @@ manifestations are set aside as above. **Thirteen terms are removed because they
 findings of the eye or of vision at all** and do not belong in a panel described as
 ocular: a systemic rash (177 reports, ratio 15.5), a route of exposure, a behavioural
 descriptor, a gastrointestinal tear, two systemic diseases, a psychiatric phenomenon and
-similar (Table 2f). One of these — *macule* — is retained on the ocular side despite
+similar (Table S7). One of these — *macule* — is retained on the ocular side despite
 being flagged as a non-ocular artefact by the term classifier, because a macule is also a
 retinal finding and removing a term on an ambiguous label would be the worse error; the
 decision is recorded here rather than left implicit.
@@ -608,11 +608,11 @@ review was worth doing. Five further terms are intraocular infection or its sequ
 the tuberculosis group. The remaining fifteen are neither drug toxicity nor tuberculosis —
 post-surgical codes, trauma, an ocular tumour, diabetic retinopathy and non-specific symptom
 codes — and are reported as a fourth group that is explicitly excluded from the toxicity
-reading (Table 2g), so that they neither inflate the signal count nor disappear from it. Two
+reading (Table S8), so that they neither inflate the signal count nor disappear from it. Two
 of that group are strict signals, ocular fistula and a complication of cataract surgery;
 excluding them from the toxicity reading does not remove them from the panel, so the
 152-term count and its 45 strict signals are unchanged. The panel's anatomical composition
-is summarised in Table 2d, which now reports one row per anatomical group rather than the
+is summarised in Table S5, which now reports one row per anatomical group rather than the
 unclassified list it previously held.
 
 ### 3.4 Time to onset separates optic-nerve events from all other events
@@ -620,8 +620,8 @@ unclassified list it previously held.
 Time from starting ethambutol to the reported event could be computed in 1,992
 cases. The median was **125 days (IQR 63-293; 90th percentile 636 days) for
 optic-nerve events** and 111.5 days for ocular events generally, compared with
-**30 days (IQR 9-85)** for non-ocular events in the same case set (Figure 8,
-Table 3). An interval of this length is what a cumulative axonal injury would
+**30 days (IQR 9-85)** for non-ocular events in the same case set (Figure 6,
+Table S9). An interval of this length is what a cumulative axonal injury would
 produce and is difficult to reconcile with an acute hypersensitivity mechanism.
 
 ### 3.5 Predictors of an ocular event
@@ -633,10 +633,10 @@ ocular event (adjusted OR 1.009, 95% CI 1.005-1.012; P = 1.1e-6), as did female 
 (1.358, 1.151-1.601; P = 2.9e-4). Reporting year was weakly negative (0.978 per
 year, 0.960-0.997) and the number of reported reactions was strongly associated
 (1.832 per log unit), as expected for a more completely documented report
-(Table 4). Reporting from Asia did not differ from the reference region (0.924,
+(Table 3). Reporting from Asia did not differ from the reference region (0.924,
 0.773-1.105; P = 0.389). Annual reporting rose from 436 ethambutol reports in 2013
 to 1,640 in 2025, while the proportion carrying an optic-nerve term stayed between
-2.5% and 5.8% without a clear trend (Figure 9).
+2.5% and 5.8% without a clear trend (Figure 6).
 
 **The regional coefficient is a reporting artefact and is not given a clinical
 reading.** Because FAERS has no denominator, the geographic coefficient could reflect
@@ -682,7 +682,7 @@ under the strictest same-class comparator. Optic neuritis moved from
 29.21 to 44.19 and 5.05; optic
 atrophy from 24.84 to 38.80 and
 7.76. Conversely, **cataract, dry eye, eye pain and glaucoma
-failed to form a signal in any of the four specifications** (Table 9), so the
+failed to form a signal in any of the four specifications** (Table 5), so the
 specific-against-general contrast does not depend on how exposure is matched, how
 the denominator is chosen, or whether concomitant-only reports are included - the
 three ways in which a pharmacovigilance signal most often turns out to be an
@@ -708,7 +708,7 @@ in the optic-nerve spectrum, 378 cases,
 77.0% had both age and sex recorded and
 32.3% had a therapy start date, so only
 **27.8%** could support a time-to-onset analysis
-(Table 10). The signal analysis, which needs only the drug name and the reaction
+(Table S13). The signal analysis, which needs only the drug name and the reaction
 term, uses the whole case set; the temporal and dose analyses rest on the minority
 of reports that carry those fields, and this is why they are reported as
 supporting rather than primary evidence.
@@ -735,7 +735,7 @@ confined to a group in which reporting is denser, and whether any group behaves
 differently enough to explain it. Both were tested by recomputing the optic-nerve odds
 ratio within strata of sex, age, reporting region and reporting era, using the same 2×2
 construction, ROR and Woolf interval as the main analysis so the values are directly
-comparable (Table 11).
+comparable (Table 6).
 
 | Stratum | Cases | Optic-nerve cases | ROR (95% CI) | Ratio of odds ratios vs reference |
 |---|---|---|---|---|
@@ -807,14 +807,14 @@ families. Screening against a 416-symbol HGNC whitelist identified 67 genes with
 co-mention evidence; after excluding genes whose co-mention was driven by
 mycobacterial-immunity work rather than ocular toxicity, 48 remained. Together with
 a curated core panel, the focused tier comprised 35 genes and produced a STRING
-network of **33 nodes and 191 edges** (Figure 5).
+network of **33 nodes and 191 edges** (Figure 3).
 
 The hubs were TP53 (degree 23), NFE2L2 (22), AKT1 (22), BCL2 (20), HMOX1 (20),
 CASP3 (20), SOD2 (19), PPARG (18), TNF (18; 14 papers) and BAX (17), with GPX4
 (17), MFN2 (14), SDHB (13), BDNF (12), TFEB (10), SMAD4 (9), SLC7A11 (7), NTRK2 (7)
-and ACSL4 (6) following (Table 5).
+and ACSL4 (6) following (Table S10).
 
-Over-representation analysis gave a coherent picture (Figure 6, Table 6). The
+Over-representation analysis gave a coherent picture (Figure 4, Table S11). The
 leading KEGG term was **ferroptosis** (P = 6.10e-7; 6 of 41 pathway genes: GPX4,
 SLC7A11, ACSL4, SDHB, SMAD4, HMOX1). GO biological process was led by regulation of
 programmed cell death (P = 6.15e-14), GO cellular component by **mitochondrion**
@@ -851,7 +851,7 @@ the network. Against the union of its optic-nerve sets (25 genes) the overlap is
 **2 of 33 hubs and 0 of 33 controls** (P = 0.246); against
 all four ocular sets (184 genes) it is **5 of 33 hubs and 0 of 33
 controls** (P = 0.027). The genes in the larger overlap are CAT, HMOX1, OPA1, SOD2, TNF
-(Figure 10).
+(Figure S2).
 
 **The retinal expression test** is reported in Section 3.11: 31 of the 33 hubs are detected in
 human retinal clusters at nCPM > 1 against a random-set expectation of 25.2 (P = 0.0067).
@@ -990,8 +990,8 @@ centred on the main site leaves that fragment outside it. A fourth, 1FSY, could 
 docked at all: its ligand contains boron and the PDBQT written by Open Babel carries an
 atom type Vina rejects.
 
-Ethambutol docked with affinities between -3.96 and -5.50 kcal/mol (Figure 7,
-Table 7). The most favourable were TNF (-5.50), MFN2 (-5.21), HMOX1 (-5.09),
+Ethambutol docked with affinities between -3.96 and -5.50 kcal/mol (Figure 5,
+Table S12). The most favourable were TNF (-5.50), MFN2 (-5.21), HMOX1 (-5.09),
 NFE2L2 (-5.01) and BCL2 (-4.95); the weakest were GPX4 (-3.96), SMAD4 (-4.06) and
 AKT1 (-4.05). The affinities are modest and span a narrow range, which is the
 expected result for a small, highly polar molecule with nine rotatable bonds and
@@ -1350,7 +1350,7 @@ acceptors, **9** rotatable bonds, **14** heavy atoms and a complexity of 109. Th
 agree with the docking preparation used in Section 3.9, which recorded 14 heavy atoms and
 9 rotatable bonds, so the docking and this profile describe the same molecule.
 
-**All 5 of the standard drug-likeness rules are satisfied** (Table 12): Lipinski's rule of
+**All 5 of the standard drug-likeness rules are satisfied** (Table S14): Lipinski's rule of
 five, Veber's oral-bioavailability criteria, the Ghose filter, and the two descriptors
 associated with central-nervous-system penetration. The last of those is the result worth
 noting, because it runs against the intuitive expectation for a hydrophilic compound.
@@ -1599,49 +1599,65 @@ randomisation. The analysis code is available at https://github.com/Bowen2485/et
 
 **Figure 1** FAERS case-selection flow (90 quarterly ASCII releases → 20.33 million de-duplicated cases → ethambutol-related cases → ocular-term 2×2 construction).
 
-**Figure 2** Volcano plot of ethambutol ocular-term disproportionality. Abscissa: log₂ reporting odds ratio. Ordinate: −log₁₀ Benjamini–Hochberg q. Red points are strict signals.
+**Figure 2** Disproportionality of ethambutol-associated ocular terms. (A) Volcano plot: abscissa, log₂ reporting odds ratio; ordinate, −log₁₀ Benjamini–Hochberg q; red points are strict signals. (B) Forest plot of the signal terms (reporting odds ratio with 95% CI, n ≥ 3).
 
-**Figure 3** Heat map of ocular reporting odds ratios across six antitubercular drugs (log₂ ROR).
+**Figure 3** Focus-layer STRING protein–protein interaction network (33 nodes, 191 edges). Red: curated core panel; orange: literature-supported genes; blue: optic-nerve phenotype genes.
 
-**Figure 4** Forest plot of ethambutol ocular signals (ROR with 95% CI, n ≥ 3).
+**Figure 4** Focus-layer functional enrichment dot plot (GO-BP/CC/MF, KEGG, Reactome, WikiPathways).
 
-**Figure 5** Focus-layer STRING protein–protein interaction network (33 nodes, 191 edges). Red: curated core panel; orange: literature-supported genes; blue: optic-nerve phenotype genes.
+**Figure 5** Docking scores of ethambutol against 14 hub targets (AutoDock Vina, kcal/mol).
 
-**Figure 6** Focus-layer functional enrichment dot plot (GO-BP/CC/MF, KEGG, Reactome, WikiPathways).
+**Figure 6** Temporal behaviour of ethambutol ocular reporting. (A) Time from starting ethambutol to onset, log-scale histogram by event category. (B) Median times with box plots. (C) Annual report volume and the proportion carrying an optic-nerve term (2013–2026).
 
-**Figure 7** Docking scores of ethambutol against 14 hub targets (AutoDock Vina, kcal/mol).
+**Figure S1** Heat map of ocular reporting odds ratios across six antitubercular drugs (log₂ ROR). Supplementary.
 
-**Figure 8** Time from starting ethambutol to onset (left: log-scale histogram by event category; right: box plots with median times).
-
-**Figure 9** Annual ethambutol report volume and the proportion carrying an optic-nerve term (2013–2026).
-
-**Figure 10** Overlap of the network's hub genes with DisGeNET ocular disease genes (5 of 33 hubs; 184 ocular genes).
+**Figure S2** Overlap of the network's hub genes with DisGeNET ocular disease genes (5 of 33 hubs; 184 ocular genes). Supplementary.
 
 **Table 1** Study population (cases per exposure after FAERS de-duplication).
-**Table 2** Ethambutol ocular signal table (152 terms).
-**Table 2b** Strict signals (45 terms).
-**Table 2c** Drug-toxicity-spectrum signals (top 30).
-**Table 2d** Anatomical grouping of the panel (152 terms).
-**Table 2e** Ocular tuberculosis manifestations, excluded from the toxicity reading (17 terms).
-**Table 2f** Non-ocular terms removed from the panel (13 terms).
-**Table 2g** Other ocular findings, neither drug toxicity nor tuberculosis, excluded from the toxicity reading (15 terms).
-**Table 3** Time from starting ethambutol to onset.
-**Table 4** Multivariable logistic regression.
-**Table 5** Focus-layer hub genes.
-**Table 6** Principal enriched pathways.
-**Table 7** Molecular docking score matrix.
-**Table 8** Two-sample Mendelian randomisation estimates for the primary outcome, optic neuritis, one row per exposure.
-**Table 9** Robustness checks (four scenarios).
-**Table 10** Report adequacy.
-**Table 11** Optic-nerve odds ratio by patient subgroup, with contrasts between strata.
+
+**Table 2** Strict signals (45 terms).
+
+**Table 3** Multivariable logistic regression.
+
+**Table 4** Two-sample Mendelian randomisation estimates for the primary outcome, optic neuritis, one row per exposure.
+
+**Table 5** Robustness checks (four scenarios).
+
+**Table 6** Optic-nerve odds ratio by patient subgroup, with contrasts between strata.
+
+**Supplementary tables.**
+
 **Table S1** Renal-function Mendelian randomisation estimates (wider harmonisation against the cached FinnGen scans).
+
 **Table S2** The full Mendelian randomisation panel: every exposure against all six optic-nerve and visual outcomes (60 estimates).
 
-**Additional tables.** Regimen-stratified within-class comparison (`results/faers_regimen_strata.csv`); JADER external validation (`results/jader_validation.csv`); temporal split validation (`results/faers_temporal_validation.csv`); redocking validation panel (`results/redocking_validation_final.csv`); tuberculosis burden denominator (`data/derived/faers_tb_denominator.csv` and `data/derived/faers_who_merged.csv`); ligand parameter validation (`results/ligand_parameter_validation.json`).
+**Table S3** Ethambutol ocular signal table (152 terms).
 
-**Machine-readable table files.** Each numbered table is also provided as a UTF-8 CSV in `tables/`: `Table1_cohort.csv`, `Table2_signals.csv` (152 ocular terms), `Table2b_signals_strict.csv` (the 45 strict signals), `Table2c_toxicity_spectrum.csv` (top 30 by ratio), `Table2d_panel_anatomical.csv` (the panel by anatomical group), `Table2d_review_proposed.csv` (the review of the previously unclassified terms, with a reason for each), `Table2e_ocular_tuberculosis.csv` (17, excluded from the toxicity reading), `Table2f_non_ocular_terms.csv` (13, removed from the panel), `Table2g_other_ocular.csv` (15, neither drug toxicity nor tuberculosis, excluded from the toxicity reading), `Table2_signals_full_panel.csv` (the 178-term derived panel), `Table3_tto.csv`, `Table4_logistic.csv`, `Table5_hubs.csv`, `Table6_enrichment.csv`, `Table7_docking.csv`, `Table8_mr.csv` (the primary outcome, one row per exposure), `TableS1_mr_renal.csv`, `TableS2_mr_full_panel.csv` (all 60 estimates), `Table9_robustness.csv`, `Table10_adequacy.csv`.
+**Table S4** Drug-toxicity-spectrum signals (top 30).
 
----
+**Table S5** Anatomical grouping of the panel (152 terms).
+
+**Table S6** Ocular tuberculosis manifestations, excluded from the toxicity reading (17 terms).
+
+**Table S7** Non-ocular terms removed from the panel (13 terms).
+
+**Table S8** Other ocular findings, neither drug toxicity nor tuberculosis, excluded from the toxicity reading (15 terms).
+
+**Table S9** Time from starting ethambutol to onset.
+
+**Table S10** Focus-layer hub genes.
+
+**Table S11** Principal enriched pathways.
+
+**Table S12** Molecular docking score matrix.
+
+**Table S13** Report adequacy.
+
+**Table S14** Physicochemical and drug-likeness profile of ethambutol (PubChem descriptors; the five standard rules are evaluated in `results/admet_ethambutol.json`). This table was cited in the text but had no caption; the caption is added here.
+
+**Additional analyses without a numbered table.** Regimen-stratified within-class comparison (`results/faers_regimen_strata.csv`); cumulative-dose (`tables/Table13_cumulative_dose.csv`) and head-to-head comparison (`tables/Table14_headtohead.csv`); within-class signal comparison (`tables/Table2_withinclass.csv`); dose strata (`tables/Table11_dose.csv`); JADER external validation (`results/jader_validation.csv`); temporal split validation (`results/faers_temporal_validation.csv`); redocking validation panel (`results/redocking_validation_final.csv`); tuberculosis burden denominator (`data/derived/faers_tb_denominator.csv` and `data/derived/faers_who_merged.csv`); ligand parameter validation (`results/ligand_parameter_validation.json`).
+
+**Machine-readable table files.** Each numbered table is also provided as a UTF-8 CSV in `tables/`. Main tables: `Table1_cohort.csv` (Table 1), `Table2b_signals_strict.csv` (Table 2), `Table4_logistic.csv` (Table 3), `Table8_mr.csv` (Table 4), `Table9_robustness.csv` (Table 5); the subgroup table (Table 6) is `results/faers_subgroups.csv` with the between-stratum contrasts in `results/faers_subgroup_contrasts.csv`. Supplementary tables: `TableS1_mr_renal.csv` (Table S1), `TableS2_mr_full_panel.csv` (Table S2), `Table2_signals.csv` (Table S3), `Table2c_toxicity_spectrum.csv` (Table S4), `Table2d_panel_anatomical.csv` (Table S5), `Table2e_ocular_tuberculosis.csv` (Table S6), `Table2f_non_ocular_terms.csv` (Table S7), `Table2g_other_ocular.csv` (Table S8), `Table3_tto.csv` (Table S9), `Table5_hubs.csv` (Table S10), `Table6_enrichment.csv` (Table S11), `Table7_docking.csv` (Table S12), `Table10_adequacy.csv` (Table S13); the 178-term derived panel is `Table2_signals_full_panel.csv` and the review of the previously unclassified terms is `Table2d_review_proposed.csv`, with a reason for each entry.
 
 ## Reporting checklists
 

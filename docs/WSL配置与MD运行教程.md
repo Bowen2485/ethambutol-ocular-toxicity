@@ -146,7 +146,7 @@ df -h ~
 
 ```bash
 cd ~/ethambutol
-python src/final_audit.py        # 应为 72 项全过
+python src/final_audit.py        # 应为 71 项全过
 python src/audit_crosslanguage.py # 应为 35 项全过
 ```
 
@@ -413,7 +413,7 @@ swap=8GB
 [ ] 5. 装 miniforge + conda 环境（C1）
 [ ] 6. 验证 CUDA 平台（C2）   -> 必须看到 CUDA 那一行
 [ ] 7. 复制项目（B2 方案二或三）
-[ ] 8. cd ~/ethambutol && python src/final_audit.py   -> 72 项全过
+[ ] 8. cd ~/ethambutol && python src/final_audit.py   -> 71 项全过
 [ ] 9. 按 D2 跑全原子 MD
 [ ] 10. 按 D3 判定并结合四个指标写结论
 ```

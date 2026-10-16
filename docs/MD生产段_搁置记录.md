@@ -168,5 +168,5 @@ wsl -d Ubuntu -- bash -c 'cd /home/bowen/ethambutol && /home/bowen/miniconda3/en
 > Section 3.9b: …"*
 
 同段末的 "every production metric" 相应改为 "every metric of a production window"。
-改后 `src/final_audit.py` **72 项**、`src/audit_crosslanguage.py` **35 项**、
+改后 `src/final_audit.py` **71 项**、`src/audit_crosslanguage.py` **35 项**、
 `src/verify_latex.py` **34 项**全部通过。

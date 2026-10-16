@@ -72,6 +72,18 @@ with zipfile.ZipFile(OUT) as z:
                      (f"{TOP}/references.bib", "the bibliography"),
                      (f"{TOP}/Frontiers-Vancouver.bst", "the reference style")):
         print(f"  {'present' if req in names else 'MISSING':8s} {req:44s} {why}")
-    figs = [n for n in names if n.startswith(f"{TOP}/Figure")]
-    print(f"  {'present' if len(figs) == 10 else 'MISSING':8s} "
-          f"{'ten figure files':44s} found {len(figs)}")
+    figs = sorted(n.rsplit("/", 1)[-1] for n in names if n.startswith(f"{TOP}/Figure"))
+    #: the exact set the consolidated paper needs: six main plus two supplementary.  A
+    #: bare count would not notice the wrong figure being shipped under a right-looking
+    #: name, which is how the package came to hold a superseded manuscript last time.
+    expected_figs = {
+        "Figure1_flow.pdf", "Figure2_disproportionality.pdf", "Figure3_network.pdf",
+        "Figure4_enrichment.pdf", "Figure5_docking.pdf", "Figure6_temporal.pdf",
+        "FigureS1_heatmap.pdf", "FigureS2_venn.pdf",
+    }
+    missing_figs = sorted(expected_figs - set(figs))
+    extra_figs = sorted(set(figs) - expected_figs)
+    print(f"  {'present' if not missing_figs and not extra_figs else 'MISSING':8s} "
+          f"{'eight figure files':44s} found {len(figs)}"
+          + (f"  missing {missing_figs}" if missing_figs else "")
+          + (f"  unexpected {extra_figs}" if extra_figs else ""))

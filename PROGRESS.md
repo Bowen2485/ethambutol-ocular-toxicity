@@ -5,7 +5,7 @@
 >
 > **本项目全部数值均来自真实数据分析，无一处编造。**
 > **全部 32 条参考文献均经 Europe PMC 回查验证。**
-> **稿件内全部数值经 72 项自动一致性审计通过。**
+> **稿件内全部数值经 71 项自动一致性审计通过。**（图件检查由 10 图改为 6 主图 + 2 补充图，项数随之少 1）
 >
 > ⚠️ **最近一次状态回填：2026-10-17（含 10-16 回填）。** 本文件是分期存档，以下章节
 > 保留各轮的历史状态，其中若干处已被后续工作推翻；**凡与第〇节冲突者，以第〇节为准。**
@@ -26,10 +26,10 @@
 | **中医内容** | ❌ **已移除**（不是"完成"）：机制章节、候选方药、中药成分对接面板与图7热图均已撤下 | 原件在 `archive/tcm_removed/`；全文 TCM 残留扫描 0 命中 |
 | **摘要** | ✅ 已由 867 词压至 **343 词**（2026-10-17 再由 353 词删 10 词，未动任何数字）；按 `src/check_frontiers_limits.py` 口径 **347 词 / 上限 350，余 3 词** | `manuscript/Ethambutol_EyeTox_EN_full.md` 摘要段；生成器 `src/apply_abstract_and_title.py` |
 | **参考文献** | ✅ **32 条**（旧稿写 27 条） | `manuscript/references_en.md` |
-| **图** | ✅ **10 张**（F1–F10，含 Figure10 Venn） | `figures/Figure1..10` |
-| **稿件修订（2026-10-17）** | ✅ 已修四处缺陷：①Methods §2.6b「all measured during production」与 §3.9b「HMOX1/MFN2 无生产帧」自相矛盾；②Results 段「两个病例数」整段与 Methods **逐字重复**（删 Results 那份，保留 Methods）；③`### 3.9` 标题重复一次；④CRediT 中 Jing Yan 的「Funding acquisition」与「无资助」声明冲突（已删）。CN 重复标题一并删除 | 已重建 DOCX 与 LaTeX/Overleaf：`final_audit` **72/72**、`audit_crosslanguage` **35/35**、`verify_latex` **34/34**、`final_consistency_check` 无 MISMATCH |
+| **图** | ✅ **6 张主图 + 2 张补充图**（2026-10-17 按超限方案合并/分层）：主图 F1 流程、**F2 不成比例（火山+森林合并）**、F3 网络、F4 富集、F5 对接、**F6 时序（TTO+趋势合并）**；补充图 S1 热图、S2 Venn | `figures/`；生成器 `src/make_figures_consolidated.py` |
+| **稿件修订（2026-10-17）** | ✅ 已修四处缺陷：①Methods §2.6b「all measured during production」与 §3.9b「HMOX1/MFN2 无生产帧」自相矛盾；②Results 段「两个病例数」整段与 Methods **逐字重复**（删 Results 那份，保留 Methods）；③`### 3.9` 标题重复一次；④CRediT 中 Jing Yan 的「Funding acquisition」与「无资助」声明冲突（已删）。CN 重复标题一并删除 | 已重建 DOCX 与 LaTeX/Overleaf：`final_audit` **71/71**、`audit_crosslanguage` **35/35**、`verify_latex` **34/34**、`final_consistency_check` 无 MISMATCH |
 | **摘要压缩（2026-10-17）** | ✅ 353 → **343 词**（删 10 词，未动任何数字），Frontiers 口径 **347 / 上限 350，余 3 词**。改的是生成器的 `EN_PARTS`／`CN_PARTS`，重跑 `src/apply_abstract_and_title.py --write` 即生效 | `src/check_frontiers_limits.py` 实测 |
-| **图表超限（待决策）** | ⏸ 正文现有 **10 图 + 17 表项 = 27 个展示项**，多数期刊限 6–8。**方案已出、未改稿**：合并 F2+F4 与 F8+F9、F3/F10 移补充材料；表2 家族 7 项压到 1 项 → 正文 6 图 + 6 表 | `docs/图表超限处理方案_20261017.md` |
+| **图表超限（2026-10-17 已执行）** | ✅ 正文由 **27 个展示项压到 6 图 + 6 表**。图：F2+F4 合并、F8+F9 合并、F3/F10 移入补充材料（Figure S1/S2）。表：表2 家族 7 项只留严格信号表在正文，其余移补充材料；正文表重编为 **1–6**，补充表 **S1–S14**。**附带修好一处旧缺陷**：正文引用了 Table 12 却既无表题也无表文件，现补为 Table S14（数据 `results/admet_ethambutol.json`） | `src/make_figures_consolidated.py`、`src/renumber_figures_tables.py`；方案见 `docs/图表超限处理方案_20261017.md` |
 | **代码仓库** | ✅ **已公开**：https://github.com/Bowen2485/ethambutol-ocular-toxicity （MIT 许可）；2026-10-16 复核 `main` 已与本地工作副本一致 | GitHub API 返回 `"private": false`；稿件 Code availability 已填真实 URL |
 | **MD 分子动力学** | ⏸ **已搁置（2026-10-17 作者决定：运行会致机器过热重启）**。稿件仍按 NFE2L2 1.0 ns 生产段 / HMOX1 0.23 ns / MFN2 0.13 ns 表述，**自洽、无需改动**。**但本次意外抢救出 HMOX1 约 0.48 ns 生产段**（未采用；采用须连改 §3.9b 解读段，因配体 RMSD 由 2.85 → 5.13 Å）。另查明：`addSolvent` 不可复现 → 原子数每次不同 → checkpoint 守卫必然拒绝 → **续跑在现有实现下不可能**，每次尝试都必须一口气跑完 | `results/md_allatom_stability_pbc.csv`；`docs/MD生产段_搁置记录.md` |
 | **HMOX1 血红素** | 🔶 现方案剥离 HEM，改以"接触残基与血红素邻接残基重叠 2/8"作地标；参数化方案仍未验证 | 见下文 §8.8 |
@@ -39,7 +39,7 @@
 - "最终仅纳入 3 个暴露（原计划 10 个）"（§〇之一 局限③、§8.7 退路③）→ **已作废**；
 - "中医机制章节 ✅ 完成"（§一）→ **已作废**，该章节已移除归档；
 - "27 条参考文献"（标题栏、§一、§二）→ **已作废**，现为 32 条；
-- "9 图 / F1–F9"（§一、§4.4、§7.2）→ **已作废**，现为 10 图；
+- "9 图 / F1–F9"、"10 图 / F1–F10"（§一、§4.4、§7.2）→ **已作废**，现为 6 主图 + 2 补充图；
 - "25 个严格信号"（§一 完成度总览）→ **已作废**，现为 45 个；
 - "8,889 词"（§一）→ **已作废**，现全文约 21,600 词（Introduction–Conclusion 约 18,600 词）。
 
@@ -51,8 +51,8 @@
 
 | 文件 | 内容 |
 |---|---|
-| `manuscript/Ethambutol_EyeTox_EN.docx` | **英文 SCI 投稿稿**：全文约 21,600 词（Introduction–Conclusion 约 18,600 词），内嵌 **10 图**，行号 + 页码，**32 条**参考文献 |
-| `manuscript/Ethambutol_EyeTox_CN_中文版.docx` | **中文对照译本**：含 **10 图**，结构与英文版逐节对应 |
+| `manuscript/Ethambutol_EyeTox_EN.docx` | **英文 SCI 投稿稿**：全文约 21,600 词（Introduction–Conclusion 约 18,600 词），内嵌 **6 图**，行号 + 页码，**32 条**参考文献 |
+| `manuscript/Ethambutol_EyeTox_CN_中文版.docx` | **中文对照译本**：含 **6 图**，结构与英文版逐节对应 |
 | `manuscript/Ethambutol_EyeTox_EN_full.md` | 英文稿源文件（便于修改） |
 | `manuscript/Ethambutol_EyeTox_CN_full.md` | 中文稿源文件 |
 | `manuscript/references_en.md` | **32 条**参考文献（全部经 Europe PMC 验证） |
@@ -68,7 +68,7 @@
 | 目录 | 内容 |
 |---|---|
 | `tables/` | 12 个 CSV + `results_digest.md`（全部核心数值集中一处） |
-| `figures/` | **10 图** × (PDF 矢量 + 300 dpi PNG)，F1–F10（含 Figure10 Venn） |
+| `figures/` | **8 图** × (PDF 矢量 + 300 dpi PNG)：主图 F1–F6 + 补充图 S1–S2 |
 | `docs/` | 主题文献梳理(84 PMID)、中药背景(72 PMID)、STROBE/RECORD 清单、期刊建议与中英文投稿信、中英对照术语表、需人工完成清单 |
 | `results/` | 25 个分析输出 CSV |
 | `src/` | 34 个可重跑脚本 |
@@ -184,13 +184,13 @@
 | 机制网络 + 富集 | ✅ 完成 | 分层 PPI、hub 排名、g:Profiler + STRING 富集 |
 | 分子对接 | ✅ 完成 | 14 靶点 × 12 配体 = 126 次成功对接 + 重对接验证 |
 | MR（OpenGWAS + FinnGen）| ✅ 完成 | 10 个暴露 × 6 个视神经结局 = 60 个估计（表8，含体质指数阳性对照）+ 肾功能专项 18 个（表S1） |
-| 图表生成 | ✅ 完成 | F1–F10，PDF + 300 dpi PNG |
+| 图表生成 | ✅ 完成 | 主图 F1–F6 + 补充图 S1–S2，PDF + 300 dpi PNG |
 | 发表表格 + 摘要 | ✅ 完成 | Table1–9 + results_digest.md |
 | 英文 SCI 稿 | ✅ 初稿完成 | 全文成稿（Abstract/Intro/Methods/Results/Discussion/Conclusion） |
 | 中文对照稿 | ✅ 已成稿 | `manuscript/Ethambutol_EyeTox_CN_full.md`，与英文版逐节对应，MR 段已补 |
 | 中医机制章节 | ❌ 已移除 | 曾完成三层病机 + 治法 + 候选方药，后按作者决定全部撤下，归档于 `archive/tcm_removed/` |
 | 投稿配套材料 | ✅ 完成 | STROBE/RECORD 清单、期刊建议、中英文投稿信、数据可用性声明、中英对照术语表 |
-| **交付物计数** | 见左 | `manuscript/` 8 个、`tables/` 24 个 CSV、`figures/` 10 图（PDF + PNG 各 10）、`results/` 62 个 CSV，另有 `docs/` 与 `src/` |
+| **交付物计数** | 见左 | `manuscript/` 8 个、`tables/` 24 个 CSV、`figures/` 8 图（PDF + PNG 各 8）、`results/` 62 个 CSV，另有 `docs/` 与 `src/` |
 
 ---
 
@@ -431,7 +431,7 @@ n=13,804，事件 971，pseudo-R²=0.0351，似然比检验 P=1.46×10⁻⁴⁹
 > 现行下一步见 `docs/投稿前待办清单.md` 与第〇节，要点：
 1. **补 ORCID 与伦理确认**（只有作者能做）
 2. **决定 MD 生产段**：补跑（HMOX1 / MFN2 各 ≥1 ns）或收窄稿件 §3.9b 表述
-3. **图表超限处理**：现 10 图，多数期刊限 6–8 个，需合并或移入补充材料
+3. ~~**图表超限处理**：现 10 图，多数期刊限 6–8 个~~ **✅ 已完成（正文 6 图 + 6 表）**
 4. ~~**摘要再删 5–10 词**（353 → ≤350）~~ **✅ 已完成（343 词，口径 347）**
 5. **选定目标期刊并到官网核对最新须知**（`docs/目标期刊推荐_20261015.md`）
 6. **投稿**：注册投稿系统、填 Cover letter、提前通知六位作者确认邮件

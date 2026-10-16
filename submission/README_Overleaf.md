@@ -74,7 +74,7 @@ Frontiers 要求分别上传：
 | 命令被转义破坏（`\textbackslash`、`\{\}`） | 0 ✓ |
 | 结构化摘要 | Background / Methods / Results / Conclusions ✓（343 词；Frontiers 口径 347／上限 350） |
 | 关键词 | 8 个（Frontiers 要求 5–8）✓ |
-| 图件与图题 | 10 张图，10 条图题，**且每张图都在正文中被引用** ✓（`src/audit_artefacts.py` 第 6 节） |
+| 图件与图题 | 正文 6 张图（另有 2 张补充图），**且每张图都在正文中被引用** ✓（`src/audit_artefacts.py` 第 6 节） |
 | 必需声明 | 齐全 ✓ |
 
 ---

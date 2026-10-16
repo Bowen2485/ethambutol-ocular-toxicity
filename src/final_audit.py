@@ -69,7 +69,10 @@ for d, names in expected.items():
 
 # ------------------------------------------------------------------ 2. figures
 print("\n[2] figures as PDF + PNG")
-for i in range(1, 10):
+#: Six main figures after the consolidation, plus the two that moved to supplementary.
+#: Listed rather than derived from the manuscript, so that deleting a figure and its
+#: caption together cannot make this check pass.
+for i in ("1", "2", "3", "4", "5", "6", "S1", "S2"):
     stems = [f for f in FIG.glob(f"Figure{i}_*") if f.suffix in (".pdf", ".png")]
     pdfs = [f for f in stems if f.suffix == ".pdf"]
     pngs = [f for f in stems if f.suffix == ".png"]

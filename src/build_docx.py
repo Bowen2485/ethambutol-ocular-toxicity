@@ -34,29 +34,24 @@ FIG = ROOT / "figures"
 TAB = ROOT / "tables"
 OUT = MAN
 
+#: Six main figures after the consolidation.  The heat map and the Venn overlap moved to
+#: supplementary (Figure S1/S2) and the volcano and forest panels were merged, so the
+#: supplied filenames are not the ones a "Figure n" key used to imply.  Supplementary
+#: figures are deliberately absent: they belong in the supplementary file, not in the
+#: manuscript body.
 FIG_MAP = {
     "figure 1": "Figure1_flow.png",
-    "figure 2": "Figure2_volcano.png",
-    "figure 3": "Figure3_heatmap.png",
-    "figure 4": "Figure4_forest.png",
-    "figure 5": "Figure5_network.png",
-    "figure 6": "Figure6_enrichment.png",
-    "figure 7": "Figure7_docking.png",
-    "figure 8": "Figure8_tto.png",
-    "figure 9": "Figure9_trend.png",
-    "figure 10": "Figure10_venn_hubs_ocular.png",
-    "figure10": "Figure10_venn_hubs_ocular.png",
+    "figure 2": "Figure2_disproportionality.png",
+    "figure 3": "Figure3_network.png",
+    "figure 4": "Figure4_enrichment.png",
+    "figure 5": "Figure5_docking.png",
+    "figure 6": "Figure6_temporal.png",
     "图1": "Figure1_flow.png",
-    "图2": "Figure2_volcano.png",
-    "图3": "Figure3_heatmap.png",
-    "图4": "Figure4_forest.png",
-    "图5": "Figure5_network.png",
-    "图6": "Figure6_enrichment.png",
-    "图7": "Figure7_docking.png",
-    "图8": "Figure8_tto.png",
-    "图9": "Figure9_trend.png",
-    "图10": "Figure10_venn_hubs_ocular.png",
-    "图 10": "Figure10_venn_hubs_ocular.png",
+    "图2": "Figure2_disproportionality.png",
+    "图3": "Figure3_network.png",
+    "图4": "Figure4_enrichment.png",
+    "图5": "Figure5_docking.png",
+    "图6": "Figure6_temporal.png",
 }
 
 
@@ -345,53 +340,39 @@ def build(md_path: Path, out_path: Path, title: str, east_font: str,
     print(f"[ok] {out_path.name}: {out_path.stat().st_size/1024:.0f} KB")
 
 
-# key tables to embed in the manuscript, in the order the text cites them
+# key tables to embed in the manuscript, in the order the text cites them.
+#: Six main tables after the consolidation.  The panel-description tables, the time-to-
+#: onset table, the hub and enrichment tables, the docking matrix and the adequacy table
+#: all moved to supplementary material, so they are no longer appended here; paths are
+#: relative to the project root because Table 6 lives under results/ rather than tables/.
 KEY_TABLES = [
-    ("Table1_cohort.csv",
+    ("tables/Table1_cohort.csv",
      "Table 1. Study population: de-duplicated FAERS cases by exposure."),
-    ("Table2c_toxicity_spectrum.csv",
-     "Table 2. Leading drug-toxicity-spectrum signals for ethambutol "
-     "(ROR lower 95% CI > 1, PRR >= 2, chi-square >= 4, IC025 > 0, >= 3 cases; "
-     "Benjamini-Hochberg q < 0.05)."),
-    ("Table3_tto.csv",
-     "Table 3. Time from starting ethambutol to the reported event."),
-    ("Table4_logistic.csv",
-     "Table 4. Multivariable logistic regression for any ocular adverse event."),
-    ("Table5_hubs.csv",
-     "Table 5. Focused-tier PPI hubs ranked by degree."),
-    ("Table6_enrichment.csv",
-     "Table 6. Leading enriched terms (FDR < 0.05)."),
-    ("Table7_docking.csv",
-     "Table 7. Docking scores (AutoDock Vina, kcal/mol)."),
-    ("Table8_mr.csv",
-     "Table 8. Two-sample Mendelian randomisation estimates for the primary outcome, "
+    ("tables/Table2b_signals_strict.csv",
+     "Table 2. Strict ocular signals for ethambutol (ROR lower 95% CI > 1, PRR >= 2, "
+     "chi-square >= 4, IC025 > 0, >= 3 cases; Benjamini-Hochberg q < 0.05)."),
+    ("tables/Table4_logistic.csv",
+     "Table 3. Multivariable logistic regression for any ocular adverse event."),
+    ("tables/Table8_mr.csv",
+     "Table 4. Two-sample Mendelian randomisation estimates for the primary outcome, "
      "optic neuritis, one row per exposure."),
-    ("TableS1_mr_renal.csv",
-     "Table S1. Renal-function Mendelian randomisation estimates, from the wider "
-     "harmonisation against the cached FinnGen scans."),
-    ("TableS2_mr_full_panel.csv",
-     "Table S2. The full Mendelian randomisation panel: every exposure against all six "
-     "optic-nerve and visual outcomes (60 estimates)."),
-    ("Table9_robustness.csv",
-     "Table 9. Robustness of the disproportionality conclusions across four "
+    ("tables/Table9_robustness.csv",
+     "Table 5. Robustness of the disproportionality conclusions across four "
      "specifications."),
-    ("Table10_adequacy.csv",
-     "Table 10. Report adequacy: completeness of key fields."),
+    ("results/faers_subgroups.csv",
+     "Table 6. Optic-nerve odds ratio by patient subgroup."),
+    ("results/faers_subgroup_contrasts.csv",
+     "Table 6 (continued). Contrasts between strata."),
 ]
 
 CN_TABLE_TITLES = {
-    "Table1_cohort.csv": "表1 研究人群：FAERS 去重后各暴露病例数",
-    "Table2c_toxicity_spectrum.csv": "表2 乙胺丁醇主要药物毒性谱信号",
-    "Table3_tto.csv": "表3 用药至发病时间",
-    "Table4_logistic.csv": "表4 多因素 logistic 回归（因变量：任一眼部不良事件）",
-    "Table5_hubs.csv": "表5 聚焦层蛋白互作网络 hub 基因（按度排序）",
-    "Table6_enrichment.csv": "表6 主要富集通路（FDR < 0.05）",
-    "Table7_docking.csv": "表7 分子对接打分（AutoDock Vina, kcal/mol）",
-    "Table8_mr.csv": "表8 两样本孟德尔随机化估计：主要结局（视神经炎），每个暴露一行",
-    "TableS1_mr_renal.csv": "表S1 肾功能孟德尔随机化估计（对照缓存 FinnGen 扫描的更宽协调）",
-    "TableS2_mr_full_panel.csv": "表S2 完整孟德尔随机化面板：全部暴露 × 全部 6 个视神经及视觉结局（60 个估计）",
-    "Table9_robustness.csv": "表9 四情景稳健性检验",
-    "Table10_adequacy.csv": "表10 报告充分性：关键字段完整度",
+    "tables/Table1_cohort.csv": "表1 研究人群：FAERS 去重后各暴露病例数",
+    "tables/Table2b_signals_strict.csv": "表2 乙胺丁醇的严格眼部信号",
+    "tables/Table4_logistic.csv": "表3 多因素 logistic 回归（因变量：任一眼部不良事件）",
+    "tables/Table8_mr.csv": "表4 两样本孟德尔随机化估计：主要结局（视神经炎），每个暴露一行",
+    "tables/Table9_robustness.csv": "表5 四情景稳健性检验",
+    "results/faers_subgroups.csv": "表6 按患者亚组的视神经比值比",
+    "results/faers_subgroup_contrasts.csv": "表6（续）层间对比",
 }
 
 
@@ -401,7 +382,7 @@ def append_tables(doc_path: Path, east: str, size: float,
     doc = Document(doc_path)
     add_heading(doc, "表格" if cn else "Tables", 1, east=east)
     for fname, en_caption in KEY_TABLES:
-        p = TAB / fname
+        p = ROOT / fname
         if not p.exists():
             continue
         caption = CN_TABLE_TITLES.get(fname, en_caption) if cn else en_caption

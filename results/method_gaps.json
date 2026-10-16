@@ -1,0 +1,204 @@
+{
+  "methods": [
+    {
+      "method": "Venn intersection of drug and disease targets",
+      "peers": 2,
+      "where": [
+        "LTRA / EGPA",
+        "drug-induced cheilitis"
+      ],
+      "manuscript": false
+    },
+    {
+      "method": "drug-target sources beyond Open Targets",
+      "peers": 2,
+      "where": [
+        "LTRA / EGPA",
+        "drug-induced cheilitis"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "disease-target sources",
+      "peers": 2,
+      "where": [
+        "LTRA / EGPA",
+        "drug-induced cheilitis"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "PPI network from STRING with a cutoff",
+      "peers": 2,
+      "where": [
+        "LTRA / EGPA",
+        "drug-induced cheilitis"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "hub selection by topology",
+      "peers": 1,
+      "where": [
+        "drug-induced cheilitis"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "GO and KEGG enrichment",
+      "peers": 2,
+      "where": [
+        "LTRA / EGPA",
+        "drug-induced cheilitis"
+      ],
+      "manuscript": false
+    },
+    {
+      "method": "GEO differential-expression validation",
+      "peers": 2,
+      "where": [
+        "LTRA / EGPA",
+        "drug-induced cheilitis"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "molecular docking",
+      "peers": 1,
+      "where": [
+        "drug-induced cheilitis"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "molecular dynamics",
+      "peers": 1,
+      "where": [
+        "drug-induced cheilitis"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "binding free energy",
+      "peers": 1,
+      "where": [
+        "drug-induced cheilitis"
+      ],
+      "manuscript": false
+    },
+    {
+      "method": "immune infiltration",
+      "peers": 1,
+      "where": [
+        "drug-induced cheilitis"
+      ],
+      "manuscript": false
+    },
+    {
+      "method": "ADMET prediction",
+      "peers": 1,
+      "where": [
+        "drug-induced cheilitis"
+      ],
+      "manuscript": false
+    },
+    {
+      "method": "time-to-onset analysis",
+      "peers": 3,
+      "where": [
+        "ICI ocular AEs",
+        "LTRA / EGPA",
+        "drug-induced cheilitis"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "Weibull or distribution fitting",
+      "peers": 1,
+      "where": [
+        "LTRA / EGPA"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "subgroup analysis",
+      "peers": 3,
+      "where": [
+        "ICI ocular AEs",
+        "LTRA / EGPA",
+        "drug-induced cheilitis"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "sensitivity analysis",
+      "peers": 2,
+      "where": [
+        "LTRA / EGPA",
+        "drug-induced cheilitis"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "four disproportionality algorithms together",
+      "peers": 1,
+      "where": [
+        "LTRA / EGPA"
+      ],
+      "manuscript": false
+    },
+    {
+      "method": "FDR correction",
+      "peers": 1,
+      "where": [
+        "drug-induced cheilitis"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "restriction to the suspect drug",
+      "peers": 2,
+      "where": [
+        "ICI ocular AEs",
+        "LTRA / EGPA"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "reporting completeness",
+      "peers": 1,
+      "where": [
+        "drug-induced cheilitis"
+      ],
+      "manuscript": true
+    },
+    {
+      "method": "separate pharmacovigilance database",
+      "peers": 1,
+      "where": [
+        "LTRA / EGPA"
+      ],
+      "manuscript": true
+    }
+  ],
+  "gaps": [
+    {
+      "method": "Venn intersection of drug and disease targets",
+      "peers": 2,
+      "where": [
+        "LTRA / EGPA",
+        "drug-induced cheilitis"
+      ],
+      "manuscript": false
+    },
+    {
+      "method": "GO and KEGG enrichment",
+      "peers": 2,
+      "where": [
+        "LTRA / EGPA",
+        "drug-induced cheilitis"
+      ],
+      "manuscript": false
+    }
+  ]
+}

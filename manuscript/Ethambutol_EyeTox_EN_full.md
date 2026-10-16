@@ -783,6 +783,21 @@ term, uses the whole case set; the temporal and dose analyses rest on the minori
 of reports that carry those fields, and this is why they are reported as
 supporting rather than primary evidence.
 
+**The dose finding disagrees with part of the clinical literature, and the reason is
+report completeness.** This analysis found that daily dose did not predict the optic-nerve
+outcome once exposure duration was accounted for (likelihood-ratio P = 0.55), whereas the
+Korean cohort of 1,000 patients reports the opposite ordering: renal dysfunction and the daily
+dose contributed, but not the duration of treatment [30]. A 2026 systematic review of eleven
+studies and 370 patients resolves the same question the other way, finding longer duration the
+principal factor and giving a dose gradient — prevalence 1% below 15 mg/kg/day, threefold higher
+at 20 mg/kg/day [29].
+
+Both can hold, and the reason this analysis is the weakest of the three on dose is stated in
+Section 3.7: only 27.8% of the optic-nerve reports carry age, sex and a therapy start date
+together, so the dose model is fitted on the minority of cases with complete exposure fields
+and has little power to detect a dose effect. **The dose result is therefore inconclusive rather
+than negative**, and the clinical literature is left to carry the dose question.
+
 ### 3.7b The signal holds in every patient subgroup, and the age gradient is the only one worth reading
 
 Two questions follow from a signal that survives every specification: whether it is
@@ -900,7 +915,7 @@ against 4 of 33 (12%), odds ratio 7.82,
 Fisher P = 2.6e-04.** The corrected figure is the one reported.
 
 **The intersection with ocular disease gene sets**, which is the step the comparator papers in
-this genre take: they collect a drug's targets, collect the disease's genes, and analyse only
+this genre take [32]: they collect a drug's targets, collect the disease's genes, and analyse only
 the overlap. DisGeNET's ocular sets were retrieved through its interface and intersected with
 the network. Against the union of its optic-nerve sets (25 genes) the overlap is
 **2 of 33 hubs and 0 of 33 controls** (P = 0.246); against
@@ -1233,6 +1248,30 @@ exists, so the renal nulls are absences of effect rather than absences of power.
 returned nothing for every exposure would leave the negative results uninterpretable, and
 this is the reason the control was carried.
 
+**Smoking was tested as a genetic exposure and shows no effect.** The panel carries
+two smoking traits and neither is associated with any of the six optic-nerve or visual outcomes
+after Benjamini-Hochberg correction (all q ≥ 0.86). Smoking initiation is the stronger of
+the two, with 32 instruments:
+
+| Outcome | Smoking initiation, OR (95% CI) | q | Cigarettes per day, OR (95% CI) | q |
+|---|---|---|---|---|
+| BLINDANDVISIMPAIRMENT | 0.88 (0.58–1.35) | 0.96 | 1.13 (0.74–1.72) | 0.96 |
+| COULOURVISDEF | 0.79 (0.15–4.24) | 0.96 | 1.54 (0.29–8.21) | 0.96 |
+| OPTATROPHY | 0.72 (0.30–1.68) | 0.96 | 1.69 (0.72–3.95) | 0.86 |
+| OPTNERVNAS | 0.95 (0.42–2.15) | 0.96 | 0.91 (0.40–2.04) | 0.96 |
+| OPTNEURITIS | 1.08 (0.63–1.86) | 0.96 | 1.17 (0.69–2.00) | 0.96 |
+| VISFIELDDEF | 0.95 (0.65–1.39) | 0.96 | 1.09 (0.75–1.60) | 0.96 |
+
+This is reported because a cohort of 4,141 ethambutol recipients found smoking an independent
+risk factor for optic neuropathy on adjusted logistic regression (OR 7.06, p = 0.01) [p2023].
+The two are not in direct conflict — a genetic instrument estimates lifelong liability to
+smoke, whereas an adjusted estimate in a treated cohort captures current smoking together with
+whatever it correlates with — but they do not corroborate each other either. **The result is an
+absence of a detectable effect rather than a demonstration of none**: smoking initiation is
+powered at 32 instruments and its estimates sit near unity with intervals that include it,
+while cigarettes per day, at 14 instruments, is weaker still and its intervals are
+correspondingly wide.
+
 Serum creatinine deserves a note, because it was absent from the first analysis and
 its recovery is instructive. An early run recorded zero harmonised instruments for it
 against every outcome, which is not a property the data can have: serum creatinine
@@ -1398,6 +1437,24 @@ and therapy duration in 6.2%, and only 27.8% of optic-nerve-spectrum cases carri
 the fields needed for a time-to-onset analysis. Dose-response and latency questions
 therefore cannot be answered from spontaneous reports, however large the database;
 they require prospective cohorts with protocolised exposure documentation.
+
+**Reversibility, which this study cannot measure, is where the clinical literature is
+most useful.** Two cohorts report it and they differ. Among 4,141 ethambutol recipients in a
+Thai cohort, 60% of the 20 who developed optic neuropathy improved by at least two Snellen
+lines over a mean of 6.9 months, and improvement was unrelated to demographics, past medical
+history, smoking or ethambutol dosing [p2023]. In the Korean cohort fewer than a third improved
+after the drug was stopped, the latency to recovery was 5.38 ± 1.71 months, and no patient who
+had optic disc pallor at diagnosis recovered any visual function [30].
+
+The last observation is the clinically decisive one, and it fixes the timescale this analysis
+implies. The median time from starting ethambutol to an optic-nerve event here is 125 days
+against 30 days for non-ocular events in the same reports, so the toxic effect is slow and the
+window in which it can be detected precedes the appearance of disc pallor — after which the
+Korean data indicate that recovery does not occur. A pharmacovigilance database records events
+rather than outcomes, so this study cannot add to the reversibility figures; what it contributes
+is the timing that makes surveillance worthwhile. Optical coherence tomography angiography
+detects reduced macular superficial vessel density before clinical onset [31], which is the
+kind of measure that would fit inside that window.
 
 ### 4.5 Limitations
 

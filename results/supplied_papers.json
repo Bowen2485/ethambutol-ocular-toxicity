@@ -1,0 +1,104 @@
+[
+  {
+    "file": "haitanuwong.pdf",
+    "title": "Incidence, risk factors and",
+    "doi": "10.3389/fopht.2023.1152215",
+    "pmid": "",
+    "chars": 27714,
+    "source": "8 pages",
+    "percents": [
+      "100",
+      "95",
+      "82",
+      "80",
+      "75",
+      "60",
+      "35",
+      "25",
+      "20",
+      "15",
+      "10",
+      "5"
+    ],
+    "text_path": "docs\\literature_peers\\text\\haitanuwong_text.txt"
+  },
+  {
+    "file": "au2022.pdf",
+    "title": "Su L, et al. Br J Ophthalmol 2020;0:1–5. doi:10.1136/bjophthalmol-2020-317742",
+    "doi": "10.1136/bjophthalmol-2020-317742",
+    "pmid": "",
+    "chars": 32132,
+    "source": "5 pages",
+    "percents": [
+      "95",
+      "5",
+      "1"
+    ],
+    "text_path": "docs\\literature_peers\\text\\au2022_text.txt"
+  },
+  {
+    "file": "au2008.pdf",
+    "title": "Incidence and Clinical Features of Ethambutol-Induced",
+    "doi": "",
+    "pmid": "",
+    "chars": 28778,
+    "source": "9 pages",
+    "percents": [
+      "77.8",
+      "65.4",
+      "61.5",
+      "60",
+      "38.5",
+      "5",
+      "2",
+      "1.5",
+      "1"
+    ],
+    "text_path": "docs\\literature_peers\\text\\au2008_text.txt"
+  },
+  {
+    "file": "41905405.pdf",
+    "title": "Risk factors for ethambutol-",
+    "doi": "10.1016/j.jcjo.2026.03.004",
+    "pmid": "",
+    "chars": 44291,
+    "source": "10 pages",
+    "percents": [
+      "95",
+      "50",
+      "36",
+      "30",
+      "27",
+      "15.1",
+      "10.2",
+      "2.5",
+      "1.7",
+      "1",
+      "0"
+    ],
+    "text_path": "docs\\literature_peers\\text\\41905405_text.txt"
+  },
+  {
+    "file": "42251932.pdf",
+    "title": "Deciphering the molecular mechanisms of fluoxetine-induced sexual",
+    "doi": "10.1016/j.pnpbp.2026.111773",
+    "pmid": "",
+    "chars": 61839,
+    "source": "13 pages",
+    "percents": [
+      "95",
+      "69.7",
+      "65.8",
+      "46.6",
+      "46.2",
+      "40.6",
+      "33.7",
+      "27.8",
+      "21.8",
+      "15.2",
+      "14.3",
+      "8.2"
+    ],
+    "text_path": "docs\\literature_peers\\text\\42251932_text.txt"
+  }
+]

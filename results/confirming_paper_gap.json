@@ -1,0 +1,52 @@
+{
+  "genes_named": {
+    "SDHB": 115,
+    "GPX4": 15,
+    "SLC7A11": 15,
+    "OPA1": 1
+  },
+  "hubs_absent": [
+    "ACSL4",
+    "AKT1",
+    "APAF1",
+    "BAX",
+    "BCL2",
+    "BCL2L1",
+    "CASP3",
+    "CAT",
+    "CYCS",
+    "DNM1L",
+    "FTH1",
+    "FTL",
+    "GPX1",
+    "HIF1A",
+    "HMOX1",
+    "IL6",
+    "KEAP1",
+    "MAPK1",
+    "MFN2",
+    "NFE2L2",
+    "NQO1",
+    "PPARGC1A",
+    "SLC25A4",
+    "SOD2",
+    "STAT3",
+    "TNF",
+    "TP53",
+    "TXN",
+    "VDAC1"
+  ],
+  "gaps": [
+    "Patient data incidental (4 mentions), not a clinical analysis",
+    "29 of this manuscript's 33 hub genes are never named, so their role was not tested",
+    "A dose-response was described preclinically, but not at human doses"
+  ],
+  "future_work": [
+    "Future \nstudies are warranted to establish a therapeutic window and \noptimize dosage for potential translational applications, \nwhich represents an essential next step toward clinical rel-\nevance.",
+    "This updated classification warrants careful \ninterpretation of our findings.",
+    "Furthermore, while primary RGC cultures \nmight provide more direct evidence, considering the techni-\ncal challenges and viability limitations of primary cultures, \nthe RGC-5 model offers a reliable platform for our initial \ninvestigation into EMB's neuroprotective mechanisms.",
+    "We \npropose that these findings should be considered as pre-\nliminary mechanistic evidence in a retinal neuronal model, \nand we plan to further validate these pathways using con-\nditional knockout animal models in future studies.",
+    "Moreo-\nver, we acknowledge that direct in vivo validation through \ngenetic manipulation of Smad4 or SDHB remains to be \nestablished.",
+    "Future studies utilizing conditional knockout \nmodels or viral-mediated gene delivery in the retina would \nbe valuable to confirm this molecular pathway in an intact \nphysiological system."
+  ]
+}

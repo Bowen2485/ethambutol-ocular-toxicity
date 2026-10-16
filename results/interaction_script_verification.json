@@ -1,0 +1,102 @@
+{
+  "selection": {
+    "protein water ligand": {
+      "n_atoms": 56,
+      "old_selection_size": [
+        12,
+        38
+      ],
+      "what_the_old_indices_point_at": {
+        "protein": {
+          "protein": 11,
+          "water": 1
+        },
+        "ligand": {
+          "ligand": 35,
+          "OFF THE END": 3
+        }
+      },
+      "old_runtime_error": "index 56 is out of bounds for axis 0 with size 56",
+      "new_ligand_atoms": 38,
+      "new_selection_correct": true
+    },
+    "protein ligand water": {
+      "n_atoms": 56,
+      "old_selection_size": [
+        12,
+        38
+      ],
+      "what_the_old_indices_point_at": {
+        "protein": {
+          "protein": 11,
+          "ligand": 1
+        },
+        "ligand": {
+          "water": 2,
+          "ligand": 36
+        }
+      },
+      "old_runtime_error": null,
+      "new_ligand_atoms": 38,
+      "new_selection_correct": true
+    }
+  },
+  "lennard_jones": {
+    "sigma_C": 3.4,
+    "epsilon_C": 0.086,
+    "well_position_correct": 3.816,
+    "well_position_wrong": 4.284,
+    "energy_at_true_minimum_wrong_form": 0.0,
+    "table": [
+      {
+        "r": 3.4,
+        "correct": 0.0,
+        "sigma_rmin": 0.688,
+        "diff": -0.688
+      },
+      {
+        "r": 3.6,
+        "correct": -0.071,
+        "sigma_rmin": 0.205,
+        "diff": -0.276
+      },
+      {
+        "r": 3.8,
+        "correct": -0.086,
+        "sigma_rmin": 0.009,
+        "diff": -0.095
+      },
+      {
+        "r": 4.0,
+        "correct": -0.081,
+        "sigma_rmin": -0.064,
+        "diff": -0.017
+      },
+      {
+        "r": 4.28,
+        "correct": -0.065,
+        "sigma_rmin": -0.086,
+        "diff": 0.021
+      },
+      {
+        "r": 4.6,
+        "correct": -0.047,
+        "sigma_rmin": -0.076,
+        "diff": 0.029
+      },
+      {
+        "r": 5.0,
+        "correct": -0.031,
+        "sigma_rmin": -0.055,
+        "diff": 0.024
+      }
+    ],
+    "verdict": "quantitative"
+  },
+  "dielectric": {
+    "identical": true,
+    "old_expression": "d * 4.0 * d / 4.0",
+    "new_expression": "DIELECTRIC_SLOPE * r * r with slope 1.0",
+    "verdict": "documentation only, numerically a no-op"
+  }
+}

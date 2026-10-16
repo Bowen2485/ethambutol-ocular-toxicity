@@ -73,5 +73,5 @@ with zipfile.ZipFile(OUT) as z:
                      (f"{TOP}/Frontiers-Vancouver.bst", "the reference style")):
         print(f"  {'present' if req in names else 'MISSING':8s} {req:44s} {why}")
     figs = [n for n in names if n.startswith(f"{TOP}/Figure")]
-    print(f"  {'present' if len(figs) == 9 else 'MISSING':8s} "
-          f"{'nine figure files':44s} found {len(figs)}")
+    print(f"  {'present' if len(figs) == 10 else 'MISSING':8s} "
+          f"{'ten figure files':44s} found {len(figs)}")

@@ -850,7 +850,8 @@ the overlap. DisGeNET's ocular sets were retrieved through its interface and int
 the network. Against the union of its optic-nerve sets (25 genes) the overlap is
 **2 of 33 hubs and 0 of 33 controls** (P = 0.246); against
 all four ocular sets (184 genes) it is **5 of 33 hubs and 0 of 33
-controls** (P = 0.027). The genes in the larger overlap are CAT, HMOX1, OPA1, SOD2, TNF.
+controls** (P = 0.027). The genes in the larger overlap are CAT, HMOX1, OPA1, SOD2, TNF
+(Figure 10).
 
 **The retinal expression test** is reported in Section 3.11: 31 of the 33 hubs are detected in
 human retinal clusters at nCPM > 1 against a random-set expectation of 25.2 (P = 0.0067).
@@ -1609,6 +1610,8 @@ randomisation. The analysis code is available at https://github.com/Bowen2485/et
 **Figure 8** Time from starting ethambutol to onset (left: log-scale histogram by event category; right: box plots with median times).
 
 **Figure 9** Annual ethambutol report volume and the proportion carrying an optic-nerve term (2013–2026).
+
+**Figure 10** Overlap of the network's hub genes with DisGeNET ocular disease genes (5 of 33 hubs; 184 ocular genes).
 
 **Table 1** Study population (cases per exposure after FAERS de-duplication).
 **Table 2** Ethambutol ocular signal table (152 terms).

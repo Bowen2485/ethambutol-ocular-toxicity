@@ -431,7 +431,7 @@ The question this section answers is whether the network's genes are annotated f
 
 \textbf{The set-level annotation test.} Disease annotations for all 33 hub genes and all 33 control genes were retrieved from DisGeNET, and a gene counted as ocular if any of its annotated disease names matched a list of ocular stems. \textbf{20 of 33 hubs (61\%) and 4 of 33 controls (12\%)} carried such a match (Fisher P = 4.1e-05). The keyword match was then audited, because it produces false positives: \textit{keratosis} and \textit{dyskeratosis congenita} are skin diseases whose spelling contains an ocular stem, and \textit{cataract and cardiomyopathy} is a syndrome classified under its cardiac feature. Removing every match of that kind leaves \textbf{18 of 33 (55\%) against 4 of 33 (12\%), odds ratio 7.82, Fisher P = 2.6e-04.} The corrected figure is the one reported.
 
-\textbf{The intersection with ocular disease gene sets}, which is the step the comparator papers in this genre take \citep{f2026}: they collect a drug's targets, collect the disease's genes, and analyse only the overlap. DisGeNET's ocular sets were retrieved through its interface and intersected with the network. Against the union of its optic-nerve sets (25 genes) the overlap is \textbf{2 of 33 hubs and 0 of 33 controls} (P = 0.246); against all four ocular sets (184 genes) it is \textbf{5 of 33 hubs and 0 of 33 controls} (P = 0.027). The genes in the larger overlap are CAT, HMOX1, OPA1, SOD2, TNF.
+\textbf{The intersection with ocular disease gene sets}, which is the step the comparator papers in this genre take \citep{f2026}: they collect a drug's targets, collect the disease's genes, and analyse only the overlap. DisGeNET's ocular sets were retrieved through its interface and intersected with the network. Against the union of its optic-nerve sets (25 genes) the overlap is \textbf{2 of 33 hubs and 0 of 33 controls} (P = 0.246); against all four ocular sets (184 genes) it is \textbf{5 of 33 hubs and 0 of 33 controls} (P = 0.027). The genes in the larger overlap are CAT, HMOX1, OPA1, SOD2, TNF (Figure 10).
 
 \textbf{The retinal expression test} is reported in Section 3.11: 31 of the 33 hubs are detected in human retinal clusters at nCPM > 1 against a random-set expectation of 25.2 (P = 0.0067).
 
@@ -850,6 +850,13 @@ tables.
 \includegraphics[width=\linewidth]{Figure9_trend}
 \caption{Annual ethambutol report volume and the proportion carrying an optic-nerve term (2013--2026).}
 \label{fig:9}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{Figure10_venn_hubs_ocular}
+\caption{Overlap of the network's hub genes with DisGeNET ocular disease genes (5 of 33 hubs; 184 ocular genes).}
+\label{fig:10}
 \end{figure}
 
 

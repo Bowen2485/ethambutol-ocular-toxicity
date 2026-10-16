@@ -13,6 +13,8 @@ This checks:
     * how many figures and tables exist as files, and what they are
     * how many the manuscript refers to
     * whether the declared lists in the manuscript match
+    * whether every declared figure is actually cited in the body, which is what the Word and
+      LaTeX builds use to decide where to place it
     * whether sections the text announces are present
 """
 from __future__ import annotations
@@ -104,3 +106,25 @@ for key in ("Data availability", "data availability", "Data Availability",
             "STROBE", "RECORD", "reporting guideline", "Code availability",
             "数据可用性", "报告规范"):
     print(f"  EN contains {key!r}: {key in EN}")
+
+print()
+print("=" * 96)
+print("6. Every declared figure is also cited in the body")
+print("=" * 96)
+#: A figure that appears only in the caption list is a figure no reader is ever sent to, and
+#: both builders embed a figure at its first mention in the body.  Two instances of this went
+#: unnoticed until they were looked for directly: the Venn diagram existed in the repository
+#: cited nowhere at all, and the Chinese docking figure was listed but never mentioned, so the
+#: Chinese Word file shipped without it.  Counting references does not catch either.
+for label, text, pat, list_head in (
+        ("EN", EN, r"Figure\s*(\d{1,2})", r"\*\*Figure 1\*\*"),
+        ("CN", CN, r"图\s*(\d{1,2})", r"\*\*图1\*\*")):
+    lines = text.splitlines()
+    start = next((i for i, ln in enumerate(lines) if re.match(list_head, ln.strip())),
+                 len(lines))
+    in_body = {int(n) for n in re.findall(pat, "\n".join(lines[:start]))}
+    in_list = {int(n) for n in re.findall(pat, "\n".join(lines[start:]))}
+    only_listed = sorted(in_list - in_body)
+    print(f"  {'OK' if not only_listed else 'PROBLEM':8s} {label}: {len(in_list)} declared, "
+          f"{len(in_body)} cited in the body"
+          + (f"; listed but never cited: {only_listed}" if only_listed else ""))

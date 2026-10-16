@@ -44,6 +44,8 @@ FIG_MAP = {
     "figure 7": "Figure7_docking.png",
     "figure 8": "Figure8_tto.png",
     "figure 9": "Figure9_trend.png",
+    "figure 10": "Figure10_venn_hubs_ocular.png",
+    "figure10": "Figure10_venn_hubs_ocular.png",
     "图1": "Figure1_flow.png",
     "图2": "Figure2_volcano.png",
     "图3": "Figure3_heatmap.png",
@@ -53,6 +55,8 @@ FIG_MAP = {
     "图7": "Figure7_docking.png",
     "图8": "Figure8_tto.png",
     "图9": "Figure9_trend.png",
+    "图10": "Figure10_venn_hubs_ocular.png",
+    "图 10": "Figure10_venn_hubs_ocular.png",
 }
 
 
@@ -180,7 +184,7 @@ def embed_figures(doc, text: str, east: str = "Times New Roman",
                   size: float = 10):
     """Place each figure after the paragraph that first mentions it."""
     done: set[str] = set()
-    for m in re.finditer(r"(Figure\s*\d|图\s*\d)", text):
+    for m in re.finditer(r"(Figure\s*\d{1,2}|图\s*\d{1,2})", text):
         key = m.group(0).lower().replace(" ", "")
         if key in done:
             continue

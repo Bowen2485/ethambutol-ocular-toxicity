@@ -137,6 +137,21 @@ if BIB.exists():
         note(f"{len(uncited)} bibliography entries are never cited: {uncited[:8]}")
     else:
         check(True, "every bibliography entry is cited")
+
+    #: The Overleaf package ships its own copy of the bibliography, and the two drifted: the
+    #: packaged copy was four entries behind while this file passed, because only this path was
+    #: checked.  On Overleaf that renders as four "?" citations rather than an error, so it is
+    #: checked here rather than left to the compile.
+    OV_BIB = ROOT / "submission" / "overleaf" / "references.bib"
+    if OV_BIB.exists():
+        ov_keys = set(re.findall(r"@\w+" + re.escape(LBR) + r"([^,\s]+),",
+                                 OV_BIB.read_text(encoding="utf-8")))
+        ov_missing = sorted(c for c in cited if c not in ov_keys)
+        check(not ov_missing, "the packaged bibliography resolves every citation",
+              f"{len(ov_keys)} entries in submission/overleaf/references.bib"
+              + (f", missing {ov_missing}" if ov_missing else ""))
+    else:
+        check(False, "the packaged bibliography exists")
 else:
     check(False, "the bibliography file exists")
 

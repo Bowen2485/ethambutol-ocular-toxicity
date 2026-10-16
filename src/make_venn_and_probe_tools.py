@@ -23,6 +23,7 @@ The probes
 from __future__ import annotations
 
 import json
+import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -95,12 +96,18 @@ try:
     ax.set_title("Overlap of the network's hub genes with DisGeNET ocular disease genes",
                  fontsize=11.5, pad=10)
     fig.tight_layout()
-    png = FIG / "fig_venn_hubs_ocular.png"
-    fig.savefig(png, bbox_inches="tight", facecolor="white")
+    #: Named with the other numbered figures and written as vector PDF as well as PNG.  The
+    #: first version of this script wrote only figures/fig_venn_hubs_ocular.png, which is why
+    #: the diagram existed in the repository but was cited nowhere in either manuscript: the
+    #: LaTeX package embeds Figure<n>_*.pdf and the Word builder looks up Figure<n>_*.png.
+    pdf = FIG / "Figure10_venn_hubs_ocular.pdf"
+    png = FIG / "Figure10_venn_hubs_ocular.png"
+    fig.savefig(pdf, bbox_inches="tight", facecolor="white")
+    fig.savefig(png, bbox_inches="tight", facecolor="white", dpi=320)
     plt.close(fig)
     print()
-    print(f"  figure written: {png.relative_to(ROOT)}")
-    print(f"      {png.stat().st_size / 1024:.0f} KB")
+    print(f"  figures written: {pdf.relative_to(ROOT)}  ({pdf.stat().st_size / 1024:.0f} KB)")
+    print(f"                   {png.relative_to(ROOT)}  ({png.stat().st_size / 1024:.0f} KB)")
 except ImportError as e:
     print(f"  matplotlib unavailable: {e}")
 
@@ -145,15 +152,31 @@ TARGETS = [
                            "TPSA,HBondDonorCount,HBondAcceptorCount,RotatableBondCount,"
                            "CanonicalSMILES/JSON"),
 ]
+#: --no-probes redraws the figure from the frozen result without touching the network, which is
+#: what is needed when only the diagram has changed.  The probe record from the previous run is
+#: carried over rather than overwritten with a page of connection failures.
+no_probes = "--no-probes" in sys.argv
+prior = {}
+_probe_file = OUT / "infiltration_admet_probe.json"
+if _probe_file.exists():
+    try:
+        prior = json.loads(_probe_file.read_text(encoding="utf-8")).get("probes", [])
+    except Exception:  # noqa: BLE001
+        prior = []
+
 probes = []
-for label, url in TARGETS:
-    r = probe(label, url)
-    probes.append(r)
-    state = ("CHALLENGE" if r["challenge"] else
-             ("OK" if r["status"] == 200 and r["bytes"] > 500 else "no data"))
-    print(f"  {state:10s} {str(r['status']):>5}  {r['bytes']:>7,} B  {label}")
-    if r["bytes"] < 400:
-        print(f"             {r['sample'][:100]}")
+if no_probes:
+    probes = prior
+    print(f"  skipped by --no-probes; carrying over {len(probes)} record(s) from the last run")
+else:
+    for label, url in TARGETS:
+        r = probe(label, url)
+        probes.append(r)
+        state = ("CHALLENGE" if r["challenge"] else
+                 ("OK" if r["status"] == 200 and r["bytes"] > 500 else "no data"))
+        print(f"  {state:10s} {str(r['status']):>5}  {r['bytes']:>7,} B  {label}")
+        if r["bytes"] < 400:
+            print(f"             {r['sample'][:100]}")
 
 (OUT / "infiltration_admet_probe.json").write_text(
     json.dumps({"venn": {"hubs": HUBS, "ocular_genes": ALL_EYE,

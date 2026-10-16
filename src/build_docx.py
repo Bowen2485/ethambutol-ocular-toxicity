@@ -409,10 +409,9 @@ def main() -> int:
         build(
             MAN / "Ethambutol_EyeTox_EN_full.md",
             OUT / "Ethambutol_EyeTox_EN.docx",
-            "Ocular toxicity of ethambutol: a whole-database pharmacovigilance "
-            "analysis of 20.3 million FAERS cases integrated with network "
-            "toxicology, molecular docking and genetic interrogation of the "
-            "optic-nerve phenotype",
+            "Ocular toxicity of ethambutol in 20.3 million FAERS cases: "
+            "pharmacovigilance, network toxicology, molecular docking and "
+            "genetic interrogation",
             east_font="Times New Roman", base_size=12)
         append_tables(OUT / "Ethambutol_EyeTox_EN.docx", "Times New Roman", 12,
                       cn=False)
@@ -420,8 +419,8 @@ def main() -> int:
         build(
             MAN / "Ethambutol_EyeTox_CN_full.md",
             OUT / "Ethambutol_EyeTox_CN_中文版.docx",
-            "乙胺丁醇眼毒性：2033 万例 FAERS 全库药物警戒分析及"
-            "网络毒理学、分子对接与遗传学整合研究",
+            "乙胺丁醇眼毒性：2 033 万例 FAERS 病例中的药物警戒、"
+            "网络毒理学、分子对接与遗传学考察",
             east_font="宋体", base_size=10.5)
         append_tables(OUT / "Ethambutol_EyeTox_CN_中文版.docx", "宋体", 10.5,
                       cn=True)

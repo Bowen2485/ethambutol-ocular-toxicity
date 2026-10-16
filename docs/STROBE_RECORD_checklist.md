@@ -1,8 +1,7 @@
 # STROBE / RECORD-PE reporting checklist
 
-**Manuscript:** Ocular toxicity of ethambutol: a whole-database pharmacovigilance
-analysis of 20.3 million FAERS cases integrated with network toxicology,
-molecular docking and genetic interrogation of the optic-nerve phenotype
+**Manuscript:** Ocular toxicity of ethambutol in 20.3 million FAERS cases:
+pharmacovigilance, network toxicology, molecular docking and genetic interrogation
 
 **Design:** Retrospective pharmacovigilance disproportionality study with
 integrated computational mechanism analysis.

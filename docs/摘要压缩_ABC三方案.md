@@ -1,7 +1,14 @@
-# 摘要压缩：三个方案（待选）
+# 摘要压缩：三个方案
 
+> **✅ 已采用方案 A（2026-10-17）**，并已写入中英两版稿件与 `submission/abstract_rewritten.json`；
+> 应用脚本 `src/apply_abstract_and_title.py`（可重跑）。
+> 最终为 **350 词**，比下表多 1 词，原因是把摘要里的"在任何比较中"改为
+> **"在同类药内部比较中"**——1.15 这组数值出自 `faers_withinclass_signals.csv`，
+> 而 Table 2 与正文 §3.2 引用的 1.82 出自全库比较；原来的措辞会让读者以为摘要写错了。
+> 若需要留出余量，改用 C（303 词）只需替换 `apply_abstract_and_title.py` 中的 EN_PARTS／CN_PARTS。
+>
 > 生成：`src/draft_abstract_variants.py`（可重跑；字数按空白分词统计，与 Frontiers 口径一致）
-> 现状：`submission/abstract_rewritten.json`，**378 词**（Background 40／Methods 109／Results 183／Conclusion 46），Frontiers 上限约 350 词，**超 28 词**。
+> 原状：`submission/abstract_rewritten.json`，**378 词**（Background 40／Methods 109／Results 183／Conclusion 46），Frontiers 上限约 350 词，**超 28 词**。
 
 | 方案 | 从哪里删 | 删掉了什么 | 字数 |
 |---|---|---|---|

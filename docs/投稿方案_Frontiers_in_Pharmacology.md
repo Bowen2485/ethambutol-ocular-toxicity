@@ -64,8 +64,8 @@ Frontiers in Pharmacology
 Dear Editors,
 
 We submit for your consideration the manuscript entitled "Ocular toxicity of
-ethambutol: a whole-database pharmacovigilance analysis of 20.3 million FAERS
-cases with network toxicology, molecular docking and genetic interrogation", for
+ethambutol in 20.3 million FAERS cases: pharmacovigilance, network toxicology,
+molecular docking and genetic interrogation", for
 consideration as an Original Research article.
 
 Ethambutol is a first-line antitubercular drug whose optic neuropathy is

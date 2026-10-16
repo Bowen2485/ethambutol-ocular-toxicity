@@ -62,3 +62,8 @@ docking/validation/*/docked*.pdbqt
 .idea/
 Thumbs.db
 Desktop.ini
+credential/*
+credentials/*
+disgenet_key*
+*_key.txt
+*.uuid

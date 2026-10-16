@@ -1,0 +1,17 @@
+{
+  "parts": {
+    "Background": "Ethambutol is a first-line antitubercular drug whose optic neuropathy can be irreversible, and its frequency estimates vary widely with ascertainment. No pharmacovigilance analysis has profiled the ocular phenotype against other first-line antitubercular drugs.",
+    "Methods": "We analysed all 90 FDA Adverse Event Reporting System (FAERS) quarterly releases (2004Q1-2026Q2; 89 usable), de-duplicating 24,389,966 reports to 20,328,568 cases by the FDA case-version protocol. Four disproportionality measures were computed for 178 ocular MedDRA preferred terms across ethambutol and five comparator antitubercular drugs, with Benjamini-Hochberg control and four robustness specifications. We assessed time to onset, predictors and completeness, combined Europe PMC, Open Targets and STRING into a mechanism network, tested enrichment, docked ethambutol against the hub targets, and interrogated the loci against FinnGen R12 phenotypes.",
+    "Results": "Among 13,804 de-duplicated ethambutol cases, 971 (7.03%) reported an ocular event and 475 (3.44%) an optic-nerve event; 45 of 152 testable ocular terms met strict signal criteria. The risk was confined to the optic nerve: optic neuropathy gave an ROR of 159.21 (95% CI 134.65-188.25), whereas no non-specific ocular complaint formed a signal in the within-class comparison (vision blurred 1.15, cataract 0.81, dry eye 0.35, eye pain 0.32, glaucoma 0.18, ocular hyperaemia 0.18). Within the antitubercular class ethambutol had an ROR of 6.47 (5.38-7.79) for optic neuropathy, and restricting the comparison to ethambutol-containing regimens gave a rate ratio of 3.28 (1.03-10.40) against regimens without it, so the association is not explained by the tuberculosis population. The pattern replicated in JADER (1,054,239 cases; optic neuropathy ROR 571.0, toxic optic neuropathy 864.6, all control terms null). Median time to an optic-nerve event was 125 days versus 30 days for non-ocular events; only 27.8% carried enough detail for time-to-onset analysis. Enrichment converged on ferroptosis and mitochondrial integrity, and genetically proxied renal function showed no causal effect on any optic-nerve outcome (all q >= 0.87).",
+    "Conclusions": "Ethambutol ocular toxicity is a highly specific optic-nerve signal that spares the ocular surface, is delayed by months, resists every robustness specification tested, and replicates in an independent national database. Renal impairment appears to raise drug exposure rather than independently cause optic-nerve degeneration."
+  },
+  "keywords": "ethambutol; optic neuropathy; pharmacovigilance; FAERS; disproportionality analysis; ferroptosis; molecular docking; Mendelian randomisation",
+  "word_counts": {
+    "Background": 33,
+    "Methods": 86,
+    "Results": 181,
+    "Conclusions": 43
+  },
+  "total": 343,
+  "note": "Applied to manuscript/Ethambutol_EyeTox_EN_full.md by src/apply_abstract_and_title.py. Variant A of src/draft_abstract_variants.py; see docs/摘要压缩_ABC三方案.md."
+}

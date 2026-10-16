@@ -2,8 +2,8 @@
 
 > **✅ 已采用方案 A（2026-10-16）**，并已写入中英两版稿件与 `submission/abstract_rewritten.json`；
 > 应用脚本 `src/apply_abstract_and_title.py`（可重跑）。
-> 最终实测为 **353 词**（对 `manuscript/Ethambutol_EyeTox_EN_full.md` 摘要段按空白分词统计），
-> 略超 Frontiers 约 350 词的上限，建议再删 5–10 词；超出下表的原因是把摘要里的"在任何比较中"改为
+> 2026-10-17 再删 10 词后为 **343 词**（对 `manuscript/Ethambutol_EyeTox_EN_full.md` 摘要段按空白分词统计）；
+> 按 `src/check_frontiers_limits.py` 口径为 347 词、上限 350 内（余 3 词）；超出下表的原因是把摘要里的"在任何比较中"改为
 > **"在同类药内部比较中"**——1.15 这组数值出自 `faers_withinclass_signals.csv`，
 > 而 Table 2 与正文 §3.2 引用的 1.82 出自全库比较；原来的措辞会让读者以为摘要写错了。
 > 若需要留出余量，改用 C（303 词）只需替换 `apply_abstract_and_title.py` 中的 EN_PARTS／CN_PARTS。

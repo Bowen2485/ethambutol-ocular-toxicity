@@ -46,7 +46,7 @@ EN_PARTS = [
     ("Background",
      "Ethambutol is a first-line antitubercular drug whose optic neuropathy can be "
      "irreversible, and its frequency estimates vary widely with ascertainment. No "
-     "pharmacovigilance analysis has profiled the ocular phenotype against the other "
+     "pharmacovigilance analysis has profiled the ocular phenotype against other "
      "first-line antitubercular drugs."),
     ("Methods",
      "We analysed all 90 FDA Adverse Event Reporting System (FAERS) quarterly releases "
@@ -70,14 +70,14 @@ EN_PARTS = [
      "association is not explained by the tuberculosis population. The pattern replicated in "
      "JADER (1,054,239 cases; optic neuropathy ROR 571.0, toxic optic neuropathy 864.6, all "
      "control terms null). Median time to an optic-nerve event was 125 days versus 30 days for "
-     "non-ocular events, and only 27.8% of cases carried enough detail for time-to-onset "
-     "analysis. Enrichment converged on ferroptosis and mitochondrial integrity, and genetically "
+     "non-ocular events; only 27.8% carried enough detail for time-to-onset analysis. "
+     "Enrichment converged on ferroptosis and mitochondrial integrity, and genetically "
      "proxied renal function showed no causal effect on any optic-nerve outcome (all q >= 0.87)."),
     ("Conclusions",
      "Ethambutol ocular toxicity is a highly specific optic-nerve signal that spares the ocular "
      "surface, is delayed by months, resists every robustness specification tested, and "
-     "replicates in an independent national database. Renal impairment appears to act by "
-     "raising drug exposure rather than by independently causing optic-nerve degeneration."),
+     "replicates in an independent national database. Renal impairment appears to raise "
+     "drug exposure rather than independently cause optic-nerve degeneration."),
 ]
 
 CN_PARTS = [
@@ -87,7 +87,7 @@ CN_PARTS = [
     ("方法",
      "分析 FDA 不良事件报告系统（FAERS）全部 90 个季度发布（2004Q1—2026Q2，可用 89 个），"
      "按 FDA 病例版本规则将 24 389 966 份报告去重为 20 328 568 例病例。以乙胺丁醇及 5 种"
-     "抗结核药为暴露，对 178 个眼科 MedDRA 首选术语计算四种不成比例度量，"
+     "抗结核药为暴露，对 178 个眼科 MedDRA 术语计算四种不成比例度量，"
      "以 Benjamini-Hochberg 法校正并另设四种稳健性口径。分析用药至发病时间、预测因素与报告"
      "充分性；随后将 Europe PMC、Open Targets 与 STRING 整合为机制网络，做功能富集，"
      "将乙胺丁醇对接至 hub 靶点，并以 FinnGen R12 视神经表型作遗传学考察。"),
@@ -100,7 +100,7 @@ CN_PARTS = [
      "相对不含该药的方案率比为 3.28（1.03～10.40），故该关联不能以结核病人群解释。"
      "该模式在日本 JADER（1 054 239 例）中独立复现：视神经症 ROR 571.0、"
      "中毒性视神经症 864.6，全部对照术语阴性。用药至视神经事件中位 125 d，非眼部事件 30 d；"
-     "仅 27.8% 的病例具备足够细节做发病时间分析。富集收敛于铁死亡与线粒体完整性；"
+     "仅 27.8% 具备足够细节做发病时间分析。富集收敛于铁死亡与线粒体完整性；"
      "遗传代理的肾功能对全部视神经结局无因果效应（q 均 ≥ 0.87）。"),
     ("结论",
      "乙胺丁醇眼部毒性是特异性极高的视神经信号：不累及眼表、延迟数月出现、经全部稳健性口径"

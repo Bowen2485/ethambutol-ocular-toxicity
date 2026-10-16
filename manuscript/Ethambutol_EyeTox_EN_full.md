@@ -378,6 +378,18 @@ first residues of each sequence as the most persistent contacts. The values from
 were discarded, and the corrected analysis includes a guard that refuses to write its output
 if the number of contacting residues is again equal to the total.
 
+The residue assignments were then checked against the structures rather than accepted on
+their face value, because the mapping had already failed once. Two checks were applied: the
+distance from the ligand centroid to each named residue, which for a genuine interface lies
+in the range an extended ligand spans; and, for HMOX1, the overlap between the contacting
+residues and the residues adjacent to the heme that was removed when the 1N45 receptor was
+cleaned, which is an independent landmark because the heme site is known from the deposited
+structure. The first check initially reported a failure for all three targets because it
+compared the contact distances with the distance to the first residue of each chain, which is
+26–36 Å and carries no information about where a pocket is; that comparison was wrong, not
+the mapping. The HMOX1 overlap is reported as it stands, at two of eight persistent contacts,
+rather than as a pass.
+
 ---
 
 ## 3. Results
@@ -1058,6 +1070,37 @@ trajectories were written without explicit hydrogen positions for the ligand, an
 the conventional upper bound for such a pair. It therefore counts potential polar contacts,
 not established hydrogen bonds, and is used as a comparative measure across the three
 targets rather than as a bond count.
+
+**The site itself can be named, which the contact count alone does not do.** Restricting to
+residues in contact for at least half the run gives 10 sites in NFE2L2, 16 in HMOX1 and 10
+in MFN2 — pockets of a size consistent with a buried ligand — and the persistent residues
+are aromatic and polar rather than a scattering along the chain.
+
+| Target | Residues in contact for ≥50% of the run | Pocket size | Closest approach |
+|---|---|---|---|
+| **NFE2L2** | TYR10, ARG12, PHE15, ASN58, SER59, GLN13, PRO60, LEU8 | 10 of 301 | 0.16 nm (TYR10) |
+| **HMOX1** | PHE24, MET25, PHE28, PHE38, VAL41, LEU45, ARG127, ASP131 | 16 of 428 | 0.16 nm (ASP131) |
+| **MFN2** | TRP95, LEU166, ARG289, GLU313, GLU317, SER4, PRO165, GLN310 | 10 of 841 | 0.16 nm (GLU313) |
+
+Two features of these lists are worth recording. The pocket in HMOX1 is mostly hydrophobic —
+four phenylalanines, a valine and a leucine — with two charged residues at its edge, which is
+what a substrate site for a small polar molecule looks like. **And in HMOX1 two of the eight
+persistent contacts are adjacent to where the heme was removed**: MET25 at 2.65 Å and ARG127
+at 2.43 Å from the nearest heme atom of the deposited structure. Twenty-seven of the 428
+residues lie within 5 Å of the heme, so chance alone would give about 0.5 of the eight, and
+finding two is above chance without being a heme-site pose. The ligand's edge reaches the
+heme cavity while its body lies against the neighbouring hydrophobic residues, which is a
+partial occupancy of the active site rather than a replacement of the cofactor.
+
+**A note on how this was verified, because the first check reached the wrong conclusion.** A
+verification script compared the distance from the ligand to the first residue of each chain
+(26–36 Å) with the median distance to the contacting residues (about 7 Å) and declared the
+residue numbering offset. That reference is meaningless: an elongated protein has its chain
+start far from its binding pocket, and the quantity that carries information is the absolute
+distance, which is 4.7–9.5 Å here and is what an interface measures. Ethambutol has 14 heavy
+atoms and 9 rotatable bonds, so an extended ligand spanning a pocket sits at that distance
+from the residues it touches; a rigid molecule of the same mass would sit closer. The
+numbering is therefore sound and the site assignments stand.
 
 **What makes this more than three separate observations is that the three numbers that
 matter are nearly the same in all three systems.** The receptor backbone RMSD is 1.18,

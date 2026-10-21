@@ -138,9 +138,11 @@ def figure3() -> None:
     pts.sort(key=lambda r: -r["ror"])
     ctl.sort(key=lambda r: -r["ror"])
     rows = [(r["term"].capitalize(), r["ror"], r["ror_lcl"], r["ror_ucl"], r["a"]) for r in pts]
-    rows += [(r["term"].capitalize() + " (control)", r["ror"], r["ror_lcl"], r["ror_ucl"], r["a"])
-             for r in ctl]
-    forest(rows, "Preferred terms: optic-nerve query (top) and pre-specified controls (bottom)",
+    negative = {"Cataract", "Dry eye", "Glaucoma", "Conjunctivitis"}
+    rows += [(r["term"].capitalize()
+              + (" (negative control)" if r["term"] in negative else " (non-specific comparator)"),
+              r["ror"], r["ror_lcl"], r["ror_ucl"], r["a"]) for r in ctl]
+    forest(rows, "Preferred terms within the optic-nerve query (top), pre-specified negative controls and non-specific comparators (bottom)",
            "Reporting odds ratio (log scale, 95% CI)", "Figure3_pt_forest",
            xlim=(0.05, 400), figsize=(6.8, 5.4))
 

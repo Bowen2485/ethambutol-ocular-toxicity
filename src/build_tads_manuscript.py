@@ -104,7 +104,8 @@ glaucoma and dry eye were null or below unity in the same analysis. The two FAER
 that period's own de-duplicated case count as the reference population. Estimates are not compared
 across systems: the proportion of reports naming the drug as suspect differs by system.
 
-Table 4. Non-specific ocular terms in FAERS (pre-specified controls).
+Table 4. Pre-specified negative controls (cataract, dry eye, glaucoma, conjunctivitis) and
+non-specific comparators (eye pain, vision blurred) in FAERS.
 
 | Term | Exposed cases | Cases in database | ROR | 95% CI | q |
 |---|---|---|---|---|---|
@@ -190,9 +191,9 @@ intervals on a logarithmic axis; the dashed line marks unity. Red, interval abov
 interval below unity; grey, interval includes unity. The number of exposed cases is given at the
 right.
 
-**Figure 3.** Preferred terms inside the optic-nerve query (upper panel) and the pre-specified
-non-specific control terms (lower panel). Terms with fewer than three exposed cases are not
-plotted. Conventions as in Figure 2.
+**Figure 3.** Preferred terms within the optic-nerve query, alongside the pre-specified negative
+controls and the non-specific ocular comparators. Terms with fewer than three exposed cases are
+not plotted. Conventions as in Figure 2.
 
 **Figure 4.** Sensitivity of the optic-nerve estimate to exposure role and reporting period. The
 upper four rows compare the preferred term and the query under all-role and suspect-only

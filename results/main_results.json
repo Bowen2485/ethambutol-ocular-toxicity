@@ -409,5 +409,61 @@
   "strict_token": {
     "status": "not a separate analysis",
     "why": "the cohort is identified by a case-insensitive substring match on the drug-name fields with the single name token ETHAMBUTOL, so a 'whole-token' variant does not define a different cohort; the earlier Methods text described the exposure incorrectly and the sensitivity has been withdrawn rather than reported"
+  },
+  "regimen": {
+    "definition": "optic-nerve event (optic neuropathy, optic neuritis, optic atrophy, toxic optic neuropathy; both spellings) among reports naming rifampicin, isoniazid and pyrazinamide, split by whether ethambutol is also named",
+    "with_ethambutol": {
+      "n_optic": 76,
+      "n": 6167
+    },
+    "without_ethambutol": {
+      "n_optic": 7,
+      "n": 1098
+    },
+    "rate_ratio": 1.9330538117630705,
+    "rate_ratio_lcl": 0.8936925045965071,
+    "rate_ratio_ucl": 4.181188742160053
+  },
+  "period_coverage": {
+    "N": 20692683,
+    "in_range": 20692645,
+    "outside_or_unparsed": 57,
+    "cases_with_multiple_demo_rows": 6115,
+    "span_both_periods": 0,
+    "year_distribution": {
+      "1986": 1,
+      "1992": 1,
+      "1996": 2,
+      "1997": 1,
+      "1998": 4,
+      "1999": 16,
+      "2000": 7,
+      "2001": 7,
+      "2002": 5,
+      "2003": 13,
+      "2004": 204724,
+      "2005": 230380,
+      "2006": 244962,
+      "2007": 264685,
+      "2008": 309197,
+      "2009": 335123,
+      "2010": 476964,
+      "2011": 538486,
+      "2012": 638091,
+      "2013": 769310,
+      "2014": 811551,
+      "2015": 1223169,
+      "2016": 1143271,
+      "2017": 1203184,
+      "2018": 1410447,
+      "2019": 1422976,
+      "2020": 1422176,
+      "2021": 1574355,
+      "2022": 1536812,
+      "2023": 1393132,
+      "2024": 1350415,
+      "2025": 1396239,
+      "2026": 792996
+    }
   }
 }

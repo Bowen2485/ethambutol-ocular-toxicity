@@ -84,10 +84,14 @@ for n in sorted(entries):
         loc += f";{vol}"
         if issue:
             loc += f"({issue})"
-        elif pages:
-            loc += ":"
-        if pages and issue:
+        if pages:
             loc += f":{pages}"
+        elif not pages:
+            #: some records have no page range; the article number is the last segment of the
+            #: DOI (e.g. 1152215, k3532) and is what Vancouver style expects in its place
+            tail = doi.rsplit("/", 1)[-1]
+            if re.fullmatch(r"[A-Za-z]?\d+", tail):
+                loc += f":{tail}"
     bits.append(loc + ". " if loc else "")
     bits.append(f"doi:{doi}.")
     out.append(f"{n}. " + "".join(bits).replace("..", ".").strip())

@@ -32,7 +32,7 @@
 
 Ethambutol is one of the standard drugs used to treat tuberculosis. It can damage the optic nerve, and patients may lose vision if the drug is continued after the damage begins. How often this happens is uncertain, because estimates depend on how closely patients are examined; published figures range from less than one in a hundred to about six in a hundred.
 
-Doctors send reports of suspected side effects to national databases. We studied these reports to ask a narrower question than "how common is the damage": when ethambutol is named in a report that mentions an eye problem, is the problem usually something specific to the optic nerve, or is it any eye complaint at all? Using a standard dictionary that sorts eye problems into eleven categories, one of which is the optic nerve, we found that the optic-nerve category stands out far more than the others, and that everyday complaints such as cataract, dry eye and eye pain are not reported more often than expected. The same pattern appeared in databases from Japan and Canada.
+Doctors send reports of suspected side effects to national databases. We studied these reports to ask a narrower question than "how common is the damage": when ethambutol is named in a report that mentions an eye problem, is the problem usually something specific to the optic nerve, or is it any eye complaint at all? Using a standard dictionary that sorts eye problems into eleven categories, one of which is the optic nerve, we found that the optic-nerve category stands out far more than the others, and that everyday complaints such as cataract, dry eye and eye pain are not reported more often than expected. A similar optic-nerve signal appeared in databases from Japan and Canada, although the Canadian data do not allow the same term-by-term comparison of everyday eye complaints.
 
 Reports of side effects cannot tell us how many people are actually harmed, and they are influenced by which side effects doctors recognise and choose to report. What they can show is a consistent pattern across countries. That pattern supports watching vision carefully in people taking ethambutol, especially in the first months of treatment.
 
@@ -85,7 +85,7 @@ Multiplicity was controlled with the Benjamini–Hochberg procedure within two f
 
 ### 2.7 Sensitivity analyses
 
-Three analyses test whether the main result depends on a single definition. First, exposure was restricted to reports naming ethambutol as the primary or secondary suspect drug. Second, the database was split by receipt year at 2016, so that each period carries at least forty optic-neuropathy events, and the optic-nerve contrast was recomputed in each period with that period's own de-duplicated case count as the reference population; this tests stability across reporting eras, not generalisability. Third, within the antitubercular class, the optic-nerve rate was compared between reports naming rifampicin, isoniazid and pyrazinamide with and without ethambutol, a contrast in which the background regimen is held constant by construction. Strata in which the groups differ in disease state — in particular isoniazid-only reports, largely latent-infection prophylaxis — are reported but not used as evidence.
+Three analyses test whether the main result depends on a single definition. First, exposure was restricted to reports naming ethambutol as the primary or secondary suspect drug. Second, the database was split by receipt year at 2016, so that each period carries at least forty optic-neuropathy events, and the optic-nerve contrast was recomputed in each period with that period's own de-duplicated case count as the reference population; this tests stability across reporting eras, not generalisability. Cases whose every receipt date precedes 2004 fall outside both periods (57 of 20,692,683); the year distribution is given in supplementary Table S7. Third, within the antitubercular class, the optic-nerve rate was compared between reports naming rifampicin, isoniazid and pyrazinamide with and without ethambutol, a contrast in which the background regimen is held constant by construction. Strata in which the groups differ in disease state — in particular isoniazid-only reports, largely latent-infection prophylaxis — are reported but not used as evidence.
 
 Age, sex and reporting region were examined in a multivariable logistic model of an ocular event within the ethambutol cases. These coefficients are reported in the supplement and are not interpreted as patient-level risk factors, because the database records reports rather than patients.
 
@@ -107,7 +107,7 @@ The transcriptomic section is exploratory. It was not pre-registered, the direct
 
 ### 2.11 Software and reproducibility
 
-All analyses were run as standalone, re-runnable Python scripts with recorded software versions and random seeds. The de-duplication map, the 2×2 tables, the query-level results and the preferred-term results are exported from a single results file (`results/main_results.json`), from which the tables in this paper are generated, so that no number is transcribed by hand. The code, the derived tables and a data dictionary are available at the repository given in the Statements, under a tagged release that corresponds to this manuscript.
+All analyses were run as standalone, re-runnable Python scripts with recorded software versions and random seeds. The de-duplication map, the 2×2 tables, the query-level results, the preferred-term results, the period split and the fixed-regimen contrast are all exported to a single results file (`results/main_results.json`), from which the tables in this paper are generated, so that no number is transcribed by hand. The code, the derived tables and a data dictionary are available at the repository given in the Statements, under the release tag `v2.0-tads-2026-10-21`, which identifies the commit from which the numbers, tables and figures in this manuscript were generated.
 
 
 ## 3. Results
@@ -132,7 +132,7 @@ The three negative controls were at or below background: cataract 0.89 (0.65–1
 
 Restricting exposure to reports naming ethambutol as the primary or secondary suspect drug increased both estimates, because the cohort is smaller and more specifically exposed: the query rose from 23.51 to 35.01 (370 cases exposed) and optic neuropathy from 116.58 to 191.22 (157 cases) (Figure 4).
 
-Splitting the database by receipt year at 2016 gave 4,316 ethambutol cases among 7,189,907 de-duplicated cases in 2004–2016 and 11,194 among 13,502,719 in 2017–2026, which together account for the whole cohort. The optic-nerve contrast was similar in the two periods: 131.72 (100.43–172.76) on 57 exposed cases and 111.66 (91.61–136.10) on 108. The proportion of ethambutol cases reporting optic neuropathy fell from 1.32% to 0.96%, and the proportion of all other reports carrying the term fell from 0.0102% to 0.0087%, so the ratio between the two was stable while both proportions fell. This analysis is within one database and shares its reporting artefacts; it tests stability across reporting eras, not generalisability.
+Splitting the database by receipt year at 2016 gave 4,316 ethambutol cases among 7,189,907 de-duplicated cases in 2004–2016 and 11,194 among 13,502,719 in 2017–2026, which together account for the whole cohort. The optic-nerve contrast was similar in the two periods: 131.72 (100.43–172.76) on 57 exposed cases and 111.66 (91.61–136.10) on 108. The proportion of ethambutol cases reporting optic neuropathy fell from 1.32% to 0.96%, and the proportion of all other reports carrying the term fell from 0.0102% to 0.0087%, so the ratio between the two was stable while both proportions fell. This analysis is within one database and shares its reporting artefacts; it tests stability across reporting eras, not generalisability. The two periods cover 20,692,626 of the 20,692,683 de-duplicated cases; the remaining 57 carry receipt dates before 2004 and fall outside both periods (supplementary Table S7).
 
 Within the antitubercular class, the one comparison in which the background regimen is held constant — reports naming rifampicin, isoniazid and pyrazinamide, partitioned by whether ethambutol is also named — gave an optic-nerve rate of 1.23% (76/6,167) with ethambutol against 0.64% (7/1,098) without, a rate ratio of 1.93 (0.89–4.18). The interval includes unity and the unexposed group is small, so this contrast is consistent in direction with the rest of the analysis but is not statistically significant on its own, and it is reported as a supporting analysis rather than as the basis of a within-class claim.
 
@@ -183,7 +183,7 @@ The transcriptomic reanalysis was included because the mechanisms proposed for t
 
 ### 4.5 Clinical and regulatory implications
 
-The practical value of a reporting signal of this shape is that it identifies where to look. Ethambutol optic neuropathy is treatable only by stopping the drug, and the damage becomes irreversible once atrophy is established, so the clinical task is detection before that point. In these data 11.0% of optic-nerve events were reported within 30 days of starting treatment and 23.2% within 60 days, with a median of 125 days; a surveillance schedule whose first assessment falls at three months would therefore sit after a substantial minority of events. That is an argument for a baseline examination and an early first follow-up, and it is consistent with the clinical literature in which structural measures predict visual outcome better than initial acuity [10,11,12,13]. The data cannot define the optimal interval, because the reports do not record examinations that were not performed.
+The practical value of a reporting signal of this shape is that it identifies where to look, and it should be read as a reason for clinical vigilance rather than as a basis for a screening schedule. Ethambutol optic neuropathy is managed by stopping the drug, and the damage becomes irreversible once atrophy is established, so detection before that point is what matters. In these data the reported time to onset had a median of 125 days, with 11.0% of optic-nerve events reported within 30 days of starting treatment and 23.2% within 60 days. That distribution describes reports with complete dates, not the incidence we would see in a monitored cohort: reports are a selected subset, the date of onset is recorded retrospectively, and no examinations that were not performed can appear in it. It is therefore consistent with a baseline examination and an early first follow-up, and with the clinical literature in which structural measures predict visual outcome better than initial acuity [10,11,12,13], but it cannot set the interval, and we do not derive one from it.
 
 For regulators and for those who build pharmacovigilance workflows, the transferable point is methodological. A MedDRA query set nominated in advance, used as its own internal comparison and paired with pre-specified non-specific controls, gives a signal that is robust to the objection that the drug simply generates more ocular reports. The same design can be applied to other drugs with a suspected site-specific toxicity, and it requires no data beyond what spontaneous reporting systems already publish.
 
@@ -232,9 +232,9 @@ intervals on a logarithmic axis; the dashed line marks unity. Red, interval abov
 interval below unity; grey, interval includes unity. The number of exposed cases is given at the
 right.
 
-**Figure 3.** Preferred terms inside the optic-nerve query (upper panel) and the pre-specified
-non-specific control terms (lower panel). Terms with fewer than three exposed cases are not
-plotted. Conventions as in Figure 2.
+**Figure 3.** Preferred terms within the optic-nerve query, alongside the pre-specified negative
+controls and the non-specific ocular comparators. Terms with fewer than three exposed cases are
+not plotted. Conventions as in Figure 2.
 
 **Figure 4.** Sensitivity of the optic-nerve estimate to exposure role and reporting period. The
 upper four rows compare the preferred term and the query under all-role and suspect-only
@@ -289,7 +289,8 @@ glaucoma and dry eye were null or below unity in the same analysis. The two FAER
 that period's own de-duplicated case count as the reference population. Estimates are not compared
 across systems: the proportion of reports naming the drug as suspect differs by system.
 
-Table 4. Non-specific ocular terms in FAERS (pre-specified controls).
+Table 4. Pre-specified negative controls (cataract, dry eye, glaucoma, conjunctivitis) and
+non-specific comparators (eye pain, vision blurred) in FAERS.
 
 | Term | Exposed cases | Cases in database | ROR | 95% CI | q |
 |---|---|---|---|---|---|
@@ -307,7 +308,7 @@ Table 4. Non-specific ocular terms in FAERS (pre-specified controls).
 2. Ambika S, Lakshmi KP, Gopal M, Noronha OV. Visual outcomes of toxic optic neuropathy secondary to Ethambutol: A retrospective observational study from India, an endemic country. Indian J Ophthalmol. 2022;70(9):3388-3392. doi:10.4103/ijo.ijo_2996_21.
 3. An HR, Lee BJ, Moon Y. Visual Recovery Time in Patients with Ethambutol-induced Toxic Optic Neuropathy. Korean J Ophthalmol. 2024;38(2):91-97. doi:10.3341/kjo.2023.0095.
 4. Singh P, Karkhur S, Verma V. Ethambutol-Induced Optic Neuropathy: A Retrospective Study of Incidences and Risk Factors. Cureus. 2025;17(2):e79160. doi:10.7759/cureus.79160.
-5. Chaitanuwong P, Srithawatpong S, Ruamviboonsuk P, Apinyawasisuk S, Watcharapanjamart A, Moss HE. Incidence, risk factors and ophthalmic clinical characteristic of ethambutol-induced optic neuropathy: 7-year experience. Front Ophthalmol (Lausanne). 2023;3:. doi:10.3389/fopht.2023.1152215.
+5. Chaitanuwong P, Srithawatpong S, Ruamviboonsuk P, Apinyawasisuk S, Watcharapanjamart A, Moss HE. Incidence, risk factors and ophthalmic clinical characteristic of ethambutol-induced optic neuropathy: 7-year experience. Front Ophthalmol (Lausanne). 2023;3:1152215. doi:10.3389/fopht.2023.1152215.
 6. Lee S, Ryu WY, Kang D, Lee JK. Prevalence and Incidence of Ethambutol-Induced Optic Neuropathy and Its Risk Factors in Korea: A Nationwide Population-Based Study. J Korean Med Sci. 2025;40(20):e65. doi:10.3346/jkms.2025.40.e65.
 7. Liu SS, Feng SC, Wu MF, Chin CS, Chen HC, Huang WC. Programmatic Assessment of Ethambutol-Related Optic Neuropathy in Patients with Mycobacterial Infections: A Prospective Observational Cohort Study. Infect Dis Ther. 2025;14(10):2391-2404. doi:10.1007/s40121-025-01219-x.
 8. Mandal S, Saxena R, Dhiman R, Mohan A, Padhy SK, Phuljhele S, et al. Prospective study to evaluate incidence and indicators for early detection of ethambutol toxicity. Br J Ophthalmol. 2021;105(7):1024-1028. doi:10.1136/bjophthalmol-2020-316897.
@@ -319,5 +320,5 @@ Table 4. Non-specific ocular terms in FAERS (pre-specified controls).
 14. Mao Q, Ou ZM. Mining of adverse reaction signals and medication insights of anti-tuberculosis drugs based on the FAERS database. Asia-Pacific Medical Frontiers. 2026;1(3):1-18.
 15. Suresh J, Kumar R, Hissar S, Shukla S, Vivekanandan K. Ocular toxicity associated with Ethambutol in the South-East Asia Region. Int Ophthalmol. 2026;46(1):251. doi:10.1007/s10792-026-04131-6.
 16. Fusaroli M, Salvo F, Begaud B, AlShammari TM, Bate A, Battini V, et al. The Reporting of a Disproportionality Analysis for Drug Safety Signal Detection Using Individual Case Safety Reports in PharmacoVigilance (READUS-PV): Development and Statement. Drug Saf. 2024;47(6):575-584. doi:10.1007/s40264-024-01421-9.
-17. Langan SM, Schmidt SA, Wing K, Ehrenstein V, Nicholls SG, Filion KB, et al. The reporting of studies conducted using observational routinely collected health data statement for pharmacoepidemiology (RECORD-PE). BMJ. 2018;363:. doi:10.1136/bmj.k3532.
+17. Langan SM, Schmidt SA, Wing K, Ehrenstein V, Nicholls SG, Filion KB, et al. The reporting of studies conducted using observational routinely collected health data statement for pharmacoepidemiology (RECORD-PE). BMJ. 2018;363:k3532. doi:10.1136/bmj.k3532.
 18. Li Q, Ge W, Zhang Y, Xu Q, Xu J, Zhang Y, et al. Ethambutol induces optic neuropathy through SDHB-mediated ferroptosis in retinal ganglion cells via Smad4 pathway. Hum Cell. 2026;39(2):37. doi:10.1007/s13577-025-01342-4.

@@ -30,10 +30,13 @@ d = json.loads((RES / "main_results.json").read_text(encoding="utf-8"))
 reg = json.loads((RES / "audit_regimen.json").read_text(encoding="utf-8"))
 
 # ---------------------------------------------------------------- S1 terms
+NEGATIVE = {"Cataract", "Dry eye", "Glaucoma", "Conjunctivitis"}
 rows = []
 for r in d["pt"]:
+    group = ("optic nerve" if r["group"] == "optic nerve"
+             else ("negative control" if r["term"] in NEGATIVE else "non-specific comparator"))
     rows.append({
-        "Term": r["term"], "Group": r["group"], "Exposed cases": r["a"],
+        "Term": r["term"], "Group": group, "Exposed cases": r["a"],
         "Cases in database": r["n_event"], "ROR": round(r["ror"], 2),
         "95% CI lower": round(r["ror_lcl"], 2), "95% CI upper": round(r["ror_ucl"], 2),
         "q (BH)": r["q_bh"], "Exposed cases, suspect only": r["a_suspect"],
@@ -96,6 +99,15 @@ s6 = pd.DataFrame(zero) if zero else pd.DataFrame(
     [{"Term": "none", "Exposed cases": "", "Cases in database": "",
       "Note": "no zero cell in the reported panel"}])
 
+# ------------------------------------------------------- S7 period coverage
+cov = json.loads((RES / "audit_period_coverage.json").read_text(encoding="utf-8"))
+s7 = pd.DataFrame([
+    {"Item": "De-duplicated cases", "n": cov["dedup_rows"]},
+    {"Item": "Cases with at least one receipt date in 2004-2026", "n": cov["inrange_cases"]},
+    {"Item": "Cases whose every receipt date precedes 2004 (outside both periods)",
+     "n": cov["pre2004_cases"]},
+])
+
 with pd.ExcelWriter(OUT, engine="openpyxl") as xw:
     s1.to_excel(xw, sheet_name="S1_terms", index=False)
     s2.to_excel(xw, sheet_name="S2_sensitivity", index=False)
@@ -103,7 +115,9 @@ with pd.ExcelWriter(OUT, engine="openpyxl") as xw:
     s4.to_excel(xw, sheet_name="S4_canada", index=False)
     s5.to_excel(xw, sheet_name="S5_flow", index=False)
     s6.to_excel(xw, sheet_name="S6_zero_cells", index=False)
+    s7.to_excel(xw, sheet_name="S7_period_coverage", index=False)
 
 print(f"written {OUT.relative_to(ROOT)}")
-for name, frame in (("S1", s1), ("S2", s2), ("S3", s3), ("S4", s4), ("S5", s5), ("S6", s6)):
+for name, frame in (("S1", s1), ("S2", s2), ("S3", s3), ("S4", s4), ("S5", s5),
+                    ("S6", s6), ("S7", s7)):
     print(f"  {name}: {len(frame)} rows")

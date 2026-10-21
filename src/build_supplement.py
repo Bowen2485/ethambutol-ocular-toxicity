@@ -27,6 +27,7 @@ RES = ROOT / "results"
 OUT = ROOT / "submission" / "tads" / "Supplementary_Tables.xlsx"
 
 d = json.loads((RES / "main_results.json").read_text(encoding="utf-8"))
+reg = json.loads((RES / "audit_regimen.json").read_text(encoding="utf-8"))
 
 # ---------------------------------------------------------------- S1 terms
 rows = []
@@ -62,8 +63,12 @@ s2 = pd.DataFrame([
      "Outcome": "Optic neuropathy", "Exposed cases": t2["a"], "ROR": round(t2["ror"], 2),
      "95% CI": f"{t2['ror_lcl']:.2f}-{t2['ror_ucl']:.2f}"},
     {"Specification": "Fixed regimen: RIF+INH+PZA with ethambutol",
-     "Outcome": "Optic-nerve event, rate ratio", "Exposed cases": 5736,
-     "ROR": "3.24 (rate ratio)", "95% CI": "1.02-10.28"},
+     "Outcome": "Optic-nerve event, rate ratio", "Exposed cases": reg["strata"]["rifampicin+isoniazid+pyrazinamide+ethambutol"]["n"],
+     "ROR": f"{reg['rate_ratio']:.2f} (rate ratio)",
+     "95% CI": f"{reg['rate_ratio_lcl']:.2f}-{reg['rate_ratio_ucl']:.2f}"},
+    {"Specification": "Fixed regimen: RIF+INH+PZA without ethambutol",
+     "Outcome": "Optic-nerve event, rate ratio (reference)", "Exposed cases": reg["strata"]["rifampicin+isoniazid+pyrazinamide"]["n"],
+     "ROR": "reference", "95% CI": ""},
 ])
 
 # ---------------------------------------------------------------- S3 JADER

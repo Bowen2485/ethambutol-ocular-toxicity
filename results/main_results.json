@@ -1,10 +1,15 @@
 {
   "generated_by": "src/build_main_results.py",
   "main_specification": {
-    "exposure": "ethambutol anywhere in the drug records of the surviving case version, any role",
+    "exposure": "ethambutol in the drug-name fields (drugname, prod_ai) of the surviving case version, case-insensitive substring match on the single name token ETHAMBUTOL, any drug role unless stated otherwise",
     "outcome": "MedDRA 29.0 narrow SMQ or preferred term, matched in canonical and upper-case spelling",
     "denominator": "all de-duplicated FAERS cases, 2004Q1-2026Q2",
-    "metric": "ROR with Woolf 95% CI; BH across the eleven ocular SMQs and across the tested PT panel"
+    "metric": "ROR with Woolf 95% CI; BH across the eleven ocular SMQs and across the tested PT panel",
+    "sensitivity": [
+      "suspect drug only (primary or secondary)",
+      "receipt year split at 2016, each period with its own denominator",
+      "fixed regimen (rifampicin + isoniazid + pyrazinamide with vs without ethambutol)"
+    ]
   },
   "N": 20692683,
   "n_ethambutol": 15510,

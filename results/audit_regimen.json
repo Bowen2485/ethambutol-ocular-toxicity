@@ -1,0 +1,21 @@
+{
+  "strata": {
+    "rifampicin+isoniazid+pyrazinamide+ethambutol": {
+      "n_optic": 76,
+      "n": 6167
+    },
+    "rifampicin+isoniazid+pyrazinamide": {
+      "n_optic": 7,
+      "n": 1098
+    }
+  },
+  "rate_ratio": 1.9330538117630705,
+  "rate_ratio_lcl": 0.8936925045965071,
+  "rate_ratio_ucl": 4.181188742160053,
+  "optic_terms": [
+    "Optic neuropathy",
+    "Optic neuritis",
+    "Optic atrophy",
+    "Toxic optic neuropathy"
+  ]
+}

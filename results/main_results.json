@@ -37,7 +37,10 @@
       "ror_suspect": 35.00780446423983,
       "q_bh": 0.0,
       "q_bh_display": "<1e-300",
-      "p_display": "<1e-300"
+      "p_display": "<1e-300",
+      "p_pearson_old": 0.0,
+      "q_bh_old": 0.0,
+      "p_test": "Pearson chi-square (min expected 19.2)"
     },
     {
       "smq": "Retinal disorders",
@@ -48,12 +51,15 @@
       "ror": 2.175955306979797,
       "ror_lcl": 1.8654095109988875,
       "ror_ucl": 2.538199505286197,
-      "p": 3.424751587425938e-24,
+      "p": 3.424751587425988e-24,
       "a_suspect": 133,
       "ror_suspect": 3.045827938487696,
-      "q_bh": 1.255742248722844e-23,
+      "q_bh": 1.2557422487228623e-23,
       "q_bh_display": "1.3e-23",
-      "p_display": "3.4e-24"
+      "p_display": "3.4e-24",
+      "p_pearson_old": 3.424751587425938e-24,
+      "q_bh_old": 1.255742248722844e-23,
+      "p_test": "Pearson chi-square (min expected 75.9)"
     },
     {
       "smq": "Glaucoma",
@@ -64,12 +70,15 @@
       "ror": 0.44830539090765853,
       "ror_lcl": 0.2602281885388863,
       "ror_ucl": 0.7723134247880918,
-      "p": 0.002986516111044391,
+      "p": 0.0029865161110443966,
       "a_suspect": 9,
       "ror_suspect": 0.5336375956960633,
-      "q_bh": 0.0046930967459269,
+      "q_bh": 0.0046930967459269095,
       "q_bh_display": "0.004693",
-      "p_display": "0.002987"
+      "p_display": "0.002987",
+      "p_pearson_old": 0.002986516111044391,
+      "q_bh_old": 0.0046930967459269,
+      "p_test": "Pearson chi-square (min expected 29.0)"
     },
     {
       "smq": "Lens disorders",
@@ -80,12 +89,15 @@
       "ror": 1.1805302837955283,
       "ror_lcl": 0.9160636132767732,
       "ror_ucl": 1.5213482238130138,
-      "p": 0.19915390351784762,
+      "p": 0.19915390351784756,
       "a_suspect": 41,
       "ror_suspect": 1.387494866799833,
-      "q_bh": 0.27383661733704046,
+      "q_bh": 0.2738366173370404,
       "q_bh_display": "0.2738",
-      "p_display": "0.1992"
+      "p_display": "0.1992",
+      "p_pearson_old": 0.19915390351784762,
+      "q_bh_old": 0.27383661733704046,
+      "p_test": "Pearson chi-square (min expected 50.9)"
     },
     {
       "smq": "Lacrimal disorders",
@@ -101,7 +113,10 @@
       "ror_suspect": 0.2744042043608723,
       "q_bh": 4.872844723877751e-09,
       "q_bh_display": "4.9e-09",
-      "p_display": "1.8e-09"
+      "p_display": "1.8e-09",
+      "p_pearson_old": 1.771943535955546e-09,
+      "q_bh_old": 4.872844723877751e-09,
+      "p_test": "Pearson chi-square (min expected 62.4)"
     },
     {
       "smq": "Corneal disorders",
@@ -112,12 +127,15 @@
       "ror": 1.0832743606528121,
       "ror_lcl": 0.6821977531231387,
       "ror_ucl": 1.7201512832246777,
-      "p": 0.7345214356053749,
+      "p": 0.7345214356053748,
       "a_suspect": 2,
       "ror_suspect": 0.20659656488469472,
-      "q_bh": 0.8079735791659124,
+      "q_bh": 0.8079735791659122,
       "q_bh_display": "0.808",
-      "p_display": "0.7345"
+      "p_display": "0.7345",
+      "p_pearson_old": 0.7345214356053749,
+      "q_bh_old": 0.8079735791659124,
+      "p_test": "Pearson chi-square (min expected 16.6)"
     },
     {
       "smq": "Conjunctival disorders",
@@ -128,12 +146,15 @@
       "ror": 0.9509423076069984,
       "ror_lcl": 0.7518814746000783,
       "ror_ucl": 1.2027045524401447,
-      "p": 0.6746319497943827,
+      "p": 0.6746319497943823,
       "a_suspect": 36,
       "ror_suspect": 0.8400952456949712,
-      "q_bh": 0.8079735791659124,
+      "q_bh": 0.8079735791659122,
       "q_bh_display": "0.808",
-      "p_display": "0.6746"
+      "p_display": "0.6746",
+      "p_pearson_old": 0.6746319497943827,
+      "q_bh_old": 0.8079735791659124,
+      "p_test": "Pearson chi-square (min expected 73.6)"
     },
     {
       "smq": "Scleral disorders",
@@ -144,12 +165,15 @@
       "ror": 0.8820797921305314,
       "ror_lcl": 0.2843520183749187,
       "ror_ucl": 2.736273032741979,
-      "p": 0.8279162331780647,
+      "p": 1.0,
       "a_suspect": 2,
       "ror_suspect": 1.0108390686297393,
-      "q_bh": 0.8279162331780647,
-      "q_bh_display": "0.8279",
-      "p_display": "0.8279"
+      "q_bh": 1.0,
+      "q_bh_display": "1",
+      "p_display": "1",
+      "p_pearson_old": 0.8279162331780647,
+      "q_bh_old": 0.8279162331780647,
+      "p_test": "Fisher exact (min expected 3.4, 0.00s)"
     },
     {
       "smq": "Periorbital and eyelid disorders",
@@ -160,12 +184,15 @@
       "ror": 0.48391452820859315,
       "ror_lcl": 0.33614580525857674,
       "ror_ucl": 0.6966419540211424,
-      "p": 6.587464055485323e-05,
+      "p": 6.587464055485326e-05,
       "a_suspect": 15,
       "ror_suspect": 0.4301743757905668,
-      "q_bh": 0.00012077017435056427,
+      "q_bh": 0.0001207701743505643,
       "q_bh_display": "0.0001208",
-      "p_display": "6.6e-05"
+      "p_display": "6.6e-05",
+      "p_pearson_old": 6.587464055485323e-05,
+      "q_bh_old": 0.00012077017435056427,
+      "p_test": "Pearson chi-square (min expected 59.8)"
     },
     {
       "smq": "Ocular infections",
@@ -176,12 +203,15 @@
       "ror": 4.130320244792305,
       "ror_lcl": 3.4675657743325594,
       "ror_ucl": 4.919746714198897,
-      "p": 9.371977127763919e-67,
+      "p": 9.371977127763649e-67,
       "a_suspect": 77,
       "ror_suspect": 4.301734838935036,
-      "q_bh": 5.154587420270156e-66,
+      "q_bh": 5.154587420270007e-66,
       "q_bh_display": "5.2e-66",
-      "p_display": "9.4e-67"
+      "p_display": "9.4e-67",
+      "p_pearson_old": 9.371977127763919e-67,
+      "q_bh_old": 5.154587420270156e-66,
+      "p_test": "Pearson chi-square (min expected 31.0)"
     },
     {
       "smq": "Ocular motility disorders",
@@ -192,12 +222,15 @@
       "ror": 2.0186315021221493,
       "ror_lcl": 1.5727365479335083,
       "ror_ucl": 2.590944520691714,
-      "p": 1.8049833774072582e-08,
+      "p": 1.8049833774072632e-08,
       "a_suspect": 31,
       "ror_suspect": 1.7330158370186608,
-      "q_bh": 3.970963430295968e-08,
+      "q_bh": 3.9709634302959795e-08,
       "q_bh_display": "4.0e-08",
-      "p_display": "1.8e-08"
+      "p_display": "1.8e-08",
+      "p_pearson_old": 1.8049833774072582e-08,
+      "q_bh_old": 3.970963430295968e-08,
+      "p_test": "Pearson chi-square (min expected 30.8)"
     }
   ],
   "pt": [
@@ -211,10 +244,13 @@
       "ror_ucl": 136.78293724600093,
       "a_suspect": 157,
       "ror_suspect": 191.22352678588518,
-      "p": 0.0,
-      "q_bh": 0.0,
-      "q_bh_display": "<1e-300",
-      "p_display": "<1e-300"
+      "p": 8.06231428949083e-269,
+      "q_bh": 6.046735717118122e-268,
+      "q_bh_display": "6.0e-268",
+      "p_display": "8.1e-269",
+      "p_pearson_old": 0.0,
+      "q_bh_old": 0.0,
+      "p_test": "Fisher exact (min expected 1.55, 0.00s)"
     },
     {
       "term": "Optic neuritis",
@@ -229,7 +265,10 @@
       "p": 0.0,
       "q_bh": 0.0,
       "q_bh_display": "<1e-300",
-      "p_display": "<1e-300"
+      "p_display": "<1e-300",
+      "p_pearson_old": 0.0,
+      "q_bh_old": 0.0,
+      "p_test": "Pearson chi-square (min expected 6.8)"
     },
     {
       "term": "Toxic optic neuropathy",
@@ -241,10 +280,13 @@
       "ror_ucl": 304.5595175298213,
       "a_suspect": 35,
       "ror_suspect": 206.49580684083966,
-      "p": 0.0,
-      "q_bh": 0.0,
-      "q_bh_display": "<1e-300",
-      "p_display": "<1e-300"
+      "p": 1.3540310070032473e-121,
+      "q_bh": 6.7701550350162375e-121,
+      "q_bh_display": "6.8e-121",
+      "p_display": "1.4e-121",
+      "p_pearson_old": 0.0,
+      "q_bh_old": 0.0,
+      "p_test": "Fisher exact (min expected 0.319, 0.00s)"
     },
     {
       "term": "Optic atrophy",
@@ -256,10 +298,13 @@
       "ror_ucl": 29.93974740090581,
       "a_suspect": 23,
       "ror_suspect": 32.96835376231503,
-      "p": 1.0990069889205437e-94,
-      "q_bh": 3.2970209667616315e-94,
-      "q_bh_display": "3.3e-94",
-      "p_display": "1.1e-94"
+      "p": 4.874047514209298e-23,
+      "q_bh": 1.8277678178284868e-22,
+      "q_bh_display": "1.8e-22",
+      "p_display": "4.9e-23",
+      "p_pearson_old": 1.0990069889205437e-94,
+      "q_bh_old": 3.2970209667616315e-94,
+      "p_test": "Fisher exact (min expected 1.22, 0.00s)"
     },
     {
       "term": "Papilloedema",
@@ -271,10 +316,13 @@
       "ror_ucl": 9.261024499595868,
       "a_suspect": 13,
       "ror_suspect": 6.659254933454349,
-      "p": 1.2155946356698766e-19,
-      "q_bh": 2.6048456478640217e-19,
-      "q_bh_display": "2.6e-19",
-      "p_display": "1.2e-19"
+      "p": 5.711286401337112e-10,
+      "q_bh": 1.7133859204011334e-09,
+      "q_bh_display": "1.7e-09",
+      "p_display": "5.7e-10",
+      "p_pearson_old": 1.2155946356698766e-19,
+      "q_bh_old": 2.6048456478640217e-19,
+      "p_test": "Fisher exact (min expected 3.37, 0.00s)"
     },
     {
       "term": "Optic nerve disorder",
@@ -286,10 +334,13 @@
       "ror_ucl": 14.678641450608206,
       "a_suspect": 8,
       "ror_suspect": 11.644320418522739,
-      "p": 7.331660068484411e-13,
-      "q_bh": 1.2219433447474018e-12,
-      "q_bh_display": "1.2e-12",
-      "p_display": "7.3e-13"
+      "p": 4.38100607693747e-06,
+      "q_bh": 7.301676794895784e-06,
+      "q_bh_display": "7.3e-06",
+      "p_display": "4.4e-06",
+      "p_pearson_old": 7.331660068484411e-13,
+      "q_bh_old": 1.2219433447474018e-12,
+      "p_test": "Fisher exact (min expected 1.19, 0.00s)"
     },
     {
       "term": "Optic nerve injury",
@@ -301,10 +352,13 @@
       "ror_ucl": 18.947972078847815,
       "a_suspect": 7,
       "ror_suspect": 14.208923262941877,
-      "p": 9.496222090166463e-15,
-      "q_bh": 1.7805416419062117e-14,
-      "q_bh_display": "1.8e-14",
-      "p_display": "9.5e-15"
+      "p": 3.179744273881572e-06,
+      "q_bh": 5.962020513527948e-06,
+      "q_bh_display": "6.0e-06",
+      "p_display": "3.2e-06",
+      "p_pearson_old": 9.496222090166463e-15,
+      "q_bh_old": 1.7805416419062117e-14,
+      "p_test": "Fisher exact (min expected 0.852, 0.00s)"
     },
     {
       "term": "Visual evoked potentials abnormal",
@@ -316,10 +370,13 @@
       "ror_ucl": 95.18085368279634,
       "a_suspect": 2,
       "ror_suspect": 34.47466927127173,
-      "p": 7.771318345277138e-20,
-      "q_bh": 1.9428295863192843e-19,
-      "q_bh_display": "1.9e-19",
-      "p_display": "7.8e-20"
+      "p": 0.00015677978933450998,
+      "q_bh": 0.00021379062181978633,
+      "q_bh_display": "0.0002138",
+      "p_display": "0.0001568",
+      "p_pearson_old": 7.771318345277138e-20,
+      "q_bh_old": 1.9428295863192843e-19,
+      "p_test": "Fisher exact (min expected 0.101, 0.00s)"
     },
     {
       "term": "Optic disc hyperaemia",
@@ -331,10 +388,13 @@
       "ror_ucl": 607.5533941019796,
       "a_suspect": 3,
       "ror_suspect": 312.658901956042,
-      "p": 3.087924189532758e-105,
-      "q_bh": 1.1579715710747842e-104,
-      "q_bh_display": "1.2e-104",
-      "p_display": "3.1e-105"
+      "p": 9.564437054247192e-07,
+      "q_bh": 2.0495222259101124e-06,
+      "q_bh_display": "2.0e-06",
+      "p_display": "9.6e-07",
+      "p_pearson_old": 3.087924189532758e-105,
+      "q_bh_old": 1.1579715710747842e-104,
+      "p_test": "Fisher exact (min expected 0.0187, 0.00s)"
     },
     {
       "term": "Cataract",
@@ -346,10 +406,13 @@
       "ror_ucl": 1.215056979411052,
       "a_suspect": 26,
       "ror_suspect": 1.0171834168758216,
-      "p": 0.4557438187692474,
-      "q_bh": 0.47752141922467106,
+      "p": 0.45574381876924774,
+      "q_bh": 0.4775214192246713,
       "q_bh_display": "0.4775",
-      "p_display": "0.4557"
+      "p_display": "0.4557",
+      "p_pearson_old": 0.4557438187692474,
+      "q_bh_old": 0.47752141922467106,
+      "p_test": "Pearson chi-square (min expected 43.9)"
     },
     {
       "term": "Dry eye",
@@ -362,9 +425,12 @@
       "a_suspect": 7,
       "ror_suspect": 0.3348063779173401,
       "p": 1.5182920698300971e-05,
-      "q_bh": 2.0703982770410416e-05,
-      "q_bh_display": "2.1e-05",
-      "p_display": "1.5e-05"
+      "q_bh": 2.2774381047451458e-05,
+      "q_bh_display": "2.3e-05",
+      "p_display": "1.5e-05",
+      "p_pearson_old": 1.5182920698300971e-05,
+      "q_bh_old": 2.0703982770410416e-05,
+      "p_test": "Pearson chi-square (min expected 35.9)"
     },
     {
       "term": "Eye pain",
@@ -376,10 +442,13 @@
       "ror_ucl": 0.9621231329938724,
       "a_suspect": 16,
       "ror_suspect": 0.671838885185783,
-      "p": 0.029554781158622492,
-      "q_bh": 0.03410167056764134,
+      "p": 0.029554781158622506,
+      "q_bh": 0.03410167056764135,
       "q_bh_display": "0.0341",
-      "p_display": "0.02955"
+      "p_display": "0.02955",
+      "p_pearson_old": 0.029554781158622492,
+      "q_bh_old": 0.03410167056764134,
+      "p_test": "Pearson chi-square (min expected 40.9)"
     },
     {
       "term": "Glaucoma",
@@ -391,10 +460,13 @@
       "ror_ucl": 0.745867888173654,
       "a_suspect": 2,
       "ror_suspect": 0.240557634716554,
-      "p": 0.006492717465606803,
-      "q_bh": 0.008115896832008505,
+      "p": 0.00649271746560681,
+      "q_bh": 0.008115896832008513,
       "q_bh_display": "0.008116",
-      "p_display": "0.006493"
+      "p_display": "0.006493",
+      "p_pearson_old": 0.006492717465606803,
+      "q_bh_old": 0.008115896832008505,
+      "p_test": "Pearson chi-square (min expected 14.3)"
     },
     {
       "term": "Conjunctivitis",
@@ -406,10 +478,13 @@
       "ror_ucl": 1.4585536628182734,
       "a_suspect": 5,
       "ror_suspect": 0.630698802756892,
-      "p": 0.47752141922467106,
-      "q_bh": 0.47752141922467106,
+      "p": 0.4775214192246713,
+      "q_bh": 0.4775214192246713,
       "q_bh_display": "0.4775",
-      "p_display": "0.4775"
+      "p_display": "0.4775",
+      "p_pearson_old": 0.47752141922467106,
+      "q_bh_old": 0.47752141922467106,
+      "p_test": "Pearson chi-square (min expected 13.6)"
     },
     {
       "term": "Vision blurred",
@@ -421,10 +496,13 @@
       "ror_ucl": 1.757356868106282,
       "a_suspect": 112,
       "ror_suspect": 1.9136004241821558,
-      "p": 6.901557498774852e-07,
-      "q_bh": 1.035233624816228e-06,
-      "q_bh_display": "1.0e-06",
-      "p_display": "6.9e-07"
+      "p": 6.901557498774836e-07,
+      "q_bh": 1.7253893746937092e-06,
+      "q_bh_display": "1.7e-06",
+      "p_display": "6.9e-07",
+      "p_pearson_old": 6.901557498774852e-07,
+      "q_bh_old": 1.035233624816228e-06,
+      "p_test": "Pearson chi-square (min expected 101.2)"
     }
   ],
   "temporal": {
@@ -496,5 +574,9 @@
     "term_set": "17 preferred terms in src/faers_case_deep.py OPTIC_TERMS; wider than the 45-term query",
     "n_other_ocular": 74,
     "note_groups": "the Methods describe three groups; the primary comparison is optic-nerve versus non-ocular, and the other-ocular group is reported with the ocular totals"
+  },
+  "statistics": {
+    "test_rule": "two-sided Fisher exact when the smallest expected cell count < 5, Pearson chi-square without continuity correction otherwise",
+    "multiplicity": "Benjamini-Hochberg within the 11 ocular queries and within the 15 preferred terms"
   }
 }

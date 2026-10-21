@@ -83,7 +83,7 @@ Preferred terms inside the optic-nerve query were described when they carried at
 
 For each drug and each outcome the whole-database 2×2 table was constructed from de-duplicated cases. The reporting odds ratio (ROR) with its 95% confidence interval (Woolf) is the primary measure. The proportional reporting ratio with its χ² statistic and the Bayesian information component (IC025, Norén prior) were computed as complementary measures and are reported in the supplementary tables. A term was regarded as a signal when the lower bound of the ROR exceeded 1 and at least three exposed cases were present, a rule fixed before the analysis to avoid signals driven by single reports. Where any cell of a 2×2 table was zero, 0.5 was added to all four cells before the ratio and its interval were computed; the terms affected are identified in the supplementary tables.
 
-Multiplicity was controlled with the Benjamini–Hochberg procedure within two families, stated in advance: the eleven ocular queries, and the fifteen preferred terms described in Section 3.3. A false-discovery rate q below 0.05 was required for a term to be called significant, and both the unadjusted and adjusted values are given where they matter. The ROR is an effect-size measure, the "at least three cases" rule is a stability threshold, and the q value is the multiplicity criterion; the three are reported separately and are not used interchangeably.
+Two-sided p values were obtained from a Fisher exact test when the smallest expected cell count fell below 5, and from Pearson's χ² without continuity correction otherwise; the test used is identified for every term in supplementary Table S1. This rule was adopted because the exposed cohort is a small fraction of a 20-million-case database, so several preferred terms have expected counts far below one and the asymptotic approximation is unreliable. Multiplicity was controlled with the Benjamini–Hochberg procedure within two families, stated in advance: the eleven ocular queries, and the fifteen preferred terms described in Section 3.3; the raw p value is reported alongside the adjusted q. A false-discovery rate q below 0.05 was required for a term to be called significant, and both the unadjusted and adjusted values are given where they matter. The ROR is an effect-size measure, the "at least three cases" rule is a stability threshold, and the q value is the multiplicity criterion; the three are reported separately and are not used interchangeably.
 
 ### 2.7 Sensitivity analyses
 
@@ -187,7 +187,7 @@ The transcriptomic reanalysis was included because the mechanisms proposed for t
 
 The practical value of a reporting signal of this shape is that it identifies where to look, and it should be read as a reason for clinical vigilance rather than as a basis for a screening schedule. Ethambutol optic neuropathy is managed by stopping the drug, and the damage becomes irreversible once atrophy is established, so detection before that point is what matters. In these data the reported time to onset had a median of 125 days, with 11.0% of optic-nerve events reported within 30 days of starting treatment and 23.2% within 60 days. That distribution describes reports with complete dates, not the incidence we would see in a monitored cohort: reports are a selected subset, the date of onset is recorded retrospectively, and no examinations that were not performed can appear in it. It is therefore consistent with a baseline examination and an early first follow-up, and with the clinical literature in which structural measures predict visual outcome better than initial acuity [10,11,12,13], but it cannot set the interval, and we do not derive one from it.
 
-For regulators and for those who build pharmacovigilance workflows, the transferable point is methodological. A MedDRA query set nominated in advance, used as its own internal comparison and paired with pre-specified non-specific controls, gives a signal that is robust to the objection that the drug simply generates more ocular reports. The same design can be applied to other drugs with a suspected site-specific toxicity, and it requires no data beyond what spontaneous reporting systems already publish.
+For regulators and for those who build pharmacovigilance workflows, the transferable point is methodological. The use of pre-specified MedDRA queries and ocular comparators provides a structured assessment of whether disproportionality is uniform across ocular outcomes. It cannot exclude outcome-specific recognition and coding of suspected toxicity. The same design can be applied to other drugs with a suspected site-specific toxicity, and it requires no data beyond what spontaneous reporting systems already publish.
 
 Two designs would move the question forward, and neither can be built from spontaneous reports. A prospective cohort with protocolised baseline and interval ophthalmic assessment — optical coherence tomography and visual field testing, with the examination schedule fixed in advance rather than triggered by symptoms — would give both an incidence and the detection window. A record-linkage study of prescription data to incident optic-neuropathy diagnoses, with renal function and dose as covariates, would test the exposure–response relationship that a reporting database cannot address.
 
@@ -251,7 +251,7 @@ Table 2. The eleven ocular Standardised MedDRA Queries (narrow sets, MedDRA 29.0
 | Lens disorders | 40 | 60 | 67,857 | 1.18 | 0.92–1.52 | 0.27 |
 | Corneal disorders | 114 | 18 | 22,172 | 1.08 | 0.68–1.72 | 0.81 |
 | Conjunctival disorders | 83 | 70 | 98,182 | 0.95 | 0.75–1.20 | 0.81 |
-| Scleral disorders | 31 | 3 | 4,537 | 0.88 | 0.28–2.74 | 0.83 |
+| Scleral disorders | 31 | 3 | 4,537 | 0.88 | 0.28–2.74 | 1 |
 | Periorbital and eyelid disorders | 104 | 29 | 79,763 | 0.48 | 0.34–0.70 | 0.00012 |
 | Glaucoma | 52 | 13 | 38,632 | 0.45 | 0.26–0.77 | 0.0047 |
 | Lacrimal disorders | 61 | 15 | 83,295 | 0.24 | 0.14–0.40 | 4.9e-09 |
@@ -271,9 +271,9 @@ Table 3. The optic-nerve outcome in the three systems, by exposure definition.
 | Canada Vigilance | Any role | Any optic-nerve term | 21 | 21.85 (14.13–33.79) |
 | Canada Vigilance | Suspect only | Any optic-nerve term | 20 | 44.63 (28.42–70.10) |
 
-ROR, reporting odds ratio. "Any optic-nerve term" is a composite of 21 MedDRA preferred terms in
-the Canadian extract; the exposed-case count is the number of reports carrying at least one of
-them, not the number of terms. The JADER rows report the term-specific estimate; cataract,
+ROR, reporting odds ratio. "Any optic-nerve term" follows the MedDRA rule for the narrow optic-nerve
+search - every preferred term containing the string OPTIC; 29 such terms appear in the Canadian
+extract, and 1308 exposed reports carried at least one of them. The exposed-case count is reports, not terms. The JADER rows report the term-specific estimate; cataract,
 glaucoma and dry eye were null or below unity in the same analysis. The two FAERS period rows use
 that period's own de-duplicated case count as the reference population. Estimates are not compared
 across systems: the proportion of reports naming the drug as suspect differs by system.
@@ -284,11 +284,11 @@ non-specific comparators (eye pain, vision blurred) in FAERS.
 | Term | Exposed cases | Cases in database | ROR | 95% CI | q |
 |---|---|---|---|---|---|
 | Cataract | 39 | 58,616 | 0.89 | 0.65–1.22 | 0.48 |
-| Dry eye | 10 | 47,855 | 0.28 | 0.15–0.52 | 2.1e-05 |
+| Dry eye | 10 | 47,855 | 0.28 | 0.15–0.52 | 2.3e-05 |
 | Eye pain | 27 | 54,555 | 0.66 | 0.45–0.96 | 0.034 |
 | Glaucoma | 4 | 19,045 | 0.28 | 0.11–0.75 | 0.0081 |
 | Conjunctivitis | 11 | 18,170 | 0.81 | 0.45–1.46 | 0.48 |
-| Vision blurred | 151 | 135,063 | 1.50 | 1.28–1.76 | 1e-06 |
+| Vision blurred | 151 | 135,063 | 1.50 | 1.28–1.76 | 1.7e-06 |
 
 
 ## References

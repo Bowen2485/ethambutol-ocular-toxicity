@@ -1,98 +1,90 @@
-# Ethambutol ocular toxicity: pharmacovigilance, network toxicology and genetic analysis
+# Ethambutol and optic-nerve adverse-event reporting
 
-Analysis code for a study of ethambutol's ocular toxicity in the FDA Adverse Event
-Reporting System, integrated with network toxicology, molecular docking, all-atom
-molecular dynamics and two-sample Mendelian randomisation.
+Analysis code and derived results for a multi-database pharmacovigilance study of ethambutol,
+reported as:
+
+> **Optic-nerve-predominant adverse-event reporting with ethambutol: a multi-database
+> pharmacovigilance study with exploratory transcriptomic analysis**
+
+The manuscript is `manuscript/TADS_manuscript.md`; the review PDF is
+`submission/Ethambutol_TADS_manuscript.pdf`; the supplementary tables are
+`submission/Supplementary_Tables.xlsx`.
 
 ## What the study asks
 
-Ethambutol's optic-nerve toxicity is long established, so the question is not whether the
-signal exists but whether it is *specific*.  A drug that damages the optic nerve should
-produce signals for optic-nerve and colour-vision terms while leaving non-specific ocular
-complaints - dry eye, eye pain, cataract, glaucoma - at or below the background rate.
-That internal contrast is the primary result, and the analysis is built around testing
-it rather than around reporting the signal itself.
+Ethambutol is a first-line antitubercular drug whose optic-nerve toxicity is long established, so
+the question is not whether the signal exists. It is whether the ocular signal is *concentrated in
+the optic nerve* rather than being part of a general increase in ocular reporting, and whether
+that pattern reproduces in other national reporting systems. Eleven ocular MedDRA queries are
+nominated in advance and compared against one another inside the same reports, with pre-specified
+non-specific terms as controls.
 
-## What the code does
+## Data and current results
 
-| Stage | Scripts | Output |
-|---|---|---|
-| FAERS ingestion and case-version de-duplication | `faers_*.py` | 20,328,568 de-duplicated cases from 90 quarterly ASCII releases |
-| Disproportionality analysis | `faers_signals*.py` | ROR, PRR, IC025, EBGM05 with Benjamini-Hochberg control over 177 ocular terms |
-| Within-class comparison | `regimen_stratified.py` | Regimen-stratified rate ratios that hold co-prescription constant |
-| Temporal validation | `faers_temporal_validation.py` | The signal reproduced in two independent reporting eras |
-| External validation | `jader_validation.py` | Replication in JADER, the Japanese database |
-| Reporting-intensity check | `build_tb_denominator.py` | WHO tuberculosis burden as a partial exposure denominator |
-| Network toxicology | `mechanism_*.py` | Pathway enrichment and hub ranking |
-| Docking | `docking_run.py` | AutoDock Vina scores with a seven-complex redocking validation panel |
-| Molecular dynamics | `run_md_allatom.py`, `analyse_md.py` | OpenMM all-atom trajectories and stability metrics |
-| Mendelian randomisation | `mr_final.py`, `mr_analysis.py` | Two-sample MR, IVW, MR-Egger, weighted median, Cochran Q, Steiger |
-| Audit | `final_audit.py` | 60 consistency checks over the manuscript's claims |
+| Quantity | Value |
+|---|---|
+| FAERS releases | 90 quarterly ASCII releases, 2004Q1-2026Q2 |
+| Submitted reports | 24,812,425 |
+| De-duplicated cases | 20,692,683 |
+| Cases naming ethambutol | 15,510 (9,024 as primary or secondary suspect) |
+| Optic-nerve query | 432 exposed cases, ROR 23.51 (21.35-25.89) |
+| Optic neuropathy | 165 exposed cases, ROR 116.58 (99.36-136.78) |
+| Optic neuritis | 156 exposed cases, ROR 23.67 (20.19-27.75) |
+| Replication | JADER (optic neuropathy 570.96, 413.50-788.37) and Canada Vigilance (21.85, 14.13-33.79) |
 
-## Rerunning it
+## Reproducing the numbers
 
-### Requirements
+One script rebuilds every number in the paper from the warehouse:
 
-Python 3.11 or later with `numpy`, `pandas`, `scipy`, `statsmodels`, `networkx`,
-`matplotlib`, `rdkit`, `mdtraj`.  Docking needs AutoDock Vina 1.2 and Open Babel 3.1.
-Molecular dynamics needs OpenMM with a CUDA platform and AmberTools for ligand
-parameterisation; it was run under WSL2 with conda-forge OpenMM 8.6.1.
+    python src/build_main_results.py      # writes results/main_results.json, main_smq.csv, main_pt.csv
 
-### Data
+The period-split sensitivity is recomputed with each period's own denominator by
 
-**No data is included in this repository** - it amounts to 42 GB.  Every source is
-publicly available and free to download:
+    python src/audit_period_and_strict.py
 
-| Source | Used for | Where |
-|---|---|---|
-| FAERS quarterly ASCII | the pharmacovigilance analysis | https://fis.fda.gov/extensions/FPD-QDE-FAERS/FPD-QDE-FAERS.html |
-| JADER | external validation | https://www.pmda.go.jp/english/rs-sb-std/rs/0009.html |
-| WHO Global Health Observatory | tuberculosis burden denominator | https://ghoapi.azureedge.net/api/ |
-| Open Targets | drug mechanism and disease associations | GraphQL API v4 |
-| STRING v12 | protein interaction network | https://string-db.org |
-| g:Profiler | functional enrichment | https://biit.cs.ut.ee/gprofiler |
-| PubChem | compound structures | https://pubchem.ncbi.nlm.nih.gov |
-| RCSB PDB | experimental structures | https://www.rcsb.org |
-| OpenGWAS | genetic instruments | https://gwas.mrcieu.ac.uk |
-| FinnGen release 12 | outcome summary statistics | gs://finngen-public-data-r12 |
+The figures, the manuscript tables and the supplementary workbook are generated from
+`results/main_results.json`:
 
-Place downloaded files under `data/raw/` following the layout the scripts expect; each
-script states its inputs in its docstring.
+    python src/make_figures_tads.py
+    python src/build_tads_manuscript.py
+    python src/build_tads_pdf.py
+    python src/build_supplement.py
 
-### One credential is required
+`src/audit_tads.py` checks the assembled paper: citations against the reference list, abstract and
+main-text length, placeholders, and the headline numbers against the results file.
 
-The Mendelian randomisation retrieves instruments from OpenGWAS, which requires a free
-API token.  `mr_final.py` and `opengwas_catalogue.py` read it from
-`data/raw/opengwas/token.txt`.  That file is **not** in this repository and must not be
-committed.  Obtain a token from your OpenGWAS account and write it to that path.
+## Important correction recorded here
 
-## What the analysis found, in one paragraph
+An earlier version of the period-split sensitivity used the whole-database case count in the
+reference cell of each period's 2x2 table, which overstated both periods (379.28 and 171.17
+instead of 131.72 and 111.66). The corrected values, and the period denominators they rest on, are
+in `results/audit_period_strict.json` and `results/main_results.json`.
 
-Of 13,804 de-duplicated ethambutol cases, 971 (7.03%) reported an ocular event and 475
-(3.44%) an optic-nerve event.  The optic-nerve signal is strong (optic neuropathy ROR
-159.21, 95% CI 134.65-188.25) while every non-specific ocular term is null (dry eye 0.42,
-cataract 0.86, eye pain 0.64, glaucoma 0.38).  The pattern replicates in a second
-reporting era and in JADER.  Within the antitubercular class, co-prescription makes the
-naive drug-versus-drug comparison uninterpretable; holding the regimen fixed, adding
-ethambutol to rifampicin, isoniazid and pyrazinamide raises the optic-nerve rate from
-0.36% to 1.16% (rate ratio 3.28, 95% CI 1.03-10.40).  Network analysis points to
-ferroptosis, and that prediction was independently confirmed experimentally in 2026.
+Two preferred terms exist in `reac` in two spellings (`Optic neuropathy` and `OPTIC NEUROPATHY`);
+an analysis that matched only one spelling counted 151 rather than 165 exposed cases. All counts in
+this repository match both spellings.
 
-## Repository layout
+## Data dictionary
 
-```
-src/            analysis scripts, each self-documenting
-manuscript/     the manuscript in English and Chinese, and the reference list
-tables/         numbered tables as CSV
-figures/        figures as PNG (for reading) and PDF (for print)
-results/        result tables produced by the analysis
-docs/           literature review, method notes, reporting checklist
-```
+`results/main_results.json` contains:
 
-## Limits stated in the paper, repeated here
+| Key | Meaning |
+|---|---|
+| `N` | de-duplicated FAERS cases |
+| `n_ethambutol`, `n_ethambutol_suspect` | cases naming the drug, any role / as PS or SS |
+| `case_flow` | counts at each step of the flow diagram |
+| `smq` | one object per ocular query: narrow-term count, exposed cases, database cases, ROR, CI, q, suspect-only estimate |
+| `pt` | one object per preferred term: group (optic nerve or control), exposed cases, database cases, ROR, CI, q, suspect-only estimate |
+| `temporal` | per-period 2x2 cells, period denominator, ROR, CI and the two proportions |
+| `strict_token` | why a whole-token variant is not a separate analysis |
 
-The docking protocol reproduced crystal poses for ligands up to 13 heavy atoms and failed
-from 19 upward; ethambutol has 14 heavy atoms, so it falls in the interval the panel
-brackets but does not fill.  The all-atom simulation covers one target over 1 ns.  The
-Mendelian randomisation cannot address the drug itself, because ethambutol has no genetic
-instrument; it addresses modifiable traits instead.
+## Legacy analyses
+
+The repository also contains code from an earlier, broader version of this project: network
+toxicology, molecular docking, all-atom molecular dynamics and two-sample Mendelian
+randomisation. **None of these is used in the current manuscript.** They are kept for provenance
+and are not part of the analysis reported in the paper.
+
+## Licence
+
+MIT. See `LICENSE`.

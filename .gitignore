@@ -1,69 +1,16 @@
-# ---------------------------------------------------------------------------
-# Data - must never be committed
-# ---------------------------------------------------------------------------
-# The analysis reads 42 GB of source data: FAERS quarterly ASCII releases, a 37 GB
-# SQLite database, JADER CSVs, FinnGen summary-statistic scans and OpenGWAS files.
-# None of it belongs in a repository.  It is all publicly downloadable and the
-# scripts describe how to obtain it.
-data/
-*.sqlite
-*.sqlite3
-*.db
-*.gz
-*.tbi
-*.bgz
-*.dcd
-*.nc
-*.xtc
-*.prmtop
-*.frcmod
-*.mol2
 
-# ---------------------------------------------------------------------------
-# Credentials - must never be committed
-# ---------------------------------------------------------------------------
-# data/raw/opengwas/token.txt holds a live OpenGWAS API token.  Publishing it would
-# hand over the account, and git keeps it in the history even after deletion.
-token.txt
-*token*.txt
-.env
-.env.*
+# Credentials directory holding API keys (DisGeNET etc.)
+credential/
+credentials/
 *.key
-*.pem
-credentials*
-secrets*
 
-# ---------------------------------------------------------------------------
-# Environment and build products
-# ---------------------------------------------------------------------------
-tools/
-.wheels/
-.piptarget/
-__pycache__/
-*.pyc
-*.pyo
-.venv/
-venv/
-env/
-.tmp/
-archive/
-receptors_clean/
+# Local LaTeX build directory (aux files, compiled PDF)
+submission/build_*/
 
-# ---------------------------------------------------------------------------
-# Large intermediate output
-# ---------------------------------------------------------------------------
-docking/poses/
-docking/validation/*/docked*.pdbqt
-
-# ---------------------------------------------------------------------------
-# Editor and OS
-# ---------------------------------------------------------------------------
-.vscode/
-.idea/
-Thumbs.db
-Desktop.ini
-credential/*
-credentials/*
-disgenet_key*
-*_key.txt
-*.uuid
+# Raw data: the SDUD annual releases are 5 GB and the docking binary 2 GB.  They are archived
+# locally under data/raw/sdud/ and tools/, with provenance in data/raw/sdud/MANIFEST.csv, and are
+# deliberately not committed.
+data/raw/sdud/
+tools/gnina.cuda12.8.static
+data/derived/
+data/raw/faers_ascii/

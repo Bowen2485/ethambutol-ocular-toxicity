@@ -12,15 +12,15 @@
 
 ## Abstract
 
-**Background.** Ethambutol causes an optic neuropathy, and its ocular signal is well recognised. Whether it is concentrated in the optic nerve, rather than reflecting a general increase in ocular reporting, has not been tested against MedDRA's own queries.
+**Background.** Ethambutol causes an optic neuropathy, and its ocular signal is well recognised. Whether it is concentrated in the optic nerve, rather than reflecting a general increase in ocular reporting, has not been tested against MedDRA's queries.
 
-**Objectives.** To test whether ethambutol reports show an optic-nerve-predominant reporting pattern across the ocular queries, and whether that pattern replicates in independent systems.
+**Objectives.** To test whether ethambutol reports show an optic-nerve-predominant reporting pattern across the ocular queries, and whether it replicates in independent systems.
 
 **Design.** Retrospective disproportionality analysis of case safety reports, with replication in two national systems and exploratory transcriptomics.
 
 **Methods.** All 90 quarterly FDA Adverse Event Reporting System releases (2004Q1–2026Q2) were de-duplicated by case version. In 15,510 ethambutol cases we computed reporting odds ratios (ROR) for the eleven ocular Standardised MedDRA Queries (narrow sets, MedDRA 29.0), with Benjamini–Hochberg control, and described the terms inside the optic-nerve query against pre-specified controls. Exposure role, period and a fixed-regimen contrast were sensitivity analyses, and the pattern was tested in JADER and Canada Vigilance.
 
-**Results.** The optic-nerve query had the highest ROR of the eleven (23.51, 95% CI 21.35–25.89; 432 cases); four queries lay above unity, three below, four null. Optic neuropathy (165; 116.58, 99.36–136.78) and optic neuritis (156; 23.67, 20.19–27.75) carried the evidence. The four negative controls showed no positive signal; vision blurred did (1.50, 1.28–1.76). An optic-nerve signal was also observed in JADER (optic neuropathy 570.96, 413.50–788.37) and Canada Vigilance (21.85, 14.13–33.79); the non-specific comparison was possible in FAERS and, for mapped terms, JADER, not Canada. Median onset was 125 days against 33 for non-ocular events. Exploratory transcriptomics did not reproduce selected ferroptosis-related predictions, whose clinical relevance is uncertain.
+**Results.** The optic-nerve query had the highest ROR of the eleven (23.51, 95% CI 21.35–25.89; 432 cases); four lay above unity, three below, four null. Optic neuropathy (165; 116.58, 99.36–136.78) and optic neuritis (156; 23.67, 20.19–27.75) carried the evidence. The four negative controls showed no positive signal; vision blurred did (1.50, 1.28–1.76). A term-level optic-nerve signal was also seen in JADER (optic neuropathy 570.96, 413.50–788.37); Canada Vigilance showed a broader string-matched composite (21.85, 14.13–33.79). The non-specific comparison was possible in FAERS and, for mapped terms, JADER, not Canada. Median onset was 125 days against 33 for non-ocular events. Exploratory transcriptomics did not reproduce selected ferroptosis-related predictions, of uncertain clinical relevance.
 
 **Conclusion.** Across three reporting systems, ethambutol showed a reproducible optic-nerve-predominant reporting pattern: a safety signal, not the incidence or causal effect of the drug.
 

@@ -97,12 +97,15 @@ table3 = f"""Table 3. The optic-nerve outcome in the three systems, by exposure 
 | Canada Vigilance | Any role | Any optic-nerve term | {can_any['a']} | {can_any['ror']:.2f} ({can_any['ror_lcl']:.2f}–{can_any['ror_ucl']:.2f}) |
 | Canada Vigilance | Suspect only | Any optic-nerve term | {can_sus['a']} | {can_sus['ror']:.2f} ({can_sus['ror_lcl']:.2f}–{can_sus['ror_ucl']:.2f}) |
 
-ROR, reporting odds ratio. "Any optic-nerve term" follows the MedDRA rule for the narrow optic-nerve
-search - every preferred term containing the string OPTIC; 29 such terms appear in the Canadian
-extract, and 1308 exposed reports carried at least one of them. The exposed-case count is reports, not terms. The JADER rows report the term-specific estimate; cataract,
-glaucoma and dry eye were null or below unity in the same analysis. The two FAERS period rows use
-that period's own de-duplicated case count as the reference population. Estimates are not compared
-across systems: the proportion of reports naming the drug as suspect differs by system.
+ROR, reporting odds ratio. The Canadian outcome is an exploratory composite of every preferred
+term containing the string OPTIC (29 such terms appear in the extract); it is not the
+45-term query and includes terms of different clinical meaning. A total of
+1,308 reports in the full Canada Vigilance database carried at least one of these
+terms, and 21 of those reports named ethambutol. The JADER rows report the term-specific
+estimate; cataract, glaucoma and dry eye were null or below unity in the same analysis. The two
+FAERS period rows use that period's own de-duplicated case count as the reference population.
+Estimates are not compared across systems: the proportion of reports naming the drug as suspect
+differs by system.
 
 Table 4. Pre-specified negative controls (cataract, dry eye, glaucoma, conjunctivitis) and
 non-specific comparators (eye pain, vision blurred) in FAERS.

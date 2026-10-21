@@ -36,7 +36,8 @@
       "a_suspect": 370,
       "ror_suspect": 35.00780446423983,
       "q_bh": 0.0,
-      "q_bh_display": "<1e-300"
+      "q_bh_display": "<1e-300",
+      "p_display": "<1e-300"
     },
     {
       "smq": "Retinal disorders",
@@ -51,7 +52,8 @@
       "a_suspect": 133,
       "ror_suspect": 3.045827938487696,
       "q_bh": 1.255742248722844e-23,
-      "q_bh_display": "1.3e-23"
+      "q_bh_display": "1.3e-23",
+      "p_display": "3.4e-24"
     },
     {
       "smq": "Glaucoma",
@@ -66,7 +68,8 @@
       "a_suspect": 9,
       "ror_suspect": 0.5336375956960633,
       "q_bh": 0.0046930967459269,
-      "q_bh_display": "0.004693"
+      "q_bh_display": "0.004693",
+      "p_display": "0.002987"
     },
     {
       "smq": "Lens disorders",
@@ -81,7 +84,8 @@
       "a_suspect": 41,
       "ror_suspect": 1.387494866799833,
       "q_bh": 0.27383661733704046,
-      "q_bh_display": "0.2738"
+      "q_bh_display": "0.2738",
+      "p_display": "0.1992"
     },
     {
       "smq": "Lacrimal disorders",
@@ -96,7 +100,8 @@
       "a_suspect": 10,
       "ror_suspect": 0.2744042043608723,
       "q_bh": 4.872844723877751e-09,
-      "q_bh_display": "4.9e-09"
+      "q_bh_display": "4.9e-09",
+      "p_display": "1.8e-09"
     },
     {
       "smq": "Corneal disorders",
@@ -111,7 +116,8 @@
       "a_suspect": 2,
       "ror_suspect": 0.20659656488469472,
       "q_bh": 0.8079735791659124,
-      "q_bh_display": "0.808"
+      "q_bh_display": "0.808",
+      "p_display": "0.7345"
     },
     {
       "smq": "Conjunctival disorders",
@@ -126,7 +132,8 @@
       "a_suspect": 36,
       "ror_suspect": 0.8400952456949712,
       "q_bh": 0.8079735791659124,
-      "q_bh_display": "0.808"
+      "q_bh_display": "0.808",
+      "p_display": "0.6746"
     },
     {
       "smq": "Scleral disorders",
@@ -141,7 +148,8 @@
       "a_suspect": 2,
       "ror_suspect": 1.0108390686297393,
       "q_bh": 0.8279162331780647,
-      "q_bh_display": "0.8279"
+      "q_bh_display": "0.8279",
+      "p_display": "0.8279"
     },
     {
       "smq": "Periorbital and eyelid disorders",
@@ -156,7 +164,8 @@
       "a_suspect": 15,
       "ror_suspect": 0.4301743757905668,
       "q_bh": 0.00012077017435056427,
-      "q_bh_display": "0.0001208"
+      "q_bh_display": "0.0001208",
+      "p_display": "6.6e-05"
     },
     {
       "smq": "Ocular infections",
@@ -171,7 +180,8 @@
       "a_suspect": 77,
       "ror_suspect": 4.301734838935036,
       "q_bh": 5.154587420270156e-66,
-      "q_bh_display": "5.2e-66"
+      "q_bh_display": "5.2e-66",
+      "p_display": "9.4e-67"
     },
     {
       "smq": "Ocular motility disorders",
@@ -186,7 +196,8 @@
       "a_suspect": 31,
       "ror_suspect": 1.7330158370186608,
       "q_bh": 3.970963430295968e-08,
-      "q_bh_display": "4.0e-08"
+      "q_bh_display": "4.0e-08",
+      "p_display": "1.8e-08"
     }
   ],
   "pt": [
@@ -202,7 +213,8 @@
       "ror_suspect": 191.22352678588518,
       "p": 0.0,
       "q_bh": 0.0,
-      "q_bh_display": "<1e-300"
+      "q_bh_display": "<1e-300",
+      "p_display": "<1e-300"
     },
     {
       "term": "Optic neuritis",
@@ -216,7 +228,8 @@
       "ror_suspect": 36.92708271936358,
       "p": 0.0,
       "q_bh": 0.0,
-      "q_bh_display": "<1e-300"
+      "q_bh_display": "<1e-300",
+      "p_display": "<1e-300"
     },
     {
       "term": "Toxic optic neuropathy",
@@ -230,7 +243,8 @@
       "ror_suspect": 206.49580684083966,
       "p": 0.0,
       "q_bh": 0.0,
-      "q_bh_display": "<1e-300"
+      "q_bh_display": "<1e-300",
+      "p_display": "<1e-300"
     },
     {
       "term": "Optic atrophy",
@@ -244,7 +258,8 @@
       "ror_suspect": 32.96835376231503,
       "p": 1.0990069889205437e-94,
       "q_bh": 3.2970209667616315e-94,
-      "q_bh_display": "3.3e-94"
+      "q_bh_display": "3.3e-94",
+      "p_display": "1.1e-94"
     },
     {
       "term": "Papilloedema",
@@ -258,7 +273,8 @@
       "ror_suspect": 6.659254933454349,
       "p": 1.2155946356698766e-19,
       "q_bh": 2.6048456478640217e-19,
-      "q_bh_display": "2.6e-19"
+      "q_bh_display": "2.6e-19",
+      "p_display": "1.2e-19"
     },
     {
       "term": "Optic nerve disorder",
@@ -272,7 +288,8 @@
       "ror_suspect": 11.644320418522739,
       "p": 7.331660068484411e-13,
       "q_bh": 1.2219433447474018e-12,
-      "q_bh_display": "1.2e-12"
+      "q_bh_display": "1.2e-12",
+      "p_display": "7.3e-13"
     },
     {
       "term": "Optic nerve injury",
@@ -286,7 +303,8 @@
       "ror_suspect": 14.208923262941877,
       "p": 9.496222090166463e-15,
       "q_bh": 1.7805416419062117e-14,
-      "q_bh_display": "1.8e-14"
+      "q_bh_display": "1.8e-14",
+      "p_display": "9.5e-15"
     },
     {
       "term": "Visual evoked potentials abnormal",
@@ -300,7 +318,8 @@
       "ror_suspect": 34.47466927127173,
       "p": 7.771318345277138e-20,
       "q_bh": 1.9428295863192843e-19,
-      "q_bh_display": "1.9e-19"
+      "q_bh_display": "1.9e-19",
+      "p_display": "7.8e-20"
     },
     {
       "term": "Optic disc hyperaemia",
@@ -314,7 +333,8 @@
       "ror_suspect": 312.658901956042,
       "p": 3.087924189532758e-105,
       "q_bh": 1.1579715710747842e-104,
-      "q_bh_display": "1.2e-104"
+      "q_bh_display": "1.2e-104",
+      "p_display": "3.1e-105"
     },
     {
       "term": "Cataract",
@@ -328,7 +348,8 @@
       "ror_suspect": 1.0171834168758216,
       "p": 0.4557438187692474,
       "q_bh": 0.47752141922467106,
-      "q_bh_display": "0.4775"
+      "q_bh_display": "0.4775",
+      "p_display": "0.4557"
     },
     {
       "term": "Dry eye",
@@ -342,7 +363,8 @@
       "ror_suspect": 0.3348063779173401,
       "p": 1.5182920698300971e-05,
       "q_bh": 2.0703982770410416e-05,
-      "q_bh_display": "2.1e-05"
+      "q_bh_display": "2.1e-05",
+      "p_display": "1.5e-05"
     },
     {
       "term": "Eye pain",
@@ -356,7 +378,8 @@
       "ror_suspect": 0.671838885185783,
       "p": 0.029554781158622492,
       "q_bh": 0.03410167056764134,
-      "q_bh_display": "0.0341"
+      "q_bh_display": "0.0341",
+      "p_display": "0.02955"
     },
     {
       "term": "Glaucoma",
@@ -370,7 +393,8 @@
       "ror_suspect": 0.240557634716554,
       "p": 0.006492717465606803,
       "q_bh": 0.008115896832008505,
-      "q_bh_display": "0.008116"
+      "q_bh_display": "0.008116",
+      "p_display": "0.006493"
     },
     {
       "term": "Conjunctivitis",
@@ -384,7 +408,8 @@
       "ror_suspect": 0.630698802756892,
       "p": 0.47752141922467106,
       "q_bh": 0.47752141922467106,
-      "q_bh_display": "0.4775"
+      "q_bh_display": "0.4775",
+      "p_display": "0.4775"
     },
     {
       "term": "Vision blurred",
@@ -398,7 +423,8 @@
       "ror_suspect": 1.9136004241821558,
       "p": 6.901557498774852e-07,
       "q_bh": 1.035233624816228e-06,
-      "q_bh_display": "1.0e-06"
+      "q_bh_display": "1.0e-06",
+      "p_display": "6.9e-07"
     }
   ],
   "temporal": {
@@ -467,6 +493,8 @@
     "n_non_ocular": 2289,
     "median_non_ocular_days": 33.0,
     "n_cases_with_any_of_17_terms": 472,
-    "term_set": "17 preferred terms in src/faers_case_deep.py OPTIC_TERMS; wider than the 45-term query"
+    "term_set": "17 preferred terms in src/faers_case_deep.py OPTIC_TERMS; wider than the 45-term query",
+    "n_other_ocular": 74,
+    "note_groups": "the Methods describe three groups; the primary comparison is optic-nerve versus non-ocular, and the other-ocular group is reported with the ocular totals"
   }
 }

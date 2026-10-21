@@ -152,19 +152,27 @@ if enriched.exists():
 refs_text = re.sub(r"\.\.", ".", refs_text)
 
 STATEMENTS = """
-## Statements
+## Statements and Declarations
 
-**Ethics approval and consent to participate.** Not required. The study used publicly available,
-de-identified aggregate data from pharmacovigilance databases and public gene-expression series.
-No human participants were recruited and no identifiable information was accessed.
+**Ethics approval and consent to participate.** Not applicable. The study used publicly available,
+de-identified aggregate data from pharmacovigilance databases and public gene-expression series. No
+human participants were recruited, no identifiable information was accessed, and no ethics
+approval was therefore required.
 
-**Data availability.** FAERS quarterly ASCII releases are available from the U.S. Food and Drug
-Administration (https://fis.fda.gov/extensions/FPD-QDE-FAERS/FPD-QDE-FAERS.html); JADER from the
-Pharmaceuticals and Medical Devices Agency of Japan; Canada Vigilance from Health Canada
-(cvponline); GSE294687 and GSE318912 from NCBI GEO. The derived tables that support the findings
-— the de-duplication map, the 2×2 tables, `results/main_results.json` and the code that generates
-every table and figure — are available at
-https://github.com/Bowen2485/ethambutol-ocular-toxicity/tree/v2.0-tads-2026-10-21 (release tag `v2.0-tads-2026-10-21`) under an MIT licence.
+**Consent for publication.** Not applicable. No individual person's data are reported.
+
+**Availability of data and materials.** FAERS quarterly ASCII releases are available from the U.S.
+Food and Drug Administration
+(https://fis.fda.gov/extensions/FPD-QDE-FAERS/FPD-QDE-FAERS.html); JADER from the Pharmaceuticals
+and Medical Devices Agency of Japan; Canada Vigilance from Health Canada (cvponline); GSE294687 and
+GSE318912 from NCBI GEO. The derived tables that support the findings — the de-duplication map, the
+2×2 tables, `results/main_results.json` and the code that generates every table and figure — are
+available at https://github.com/Bowen2485/ethambutol-ocular-toxicity/tree/v2.0-tads-2026-10-21
+(release tag `v2.0-tads-2026-10-21`) under an MIT licence.
+
+**Code availability.** All analysis scripts, the data dictionary and the results file are in the
+repository named above, under the same release tag. The scripts record the software versions and
+random seeds used.
 
 **Funding.** This research received no specific grant from any funding agency in the public,
 commercial, or not-for-profit sectors.
@@ -177,27 +185,6 @@ Zhengzheng Wu: supervision. Siyuan Yang: writing — review and editing. Yaqin T
 Xuan Wang: visualisation. All authors read and approved the final manuscript.
 
 **Acknowledgements.** None.
-
-## Figure legends
-
-**Figure 1.** Case flow in the three spontaneous-reporting systems. FAERS releases were
-de-duplicated by case version; the ethambutol cohort was defined by any drug record naming the
-drug, and split by drug role. JADER and Canada Vigilance were analysed independently with the
-exposure definitions given in Table 1.
-
-**Figure 2.** The eleven ocular Standardised MedDRA Queries (narrow sets) in FAERS, ethambutol
-against all other de-duplicated reports. Points are reporting odds ratios with 95% confidence
-intervals on a logarithmic axis; the dashed line marks unity. Red, interval above unity; blue,
-interval below unity; grey, interval includes unity. The number of exposed cases is given at the
-right.
-
-**Figure 3.** Preferred terms within the optic-nerve query, alongside the pre-specified negative
-controls and the non-specific ocular comparators. Terms with fewer than three exposed cases are
-not plotted. Conventions as in Figure 2.
-
-**Figure 4.** Sensitivity of the optic-nerve estimate to exposure role and reporting period. The
-upper four rows compare the preferred term and the query under all-role and suspect-only
-exposure; the lower two split the cohort by receipt year at 2016. Conventions as in Figure 2.
 """
 
 parts = [

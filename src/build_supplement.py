@@ -131,6 +131,10 @@ s8 = pd.DataFrame([
      "Missing or unusable dates": n_cases - int(tto.iloc[0].n)},
     {"Group": "Optic-nerve event", "n": int(tto[tto.group.str.startswith("Optic-nerve")].n.iloc[0]),
      "Analysable interval": "yes", "Missing or unusable dates": ""},
+    {"Group": "Other ocular event (neither optic-nerve nor non-ocular)",
+     "n": int(tto[tto.group.str.startswith("Ocular event")].n.iloc[0])
+          - int(tto[tto.group.str.startswith("Optic-nerve")].n.iloc[0]),
+     "Analysable interval": "yes", "Missing or unusable dates": ""},
     {"Group": "Any ocular event", "n": int(tto[tto.group.str.startswith("Ocular event")].n.iloc[0]),
      "Analysable interval": "yes", "Missing or unusable dates": ""},
     {"Group": "No ocular event", "n": int(tto[tto.group.str.startswith("No ocular")].n.iloc[0]),

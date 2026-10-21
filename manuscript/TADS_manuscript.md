@@ -12,17 +12,19 @@
 
 ## Abstract
 
-**Background.** Ethambutol causes an optic neuropathy, and its ocular reporting signal is well recognised. Whether that signal is concentrated in the optic nerve, rather than reflecting a general increase in ocular reporting, has not been tested against MedDRA's own ocular queries.
+**Background.** Ethambutol causes an optic neuropathy, and its ocular signal is well recognised. Whether it is concentrated in the optic nerve, rather than reflecting a general increase in ocular reporting, has not been tested against MedDRA's own queries.
 
-**Objectives.** To test whether ethambutol reports show an optic-nerve-predominant reporting pattern across the ocular queries, and whether that pattern replicates in independent national systems.
+**Objectives.** To test whether ethambutol reports show an optic-nerve-predominant reporting pattern across the ocular queries, and whether that pattern replicates in independent systems.
 
-**Design.** Retrospective disproportionality analysis of individual case safety reports, with replication in two further national systems and a short exploratory transcriptomic reanalysis.
+**Design.** Retrospective disproportionality analysis of case safety reports, with replication in two national systems and exploratory transcriptomics.
 
-**Methods.** All 90 quarterly FDA Adverse Event Reporting System releases (2004Q1–2026Q2) were de-duplicated by case version. In 15,510 ethambutol cases we computed reporting odds ratios (ROR) for the eleven ocular Standardised MedDRA Queries (narrow sets, MedDRA 29.0), with Benjamini–Hochberg control across the eleven, and described the preferred terms inside the optic-nerve query against pre-specified control terms. Exposure role, reporting period and a fixed-regimen contrast were examined as sensitivity analyses, and the pattern was tested in JADER and Canada Vigilance.
+**Methods.** All 90 quarterly FDA Adverse Event Reporting System releases (2004Q1–2026Q2) were de-duplicated by case version. In 15,510 ethambutol cases we computed reporting odds ratios (ROR) for the eleven ocular Standardised MedDRA Queries (narrow sets, MedDRA 29.0), with Benjamini–Hochberg control, and described the terms inside the optic-nerve query against pre-specified controls. Exposure role, period and a fixed-regimen contrast were sensitivity analyses, and the pattern was tested in JADER and Canada Vigilance.
 
-**Results.** The optic-nerve query had the highest ROR of the eleven (23.51, 95% CI 21.35–25.89; 432 cases); four queries lay above unity, three below and four were null. Optic neuropathy (165 cases; 116.58, 99.36–136.78) and optic neuritis (156 cases; 23.67, 20.19–27.75) carried the evidence. Control terms were mostly at or below background, but vision blurred showed a modest excess (1.50, 1.28–1.76). The pattern replicated in JADER (optic neuropathy 570.96, 413.50–788.37) and Canada Vigilance (21.85, 14.13–33.79). Median onset was 125 days, against 33 days for non-ocular events.
+**Results.** The optic-nerve query had the highest ROR of the eleven (23.51, 95% CI 21.35–25.89; 432 cases); four queries lay above unity, three below, four null. Optic neuropathy (165; 116.58, 99.36–136.78) and optic neuritis (156; 23.67, 20.19–27.75) carried the evidence. The four negative controls showed no positive signal; vision blurred did (1.50, 1.28–1.76). An optic-nerve signal was also observed in JADER (optic neuropathy 570.96, 413.50–788.37) and Canada Vigilance (21.85, 14.13–33.79); the non-specific comparison was possible in FAERS and, for mapped terms, JADER, not Canada. Median onset was 125 days against 33 for non-ocular events. Exploratory transcriptomics did not reproduce selected ferroptosis-related predictions, whose clinical relevance is uncertain.
 
-**Conclusion.** Across three spontaneous-reporting systems, ethambutol showed a reproducible optic-nerve-predominant reporting pattern: a safety signal, not the incidence or causal effect of the drug.
+**Conclusion.** Across three reporting systems, ethambutol showed a reproducible optic-nerve-predominant reporting pattern: a safety signal, not the incidence or causal effect of the drug.
+
+**Plain Language Title.** How side-effect reports describe eye problems with the tuberculosis drug ethambutol
 
 **Keywords.** ethambutol; optic neuropathy; pharmacovigilance; disproportionality analysis; MedDRA; spontaneous reporting
 
@@ -126,7 +128,7 @@ The elevation of the ocular-infections query (4.13) is not attributable to the d
 
 Sixteen of the query's 45 narrow terms carried at least one ethambutol case and nine carried three or more; all nine were significant after correction (Figure 3). The evidence is carried by the terms with the largest numbers of cases rather than by the largest ratios. Optic neuropathy gave an ROR of 116.58 (99.36–136.78) on 165 cases and optic neuritis 23.67 (20.19–27.75) on 156 cases. The remaining seven were toxic optic neuropathy (232.95, 178.18–304.56; 63 cases), optic atrophy (20.00, 13.36–29.94; 24), papilloedema (5.97, 3.84–9.26; 20), optic nerve disorder (7.62, 3.96–14.68; 9), optic nerve injury (9.45, 4.71–18.95; 8), visual evoked potentials abnormal (30.30, 9.65–95.18; 3) and optic disc hyperaemia (181.83, 54.42–607.55; 3).
 
-The three negative controls were at or below background: cataract 0.89 (0.65–1.22; 39 cases), dry eye 0.28 (0.15–0.52; 10) and glaucoma 0.28 (0.11–0.75; 4), the last two significantly below unity. The two non-specific comparators behaved differently from one another: conjunctivitis was null at 0.81 (0.45–1.46; 11) and eye pain was slightly below unity at 0.66 (0.45–0.96; 27), whereas vision blurred showed a modest excess at 1.50 (1.28–1.76) on 151 cases. That excess is an order of magnitude below the optic-neuropathy estimate and is compatible with either a drug effect or the way a non-specific visual complaint is coded; it is reported rather than dismissed because it is the one control term that moved in the same direction as the optic-nerve terms.
+The four pre-specified negative controls showed no positive disproportionality signal: cataract 0.89 (0.65–1.22), conjunctivitis 0.81 (0.45–1.46), dry eye 0.28 (0.15–0.52) and glaucoma 0.28 (0.11–0.75). The two non-specific comparators behaved differently from one another: eye pain was reported less often than expected (0.66 (0.45–0.96)), whereas vision blurred showed a modest excess (1.50 (1.28–1.76) on 151 cases). This pattern is less consistent with a uniform increase across all ocular reporting, although outcome-specific recognition and coding cannot be excluded, and the excess for vision blurred is reported rather than set aside.
 
 ### 3.4 Sensitivity: exposure role and reporting period
 
@@ -146,7 +148,7 @@ The extract of Canada Vigilance available to us carries the optic-nerve composit
 
 ### 3.6 Time to onset
 
-Time from starting ethambutol to the reported event could be computed in 2,446 of the 15,510 ethambutol cases (15.8%). In this analysis an optic-nerve event was defined by the case-level term list (17 preferred terms, supplementary Table S8), which is wider than the 45-term query: 472 cases carried at least one of those terms and 83 had a usable interval, against 2,289 cases in the non-ocular group. The absolute number is therefore not comparable with the 432 exposed cases of the query, which use a different term set. Median interval was 125 days (IQR 63–293) for optic-nerve events and 33 days (IQR 10–100) for non-ocular events. The remaining 13,064 cases (84.2%) lacked a therapy start date, an event date, or an interval within the accepted range, so the analysis rests on the subset with complete dates and that subset is defined by completeness rather than by sampling.
+Time from starting ethambutol to the reported event could be computed in 2,446 of the 15,510 ethambutol cases (15.8%). In this analysis an optic-nerve event was defined by the case-level term list (17 preferred terms, supplementary Table S8), which is wider than the 45-term query: 472 cases carried at least one of those terms and 83 had a usable interval, against 2,289 cases in the non-ocular group. The absolute number is therefore not comparable with the 432 exposed cases of the query, which use a different term set. Ocular events as a whole numbered 157, of which 83 were optic-nerve and 74 were other ocular events; that group had a median of 113 days (IQR 38–287), and the primary comparison reported here is optic-nerve against non-ocular events. Median interval was 125 days (IQR 63–293) for optic-nerve events and 33 days (IQR 10–100) for non-ocular events. The remaining 13,064 cases (84.2%) lacked a therapy start date, an event date, or an interval within the accepted range, so the analysis rests on the subset with complete dates and that subset is defined by completeness rather than by sampling.
 
 ### 3.7 Exploratory transcriptomic reanalysis
 
@@ -175,7 +177,7 @@ The design also changes what can be claimed. A signal concentrated in one anatom
 
 Spontaneous reporting has no denominator, and under-reporting is substantial and non-random. Three biases are relevant, and they act differently on the main result. Notoriety bias — increased reporting of a known adverse effect — raises the absolute ocular signal but does not by itself produce a contrast between optic-nerve terms and cataract, dry eye or glaucoma, because all of them sit in the same reports. Sharing a database and an exposure definition does, however, not make every reporting bias common to all outcomes: a clinician who already suspects ethambutol toxicity may record the optic-nerve diagnosis precisely and leave a visual complaint uncoded. The comparison narrows the range of explanations; it does not eliminate outcome-specific reporting. Differential coding is the more serious concern: clinicians who suspect ethambutol toxicity may code optic neuropathy more precisely than they code a non-specific complaint, which would concentrate the signal in the optic-nerve terms without any difference in underlying incidence. Indication confounding acts in the opposite direction, inflating the ocular signal as a whole; the elevation of the ocular infections query is the clearest example, and it is best explained by ocular tuberculosis itself rather than by the drug.
 
-The controls bound the conclusion in both directions. No excess reporting was observed for the selected terms — cataract 0.89, dry eye 0.28, glaucoma 0.28 and eye pain 0.66 — which makes a general increase in ocular reporting an unlikely explanation for the optic-nerve result, but it does not establish that these events are not caused by the drug: a true effect that is small relative to the background reporting rate would not appear. The result is therefore a statement about the shape of the reporting signal, not a toxicity profile. Restriction to suspect-drug reports and the period split change the size of the estimate without changing its direction. The fixed-regimen contrast — rifampicin, isoniazid and pyrazinamide with versus without ethambutol — holds the background regimen constant but rests on a small unexposed group, and its interval includes unity; it is reported for completeness rather than as evidence of a within-class effect.
+The controls bound the conclusion in both directions. The four negative-control terms did not show positive disproportionality signals, whereas the non-specific comparators were not uniformly null: eye pain was below unity, but vision blurred showed a modest elevation (1.50 (1.28–1.76)). The absence of comparable elevations for the negative-control terms is less consistent with a uniform increase in ocular reporting. The vision-blurred signal, and the possibility of outcome-specific recognition and coding, mean that the internal contrast cannot establish anatomical specificity or exclude reporting bias. It also does not show that the negative-control events are not caused by the drug: a true effect that is small relative to background reporting would not appear. The result is a statement about the shape of the reporting signal, not a toxicity profile. Restriction to suspect-drug reports and the period split change the size of the estimate without changing its direction. The fixed-regimen contrast — rifampicin, isoniazid and pyrazinamide with versus without ethambutol — holds the background regimen constant but rests on a small unexposed group, and its interval includes unity; it is reported for completeness rather than as evidence of a within-class effect.
 
 ### 4.4 Limits of the transcriptomic exploration
 
@@ -193,19 +195,27 @@ Two designs would move the question forward, and neither can be built from spont
 
 Across three spontaneous-reporting systems, ethambutol showed a reproducible optic-nerve-predominant adverse-event reporting pattern. These findings characterise a safety signal rather than the incidence or causal effect of ethambutol. The pattern is consistent with a site-specific toxicity and with the clinical literature on ethambutol optic neuropathy, but differential reporting and residual confounding cannot be excluded, and the transcriptomic exploration does not establish a mechanism.
 
-## Statements
+## Statements and Declarations
 
-**Ethics approval and consent to participate.** Not required. The study used publicly available,
-de-identified aggregate data from pharmacovigilance databases and public gene-expression series.
-No human participants were recruited and no identifiable information was accessed.
+**Ethics approval and consent to participate.** Not applicable. The study used publicly available,
+de-identified aggregate data from pharmacovigilance databases and public gene-expression series. No
+human participants were recruited, no identifiable information was accessed, and no ethics
+approval was therefore required.
 
-**Data availability.** FAERS quarterly ASCII releases are available from the U.S. Food and Drug
-Administration (https://fis.fda.gov/extensions/FPD-QDE-FAERS/FPD-QDE-FAERS.html); JADER from the
-Pharmaceuticals and Medical Devices Agency of Japan; Canada Vigilance from Health Canada
-(cvponline); GSE294687 and GSE318912 from NCBI GEO. The derived tables that support the findings
-— the de-duplication map, the 2×2 tables, `results/main_results.json` and the code that generates
-every table and figure — are available at
-https://github.com/Bowen2485/ethambutol-ocular-toxicity/tree/v2.0-tads-2026-10-21 (release tag `v2.0-tads-2026-10-21`) under an MIT licence.
+**Consent for publication.** Not applicable. No individual person's data are reported.
+
+**Availability of data and materials.** FAERS quarterly ASCII releases are available from the U.S.
+Food and Drug Administration
+(https://fis.fda.gov/extensions/FPD-QDE-FAERS/FPD-QDE-FAERS.html); JADER from the Pharmaceuticals
+and Medical Devices Agency of Japan; Canada Vigilance from Health Canada (cvponline); GSE294687 and
+GSE318912 from NCBI GEO. The derived tables that support the findings — the de-duplication map, the
+2×2 tables, `results/main_results.json` and the code that generates every table and figure — are
+available at https://github.com/Bowen2485/ethambutol-ocular-toxicity/tree/v2.0-tads-2026-10-21
+(release tag `v2.0-tads-2026-10-21`) under an MIT licence.
+
+**Code availability.** All analysis scripts, the data dictionary and the results file are in the
+repository named above, under the same release tag. The scripts record the software versions and
+random seeds used.
 
 **Funding.** This research received no specific grant from any funding agency in the public,
 commercial, or not-for-profit sectors.
@@ -218,27 +228,6 @@ Zhengzheng Wu: supervision. Siyuan Yang: writing — review and editing. Yaqin T
 Xuan Wang: visualisation. All authors read and approved the final manuscript.
 
 **Acknowledgements.** None.
-
-## Figure legends
-
-**Figure 1.** Case flow in the three spontaneous-reporting systems. FAERS releases were
-de-duplicated by case version; the ethambutol cohort was defined by any drug record naming the
-drug, and split by drug role. JADER and Canada Vigilance were analysed independently with the
-exposure definitions given in Table 1.
-
-**Figure 2.** The eleven ocular Standardised MedDRA Queries (narrow sets) in FAERS, ethambutol
-against all other de-duplicated reports. Points are reporting odds ratios with 95% confidence
-intervals on a logarithmic axis; the dashed line marks unity. Red, interval above unity; blue,
-interval below unity; grey, interval includes unity. The number of exposed cases is given at the
-right.
-
-**Figure 3.** Preferred terms within the optic-nerve query, alongside the pre-specified negative
-controls and the non-specific ocular comparators. Terms with fewer than three exposed cases are
-not plotted. Conventions as in Figure 2.
-
-**Figure 4.** Sensitivity of the optic-nerve estimate to exposure role and reporting period. The
-upper four rows compare the preferred term and the query under all-role and suspect-only
-exposure; the lower two split the cohort by receipt year at 2016. Conventions as in Figure 2.
 
 
 ## Tables

@@ -12,17 +12,19 @@
 
 ## Abstract
 
-**Background.** Ethambutol causes an optic neuropathy, and its ocular reporting signal is well recognised. Whether that signal is concentrated in the optic nerve, rather than reflecting a general increase in ocular reporting, has not been tested against MedDRA's own ocular queries.
+**Background.** Ethambutol causes an optic neuropathy, and its ocular signal is well recognised. Whether it is concentrated in the optic nerve, rather than reflecting a general increase in ocular reporting, has not been tested against MedDRA's own queries.
 
-**Objectives.** To test whether ethambutol reports show an optic-nerve-predominant reporting pattern across the ocular queries, and whether that pattern replicates in independent national systems.
+**Objectives.** To test whether ethambutol reports show an optic-nerve-predominant reporting pattern across the ocular queries, and whether that pattern replicates in independent systems.
 
-**Design.** Retrospective disproportionality analysis of individual case safety reports, with replication in two further national systems and a short exploratory transcriptomic reanalysis.
+**Design.** Retrospective disproportionality analysis of case safety reports, with replication in two national systems and exploratory transcriptomics.
 
-**Methods.** All 90 quarterly FDA Adverse Event Reporting System releases (2004Q1–2026Q2) were de-duplicated by case version. In 15,510 ethambutol cases we computed reporting odds ratios (ROR) for the eleven ocular Standardised MedDRA Queries (narrow sets, MedDRA 29.0), with Benjamini–Hochberg control across the eleven, and described the preferred terms inside the optic-nerve query against pre-specified control terms. Exposure role, reporting period and a fixed-regimen contrast were examined as sensitivity analyses, and the pattern was tested in JADER and Canada Vigilance.
+**Methods.** All 90 quarterly FDA Adverse Event Reporting System releases (2004Q1–2026Q2) were de-duplicated by case version. In 15,510 ethambutol cases we computed reporting odds ratios (ROR) for the eleven ocular Standardised MedDRA Queries (narrow sets, MedDRA 29.0), with Benjamini–Hochberg control, and described the terms inside the optic-nerve query against pre-specified controls. Exposure role, period and a fixed-regimen contrast were sensitivity analyses, and the pattern was tested in JADER and Canada Vigilance.
 
-**Results.** The optic-nerve query had the highest ROR of the eleven (23.51, 95% CI 21.35–25.89; 432 cases); four queries lay above unity, three below and four were null. Optic neuropathy (165 cases; 116.58, 99.36–136.78) and optic neuritis (156 cases; 23.67, 20.19–27.75) carried the evidence. Control terms were mostly at or below background, but vision blurred showed a modest excess (1.50, 1.28–1.76). The pattern replicated in JADER (optic neuropathy 570.96, 413.50–788.37) and Canada Vigilance (21.85, 14.13–33.79). Median onset was 125 days, against 33 days for non-ocular events.
+**Results.** The optic-nerve query had the highest ROR of the eleven (23.51, 95% CI 21.35–25.89; 432 cases); four queries lay above unity, three below, four null. Optic neuropathy (165; 116.58, 99.36–136.78) and optic neuritis (156; 23.67, 20.19–27.75) carried the evidence. The four negative controls showed no positive signal; vision blurred did (1.50, 1.28–1.76). An optic-nerve signal was also observed in JADER (optic neuropathy 570.96, 413.50–788.37) and Canada Vigilance (21.85, 14.13–33.79); the non-specific comparison was possible in FAERS and, for mapped terms, JADER, not Canada. Median onset was 125 days against 33 for non-ocular events. Exploratory transcriptomics did not reproduce selected ferroptosis-related predictions, whose clinical relevance is uncertain.
 
-**Conclusion.** Across three spontaneous-reporting systems, ethambutol showed a reproducible optic-nerve-predominant reporting pattern: a safety signal, not the incidence or causal effect of the drug.
+**Conclusion.** Across three reporting systems, ethambutol showed a reproducible optic-nerve-predominant reporting pattern: a safety signal, not the incidence or causal effect of the drug.
+
+**Plain Language Title.** How side-effect reports describe eye problems with the tuberculosis drug ethambutol
 
 **Keywords.** ethambutol; optic neuropathy; pharmacovigilance; disproportionality analysis; MedDRA; spontaneous reporting
 

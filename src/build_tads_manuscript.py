@@ -164,7 +164,7 @@ Pharmaceuticals and Medical Devices Agency of Japan; Canada Vigilance from Healt
 (cvponline); GSE294687 and GSE318912 from NCBI GEO. The derived tables that support the findings
 — the de-duplication map, the 2×2 tables, `results/main_results.json` and the code that generates
 every table and figure — are available at
-https://github.com/Bowen2485/ethambutol-ocular-toxicity under an MIT licence.
+https://github.com/Bowen2485/ethambutol-ocular-toxicity/tree/v2.0-tads-2026-10-21 (release tag `v2.0-tads-2026-10-21`) under an MIT licence.
 
 **Funding.** This research received no specific grant from any funding agency in the public,
 commercial, or not-for-profit sectors.

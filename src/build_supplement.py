@@ -16,6 +16,7 @@ Sheets
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -29,6 +30,16 @@ OUT = ROOT / "submission" / "tads" / "Supplementary_Tables.xlsx"
 d = json.loads((RES / "main_results.json").read_text(encoding="utf-8"))
 reg = json.loads((RES / "audit_regimen.json").read_text(encoding="utf-8"))
 
+
+def qfmt(q: float) -> str:
+    """A q of exactly 0 is a floating-point underflow, not a probability of zero."""
+    if q == 0:
+        return "<1e-300"
+    if q < 1e-4:
+        return f"{q:.1e}"
+    return f"{q:.4g}"
+
+
 # ---------------------------------------------------------------- S1 terms
 NEGATIVE = {"Cataract", "Dry eye", "Glaucoma", "Conjunctivitis"}
 rows = []
@@ -39,7 +50,7 @@ for r in d["pt"]:
         "Term": r["term"], "Group": group, "Exposed cases": r["a"],
         "Cases in database": r["n_event"], "ROR": round(r["ror"], 2),
         "95% CI lower": round(r["ror_lcl"], 2), "95% CI upper": round(r["ror_ucl"], 2),
-        "q (BH)": r["q_bh"], "Exposed cases, suspect only": r["a_suspect"],
+        "q (BH)": qfmt(r["q_bh"]), "Exposed cases, suspect only": r["a_suspect"],
         "ROR, suspect only": round(r["ror_suspect"], 2),
     })
 s1 = pd.DataFrame(rows).sort_values(["Group", "ROR"], ascending=[True, False])
@@ -66,8 +77,9 @@ s2 = pd.DataFrame([
      "Outcome": "Optic neuropathy", "Exposed cases": t2["a"], "ROR": round(t2["ror"], 2),
      "95% CI": f"{t2['ror_lcl']:.2f}-{t2['ror_ucl']:.2f}"},
     {"Specification": "Fixed regimen: RIF+INH+PZA with ethambutol",
-     "Outcome": "Optic-nerve event, rate ratio", "Exposed cases": reg["strata"]["rifampicin+isoniazid+pyrazinamide+ethambutol"]["n"],
-     "ROR": f"{reg['rate_ratio']:.2f} (rate ratio)",
+     "Outcome": "Optic-nerve composite (4 preferred terms), ratio of reporting proportions",
+     "Exposed cases": reg["strata"]["rifampicin+isoniazid+pyrazinamide+ethambutol"]["n"],
+     "ROR": f"{reg['rate_ratio']:.2f} (ratio of proportions)",
      "95% CI": f"{reg['rate_ratio_lcl']:.2f}-{reg['rate_ratio_ucl']:.2f}"},
     {"Specification": "Fixed regimen: RIF+INH+PZA without ethambutol",
      "Outcome": "Optic-nerve event, rate ratio (reference)", "Exposed cases": reg["strata"]["rifampicin+isoniazid+pyrazinamide"]["n"],
@@ -108,6 +120,32 @@ s7 = pd.DataFrame([
      "n": cov["pre2004_cases"]},
 ])
 
+# ------------------------------------------------------------ S8 onset sample
+tto = pd.read_csv(RES / "faers_tto.csv", encoding="utf-8-sig")
+prof = pd.read_csv(RES / "faers_cases_profile.csv", encoding="utf-8-sig", low_memory=False)
+n_cases = len(prof)
+s8 = pd.DataFrame([
+    {"Group": "All ethambutol cases", "n": n_cases, "Analysable interval": "",
+     "Missing or unusable dates": ""},
+    {"Group": "Analysable interval (all)", "n": int(tto.iloc[0].n), "Analysable interval": "",
+     "Missing or unusable dates": n_cases - int(tto.iloc[0].n)},
+    {"Group": "Optic-nerve event", "n": int(tto[tto.group.str.startswith("Optic-nerve")].n.iloc[0]),
+     "Analysable interval": "yes", "Missing or unusable dates": ""},
+    {"Group": "Any ocular event", "n": int(tto[tto.group.str.startswith("Ocular event")].n.iloc[0]),
+     "Analysable interval": "yes", "Missing or unusable dates": ""},
+    {"Group": "No ocular event", "n": int(tto[tto.group.str.startswith("No ocular")].n.iloc[0]),
+     "Analysable interval": "yes", "Missing or unusable dates": ""},
+    {"Group": "Cases carrying at least one of the 17 optic-nerve terms", "n": int(prof.any_optic.sum()),
+     "Analysable interval": "83", "Missing or unusable dates": ""},
+])
+
+# ------------------------------------------------------- S9 onset term list
+deep = (ROOT / "src" / "faers_case_deep.py").read_text(encoding="utf-8")
+m = re.search(r"OPTIC_TERMS = \[(.*?)\]", deep, re.S)
+assert m, "OPTIC_TERMS not found"
+terms = [t.strip().strip('"') for t in m.group(1).replace("\n", " ").split(",") if t.strip()]
+s9 = pd.DataFrame({"Optic-nerve term used in the onset analysis": terms})
+
 with pd.ExcelWriter(OUT, engine="openpyxl") as xw:
     s1.to_excel(xw, sheet_name="S1_terms", index=False)
     s2.to_excel(xw, sheet_name="S2_sensitivity", index=False)
@@ -116,6 +154,8 @@ with pd.ExcelWriter(OUT, engine="openpyxl") as xw:
     s5.to_excel(xw, sheet_name="S5_flow", index=False)
     s6.to_excel(xw, sheet_name="S6_zero_cells", index=False)
     s7.to_excel(xw, sheet_name="S7_period_coverage", index=False)
+    s8.to_excel(xw, sheet_name="S8_onset_sample", index=False)
+    s9.to_excel(xw, sheet_name="S9_onset_terms", index=False)
 
 print(f"written {OUT.relative_to(ROOT)}")
 for name, frame in (("S1", s1), ("S2", s2), ("S3", s3), ("S4", s4), ("S5", s5),

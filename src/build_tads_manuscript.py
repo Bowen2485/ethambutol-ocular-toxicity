@@ -55,13 +55,16 @@ table1 = f"""Table 1. Data sources and exposed cohorts.
 rows = sorted(d["smq"], key=lambda r: -r["ror"])
 lines = ["Table 2. The eleven ocular Standardised MedDRA Queries (narrow sets, MedDRA 29.0), "
          "ethambutol against all other de-duplicated reports.", "",
-         "| Query | Narrow terms | Exposed cases | Cases in database | ROR | 95% CI | q |",
+         "| Query | Exposed cases | Cases in database | ROR | 95% CI | P | q |",
          "|---|---|---|---|---|---|---|"]
 for r in rows:
     q = "<1e-300" if r["q_bh"] == 0 else f"{r['q_bh']:.2g}"
-    lines.append(f"| {r['smq']} | {r['narrow_terms']} | {r['a']} | {r['n_event']:,} | "
-                 f"{r['ror']:.2f} | {r['ror_lcl']:.2f}–{r['ror_ucl']:.2f} | {q} |")
-table2 = "\n".join(lines)
+    lines.append(f"| {r['smq']} | {r['a']} | {r['n_event']:,} | "
+                 f"{r['ror']:.2f} | {r['ror_lcl']:.2f}–{r['ror_ucl']:.2f} | "
+                 f"{r['p_display']} | {q} |")
+table2 = "\n".join(lines) + (
+    "\n\nP, two-sided p value from the test named in Supplementary Table S1, which also gives "
+    "the narrow-term counts; q, Benjamini–Hochberg adjusted across the eleven queries.")
 
 # ------------------------------------------------------------------ Table 3
 on = next(r for r in d["pt"] if r["term"] == "Optic neuropathy")

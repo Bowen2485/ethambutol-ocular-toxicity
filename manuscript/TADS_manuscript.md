@@ -242,19 +242,21 @@ Table 1. Data sources and exposed cohorts.
 
 Table 2. The eleven ocular Standardised MedDRA Queries (narrow sets, MedDRA 29.0), ethambutol against all other de-duplicated reports.
 
-| Query | Narrow terms | Exposed cases | Cases in database | ROR | 95% CI | q |
+| Query | Exposed cases | Cases in database | ROR | 95% CI | P | q |
 |---|---|---|---|---|---|---|
-| Optic nerve disorders | 45 | 432 | 25,600 | 23.51 | 21.35–25.89 | <1e-300 |
-| Ocular infections | 110 | 127 | 41,375 | 4.13 | 3.47–4.92 | 5.2e-66 |
-| Retinal disorders | 208 | 164 | 101,220 | 2.18 | 1.87–2.54 | 1.3e-23 |
-| Ocular motility disorders | 69 | 62 | 41,091 | 2.02 | 1.57–2.59 | 4e-08 |
-| Lens disorders | 40 | 60 | 67,857 | 1.18 | 0.92–1.52 | 0.27 |
-| Corneal disorders | 114 | 18 | 22,172 | 1.08 | 0.68–1.72 | 0.81 |
-| Conjunctival disorders | 83 | 70 | 98,182 | 0.95 | 0.75–1.20 | 0.81 |
-| Scleral disorders | 31 | 3 | 4,537 | 0.88 | 0.28–2.74 | 1 |
-| Periorbital and eyelid disorders | 104 | 29 | 79,763 | 0.48 | 0.34–0.70 | 0.00012 |
-| Glaucoma | 52 | 13 | 38,632 | 0.45 | 0.26–0.77 | 0.0047 |
-| Lacrimal disorders | 61 | 15 | 83,295 | 0.24 | 0.14–0.40 | 4.9e-09 |
+| Optic nerve disorders | 432 | 25,600 | 23.51 | 21.35–25.89 | <1e-300 | <1e-300 |
+| Ocular infections | 127 | 41,375 | 4.13 | 3.47–4.92 | 9.4e-67 | 5.2e-66 |
+| Retinal disorders | 164 | 101,220 | 2.18 | 1.87–2.54 | 3.4e-24 | 1.3e-23 |
+| Ocular motility disorders | 62 | 41,091 | 2.02 | 1.57–2.59 | 1.8e-08 | 4e-08 |
+| Lens disorders | 60 | 67,857 | 1.18 | 0.92–1.52 | 0.1992 | 0.27 |
+| Corneal disorders | 18 | 22,172 | 1.08 | 0.68–1.72 | 0.7345 | 0.81 |
+| Conjunctival disorders | 70 | 98,182 | 0.95 | 0.75–1.20 | 0.6746 | 0.81 |
+| Scleral disorders | 3 | 4,537 | 0.88 | 0.28–2.74 | 1 | 1 |
+| Periorbital and eyelid disorders | 29 | 79,763 | 0.48 | 0.34–0.70 | 6.6e-05 | 0.00012 |
+| Glaucoma | 13 | 38,632 | 0.45 | 0.26–0.77 | 0.002987 | 0.0047 |
+| Lacrimal disorders | 15 | 83,295 | 0.24 | 0.14–0.40 | 1.8e-09 | 4.9e-09 |
+
+P, two-sided p value from the test named in Supplementary Table S1, which also gives the narrow-term counts; q, Benjamini–Hochberg adjusted across the eleven queries.
 
 Table 3. The optic-nerve outcome in the three systems, by exposure definition.
 

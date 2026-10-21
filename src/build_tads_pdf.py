@@ -71,11 +71,12 @@ def render_table(block: list[str]) -> list[str]:
     total = sum(weight)
     #: 0.97 leaves room for the inter-column padding and the rules, which the per-column
     #: subtraction of 2\tabcolsep does not fully account for
-    widths = [0.97 * w / total for w in weight]
+    widths = [0.93 * w / total for w in weight]
     colspec = "".join(
         r">{\raggedright\arraybackslash}p{\dimexpr%.4f\textwidth-2\tabcolsep\relax}" % w
         for w in widths)
-    out = [r"{\footnotesize", r"\begin{longtable}{" + colspec + "}", r"\hline"]
+    out = [r"{\footnotesize\setlength{\tabcolsep}{3.2pt}",
+           r"\begin{longtable}{" + colspec + "}", r"\hline"]
     header = " & ".join(inline(c) for c in rows[0]) + r" \\"
     for i, r in enumerate(rows):
         out.append(" & ".join(inline(c) for c in r) + r" \\")

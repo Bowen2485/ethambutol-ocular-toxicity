@@ -76,10 +76,12 @@ def render_table(block: list[str]) -> list[str]:
         r">{\raggedright\arraybackslash}p{\dimexpr%.4f\textwidth-2\tabcolsep\relax}" % w
         for w in widths)
     out = [r"{\footnotesize", r"\begin{longtable}{" + colspec + "}", r"\hline"]
+    header = " & ".join(inline(c) for c in rows[0]) + r" \\"
     for i, r in enumerate(rows):
         out.append(" & ".join(inline(c) for c in r) + r" \\")
         if i == 0:
-            out.append(r"\hline")
+            #: repeat the header on continuation pages; Table 3 runs from one page to the next
+            out += [r"\hline", r"\endfirsthead", r"\hline", header, r"\hline", r"\endhead"]
     out += [r"\hline", r"\end{longtable}", "}"]
     return out
 

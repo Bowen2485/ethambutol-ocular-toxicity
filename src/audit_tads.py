@@ -36,7 +36,7 @@ for m in re.finditer(r"\[(\d+(?:,\d+)*)\]", body):
     cited.update(int(x) for x in m.group(1).split(","))
 check(not (cited - listed), f"cited but not listed: {sorted(cited - listed)}")
 check(not (listed - cited), f"listed but not cited: {sorted(listed - cited)}")
-check(len(listed) == 18, f"reference count: {len(listed)}")
+check(len(listed) == 19, f"reference count: {len(listed)}")
 
 # ------------------------------------------------------------------ lengths
 abs_block = text[text.find("## Abstract"):text.find("**Keywords")]

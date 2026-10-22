@@ -63,8 +63,10 @@ for r in rows:
                  f"{r['ror']:.2f} | {r['ror_lcl']:.2f}–{r['ror_ucl']:.2f} | "
                  f"{r['p_display']} | {q} |")
 table2 = "\n".join(lines) + (
-    "\n\nP, two-sided p value from the test named in Supplementary Table S1, which also gives "
-    "the narrow-term counts; q, Benjamini–Hochberg adjusted across the eleven queries.")
+    "\n\nP, two-sided P value from Pearson’s χ² test without continuity correction, except for "
+    "Scleral disorders, where Fisher’s exact test was used because the smallest expected cell "
+    "count was below 5; the narrow-term counts are in Supplementary Table S1. q, "
+    "Benjamini–Hochberg adjusted across the eleven ocular queries.")
 
 # ------------------------------------------------------------------ Table 3
 on = next(r for r in d["pt"] if r["term"] == "Optic neuropathy")

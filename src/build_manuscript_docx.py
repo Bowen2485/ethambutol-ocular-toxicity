@@ -20,6 +20,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "manuscript" / "TADS_manuscript.md"
 FIG = ROOT / "results" / "tads_figures"
 OUT = ROOT / "submission" / "tads" / "Ethambutol_TADS_manuscript.docx"
+#: the file is often open in a word processor; build to a staging path and copy when it is free
+STAGE = ROOT / ".tmp" / "Ethambutol_TADS_manuscript.docx"
 
 doc = Document()
 normal = doc.styles["Normal"]
@@ -36,6 +38,21 @@ for section in doc.sections:
 
 CODE_FONT = "Consolas"
 
+
+def unnumbered(par) -> None:
+    """Force numId=0 so the word processor does not draw a bullet before a heading."""
+    from docx.oxml import OxmlElement
+    from docx.oxml.ns import qn
+
+    pPr = par._p.get_or_add_pPr()
+    numPr = OxmlElement("w:numPr")
+    ilvl = OxmlElement("w:ilvl")
+    ilvl.set(qn("w:val"), "0")
+    numId = OxmlElement("w:numId")
+    numId.set(qn("w:val"), "0")
+    numPr.append(ilvl)
+    numPr.append(numId)
+    pPr.append(numPr)
 
 def add_runs(par, text: str) -> None:
     """Emit **bold**, *italic* and `code` spans as runs."""
@@ -82,14 +99,15 @@ while i < len(lines):
     if not s:
         i += 1
         continue
-    if s.startswith("# "):
-        h = doc.add_heading(level=1)
-        add_runs(h, s[2:])
+    if re.fullmatch(r"-{3,}|\*{3,}", s):
         i += 1
         continue
-    if s.startswith("## "):
-        h = doc.add_heading(level=2)
-        add_runs(h, s[3:])
+    m = re.match(r"^(#{1,4})\s+(.*)$", s)
+    if m:
+        level = len(m.group(1))
+        h = doc.add_heading(level=level)
+        add_runs(h, m.group(2))
+        unnumbered(h)
         i += 1
         continue
     if s.startswith("|"):
@@ -103,7 +121,9 @@ while i < len(lines):
         continue
     para = [s]
     i += 1
-    while i < len(lines) and lines[i].strip() and not lines[i].strip().startswith(("#", "|")):
+    while (i < len(lines) and lines[i].strip()
+           and not lines[i].strip().startswith(("#", "|"))
+           and not re.fullmatch(r"-{3,}|\*{3,}", lines[i].strip())):
         para.append(lines[i].strip())
         i += 1
 
@@ -135,6 +155,12 @@ for n, name in enumerate(sorted(FIG.glob("*.png")), start=1):
     head.add_run(legend_text.get(n, ""))
     doc.add_paragraph()
 
-doc.save(OUT)
-print(f"written {OUT.relative_to(ROOT)}")
+STAGE.parent.mkdir(parents=True, exist_ok=True)
+doc.save(STAGE)
+try:
+    import shutil
+    shutil.copy2(STAGE, OUT)
+    print(f"written {OUT.relative_to(ROOT)}")
+except PermissionError:
+    print(f"staged at {STAGE.relative_to(ROOT)} - target is open in another program")
 print(f"  paragraphs: {len(doc.paragraphs)}, tables: {len(doc.tables)}")

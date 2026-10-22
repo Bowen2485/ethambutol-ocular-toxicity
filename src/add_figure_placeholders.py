@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-"""Add the figure placeholder notes the journal requires.
+"""Add the figure placeholder notes to the staged Word file, then copy it into place.
 
-Figures are created outside Word, so the manuscript carries a note at the point where each one is
-first cited; the legends section keeps the full captions.
+The submission copy may be open in a word processor, which blocks the write; the staged file is
+produced first and copied over when the handle is free.
 """
 from __future__ import annotations
 
+import shutil
 import sys
 from pathlib import Path
 
@@ -15,15 +16,18 @@ from docx.text.paragraph import Paragraph
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 ROOT = Path(__file__).resolve().parents[1]
+STAGE = ROOT / ".tmp" / "Ethambutol_TADS_manuscript.docx"
 OUT = ROOT / "submission" / "tads" / "Ethambutol_TADS_manuscript.docx"
 
-doc = Document(OUT)
+doc = Document(STAGE)
 placed = {1: False, 2: False, 3: False, 4: False}
 
 for p in list(doc.paragraphs):
     text = p.text
     if text.strip().startswith("Figure ") and "." in text[:12]:
-        continue  # legends section, not a citation
+        continue
+    if text.strip().startswith("[Figure"):
+        continue
     for n in (1, 2, 3, 4):
         if placed[n] or f"Figure {n}" not in text:
             continue
@@ -35,5 +39,10 @@ for p in list(doc.paragraphs):
         placed[n] = True
         break
 
-doc.save(OUT)
+doc.save(STAGE)
 print("placeholders placed:", placed)
+try:
+    shutil.copy2(STAGE, OUT)
+    print(f"copied to {OUT.relative_to(ROOT)}")
+except PermissionError:
+    print("target still open in another program; left staged")

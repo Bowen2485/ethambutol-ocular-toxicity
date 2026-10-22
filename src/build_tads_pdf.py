@@ -142,6 +142,13 @@ while i < len(lines):
             break
         para.append(ns)
         i += 1
+    #: reference lines arrive as one block without blank lines; emitted as a single
+    #: paragraph they run together, so each entry gets its own hanging-indent paragraph
+    if ref_group_open and re.match(r"^\d{1,2}\.\s", para[0]):
+        for line in para:
+            body_lines.append(r"\par\noindent\hangindent=1.35em\hangafter=1 "
+                              + inline(line) + r"\par")
+        continue
     joined = " ".join(para)
     #: a table caption is a paragraph of its own; without help it stays on the previous page when
     #: the table is pushed over, which happened to Table 4.  Look ahead for the table that follows

@@ -75,8 +75,12 @@ def render_table(block: list[str]) -> list[str]:
     colspec = "".join(
         r">{\raggedright\arraybackslash}p{\dimexpr%.4f\textwidth-2\tabcolsep\relax}" % w
         for w in widths)
-    out = [r"{\footnotesize\setlength{\tabcolsep}{3.2pt}",
-           r"\begin{longtable}{" + colspec + "}", r"\hline"]
+    #: a short table (Table 4 has six data rows) was splitting with one row on the next page;
+    #: reserving its estimated height keeps it whole without forcing a break before the long ones
+    need = 1.5 + 0.75 * len(rows)
+    prefix = [r"\needspace{%.1fcm}" % need] if len(rows) <= 10 else []
+    out = prefix + [r"{\footnotesize\setlength{\tabcolsep}{3.2pt}",
+                    r"\begin{longtable}{" + colspec + "}", r"\hline"]
     header = " & ".join(inline(c) for c in rows[0]) + r" \\"
     for i, r in enumerate(rows):
         out.append(" & ".join(inline(c) for c in r) + r" \\")
@@ -133,6 +137,21 @@ while i < len(lines):
         para.append(ns)
         i += 1
     joined = " ".join(para)
+    #: a table caption is a paragraph of its own; without help it stays on the previous page when
+    #: the table is pushed over, which happened to Table 4.  Look ahead for the table that follows
+    #: and reserve room for caption plus table.
+    if re.match(r"^Table \d+\.", joined):
+        k = i
+        while k < len(lines) and not is_table_row(lines[k]) and lines[k].strip() != "":
+            k += 1
+        while k < len(lines) and lines[k].strip() == "":
+            k += 1
+        if k < len(lines) and is_table_row(lines[k]):
+            n_rows = 0
+            while k + n_rows < len(lines) and is_table_row(lines[k + n_rows]):
+                n_rows += 1
+            if n_rows <= 10:
+                body_lines.append(r"\needspace{%.1fcm}" % (2.2 + 0.75 * n_rows))
     body_lines.append(inline(joined))
 
 body = "\n".join(body_lines)
@@ -163,7 +182,7 @@ TEX = r"""
 \usepackage{fontspec}
 \setmainfont{TeX Gyre Termes}
 \usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
-\usepackage{graphicx,longtable,array,setspace}
+\usepackage{graphicx,longtable,array,setspace,needspace}
 \usepackage{lineno}
 \usepackage[hidelinks]{hyperref}
 \usepackage{microtype}
@@ -184,7 +203,7 @@ __AUTHORS__\\[0.3em]
 \end{center}
 \vspace{0.4em}
 \begin{center}
-\small Main text __NWORDS__ words (Introduction to Conclusion); 4 figures; 4 tables; 18 references.
+\small Main text __NWORDS__ words (Introduction to Conclusion); __NFIG__ figures; __NTAB__ tables; __NREF__ references.
 \end{center}
 \vspace{0.8em}
 \linenumbers
@@ -194,6 +213,11 @@ __FIGURES__
 """
 
 title = "Optic-nerve-predominant adverse-event reporting with ethambutol: a multi-database pharmacovigilance study with exploratory transcriptomic analysis"
+#: the counts on the title page are derived, not typed: the reference count drifted from 18 to 19
+#: when a citation was added, and a hard-coded number then contradicted the reference list
+n_refs = len(re.findall(r"^\d{1,2}\.\s+\S", text[text.find("## References"):], re.M))
+n_tables = len(re.findall(r"^Table \d+\.", text, re.M))
+n_figures = len(FIG_FILES)
 TEX = (TEX.replace("__TITLE__", inline(title))
           .replace("__AUTHORS__", inline("Bowen Shi, Jing Yan, Zhengzheng Wu, Siyuan Yang, "
                                          "Yaqin Tan, Xuan Wang"))
@@ -203,6 +227,9 @@ TEX = (TEX.replace("__TITLE__", inline(title))
                                       "Sciences, 33 Lugu Road, Beijing 100040, China; "
                                       "20200121047@bucm.edu.cn"))
           .replace("__NWORDS__", f"{main_words:,}")
+          .replace("__NFIG__", str(n_figures))
+          .replace("__NTAB__", str(n_tables))
+          .replace("__NREF__", str(n_refs))
           .replace("__BODY__", body)
           .replace("__FIGURES__", "\n".join(fig_block)))
 

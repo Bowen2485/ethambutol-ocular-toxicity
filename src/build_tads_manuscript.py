@@ -193,6 +193,28 @@ Zhengzheng Wu: supervision. Siyuan Yang: writing — review and editing. Yaqin T
 Xuan Wang: visualisation. All authors read and approved the final manuscript.
 
 **Acknowledgements.** None.
+
+
+## Figure legends
+
+**Figure 1.** Case flow in the three spontaneous-reporting systems. FAERS releases were
+de-duplicated by case version; the ethambutol cohort was defined by any drug record naming the
+drug, and split by drug role. JADER and Canada Vigilance were analysed independently with the
+exposure definitions given in Table 1.
+
+**Figure 2.** The eleven ocular Standardised MedDRA Queries (narrow sets) in FAERS, ethambutol
+against all other de-duplicated reports. Points are reporting odds ratios with 95% confidence
+intervals on a logarithmic axis; the dashed line marks unity. Red, interval above unity; blue,
+interval below unity; grey, interval includes unity. The number of exposed cases is given at the
+right.
+
+**Figure 3.** Preferred terms within the optic-nerve query, alongside the pre-specified negative
+controls and the non-specific ocular comparators. Terms with fewer than three exposed cases are
+not plotted. Conventions as in Figure 2.
+
+**Figure 4.** Sensitivity of the optic-nerve estimate to exposure role and reporting period. The
+upper four rows compare the preferred term and the query under all-role and suspect-only exposure;
+the lower two split the cohort by receipt year at 2016. Conventions as in Figure 2.
 """
 
 parts = [

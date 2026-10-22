@@ -65,7 +65,9 @@ for r in rows:
 table2 = "\n".join(lines) + (
     "\n\nP, two-sided P value from Pearson’s χ² test without continuity correction, except for "
     "Scleral disorders, where Fisher’s exact test was used because the smallest expected cell "
-    "count was below 5; the narrow-term counts are in Supplementary Table S1. q, "
+    "count was below 5. Term-level estimates for the nine optic-nerve preferred terms with at "
+    "least three exposed cases and the six pre-specified controls are in Supplementary Table "
+    "S1. q, "
     "Benjamini–Hochberg adjusted across the eleven ocular queries.")
 
 # ------------------------------------------------------------------ Table 3

@@ -92,6 +92,7 @@ def render_table(block: list[str]) -> list[str]:
 
 
 body_lines: list[str] = []
+ref_group_open = False
 tables_done = 0
 i = 0
 lines = text.splitlines()
@@ -115,6 +116,11 @@ while i < len(lines):
         i += 1
         continue
     if s.startswith("## "):
+        #: the reference list runs to the last page by a few lines; a smaller size and tighter
+        #: paragraph spacing keep it from spilling onto a page of its own
+        if s[3:].strip().lower().startswith("references"):
+            body_lines.append(r"\begingroup\small\setlength{\parskip}{2pt}")
+            ref_group_open = True
         body_lines.append(r"\section*{" + inline(s[3:]) + "}")
         i += 1
         continue
@@ -154,6 +160,10 @@ while i < len(lines):
                 body_lines.append(r"\needspace{%.1fcm}" % (2.2 + 0.75 * n_rows))
     body_lines.append(inline(joined))
 
+#: the reference group opened above has to be closed at the end of the document, since the
+#: references are the last section
+if ref_group_open:
+    body_lines.append(r"\endgroup")
 body = "\n".join(body_lines)
 body = re.sub(r"\n{3,}", "\n\n", body)
 

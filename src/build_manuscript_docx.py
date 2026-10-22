@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """Build a Word version of the manuscript for submission.
 
-The PDF is for review; the journals that require a Word manuscript want the same text in .docx
-with real tables.  This converts the assembled Markdown: headings, paragraphs with **bold** runs,
-pipe tables as Word tables, and the four figures appended after the legends at 300 dpi.
+Three faults in the first version are fixed here: the nineteen references were joined into one
+4,400-character paragraph, backticks around field names (`CASEID`, `drugname`) were printed
+literally, and the title was not styled differently from body text.
 """
 from __future__ import annotations
 
@@ -34,18 +34,22 @@ for section in doc.sections:
     section.top_margin = Cm(2.2)
     section.bottom_margin = Cm(2.2)
 
+CODE_FONT = "Consolas"
+
 
 def add_runs(par, text: str) -> None:
-    """Emit **bold** and *italic* spans as runs."""
-    for chunk in re.split(r"(\*\*[^*]+\*\*|\*[^*]+\*)", text):
+    """Emit **bold**, *italic* and `code` spans as runs."""
+    for chunk in re.split(r"(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)", text):
         if not chunk:
             continue
         if chunk.startswith("**") and chunk.endswith("**"):
-            run = par.add_run(chunk[2:-2])
-            run.bold = True
-        elif chunk.startswith("*") and chunk.endswith("*") and len(chunk) > 2:
+            par.add_run(chunk[2:-2]).bold = True
+        elif chunk.startswith("`") and chunk.endswith("`"):
             run = par.add_run(chunk[1:-1])
-            run.italic = True
+            run.font.name = CODE_FONT
+            run.font.size = Pt(9.5)
+        elif chunk.startswith("*") and chunk.endswith("*") and len(chunk) > 2:
+            par.add_run(chunk[1:-1]).italic = True
         else:
             par.add_run(chunk)
 
@@ -72,6 +76,7 @@ def add_table(rows: list[list[str]]) -> None:
 
 lines = SRC.read_text(encoding="utf-8").splitlines()
 i = 0
+first_heading = True
 while i < len(lines):
     s = lines[i].strip()
     if not s:
@@ -101,15 +106,33 @@ while i < len(lines):
     while i < len(lines) and lines[i].strip() and not lines[i].strip().startswith(("#", "|")):
         para.append(lines[i].strip())
         i += 1
+
+    #: reference entries arrive as consecutive lines; joined they run together, so each one gets
+    #: its own paragraph with a hanging indent (Sage Vancouver)
+    if len(para) > 1 and all(re.match(r"^\d{1,2}\.\s", x) for x in para):
+        for entry in para:
+            p = doc.add_paragraph()
+            p.paragraph_format.left_indent = Cm(0.7)
+            p.paragraph_format.first_line_indent = Cm(-0.7)
+            p.paragraph_format.space_after = Pt(4)
+            add_runs(p, entry)
+        continue
+
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     add_runs(p, " ".join(para))
 
-# ------------------------------------------------------------------- figures
+legend_text = {}
+_md = SRC.read_text(encoding="utf-8")
+for _m in re.finditer(r"\*\*(Figure (\d+)\.)\*\*\s*(.+?)(?=\n\*\*Figure|\n## |\Z)", _md, re.S):
+    legend_text[int(_m.group(2))] = " ".join(_m.group(3).split())
+
 doc.add_page_break()
 for n, name in enumerate(sorted(FIG.glob("*.png")), start=1):
-    doc.add_paragraph().add_run(f"Figure {n}").bold = True
     doc.add_picture(str(name), width=Cm(15.5))
+    head = doc.add_paragraph()
+    head.add_run(f"Figure {n}. ").bold = True
+    head.add_run(legend_text.get(n, ""))
     doc.add_paragraph()
 
 doc.save(OUT)

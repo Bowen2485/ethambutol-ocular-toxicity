@@ -119,7 +119,8 @@ while i < len(lines):
         #: the reference list runs to the last page by a few lines; a smaller size and tighter
         #: paragraph spacing keep it from spilling onto a page of its own
         if s[3:].strip().lower().startswith("references"):
-            body_lines.append(r"\begingroup\small\setlength{\parskip}{2pt}")
+            body_lines.append(r"\begingroup\small\setlength{\parskip}{1pt}"
+                              r"\linespread{0.94}\selectfont")
             ref_group_open = True
         body_lines.append(r"\section*{" + inline(s[3:]) + "}")
         i += 1
@@ -175,19 +176,34 @@ body = "\n".join(body_lines)
 body = re.sub(r"\n{3,}", "\n\n", body)
 
 #: the figure legends are given as text; the images are placed after them, one per page
+legend_text = {}
+_man = (ROOT / "manuscript" / "TADS_manuscript.md").read_text(encoding="utf-8")
+for _m in re.finditer(r"\*\*(Figure (\d+)\.)\*\*\s*(.+?)(?=\n\*\*Figure|\n## |\Z)", _man, re.S):
+    legend_text[int(_m.group(2))] = (" ".join(_m.group(3).split()))
+
+def tex_escape(t: str) -> str:
+    """Percent, ampersand and underscore are active in LaTeX and truncate or break the caption."""
+    return (t.replace("\\", r"\textbackslash{}").replace("%", r"\%")
+             .replace("&", r"\&").replace("_", r"\_")
+             .replace("#", r"\#").replace("$", r"\$"))
+
+
 fig_block = []
 for key, stem in FIG_FILES.items():
     path = FIG / f"{stem}.pdf"
     if not path.exists():
         print(f"  missing figure {path}")
         continue
-    fig_block.append(r"\begin{figure}[p]")
-    fig_block.append(r"\centering")
-    fig_block.append(r"\includegraphics[width=\linewidth]{" + str(path.as_posix()) + "}")
-    fig_block.append(r"\end{figure}")
-    #: without a page break LaTeX packs several [p] floats onto one page and each is drawn at
-    #: half size; one figure per page keeps them legible in the review PDF
+    n = int(re.sub(r"[^0-9]", "", key) or 0)
+    caption = tex_escape(legend_text.get(n, ""))
+    #: an inline figure starts at the top of a fresh page; a [p] float is centred vertically,
+    #: which left most of each figure page empty
     fig_block.append(r"\clearpage")
+    fig_block.append(r"\noindent\includegraphics[width=0.96\linewidth]{" + str(path.as_posix()) + "}")
+    if caption:
+        fig_block.append(r"\par\vspace{8pt}")
+        fig_block.append(r"{\footnotesize\raggedright\noindent\textbf{Figure " + str(n) + ".} "
+                         + caption + r"\par}")
 
 main_start = text.find("## 1. Introduction")
 main_end = text.find("## Statements")

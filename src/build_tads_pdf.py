@@ -229,8 +229,9 @@ n_refs = len(re.findall(r"^\d{1,2}\.\s+\S", text[text.find("## References"):], r
 n_tables = len(re.findall(r"^Table \d+\.", text, re.M))
 n_figures = len(FIG_FILES)
 TEX = (TEX.replace("__TITLE__", inline(title))
-          .replace("__AUTHORS__", inline("Bowen Shi, Jing Yan, Zhengzheng Wu, Siyuan Yang, "
-                                         "Yaqin Tan, Xuan Wang"))
+          .replace("__AUTHORS__", inline("Bowen Shi (ORCID 0009-0001-6900-1779), Jing Yan, "
+                                         "Zhengzheng Wu, Siyuan Yang, Yaqin Tan, "
+                                         "Xuan Wang"))
           .replace("__AFFIL__", inline("Eye Hospital, China Academy of Chinese Medical Sciences, "
                                        "Beijing, China"))
           .replace("__CORR__", inline("Jing Yan, Eye Hospital, China Academy of Chinese Medical "

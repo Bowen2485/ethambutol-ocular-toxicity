@@ -2,7 +2,7 @@
 
 **Running title:** Optic-nerve-predominant reporting with ethambutol
 
-**Authors:** Bowen Shi¹, Jing Yan¹*, Zhengzheng Wu¹, Siyuan Yang¹, Yaqin Tan¹, Xuan Wang¹
+**Authors:** Bowen Shi¹ (ORCID 0009-0001-6900-1779), Jing Yan¹*, Zhengzheng Wu¹, Siyuan Yang¹, Yaqin Tan¹, Xuan Wang¹
 
 **Affiliation:** ¹ Eye Hospital, China Academy of Chinese Medical Sciences, 33 Lugu Road, Shijingshan District, Beijing 100040, China
 

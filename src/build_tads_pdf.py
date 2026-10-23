@@ -9,6 +9,7 @@ multiplication sign and the micro sign are set correctly without a symbol table.
 from __future__ import annotations
 
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -272,17 +273,25 @@ tex_path.write_text(TEX, encoding="utf-8")
 print(f"written {tex_path.relative_to(ROOT)}")
 print(f"tables rendered: {tables_done}; main text {main_words:,} words")
 
+#: the submission PDF is often open in a viewer, which makes xdvipdfmx fail to write it; the
+#: document is compiled to a staging name and copied over when the file is free
+TARGET = OUT / "Ethambutol_TADS_manuscript.pdf"
+STAGE_PDF = OUT / "_build_stage.pdf"
 res = subprocess.run(["xelatex", "-interaction=nonstopmode", "-halt-on-error",
-                      tex_path.name], cwd=OUT, capture_output=True, text=True,
-                     encoding="utf-8", errors="replace")
+                      "-jobname=_build_stage", tex_path.name], cwd=OUT, capture_output=True,
+                     text=True, encoding="utf-8", errors="replace")
 if res.returncode != 0:
     print(res.stdout[-3000:])
     raise SystemExit("xelatex failed")
 res = subprocess.run(["xelatex", "-interaction=nonstopmode", "-halt-on-error",
-                      tex_path.name], cwd=OUT, capture_output=True, text=True,
-                     encoding="utf-8", errors="replace")
-log = (OUT / "Ethambutol_TADS_manuscript.log").read_text(encoding="utf-8", errors="replace")
-print(f"\nPDF: {OUT / 'Ethambutol_TADS_manuscript.pdf'}")
+                      "-jobname=_build_stage", tex_path.name], cwd=OUT, capture_output=True,
+                     text=True, encoding="utf-8", errors="replace")
+log = (OUT / "_build_stage.log").read_text(encoding="utf-8", errors="replace")
+try:
+    shutil.copy2(STAGE_PDF, TARGET)
+    print(f"\nPDF: {TARGET}")
+except PermissionError:
+    print(f"\nPDF staged at {STAGE_PDF.name} - the submission copy is open in another program")
 print(f"overfull: {log.count('Overfull')}   undefined: {log.count('undefined')}")
 for m in re.finditer(r"Output written on .*?\((\d+) pages", log):
     print(f"pages: {m.group(1)}")

@@ -155,7 +155,7 @@ def figure2() -> None:
         rows.append((r["smq"], r["ror"], r["ror_lcl"], r["ror_ucl"], r["a"]))
     forest(rows, "Eleven ocular MedDRA queries, ethambutol vs all other reports",
            "Reporting odds ratio (log scale, 95% CI)", "Figure2_smq_forest",
-           xlim=(0.1, 40), figsize=(7.4, 5.2), tick_labelsize=10, value_size=9)
+           xlim=(0.1, 40), figsize=(7.4, 6.4), tick_labelsize=10.5, value_size=9.5)
 
 
 # ------------------------------------------------------------------ Figure 3
@@ -172,7 +172,7 @@ def figure3() -> None:
     forest(rows, "Optic-nerve preferred terms (top); pre-specified negative controls and "
                  "non-specific comparators (bottom)",
            "Reporting odds ratio (log scale, 95% CI)", "Figure3_pt_forest",
-           xlim=(0.05, 400), figsize=(7.6, 7.2), tick_labelsize=10, value_size=9)
+           xlim=(0.05, 400), figsize=(7.6, 9.2), tick_labelsize=10.5, value_size=9.5)
 
 
 # ------------------------------------------------------------------ Figure 4
@@ -205,7 +205,7 @@ def figure4() -> None:
         ("Term, 2004-2016", t1["ror"], t1["ror_lcl"], t1["ror_ucl"], t1["a"]),
         ("Term, 2017-2026", t2["ror"], t2["ror_lcl"], t2["ror_ucl"], t2["a"]),
     ]
-    fig, ax = plt.subplots(figsize=(7.2, 3.9))
+    fig, ax = plt.subplots(figsize=(7.2, 5.0))
     ys, labels = [], []
     y = len(rows) - 1
     for row in rows:

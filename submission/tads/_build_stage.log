@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.10.16)  24 OCT 2026 20:15
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.10.16)  25 OCT 2026 01:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -497,13 +497,13 @@ Underfull \hbox (badness 2119) in paragraph at lines 101--102
 ×2 table was constructed from
  []
 
-[5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
+[5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
 Underfull \hbox (badness 2318) in paragraph at lines 211--212
 \TU/TeXGyreTermes(0)/m/n/12 Across three spontaneous-reporting systems, ethambu
 tol reports showed an optic-nerve-
  []
 
-[15]
+
 Underfull \hbox (badness 1275) in paragraph at lines 219--220
 \TU/TeXGyreTermes(0)/m/n/12 U.S. Food and Drug Administration (https://fis.fda.
 gov/extensions/FPD-QDE-FAERS/FPD-
@@ -512,7 +512,7 @@ gov/extensions/FPD-QDE-FAERS/FPD-
 
 Underfull \hbox (badness 10000) in paragraph at lines 219--220
 \TU/TeXGyreTermes(0)/m/n/12 https://github.com/Bowen2485/ethambutol-ocular-toxi
-city/tree/v2.1-tads-2026-10-24 (release
+city/tree/v2.2-tads-2026-10-25 (release
  []
 
 [16] [17] [18]
@@ -527,7 +527,35 @@ Underfull \hbox (badness 3792) in paragraph at lines 354--354
 ic clinical characteristic of ethambutol-
  []
 
-[19] [20] (./_build_stage.aux)
+[19] [20]
+File: C:/Users/20200/Downloads/论文/投稿/ethambutol-ocular-toxicity/results/tads_fi
+gures/Figure1_flow.pdf Graphic file (type pdf)
+<use C:/Users/20200/Downloads/论文/投稿/ethambutol-ocular-toxicity/results/tads_fig
+ures/Figure1_flow.pdf>
+ [21
+
+]
+File: C:/Users/20200/Downloads/论文/投稿/ethambutol-ocular-toxicity/results/tads_fi
+gures/Figure2_smq_forest.pdf Graphic file (type pdf)
+<use C:/Users/20200/Downloads/论文/投稿/ethambutol-ocular-toxicity/results/tads_fig
+ures/Figure2_smq_forest.pdf>
+ [22
+
+]
+File: C:/Users/20200/Downloads/论文/投稿/ethambutol-ocular-toxicity/results/tads_fi
+gures/Figure3_pt_forest.pdf Graphic file (type pdf)
+<use C:/Users/20200/Downloads/论文/投稿/ethambutol-ocular-toxicity/results/tads_fig
+ures/Figure3_pt_forest.pdf>
+ [23
+
+]
+File: C:/Users/20200/Downloads/论文/投稿/ethambutol-ocular-toxicity/results/tads_fi
+gures/Figure4_sensitivity.pdf Graphic file (type pdf)
+<use C:/Users/20200/Downloads/论文/投稿/ethambutol-ocular-toxicity/results/tads_fig
+ures/Figure4_sensitivity.pdf>
+ [24
+
+] (./_build_stage.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
@@ -536,12 +564,12 @@ Package rerunfilecheck Info: File `_build_stage.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 13049 strings out of 467696
- 258048 string characters out of 5424019
- 776854 words of memory out of 5000000
- 42130 multiletter control sequences out of 15000+600000
- 629025 words of font info for 63 fonts, out of 8000000 for 9000
+ 13089 strings out of 467696
+ 261777 string characters out of 5424019
+ 778854 words of memory out of 5000000
+ 42164 multiletter control sequences out of 15000+600000
+ 629033 words of font info for 64 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 69i,5n,93p,1756b,472s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 69i,5n,93p,1756b,510s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _build_stage.pdf (20 pages).
+Output written on _build_stage.pdf (24 pages).

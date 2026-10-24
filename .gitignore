@@ -14,3 +14,4 @@ data/raw/sdud/
 tools/gnina.cuda12.8.static
 data/derived/
 data/raw/faers_ascii/
+.tmp/

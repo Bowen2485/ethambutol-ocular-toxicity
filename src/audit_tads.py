@@ -41,7 +41,7 @@ check(len(listed) == 19, f"reference count: {len(listed)}")
 # ------------------------------------------------------------------ lengths
 abs_block = text[text.find("## Abstract"):text.find("**Keywords")]
 abs_words = len([w for w in re.sub(r"[#*]", " ", abs_block).split() if re.search(r"\w", w)])
-check(abs_words <= 300, f"abstract words: {abs_words} (limit 300)")
+check(abs_words <= 250, f"abstract words: {abs_words} (limit 250)")
 
 main = text[text.find("## 1. Introduction"):text.find("## Statements")]
 main_words = len([w for w in re.sub(r"[#*|]", " ", main).split() if re.search(r"\w", w)])

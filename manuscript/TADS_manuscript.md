@@ -12,15 +12,15 @@
 
 ## Abstract
 
-**Background.** Ethambutol causes an optic neuropathy, and its ocular signal is well recognised. Whether it is concentrated in the optic nerve, rather than a general increase in ocular reporting, is untested against MedDRA's queries.
+**Background.** Ethambutol's ocular signal is well recognised; whether reporting is concentrated in the optic nerve rather than generally ocular is untested against MedDRA's queries.
 
-**Objectives.** To test whether ethambutol reports show an optic-nerve-predominant reporting pattern across ocular queries, and whether it replicates in independent systems.
+**Objectives.** To test for an optic-nerve-predominant pattern across ocular queries and its replication in independent systems.
 
-**Design.** Retrospective disproportionality analysis of case safety reports, with replication and exploratory transcriptomics.
+**Design.** Retrospective disproportionality analysis with replication and exploratory transcriptomics.
 
-**Methods.** All 90 quarterly FDA Adverse Event Reporting System releases (2004Q1–2026Q2) were de-duplicated by case version. In 15,510 ethambutol cases we computed reporting odds ratios (ROR) for the eleven ocular Standardised MedDRA Queries (narrow sets, MedDRA 29.0), with Benjamini–Hochberg control, and described the terms inside the optic-nerve query against pre-specified controls. Exposure role, period and a fixed-regimen contrast were sensitivity analyses, and the pattern was tested in JADER and Canada Vigilance.
+**Methods.** All 90 quarterly FDA Adverse Event Reporting System (FAERS) releases (2004Q1–2026Q2) were de-duplicated by case version; in 15,510 ethambutol cases we computed reporting odds ratios (ROR) for the eleven ocular Standardised MedDRA Queries (narrow, MedDRA 29.0) with Benjamini–Hochberg control and pre-specified non-specific terms; exposure role, period and a fixed-regimen contrast were sensitivity analyses; the pattern was tested in JADER and Canada Vigilance.
 
-**Results.** The optic-nerve query had the highest ROR (23.51, 95% CI 21.35–25.89; 432 cases); four showed positive signals, three were significantly below 1 and four had intervals spanning 1. Optic neuropathy (165; 116.58, 99.36–136.78) and optic neuritis (156; 23.67, 20.19–27.75) carried it. The four negative controls showed no positive signal; vision blurred did (1.50, 1.28–1.76). A term-level signal was also seen in JADER (optic neuropathy 570.96, 413.50–788.37); Canada Vigilance showed a broader string-matched composite (21.85, 14.13–33.79). The non-specific comparison was possible in FAERS and JADER, not Canada. Among reports with usable dates, median onset was 125 days for optic-nerve events against 33 for non-ocular events. Exploratory transcriptomics did not reproduce selected ferroptosis predictions, whose relevance is uncertain.
+**Results.** The optic-nerve query had the highest ROR (23.51, 95% CI 21.35–25.89; 432 cases); four showed positive signals, three were below 1 and four spanned 1. Optic neuropathy (165; 116.58, 99.36–136.78) and optic neuritis (156; 23.67, 20.19–27.75) carried it. Negative controls showed no positive signal; vision blurred did (1.50, 1.28–1.76). JADER showed a term-level signal (optic neuropathy 570.96, 413.50–788.37); Canada Vigilance a broader string-matched composite (21.85, 14.13–33.79); the non-specific comparison was possible in FAERS and JADER only. Median onset among dated reports: 125 days (optic-nerve) versus 33 (non-ocular). Transcriptomics did not reproduce selected ferroptosis predictions.
 
 **Conclusion.** Ethambutol reports showed an optic-nerve-predominant pattern in FAERS and an optic-nerve-related signal in JADER and Canada Vigilance: a safety signal, not an incidence or causal effect.
 
@@ -109,7 +109,7 @@ The transcriptomic section is exploratory. It was not pre-registered, the direct
 
 ### 2.11 Software and reproducibility
 
-All analyses were run as standalone, re-runnable Python scripts with recorded software versions and random seeds. The de-duplication map, the 2×2 tables, the query-level results, the preferred-term results, the period split and the fixed-regimen contrast are all exported to a single results file (`results/main_results.json`), from which the tables in this paper are generated, so that no number is transcribed by hand. The code, the derived tables and a data dictionary are available at the repository given in the Statements, under the release tag `v2.0-tads-2026-10-21`, which identifies the commit from which the numbers, tables and figures in this manuscript were generated.
+All analyses were run as standalone, re-runnable Python scripts with recorded software versions and random seeds. The de-duplication map, the 2×2 tables, the query-level results, the preferred-term results, the period split and the fixed-regimen contrast are all exported to a single results file (`results/main_results.json`), from which the tables in this paper are generated, so that no number is transcribed by hand. The code, the derived tables and a data dictionary are available at the repository given in the Statements, under the release tag `v2.1-tads-2026-10-24`, which identifies the commit from which the numbers, tables and figures in this manuscript were generated.
 
 
 ## 3. Results
@@ -210,8 +210,8 @@ Food and Drug Administration
 and Medical Devices Agency of Japan; Canada Vigilance from Health Canada (cvponline); GSE294687 and
 GSE318912 from NCBI GEO. The derived tables that support the findings — the de-duplication map, the
 2×2 tables, `results/main_results.json` and the code that generates every table and figure — are
-available at https://github.com/Bowen2485/ethambutol-ocular-toxicity/tree/v2.0-tads-2026-10-21
-(release tag `v2.0-tads-2026-10-21`) under an MIT licence.
+available at https://github.com/Bowen2485/ethambutol-ocular-toxicity/tree/v2.1-tads-2026-10-24
+(release tag `v2.1-tads-2026-10-24`) under an MIT licence.
 
 **Code availability.** All analysis scripts, the data dictionary and the results file are in the
 repository named above, under the same release tag. The scripts record the software versions and
